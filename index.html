@@ -9,7 +9,10 @@
 <body>
 
 <header class="navbar">
-  <h1>Iraq Air Quality</h1>
+<div class="logo">
+  <img src="assets/images/logo.png" alt="Iraq Air Quality logo">
+</div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="data.html">Data</a>
@@ -20,11 +23,16 @@
 
 <section class="hero">
   <h2>Monitoring Air Quality Across Iraq</h2>
-  <p>Independent research, open data, and visual insights.</p>
+  <p>PM2.5 concentrations — animated spatial trends</p>
 
-  <!-- Easy to replace GIF map -->
-  <img src="assets/maps/iraq_pm25.gif" alt="Iraq Air Quality Map">
+  <div class="map-container">
+    <img src="assets/maps/iraq_pm25.gif" alt="Animated PM2.5 map of Iraq">
+    <p class="map-caption">
+      PM2.5 (µg/m³) — Monthly averages. Data sources listed in Methodology.
+    </p>
+  </div>
 </section>
+
 
 <section class="content">
   <h3>What This Project Does</h3>

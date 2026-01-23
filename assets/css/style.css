@@ -41,3 +41,26 @@ footer {
   padding: 1rem;
   background: #eaeaea;
 }
+
+.map-container {
+  margin-top: 1.5rem;
+}
+
+.map-container img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.map-caption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+.logo img {
+  height: 36px;
+}
+
+.navbar {
+  align-items: center;
+}
