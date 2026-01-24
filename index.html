@@ -1,256 +1,446 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>جودة هواء العراق: آخر التحديثات</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iraq Air Quality - Real-time Monitoring</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.png" alt="Iraq Air Quality جودة هواء العراق Logo" id="logo-img">
-        <span class="ms-2 fw-bold">Iraq Air Quality</span>
-      </a>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html" data-key="home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="data.html" data-key="data">Data</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="methodology.html" data-key="methodology">Methodology</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html" data-key="about">About</a>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-outline-light ms-2" id="lang-toggle">العربية</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- Navigation (Fixed) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.png" alt="Iraq Air Quality" height="40">
+                <span class="brand-text">Iraq Air Quality</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#overview">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#insights">Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#data">Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#methodology">Methodology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-outline-light" id="langToggle">العربية</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h1 class="display-4 fw-bold mb-3" data-key="hero_title">Air Quality Across Iraq</h1>
-          <p class="lead mb-4" data-key="hero_subtitle">Real-time PM2.5 monitoring and historical trends visualization for better environmental awareness.</p>
-          <a href="data.html" class="btn btn-primary btn-lg px-4" data-key="view_data">
-            <i class="fas fa-chart-line me-2"></i>View Data
-          </a>
+    <!-- Hero Section (Full Screen) -->
+    <section class="hero-section" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <h1 class="hero-title">Monitoring Air Quality Across Iraq</h1>
+                    <p class="hero-subtitle">Real-time PM2.5 data, historical trends, and actionable insights for a healthier environment.</p>
+                    <div class="hero-buttons mt-4">
+                        <a href="#insights" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-chart-line me-2"></i>View Insights
+                        </a>
+                        <a href="#data" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-database me-2"></i>Explore Data
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="hero-card">
+                        <h5><i class="fas fa-info-circle me-2"></i>Current Status</h5>
+                        <div class="status-item">
+                            <span>Baghdad AQI</span>
+                            <span class="badge aqi-badge moderate">112</span>
+                        </div>
+                        <div class="status-item">
+                            <span>Basra PM2.5</span>
+                            <span class="value">38 µg/m³</span>
+                        </div>
+                        <div class="status-item">
+                            <span>Overall Trend</span>
+                            <span class="trend-up"><i class="fas fa-arrow-up"></i> Rising</span>
+                        </div>
+                        <a href="#overview" class="btn btn-sm btn-outline-primary w-100 mt-3">See Full Report</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-6">
-          <div class="map-container">
-            <img src="assets/maps/iraq_pm25.gif" alt="PM2.5 Map of Iraq" class="img-fluid rounded">
-            <p class="map-caption text-center mt-3" data-key="map_caption">
-              PM2.5 (µg/m³) — Monthly averages. Data sources listed in Methodology.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <a href="#overview" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
 
-  <!-- Features Section -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-5 fw-bold" data-key="features_title">Key Features</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="feature-icon">
-            <i class="fas fa-map-marked-alt"></i>
-          </div>
-          <h4 class="text-center mb-3" data-key="feature1_title">Spatial Visualization</h4>
-          <p class="text-center" data-key="feature1_desc">Interactive maps showing air quality across different regions of Iraq.</p>
+    <!-- Overview Section -->
+    <section class="section-padding" id="overview">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Air Quality Overview</h2>
+                <p class="section-subtitle">Comprehensive analysis of particulate matter across Iraqi regions</p>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="map-container">
+                        <img src="assets/maps/iraq_pm25.gif" alt="Iraq PM2.5 Map" class="img-fluid rounded shadow">
+                        <div class="map-overlay">
+                            <span class="map-label">Interactive Map Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="overview-stats">
+                        <h4 class="mb-4">Key Statistics</h4>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-wind"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h5>Average PM2.5</h5>
+                                <p class="stat-value">42.5 <span class="unit">µg/m³</span></p>
+                                <p class="stat-desc">2.5x WHO recommended limit</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h5>Most Affected City</h5>
+                                <p class="stat-value">Baghdad</p>
+                                <p class="stat-desc">AQI: 112 (Unhealthy)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h5>Worst Month</h5>
+                                <p class="stat-value">December</p>
+                                <p class="stat-desc">Due to heating and weather patterns</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <div class="feature-icon">
-            <i class="fas fa-chart-bar"></i>
-          </div>
-          <h4 class="text-center mb-3" data-key="feature2_title">Trend Analysis</h4>
-          <p class="text-center" data-key="feature2_desc">Historical data and trend analysis for pollution patterns over time.</p>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-icon">
-            <i class="fas fa-database"></i>
-          </div>
-          <h4 class="text-center mb-3" data-key="feature3_title">Open Data</h4>
-          <p class="text-center" data-key="feature3_desc">Freely accessible data for researchers, students, and policymakers.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Latest Data Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="mb-4 fw-bold" data-key="latest_data">Latest Air Quality Readings</h2>
-      <div class="table-responsive">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th data-key="city">City</th>
-              <th data-key="pm25">PM2.5 (µg/m³)</th>
-              <th data-key="aqi">AQI</th>
-              <th data-key="status">Status</th>
-              <th data-key="last_updated">Last Updated</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Baghdad</td>
-              <td>42</td>
-              <td>112</td>
-              <td><span class="badge bg-warning">Unhealthy</span></td>
-              <td>2 hours ago</td>
-            </tr>
-            <tr>
-              <td>Basra</td>
-              <td>38</td>
-              <td>105</td>
-              <td><span class="badge bg-warning">Unhealthy</span></td>
-              <td>3 hours ago</td>
-            </tr>
-            <tr>
-              <td>Erbil</td>
-              <td>22</td>
-              <td>75</td>
-              <td><span class="badge bg-info">Moderate</span></td>
-              <td>1 hour ago</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <p class="mb-0" data-key="footer_text">© 2026 Iraq Air Quality Project. All rights reserved.</p>
+    <!-- Insights Section (Like adairquality.ae) -->
+    <section class="section-padding bg-light" id="insights">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Air Quality Insights</h2>
+                <p class="section-subtitle">Data-driven analysis and visualizations</p>
+            </div>
+            
+            <!-- Insights Tabs -->
+            <div class="insights-tabs" data-aos="fade-up">
+                <ul class="nav nav-pills justify-content-center mb-4" id="insightsTab">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#trends">
+                            <i class="fas fa-chart-line me-2"></i>Trends
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#comparison">
+                            <i class="fas fa-balance-scale me-2"></i>Comparison
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#forecast">
+                            <i class="fas fa-cloud-sun me-2"></i>Forecast
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#health">
+                            <i class="fas fa-heartbeat me-2"></i>Health Impact
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="insightsTabContent">
+                    <!-- Trends Tab -->
+                    <div class="tab-pane fade show active" id="trends">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="insight-card">
+                                    <h5>PM2.5 Monthly Trends (2024)</h5>
+                                    <div class="chart-placeholder">
+                                        <!-- We'll add Chart.js here later -->
+                                        <img src="https://via.placeholder.com/600x300/0b3c5d/ffffff?text=Chart+Coming+Soon" 
+                                             alt="Trend Chart" class="img-fluid rounded">
+                                    </div>
+                                    <p class="mt-3">Seasonal variations show increased pollution during winter months due to heating and reduced dispersion.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="insight-sidebar">
+                                    <h6>Key Observations</h6>
+                                    <ul class="insight-list">
+                                        <li><i class="fas fa-arrow-up text-danger"></i> Winter peaks 65% higher than summer</li>
+                                        <li><i class="fas fa-industry text-warning"></i> Industrial areas show consistent highs</li>
+                                        <li><i class="fas fa-tree text-success"></i> Green zones maintain better air quality</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Other tabs content (similar structure) -->
+                    <div class="tab-pane fade" id="comparison">
+                        <!-- Comparison content -->
+                    </div>
+                    
+                    <div class="tab-pane fade" id="forecast">
+                        <!-- Forecast content -->
+                    </div>
+                    
+                    <div class="tab-pane fade" id="health">
+                        <!-- Health impact content -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 text-end">
-          <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="text-white"><i class="fab fa-github"></i></a>
+    </section>
+
+    <!-- Data Section -->
+    <section class="section-padding" id="data">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Access Data</h2>
+                <p class="section-subtitle">Download raw data for research and analysis</p>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="data-card text-center">
+                        <div class="data-icon">
+                            <i class="fas fa-file-csv"></i>
+                        </div>
+                        <h5>CSV Datasets</h5>
+                        <p>Monthly PM2.5 readings for all monitored cities (2018-2024)</p>
+                        <a href="#" class="btn btn-outline-primary">Download CSV</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="data-card text-center">
+                        <div class="data-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <h5>Geospatial Data</h5>
+                        <p>Shapefiles and GeoJSON for GIS analysis and mapping</p>
+                        <a href="#" class="btn btn-outline-primary">Download GIS Data</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="data-card text-center">
+                        <div class="data-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h5>Visualizations</h5>
+                        <p>Pre-made charts and graphs for presentations</p>
+                        <a href="#" class="btn btn-outline-primary">Download Graphics</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Translation System -->
-  <script>
-    const translations = {
-      en: {
-        home: "Home",
-        data: "Data",
-        methodology: "Methodology",
-        about: "About",
-        hero_title: "Iraq Air Quality Monitoring",
-        hero_subtitle: "Real-time air monitoring and historical trends visualization for better environmental awareness.",
-        view_data: "View Data",
-        map_caption: "Surface Dust (µg/m³) — Monthly averages. (for details, see Data)",
-        features_title: "Key Features",
-        feature1_title: "Spatial Visualization",
-        feature1_desc: "Interactive maps showing air quality across different regions of Iraq.",
-        feature2_title: "Trend Analysis",
-        feature2_desc: "Historical data and trend analysis for pollution patterns over time.",
-        feature3_title: "Open Data",
-        feature3_desc: "Freely accessible data for researchers, students, and policymakers.",
-        latest_data: "Latest Air Quality Readings",
-        city: "City",
-        pm25: "PM2.5 (µg/m³)",
-        aqi: "AQI",
-        status: "Status",
-        last_updated: "Last Updated",
-        footer_text: "© 2026 Iraq Air Quality Project. All rights reserved."
-      },
-      ar: {
-        home: "الرئيسية",
-        data: "البيانات",
-        methodology: "المنهجية",
-        about: "حول",
-        hero_title: "جودة الهواء في جميع أنحاء العراق",
-        hero_subtitle: "مراقبة الهواء في الوقت الفعلي وتصور الاتجاهات التاريخية لتحسين الوعي البيئي.",
-        view_data: "عرض البيانات",
-        map_caption: "الغبار المتطاير (ميكروغرام/م³) — متوسطات شهرية(لمزيد من المعلومات اضغط على المصادر).",
-        features_title: "الميزات الرئيسية",
-        feature1_title: "التصور المكاني",
-        feature1_desc: "خرائط تفاعلية تظهر جودة الهواء في مختلف مناطق العراق.",
-        feature2_title: "تحليل الاتجاهات",
-        feature2_desc: "بيانات تاريخية وتحليل الاتجاهات لأنماط التلوث عبر الزمن.",
-        feature3_title: "بيانات مفتوحة",
-        feature3_desc: "بيانات يمكن الوصول إليها بحرية للباحثين والطلاب وصناع السياسات.",
-        latest_data: "أحدث قراءات جودة الهواء",
-        city: "المدينة",
-        pm25: "PM2.5 (ميكروغرام/م³)",
-        aqi: "مؤشر جودة الهواء",
-        status: "الحالة",
-        last_updated: "آخر تحديث",
-        footer_text: "© 2026 مشروع جودة هواء العراق. جميع الحقوق محفوظة."
-      }
-    };
+    <!-- Methodology Section -->
+    <section class="section-padding bg-light" id="methodology">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Methodology</h2>
+                <p class="section-subtitle">How we collect, process, and analyze air quality data</p>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <div class="methodology-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h5>Data Collection</h5>
+                                <p>Satellite data from NASA MODIS and VIIRS, combined with ground monitoring stations across Iraq.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h5>Processing</h5>
+                                <p>Calibration using ground-truth measurements and atmospheric correction algorithms.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h5>Analysis</h5>
+                                <p>Statistical analysis and machine learning models to identify trends and patterns.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h5>Visualization</h5>
+                                <p>Interactive maps and charts using D3.js and Leaflet for clear communication.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="methodology-sidebar">
+                        <h5>Data Sources</h5>
+                        <ul class="source-list">
+                            <li><i class="fas fa-satellite"></i> NASA EarthData</li>
+                            <li><i class="fas fa-building"></i> Iraqi Ministry of Environment</li>
+                            <li><i class="fas fa-globe"></i> OpenAQ Platform</li>
+                            <li><i class="fas fa-university"></i> University Research</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    let currentLang = 'en';
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <img src="assets/images/logo.png" alt="Logo" height="40">
+                        <h5 class="mt-2">Iraq Air Quality</h5>
+                        <p class="text-muted">Monitoring for a healthier future</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#insights">Insights</a></li>
+                        <li><a href="#data">Data</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h6>Contact</h6>
+                    <p><i class="fas fa-envelope me-2"></i> contact@iraqairquality.iq</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Baghdad, Iraq</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Iraq Air Quality Project. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p class="mb-0">Designed for environmental awareness and research</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
     
-    document.getElementById('lang-toggle').addEventListener('click', function() {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      this.textContent = currentLang === 'en' ? 'العربية' : 'English';
-      
-      // Update HTML direction
-      document.documentElement.lang = currentLang;
-      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-      
-      // Update all translatable content
-      document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (translations[currentLang][key]) {
-          element.textContent = translations[currentLang][key];
-        }
-      });
-      
-      // Update logo for RTL
-      const logo = document.getElementById('logo-img');
-      if (currentLang === 'ar') {
-        logo.style.marginRight = '8px';
-        logo.style.marginLeft = '0';
-      } else {
-        logo.style.marginRight = '0';
-        logo.style.marginLeft = '8px';
-      }
-    });
-  </script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            offset: 100,
+            once: true
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 100) {
+                navbar.style.backgroundColor = 'rgba(11, 60, 93, 0.95)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.backgroundColor = 'transparent';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+        
+        // Language toggle (simplified)
+        document.getElementById('langToggle').addEventListener('click', function() {
+            const isEnglish = this.textContent === 'العربية';
+            this.textContent = isEnglish ? 'English' : 'العربية';
+            // Add full translation logic here
+        });
+    </script>
 </body>
 </html>
