@@ -1,101 +1,256 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iraq Air Quality</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-<header class="navbar">
-  <div class="logo">
-    <img src="assets/images/logo.png" alt="Iraq Air Quality logo">
-  </div>
-
-  <nav>
-    <a href="index.html" data-key="home">Home</a>
-    <a href="data.html" data-key="data">Data</a>
-    <a href="methodology.html" data-key="methodology">Methodology</a>
-    <a href="about.html" data-key="about">About</a>
-    <button id="lang-toggle">العربية</button>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images/logo.png" alt="Iraq Air Quality Logo" id="logo-img">
+        <span class="ms-2 fw-bold">Iraq Air Quality</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html" data-key="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data.html" data-key="data">Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="methodology.html" data-key="methodology">Methodology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html" data-key="about">About</a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-light ms-2" id="lang-toggle">العربية</button>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
-</header>
 
-<section class="hero">
-  <h2 data-key="hero_title">Air Quality Across Iraq</h2>
-  <p data-key="hero_subtitle">PM2.5 concentrations — animated spatial trends</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold mb-3" data-key="hero_title">Air Quality Across Iraq</h1>
+          <p class="lead mb-4" data-key="hero_subtitle">Real-time PM2.5 monitoring and historical trends visualization for better environmental awareness.</p>
+          <a href="data.html" class="btn btn-primary btn-lg px-4" data-key="view_data">
+            <i class="fas fa-chart-line me-2"></i>View Data
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <div class="map-container">
+            <img src="assets/maps/iraq_pm25.gif" alt="PM2.5 Map of Iraq" class="img-fluid rounded">
+            <p class="map-caption text-center mt-3" data-key="map_caption">
+              PM2.5 (µg/m³) — Monthly averages. Data sources listed in Methodology.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="map-container">
-    <img src="assets/maps/iraq_pm25.gif" alt="Animated PM2.5 map of Iraq">
-    <p class="map-caption" data-key="map_caption">
-      PM2.5 (µg/m³) — Monthly averages. Data sources listed in Methodology.
-    </p>
-  </div>
-</section>
+  <!-- Features Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold" data-key="features_title">Key Features</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <h4 class="text-center mb-3" data-key="feature1_title">Spatial Visualization</h4>
+          <p class="text-center" data-key="feature1_desc">Interactive maps showing air quality across different regions of Iraq.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-icon">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h4 class="text-center mb-3" data-key="feature2_title">Trend Analysis</h4>
+          <p class="text-center" data-key="feature2_desc">Historical data and trend analysis for pollution patterns over time.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <h4 class="text-center mb-3" data-key="feature3_title">Open Data</h4>
+          <p class="text-center" data-key="feature3_desc">Freely accessible data for researchers, students, and policymakers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="content">
-  <h3 data-key="project_heading">What This Project Does</h3>
-  <ul>
-    <li data-key="feature1">Tracks PM2.5 and air pollution trends</li>
-    <li data-key="feature2">Visualizes spatial and temporal patterns</li>
-    <li data-key="feature3">Provides open research data for Iraq</li>
-  </ul>
-</section>
+  <!-- Latest Data Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4 fw-bold" data-key="latest_data">Latest Air Quality Readings</h2>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th data-key="city">City</th>
+              <th data-key="pm25">PM2.5 (µg/m³)</th>
+              <th data-key="aqi">AQI</th>
+              <th data-key="status">Status</th>
+              <th data-key="last_updated">Last Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Baghdad</td>
+              <td>42</td>
+              <td>112</td>
+              <td><span class="badge bg-warning">Unhealthy</span></td>
+              <td>2 hours ago</td>
+            </tr>
+            <tr>
+              <td>Basra</td>
+              <td>38</td>
+              <td>105</td>
+              <td><span class="badge bg-warning">Unhealthy</span></td>
+              <td>3 hours ago</td>
+            </tr>
+            <tr>
+              <td>Erbil</td>
+              <td>22</td>
+              <td>75</td>
+              <td><span class="badge bg-info">Moderate</span></td>
+              <td>1 hour ago</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <p data-key="footer_text">© 2026  جودة هواء العراق</p>
-</footer>
+  <!-- Footer -->
+  <footer class="py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mb-0" data-key="footer_text">© 2026 Iraq Air Quality Project. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-<script>
-  const translations = {
-    en: {
-      home: "Home",
-      data: "Data",
-      methodology: "Methodology",
-      about: "About",
-      hero_title: "Air Quality Across Iraq",
-      hero_subtitle: "PM2.5 concentrations — animated spatial trends",
-      map_caption: "PM2.5 (µg/m³) — Monthly averages. Data sources listed in Methodology.",
-      project_heading: "What This Project Does",
-      feature1: "Tracks PM2.5 and air pollution trends",
-      feature2: "Visualizes spatial and temporal patterns",
-      feature3: "Provides open research data for Iraq",
-      footer_text: "© 2026 Iraq Air Quality"
-    },
-    ar: {
-      home: "الرئيسية",
-      data: "البيانات",
-      methodology: "المنهجية",
-      about: "حول",
-      hero_title: "جودة الهواء في جميع أنحاء العراق",
-      hero_subtitle: "تركيزات PM2.5 — اتجاهات مكانية متحركة",
-      map_caption: "PM2.5 (ميكروغرام/م³) — متوسطات شهرية. مصادر البيانات مدرجة في المنهجية.",
-      project_heading: "ما يفعله هذا المشروع",
-      feature1: "يتتبع اتجاهات تلوث الهواء وPM2.5",
-      feature2: "يصور الأنماط المكانية والزمانية",
-      feature3: "يوفر بيانات بحثية مفتوحة للعراق",
-      footer_text: "© 2026 جودة هواء العراق"
-    }
-  };
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Translation System -->
+  <script>
+    const translations = {
+      en: {
+        home: "Home",
+        data: "Data",
+        methodology: "Methodology",
+        about: "About",
+        hero_title: "Air Quality Across Iraq",
+        hero_subtitle: "Real-time PM2.5 monitoring and historical trends visualization for better environmental awareness.",
+        view_data: "View Data",
+        map_caption: "PM2.5 (µg/m³) — Monthly averages. Data sources listed in Methodology.",
+        features_title: "Key Features",
+        feature1_title: "Spatial Visualization",
+        feature1_desc: "Interactive maps showing air quality across different regions of Iraq.",
+        feature2_title: "Trend Analysis",
+        feature2_desc: "Historical data and trend analysis for pollution patterns over time.",
+        feature3_title: "Open Data",
+        feature3_desc: "Freely accessible data for researchers, students, and policymakers.",
+        latest_data: "Latest Air Quality Readings",
+        city: "City",
+        pm25: "PM2.5 (µg/m³)",
+        aqi: "AQI",
+        status: "Status",
+        last_updated: "Last Updated",
+        footer_text: "© 2026 Iraq Air Quality Project. All rights reserved."
+      },
+      ar: {
+        home: "الرئيسية",
+        data: "البيانات",
+        methodology: "المنهجية",
+        about: "حول",
+        hero_title: "جودة الهواء في جميع أنحاء العراق",
+        hero_subtitle: "مراقبة PM2.5 في الوقت الفعلي وتصور الاتجاهات التاريخية لتحسين الوعي البيئي.",
+        view_data: "عرض البيانات",
+        map_caption: "PM2.5 (ميكروغرام/م³) — متوسطات شهرية. مصادر البيانات مدرجة في المنهجية.",
+        features_title: "الميزات الرئيسية",
+        feature1_title: "التصور المكاني",
+        feature1_desc: "خرائط تفاعلية تظهر جودة الهواء في مختلف مناطق العراق.",
+        feature2_title: "تحليل الاتجاهات",
+        feature2_desc: "بيانات تاريخية وتحليل الاتجاهات لأنماط التلوث عبر الزمن.",
+        feature3_title: "بيانات مفتوحة",
+        feature3_desc: "بيانات يمكن الوصول إليها بحرية للباحثين والطلاب وصناع السياسات.",
+        latest_data: "أحدث قراءات جودة الهواء",
+        city: "المدينة",
+        pm25: "PM2.5 (ميكروغرام/م³)",
+        aqi: "مؤشر جودة الهواء",
+        status: "الحالة",
+        last_updated: "آخر تحديث",
+        footer_text: "© 2026 مشروع جودة هواء العراق. جميع الحقوق محفوظة."
+      }
+    };
 
-  let currentLang = 'en';
-
-  document.getElementById('lang-toggle').addEventListener('click', function() {
-    currentLang = currentLang === 'en' ? 'ar' : 'en';
-    this.textContent = currentLang === 'en' ? 'العربية' : 'English';
-    document.documentElement.lang = currentLang;
-    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-
-    // Update all translatable elements
-    document.querySelectorAll('[data-key]').forEach(el => {
-      const key = el.getAttribute('data-key');
-      if (translations[currentLang][key]) {
-        el.textContent = translations[currentLang][key];
+    let currentLang = 'en';
+    
+    document.getElementById('lang-toggle').addEventListener('click', function() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      this.textContent = currentLang === 'en' ? 'العربية' : 'English';
+      
+      // Update HTML direction
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      
+      // Update all translatable content
+      document.querySelectorAll('[data-key]').forEach(element => {
+        const key = element.getAttribute('data-key');
+        if (translations[currentLang][key]) {
+          element.textContent = translations[currentLang][key];
+        }
+      });
+      
+      // Update logo for RTL
+      const logo = document.getElementById('logo-img');
+      if (currentLang === 'ar') {
+        logo.style.marginRight = '8px';
+        logo.style.marginLeft = '0';
+      } else {
+        logo.style.marginRight = '0';
+        logo.style.marginLeft = '8px';
       }
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
