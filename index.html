@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,43 +9,93 @@
 <body>
 
 <header class="navbar">
-<div class="logo">
-  <img src="assets/images/logo.png" alt="Iraq Air Quality logo">
-</div>
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="Iraq Air Quality logo">
+  </div>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="data.html">Data</a>
-    <a href="methodology.html">Methodology</a>
-    <a href="about.html">About</a>
+    <a href="index.html" data-key="home">Home</a>
+    <a href="data.html" data-key="data">Data</a>
+    <a href="methodology.html" data-key="methodology">Methodology</a>
+    <a href="about.html" data-key="about">About</a>
+    <button id="lang-toggle">العربية</button>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>جودة الهواء في جميع أنحاء العراق</h2>
-  <p>PM2.5 concentrations — animated spatial trends</p>
+  <h2 data-key="hero_title">جودة الهواء في جميع أنحاء العراق</h2>
+  <p data-key="hero_subtitle">PM2.5 concentrations — animated spatial trends</p>
 
   <div class="map-container">
     <img src="assets/maps/iraq_pm25.gif" alt="Animated PM2.5 map of Iraq">
-    <p class="map-caption">
+    <p class="map-caption" data-key="map_caption">
       PM2.5 (µg/m³) — Monthly averages. Data sources listed in Methodology.
     </p>
   </div>
 </section>
 
-
 <section class="content">
-  <h3>What This Project Does</h3>
+  <h3 data-key="project_heading">What This Project Does</h3>
   <ul>
-    <li>Tracks PM2.5 and air pollution trends</li>
-    <li>Visualizes spatial and temporal patterns</li>
-    <li>Provides open research data for Iraq</li>
+    <li data-key="feature1">Tracks PM2.5 and air pollution trends</li>
+    <li data-key="feature2">Visualizes spatial and temporal patterns</li>
+    <li data-key="feature3">Provides open research data for Iraq</li>
   </ul>
 </section>
 
 <footer>
-  <p>© 2026  جودة هواء العراق </p>
+  <p data-key="footer_text">© 2026  جودة هواء العراق</p>
 </footer>
+
+<script>
+  const translations = {
+    en: {
+      home: "Home",
+      data: "Data",
+      methodology: "Methodology",
+      about: "About",
+      hero_title: "Air Quality Across Iraq",
+      hero_subtitle: "PM2.5 concentrations — animated spatial trends",
+      map_caption: "PM2.5 (µg/m³) — Monthly averages. Data sources listed in Methodology.",
+      project_heading: "What This Project Does",
+      feature1: "Tracks PM2.5 and air pollution trends",
+      feature2: "Visualizes spatial and temporal patterns",
+      feature3: "Provides open research data for Iraq",
+      footer_text: "© 2026 Iraq Air Quality"
+    },
+    ar: {
+      home: "الرئيسية",
+      data: "البيانات",
+      methodology: "المنهجية",
+      about: "حول",
+      hero_title: "جودة الهواء في جميع أنحاء العراق",
+      hero_subtitle: "تركيزات PM2.5 — اتجاهات مكانية متحركة",
+      map_caption: "PM2.5 (ميكروغرام/م³) — متوسطات شهرية. مصادر البيانات مدرجة في المنهجية.",
+      project_heading: "ما يفعله هذا المشروع",
+      feature1: "يتتبع اتجاهات تلوث الهواء وPM2.5",
+      feature2: "يصور الأنماط المكانية والزمانية",
+      feature3: "يوفر بيانات بحثية مفتوحة للعراق",
+      footer_text: "© 2026 جودة هواء العراق"
+    }
+  };
+
+  let currentLang = 'en';
+
+  document.getElementById('lang-toggle').addEventListener('click', function() {
+    currentLang = currentLang === 'en' ? 'ar' : 'en';
+    this.textContent = currentLang === 'en' ? 'العربية' : 'English';
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+    // Update all translatable elements
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (translations[currentLang][key]) {
+        el.textContent = translations[currentLang][key];
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
