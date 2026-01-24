@@ -84,41 +84,83 @@
                     </div>
                 </div>
                 <div class="col-lg-5" data-aos="fade-right">
-                    <div class="stats-card">
-                        <h4><i class="fas fa-chart-bar me-2"></i>حالة جودة الهواء الحالية</h4>
-                        <div class="stats-grid">
-                            <div class="stat-box">
-                                <div class="stat-label">بغداد</div>
-                                <div class="stat-value">142</div>
-                                <div class="stat-unit">ميكروغرام/م³</div>
-                                <div class="stat-trend up"><i class="fas fa-arrow-up"></i> +5%</div>
+                <div class="stats-card">
+                    <h4><i class="fas fa-chart-bar me-2"></i>حالة جودة الهواء الحالية</h4>
+                    
+                    <!-- Current Province Selector -->
+                    <div class="current-province-selector">
+                        <div class="province-circle active" data-province="baghdad">
+                            
+                                
                             </div>
-                            <div class="stat-box">
-                                <div class="stat-label">البصرة</div>
-                                <div class="stat-value">125</div>
-                                <div class="stat-unit">ميكروغرام/م³</div>
-                                <div class="stat-trend up"><i class="fas fa-arrow-up"></i> +3%</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-label">أربيل</div>
-                                <div class="stat-value">85</div>
-                                <div class="stat-unit">ميكروغرام/م³</div>
-                                <div class="stat-trend stable"><i class="fas fa-minus"></i> 0%</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-label">المعدل الوطني</div>
-                                <div class="stat-value">115</div>
-                                <div class="stat-unit">ميكروغرام/م³</div>
-                                <div class="stat-trend up"><i class="fas fa-arrow-up"></i> +4%</div>
-                            </div>
+                            
                         </div>
-                        <div class="stat-footer">
-                            <small>آخر تحديث: اليوم، 14:00</small>
+                        
+                    </div>
+                    
+                    <!-- Main Circular Gauge -->
+                    <div class="circular-gauge-container">
+                        <div class="circular-gauge">
+                            <!-- Gauge Background -->
+                            <div class="gauge-background"></div>
+                            
+                            <!-- Gauge Fill (based on AQI) -->
+                            <div class="gauge-fill" style="background: conic-gradient(#8f3f97 10%, #ff0000 30%, #ff7e00 40%, #ff7e00 55%, #ffff00 65%, #ffff00 85%, #00e400 95%);">
+                                <div class="gauge-inner">
+                                    <div class="gauge-value">142</div>
+                                    <div class="gauge-unit">ميكروغرام/م³</div>
+                                    <div class="gauge-label">بغداد</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Gauge Markers -->
+                            <div class="gauge-marker" style="transform: rotate(70deg);"></div>
+                        </div>
+                        
+                        <!-- AQI Status -->
+                        <div class="aqi-status">
+                            <span class="aqi-level very-unhealthy">غير صحي للحساسين</span>
+                            <span class="aqi-index">مؤشر جودة الهواء: 142</span>
                         </div>
                     </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="quick-stats">
+                        <div class="stat-item">
+                            <div class="stat-icon trend-up">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">+5%</div>
+                                <div class="stat-label">عن الأمس</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-thermometer-half"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">3.2x</div>
+                                <div class="stat-label">فوق الحد الآمن</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">14:00</div>
+                                <div class="stat-label">آخر تحديث</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-footer">
+                        <small>البيانات يتم تحديثها كل ساعة</small>
+                    </div>
                 </div>
-            </div>
-        </div>
         <a href="#map" class="scroll-down">
             <i class="fas fa-chevron-down"></i>
         </a>
@@ -180,6 +222,7 @@
                                             <span class="badge bg-danger" title="الركض غير موصى به"><i class="fas fa-running"></i></span>
                                             <span class="badge bg-danger" title="غير آمن للحوامل والأطفال"><i class="fas fa-baby"></i></span>
                                             <span class="badge bg-success" title="ارتداء الكمامة ضروري"><i class="fas fa-head-side-mask"></i></span>
+                                            <span class="badge bg-info" title="استخدام منقي الهواء موصى به"><i class="fas fa-wind"></i></span>
                                         </span>
                                     </div>
                                 </div>
@@ -197,6 +240,7 @@
                                             <span class="badge bg-warning" title="الركض بحذر"><i class="fas fa-running"></i></span>
                                             <span class="badge bg-warning" title="محدود للحوامل والأطفال"><i class="fas fa-baby"></i></span>
                                             <span class="badge bg-success" title="ارتداء الكمامة موصى به"><i class="fas fa-head-side-mask"></i></span>
+                                            <span class="badge bg-info" title="استخدام منقي الهواء موصى به"><i class="fas fa-wind"></i></span>
                                         </span>
                                     </div>
                                 </div>
@@ -214,6 +258,7 @@
                                             <span class="badge bg-warning" title="الركض بحذر"><i class="fas fa-running"></i></span>
                                             <span class="badge bg-warning" title="محدود للحوامل والأطفال"><i class="fas fa-baby"></i></span>
                                             <span class="badge bg-secondary" title="الكمامة اختيارية"><i class="fas fa-head-side-mask"></i></span>
+                                                                                        <span class="badge bg-info" title="استخدام منقي الهواء موصى به"><i class="fas fa-wind"></i></span>
                                         </span>
                                     </div>
                                 </div>
@@ -231,6 +276,7 @@
                                             <span class="badge bg-success" title="الركض مقبول"><i class="fas fa-running"></i></span>
                                             <span class="badge bg-success" title="آمن للحوامل والأطفال"><i class="fas fa-baby"></i></span>
                                             <span class="badge bg-secondary" title="الكمامة اختيارية"><i class="fas fa-head-side-mask"></i></span>
+                                            <span class="badge bg-info" title="استخدام منقي الهواء موصى به"><i class="fas fa-wind"></i></span>
                                         </span>
                                     </div>
                                 </div>
@@ -248,6 +294,7 @@
                                             <span class="badge bg-success" title="الركض آمن"><i class="fas fa-running"></i></span>
                                             <span class="badge bg-success" title="آمن للحوامل والأطفال"><i class="fas fa-baby"></i></span>
                                             <span class="badge bg-secondary" title="لا حاجة للكمامة"><i class="fas fa-head-side-mask"></i></span>
+                                            <span class="badge bg-info" title="استخدام منقي الهواء موصى به"><i class="fas fa-wind"></i></span>
                                         </span>
                                     </div>
                                 </div>
@@ -296,30 +343,8 @@
             </div>
             
             <!-- AQI Color Legend -->
-            <div class="aqi-full-legend" data-aos="fade-up">
-                <div class="legend-items">
-                    <div class="legend-item">
-                        <span class="legend-color" style="background-color: #00e400;"></span>
-                        <span class="legend-label">جيد (0-50)</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color" style="background-color: #ffff00;"></span>
-                        <span class="legend-label">متوسط (51-100)</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color" style="background-color: #ff7e00;"></span>
-                        <span class="legend-label">غير صحي للحساسين (101-150)</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color" style="background-color: #ff0000;"></span>
-                        <span class="legend-label">غير صحي (151-200)</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-color" style="background-color: #8f3f97;"></span>
-                        <span class="legend-label">غير صحي جداً (201-300)</span>
-                    </div>
-                </div>
-            </div>
+
+
             
             <!-- All 18 Provinces in Bar Chart Layout -->
             <div class="provinces-bars-container" data-aos="fade-up">
@@ -590,6 +615,224 @@
             </div>
         </div>
     </section>
+    <!-- Monthly Statistics Section -->
+    <section class="section-padding" id="monthly-stats">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">إحصائيات تركيز الغبار الشهرية</h2>
+                <p class="section-subtitle">تحليل الاتجاهات الزمنية عبر المحافظات</p>
+            </div>
+            
+            <!-- Province Selector -->
+            <div class="province-selector-container" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="provinceSelect"><i class="fas fa-map-marker-alt me-2"></i>اختر المحافظة</label>
+                            <select class="form-select" id="provinceSelect">
+                                <option value="all">جميع المحافظات</option>
+                                <option value="baghdad" selected>بغداد</option>
+                                <option value="basra">البصرة</option>
+                                <option value="mosul">الموصل</option>
+                                <option value="erbil">أربيل</option>
+                                <option value="sulaymaniyah">السليمانية</option>
+                                <option value="kirkuk">كركوك</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="time-period-tabs">
+                            <div class="btn-group time-buttons" role="group">
+                                <button type="button" class="btn btn-outline-primary active" data-period="hourly">ساعي</button>
+                                <button type="button" class="btn btn-outline-primary" data-period="daily">يومي</button>
+                                <button type="button" class="btn btn-outline-primary" data-period="weekly">أسبوعي</button>
+                                <button type="button" class="btn btn-outline-primary" data-period="monthly">شهري</button>
+                                <button type="button" class="btn btn-outline-primary" data-period="yearly">سنوي</button>
+                                <button type="button" class="btn btn-outline-primary" data-period="custom">مخصص</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chart Container with Navigation -->
+            <div class="chart-container" data-aos="fade-up">
+                <div class="chart-navigation">
+                    <button class="nav-btn prev-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <div class="chart-wrapper">
+                        <div class="chart-title">
+                            <h4>تركيز الغبار الشهري - بغداد (2024)</h4>
+                            <span class="chart-subtitle">معدلات PM10 بالميكروغرام/م³</span>
+                        </div>
+                        
+                        <!-- Monthly Bar Chart -->
+                        <div class="monthly-bars">
+                            <!-- January -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 85%; background-color: #ff7e00;">
+                                    <span class="value-label">142</span>
+                                </div>
+                                <div class="month-label">يناير</div>
+                            </div>
+                            
+                            <!-- February -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 78%; background-color: #ff7e00;">
+                                    <span class="value-label">130</span>
+                                </div>
+                                <div class="month-label">فبراير</div>
+                            </div>
+                            
+                            <!-- March -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 70%; background-color: #ffff00;">
+                                    <span class="value-label">115</span>
+                                </div>
+                                <div class="month-label">مارس</div>
+                            </div>
+                            
+                            <!-- April -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 65%; background-color: #ffff00;">
+                                    <span class="value-label">105</span>
+                                </div>
+                                <div class="month-label">أبريل</div>
+                            </div>
+                            
+                            <!-- May -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 60%; background-color: #ffff00;">
+                                    <span class="value-label">98</span>
+                                </div>
+                                <div class="month-label">مايو</div>
+                            </div>
+                            
+                            <!-- June -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 55%; background-color: #00e400;">
+                                    <span class="value-label">90</span>
+                                </div>
+                                <div class="month-label">يونيو</div>
+                            </div>
+                            
+                            <!-- July -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 50%; background-color: #00e400;">
+                                    <span class="value-label">82</span>
+                                </div>
+                                <div class="month-label">يوليو</div>
+                            </div>
+                            
+                            <!-- August -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 48%; background-color: #00e400;">
+                                    <span class="value-label">78</span>
+                                </div>
+                                <div class="month-label">أغسطس</div>
+                            </div>
+                            
+                            <!-- September -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 52%; background-color: #ffff00;">
+                                    <span class="value-label">85</span>
+                                </div>
+                                <div class="month-label">سبتمبر</div>
+                            </div>
+                            
+                            <!-- October -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 65%; background-color: #ffff00;">
+                                    <span class="value-label">105</span>
+                                </div>
+                                <div class="month-label">أكتوبر</div>
+                            </div>
+                            
+                            <!-- November -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 75%; background-color: #ff7e00;">
+                                    <span class="value-label">122</span>
+                                </div>
+                                <div class="month-label">نوفمبر</div>
+                            </div>
+                            
+                            <!-- December -->
+                            <div class="month-bar">
+                                <div class="bar-value" style="height: 90%; background-color: #ff7e00;">
+                                    <span class="value-label">148</span>
+                                </div>
+                                <div class="month-label">ديسمبر</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Chart Legend -->
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #00e400;"></span>
+                                <span class="legend-text">جيد (&lt;100)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #ffff00;"></span>
+                                <span class="legend-text">متوسط (100-120)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background-color: #ff7e00;"></span>
+                                <span class="legend-text">غير صحي (&gt;120)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="nav-btn next-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+                
+                <!-- Chart Stats -->
+                <div class="chart-stats" data-aos="fade-up">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="stat-value">148</div>
+                                <div class="stat-label">الحد الأقصى (ديسمبر)</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="stat-value">78</div>
+                                <div class="stat-label">الحد الأدنى (أغسطس)</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="stat-value">105</div>
+                                <div class="stat-label">المعدل السنوي</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-box">
+                                <div class="stat-icon">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <div class="stat-value">+12%</div>
+                                <div class="stat-label">عن العام الماضي</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Data Section -->
     <section class="section-padding" id="data">
@@ -854,6 +1097,7 @@
                 overview_title: "نظرة عامة على جودة الهواء",
                 overview_subtitle: "تحليل شامل للجسيمات عبر المناطق العراقية",
                 
+            
 
 
                 // Footer
@@ -1036,5 +1280,7 @@
             }
         });
     </script>
+    <!-- Custom JavaScript -->
+<script src="assets/js/main.js"></script>
 </body>
 </html>
