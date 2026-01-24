@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <!-- Simple Iraq Map Shape -->
+  <path d="M30,25 L50,20 L70,25 L90,30 L110,35 L130,30 L150,25 L170,30 L180,35 L160,40 L140,45 L120,40 L100,35 L80,30 L60,25 L40,30 L30,35 Z" 
+        fill="#228B22" stroke="#000000" stroke-width="1.5"/>
+  
+  <!-- Air Flow Lines (Simple, no animation) -->
+  <line x1="180" y1="25" x2="195" y2="20" stroke="#FF0000" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="170" y1="30" x2="185" y2="25" stroke="#FF0000" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="160" y1="35" x2="175" y2="30" stroke="#FF0000" stroke-width="1.5" stroke-dasharray="3,2"/>
+  
+  <!-- Text -->
+  <text x="195" y="35" text-anchor="end" fill="#000000" font-family="Arial" font-weight="bold" font-size="14">
+    جودة الهواء في العراق
+  </text>
+  <text x="195" y="50" text-anchor="end" fill="#228B22" font-family="Arial" font-size="10">
+    Iraq Air Quality
+  </text>
+</svg>
