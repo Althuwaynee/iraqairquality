@@ -55,11 +55,17 @@ h2 {
 }
 
 .map-container {
-  height: 450px;
+  height: 450px;        /* height is REQUIRED for Leaflet */
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #e2e8f0;
 }
+
+/* Remove the red background test after confirming */
+#map-risk {
+  height: 100%;          /* take full height of container */
+}
+
 
 /* Legend */
 .legend {
@@ -227,6 +233,4 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-#map-risk {
-  background: red;
-}
+
