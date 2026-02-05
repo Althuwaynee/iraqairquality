@@ -1,0 +1,232 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* Main Content */
+main {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Map Containers */
+.map-section, .risk-section, .stats-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.map-container {
+  height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+/* Legend */
+.legend {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  min-width: 160px;
+}
+
+.legend h4 {
+  margin: 0 0 8px 0;
+  color: #1e293b;
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.box {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.green { background: #10b981; }
+.yellow { background: #f59e0b; }
+.orange { background: #f97316; }
+.red { background: #ef4444; }
+.purple { background: #8b5cf6; }
+
+/* Risk Section Layout */
+.risk-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.risk-list {
+  flex: 0 0 300px;
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.risk-list h3 {
+  margin-top: 0;
+  color: #1e293b;
+}
+
+.risk-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.risk-list li {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 4px solid #ef4444;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.risk-list strong {
+  display: block;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+/* Statistics */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+
+.stat-card h3 {
+  margin-top: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin: 0.5rem 0;
+}
+
+.update-time {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .risk-container {
+    flex-direction: column;
+  }
+  
+  .risk-list {
+    width: 100%;
+    flex: none;
+  }
+  
+  .map-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  
+  .map-section, .risk-section, .stats-section {
+    padding: 1rem;
+  }
+  
+  .legend {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
+#map-risk {
+  background: red;
+}

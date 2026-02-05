@@ -1,0 +1,2565 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-05T16:02:22.119690Z",
+    "reference_time": "2026-02-05T15:00:00Z",
+    "rolling_windows_hours": [
+      6,
+      12,
+      24
+    ],
+    "data_resolution_hours": 3,
+    "note": "Data is at 3-hour resolution. Means use available data points within window."
+  },
+  "districts": [
+    {
+      "district_id": 1,
+      "district_name": "Abu Ghraib",
+      "province_name": "Al-Anbar",
+      "latitude": 33.22284294208515,
+      "longitude": 44.079107812464066,
+      "pm10": {
+        "now": 17.43084261920802,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 33.507949167228055,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 60.0646263928812,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 121.97123790494258,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 121.97123790494258
+      }
+    },
+    {
+      "district_id": 10,
+      "district_name": "Abu al Khasib",
+      "province_name": "Al-Basrah",
+      "latitude": 30.322295164959556,
+      "longitude": 48.00084412853525,
+      "pm10": {
+        "now": 73.82540569758696,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 113.06616137148863,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 109.17879114038492,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 116.80669829651288,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 116.80669829651288
+      }
+    },
+    {
+      "district_id": 100,
+      "district_name": "Al Noamania",
+      "province_name": "Wasit",
+      "latitude": 32.36105076371928,
+      "longitude": 45.48407746387027,
+      "pm10": {
+        "now": 47.7006965835501,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 69.48547457211461,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 106.15240617076475,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 130.24787831254125,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 130.24787831254125
+      }
+    },
+    {
+      "district_id": 101,
+      "district_name": "As Suwayrah",
+      "province_name": "Wasit",
+      "latitude": 32.826949654777835,
+      "longitude": 45.04891490509748,
+      "pm10": {
+        "now": 52.846008055646365,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 61.256841507295015,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 82.7637822519858,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 93.77084024471178,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 93.77084024471178
+      }
+    },
+    {
+      "district_id": 102,
+      "district_name": "Badrah",
+      "province_name": "Wasit",
+      "latitude": 33.01018592191133,
+      "longitude": 45.874173303288195,
+      "pm10": {
+        "now": 48.718917524359185,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 86.90064416230649,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 85.18894326502183,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 78.48381171941051,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 78.48381171941051
+      }
+    },
+    {
+      "district_id": 11,
+      "district_name": "Al Faw",
+      "province_name": "Al-Basrah",
+      "latitude": 30.09346407757131,
+      "longitude": 48.21259266486124,
+      "pm10": {
+        "now": 81.84175381948673,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 118.09033742886925,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 112.07680881121091,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 111.73352084289925,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 111.73352084289925
+      }
+    },
+    {
+      "district_id": 12,
+      "district_name": "Al Madiana",
+      "province_name": "Al-Basrah",
+      "latitude": 31.01278159959984,
+      "longitude": 47.27969021111455,
+      "pm10": {
+        "now": 50.106285826574485,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 106.37571429847439,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 113.07382863982264,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 100.02523779862918,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 100.02523779862918
+      }
+    },
+    {
+      "district_id": 13,
+      "district_name": "Al Qurnah",
+      "province_name": "Al-Basrah",
+      "latitude": 30.951507845907454,
+      "longitude": 47.504821845711334,
+      "pm10": {
+        "now": 55.714560628762136,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 113.8044240206918,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 109.65226325202597,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 93.9796886342366,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 93.9796886342366
+      }
+    },
+    {
+      "district_id": 14,
+      "district_name": "Al Zubair",
+      "province_name": "Al-Basrah",
+      "latitude": 30.140320747885756,
+      "longitude": 47.051652263129796,
+      "pm10": {
+        "now": 57.08545504166947,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 101.07969432061434,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 116.61090518441623,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 118.9666036992123,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 118.9666036992123
+      }
+    },
+    {
+      "district_id": 15,
+      "district_name": "Basrah",
+      "province_name": "Al-Basrah",
+      "latitude": 30.58488009735456,
+      "longitude": 47.60895459396477,
+      "pm10": {
+        "now": 63.42046828961068,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 114.88565136501347,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 109.82088654238358,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 96.89813966268441,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 96.89813966268441
+      }
+    },
+    {
+      "district_id": 16,
+      "district_name": "Shatt Al Arab",
+      "province_name": "Al-Basrah",
+      "latitude": 30.733716653568777,
+      "longitude": 47.89427749118113,
+      "pm10": {
+        "now": 70.29152884424236,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 119.41103550738428,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 110.36387550385957,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 97.03800891821056,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 97.03800891821056
+      }
+    },
+    {
+      "district_id": 17,
+      "district_name": "Al Khithir",
+      "province_name": "Al-Muthannia",
+      "latitude": 31.211217356548065,
+      "longitude": 45.59095280222517,
+      "pm10": {
+        "now": 48.47696599010868,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 97.24415628835793,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 155.6211161879854,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 140.74876758757495,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 140.74876758757495
+      }
+    },
+    {
+      "district_id": 18,
+      "district_name": "As Salman",
+      "province_name": "Al-Muthannia",
+      "latitude": 30.037772528935243,
+      "longitude": 45.34324916086535,
+      "pm10": {
+        "now": 60.5682000345497,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 91.60374549593178,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 114.61085458820818,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 113.46660903056306,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 113.46660903056306
+      }
+    },
+    {
+      "district_id": 19,
+      "district_name": "As Samawah",
+      "province_name": "Al-Muthannia",
+      "latitude": 31.22628548408288,
+      "longitude": 45.26107498099238,
+      "pm10": {
+        "now": 44.02905558714203,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 91.00216249896785,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 139.9064129331681,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 147.65625219149615,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 147.65625219149615
+      }
+    },
+    {
+      "district_id": 2,
+      "district_name": "Al Fallujah",
+      "province_name": "Al-Anbar",
+      "latitude": 33.105313260379475,
+      "longitude": 43.777410959201084,
+      "pm10": {
+        "now": 17.91004438635754,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 39.7305554975869,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 62.40102183246307,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 139.8623446417123,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 139.8623446417123
+      }
+    },
+    {
+      "district_id": 20,
+      "district_name": "Rumaitha",
+      "province_name": "Al-Muthannia",
+      "latitude": 31.49777407467573,
+      "longitude": 45.295419354379,
+      "pm10": {
+        "now": 45.965525806593405,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 79.2887420690477,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 132.87324524142863,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 153.37076368320925,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 153.37076368320925
+      }
+    },
+    {
+      "district_id": 21,
+      "district_name": "Ad Diwaniyah",
+      "province_name": "Al-Qadisiyah",
+      "latitude": 32.05638201510581,
+      "longitude": 44.93432548754941,
+      "pm10": {
+        "now": 31.672585752759705,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 59.014264244448675,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 114.78585749500174,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 170.74771291866904,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 170.74771291866904
+      }
+    },
+    {
+      "district_id": 22,
+      "district_name": "Afak",
+      "province_name": "Al-Qadisiyah",
+      "latitude": 31.933401279365494,
+      "longitude": 45.41428409276566,
+      "pm10": {
+        "now": 45.9662986359382,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 61.378816719066776,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 117.6090189008647,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 139.26915833194863,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 139.26915833194863
+      }
+    },
+    {
+      "district_id": 23,
+      "district_name": "Al Hamza",
+      "province_name": "Al-Qadisiyah",
+      "latitude": 31.568054071632826,
+      "longitude": 44.83318162808363,
+      "pm10": {
+        "now": 34.33453913351688,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 73.04339597493946,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 120.59920374223304,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 157.4851324128728,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 157.4851324128728
+      }
+    },
+    {
+      "district_id": 24,
+      "district_name": "Shamiya",
+      "province_name": "Al-Qadisiyah",
+      "latitude": 31.77676313071312,
+      "longitude": 44.59017146056126,
+      "pm10": {
+        "now": 27.368079515956257,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 64.21986747340624,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 114.71855592075433,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 153.56195623166937,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 153.56195623166937
+      }
+    },
+    {
+      "district_id": 25,
+      "district_name": "Al Kufa",
+      "province_name": "An-Najaf",
+      "latitude": 32.05113981282575,
+      "longitude": 44.44017246858249,
+      "pm10": {
+        "now": 28.809872380942213,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 60.81039144404261,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 106.8475755494563,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 174.62902904727466,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 174.62902904727466
+      }
+    },
+    {
+      "district_id": 26,
+      "district_name": "Al Manathera",
+      "province_name": "An-Najaf",
+      "latitude": 31.79653011163293,
+      "longitude": 44.41160823199626,
+      "pm10": {
+        "now": 28.823565178162184,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 62.22162414114615,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 104.70352139159797,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 157.15393286756927,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 157.15393286756927
+      }
+    },
+    {
+      "district_id": 27,
+      "district_name": "Najaf",
+      "province_name": "An-Najaf",
+      "latitude": 31.021296483611717,
+      "longitude": 43.71875238029147,
+      "pm10": {
+        "now": 49.33185503926239,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 61.66624429693211,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 83.35788456549037,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 110.98468966434575,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 110.98468966434575
+      }
+    },
+    {
+      "district_id": 28,
+      "district_name": "Arbil",
+      "province_name": "Arbil",
+      "latitude": 36.09412336633159,
+      "longitude": 43.979899284467095,
+      "pm10": {
+        "now": 9.837930103623187,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 11.118858195666837,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 10.151992948147685,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 10.39747478358417,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 10.39747478358417
+      }
+    },
+    {
+      "district_id": 29,
+      "district_name": "Choman",
+      "province_name": "Arbil",
+      "latitude": 36.62157561582655,
+      "longitude": 44.836960413670944,
+      "pm10": {
+        "now": 1.3830213564801515,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 1.8154118517439939,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 1.7735375721633801,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 2.1601925906776267,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 2.1601925906776267
+      }
+    },
+    {
+      "district_id": 3,
+      "district_name": "Al Haditha",
+      "province_name": "Al-Anbar",
+      "latitude": 34.27452147741327,
+      "longitude": 42.34318442112082,
+      "pm10": {
+        "now": 7.065951782877266,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 18.15335815480132,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 25.09259834543042,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 69.82989330004195,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 69.82989330004195
+      }
+    },
+    {
+      "district_id": 30,
+      "district_name": "Koisnjaq",
+      "province_name": "Arbil",
+      "latitude": 36.02310426460116,
+      "longitude": 44.483131387922455,
+      "pm10": {
+        "now": 8.163966939479543,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 7.653072666948504,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 6.875059344572774,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 7.07333766417928,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 7.07333766417928
+      }
+    },
+    {
+      "district_id": 31,
+      "district_name": "Makhmur",
+      "province_name": "Arbil",
+      "latitude": 35.8020605658091,
+      "longitude": 43.594919062925335,
+      "pm10": {
+        "now": 12.31574799369431,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 19.998675237159308,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 16.864844109176893,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 17.01183072122184,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 17.01183072122184
+      }
+    },
+    {
+      "district_id": 32,
+      "district_name": "Mergasur",
+      "province_name": "Arbil",
+      "latitude": 36.98379036535986,
+      "longitude": 44.17261192442923,
+      "pm10": {
+        "now": 2.8686754475318343,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 2.4416582959069304,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 2.0326777867032115,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 2.896273220987103,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 2.896273220987103
+      }
+    },
+    {
+      "district_id": 33,
+      "district_name": "Shaqlawa",
+      "province_name": "Arbil",
+      "latitude": 36.42382582668836,
+      "longitude": 44.20208455950038,
+      "pm10": {
+        "now": 7.0560893310567225,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 7.559299400843776,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 6.7750690599422025,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 7.154836263776845,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 7.154836263776845
+      }
+    },
+    {
+      "district_id": 34,
+      "district_name": "Soran",
+      "province_name": "Arbil",
+      "latitude": 36.808070484282545,
+      "longitude": 44.58797960447272,
+      "pm10": {
+        "now": 1.4600798394027732,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 1.6879006339215101,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 1.5529818511770235,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 2.0169117967930457,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 2.0169117967930457
+      }
+    },
+    {
+      "district_id": 35,
+      "district_name": "Chamchamal",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 35.338345566641394,
+      "longitude": 44.89128976375739,
+      "pm10": {
+        "now": 17.00994608183714,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 27.632222973582984,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 25.728615132283675,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 24.017397181840806,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 24.017397181840806
+      }
+    },
+    {
+      "district_id": 36,
+      "district_name": "Darbandokeh",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 35.18624281956737,
+      "longitude": 45.63370933688703,
+      "pm10": {
+        "now": 9.74546410099701,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 18.01575466254522,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 20.51572320568915,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 19.15712926948865,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 19.15712926948865
+      }
+    },
+    {
+      "district_id": 37,
+      "district_name": "Dukan",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 35.909791337834704,
+      "longitude": 45.040271627253254,
+      "pm10": {
+        "now": 6.191824990549453,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 9.162436316190567,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 8.523936184281926,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 8.462285875140802,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 8.462285875140802
+      }
+    },
+    {
+      "district_id": 38,
+      "district_name": "Halabja",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 35.19889656704979,
+      "longitude": 45.91233718388822,
+      "pm10": {
+        "now": 8.739846929364582,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 15.588741197546641,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 18.297781504611343,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 17.36464916041095,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 17.36464916041095
+      }
+    },
+    {
+      "district_id": 39,
+      "district_name": "Kalar",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 34.88576413332841,
+      "longitude": 45.27184707332049,
+      "pm10": {
+        "now": 22.63205972977931,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 34.50855724821735,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 34.77142093126658,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 33.57271459731162,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 33.57271459731162
+      }
+    },
+    {
+      "district_id": 4,
+      "district_name": "Al Qa'im",
+      "province_name": "Al-Anbar",
+      "latitude": 34.23773850679376,
+      "longitude": 41.05757223341616,
+      "pm10": {
+        "now": 10.972651381380434,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 11.704518350493013,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 17.439952296867702,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 57.92057419747626,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 57.92057419747626
+      }
+    },
+    {
+      "district_id": 40,
+      "district_name": "Penjwin",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 35.70007100609606,
+      "longitude": 45.99337603708975,
+      "pm10": {
+        "now": 3.5763871163684806,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 4.6469892636404,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 4.550924744245654,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 4.803811388545479,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 4.803811388545479
+      }
+    },
+    {
+      "district_id": 41,
+      "district_name": "Pshdar",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 36.260580461317225,
+      "longitude": 45.11872985685647,
+      "pm10": {
+        "now": 2.226099399078671,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 2.3203074820281175,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 2.127844128664073,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 2.947027346553146,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 2.947027346553146
+      }
+    },
+    {
+      "district_id": 42,
+      "district_name": "Rania",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 36.23643102292312,
+      "longitude": 44.74764456144559,
+      "pm10": {
+        "now": 4.004004580606113,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 4.838939746181891,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 4.704885588339458,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 4.799584313912762,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 4.799584313912762
+      }
+    },
+    {
+      "district_id": 43,
+      "district_name": "Sharbazher",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 35.713649396902575,
+      "longitude": 45.56328675629061,
+      "pm10": {
+        "now": 5.533466404952192,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 6.500166339523574,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 6.060139725199803,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 6.075488238663399,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 6.075488238663399
+      }
+    },
+    {
+      "district_id": 44,
+      "district_name": "Sulaymaniya",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 35.456944001285265,
+      "longitude": 45.29851493606642,
+      "pm10": {
+        "now": 10.968166706888145,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 17.923069541646353,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 17.52041676722036,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 17.463716027884,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 17.463716027884
+      }
+    },
+    {
+      "district_id": 45,
+      "district_name": "Daquq",
+      "province_name": "At-Ta'mim",
+      "latitude": 35.13084985740137,
+      "longitude": 44.368064379349406,
+      "pm10": {
+        "now": 18.30646735424069,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 30.29267694363097,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 28.822885123767104,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 25.358128252111594,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 25.358128252111594
+      }
+    },
+    {
+      "district_id": 46,
+      "district_name": "Dibis",
+      "province_name": "At-Ta'mim",
+      "latitude": 35.67937289131292,
+      "longitude": 43.900415982001164,
+      "pm10": {
+        "now": 13.333166680183284,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 19.65343542185266,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 16.642346531161554,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 16.60931238028492,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 16.60931238028492
+      }
+    },
+    {
+      "district_id": 47,
+      "district_name": "Haweeja",
+      "province_name": "At-Ta'mim",
+      "latitude": 35.256724501356565,
+      "longitude": 43.70095842908063,
+      "pm10": {
+        "now": 17.928583320256436,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 25.61707175017808,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 21.9452472121966,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 23.32558419612075,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 23.32558419612075
+      }
+    },
+    {
+      "district_id": 48,
+      "district_name": "Kirkuk",
+      "province_name": "At-Ta'mim",
+      "latitude": 35.4864951510407,
+      "longitude": 44.239284367254385,
+      "pm10": {
+        "now": 14.768818668008223,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 24.086025603756354,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 21.47419776386368,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 20.64524660428377,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 20.64524660428377
+      }
+    },
+    {
+      "district_id": 49,
+      "district_name": "Al-Mada'in",
+      "province_name": "Babil",
+      "latitude": 33.05982072936117,
+      "longitude": 44.3981231333268,
+      "pm10": {
+        "now": 19.891931508975304,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 36.09984543875349,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 68.03845186827382,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 112.57985581013332,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 112.57985581013332
+      }
+    },
+    {
+      "district_id": 5,
+      "district_name": "Anah",
+      "province_name": "Al-Anbar",
+      "latitude": 34.270706612798,
+      "longitude": 41.81234282035886,
+      "pm10": {
+        "now": 7.942913157085314,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 13.101888558648758,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 19.516095638046977,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 77.29918698292212,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 77.29918698292212
+      }
+    },
+    {
+      "district_id": 50,
+      "district_name": "Al Hashimiyah",
+      "province_name": "Babil",
+      "latitude": 32.29782668302269,
+      "longitude": 44.73249203228896,
+      "pm10": {
+        "now": 25.967271752314215,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 52.78268891588318,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 111.07439641801302,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 165.67817962945549,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 165.67817962945549
+      }
+    },
+    {
+      "district_id": 51,
+      "district_name": "Al Hillah",
+      "province_name": "Babil",
+      "latitude": 32.29579786117719,
+      "longitude": 44.36278554719627,
+      "pm10": {
+        "now": 30.001056958296168,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 60.256419452354294,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 110.4778317610165,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 172.56669366105467,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 172.56669366105467
+      }
+    },
+    {
+      "district_id": 52,
+      "district_name": "Al Mahawil",
+      "province_name": "Babil",
+      "latitude": 32.61447742592752,
+      "longitude": 44.61763573199641,
+      "pm10": {
+        "now": 20.452144035058566,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 37.829923241467874,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 83.34518558666947,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 131.07167323304324,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 131.07167323304324
+      }
+    },
+    {
+      "district_id": 53,
+      "district_name": "Al Misiab",
+      "province_name": "Babil",
+      "latitude": 32.698928485478795,
+      "longitude": 44.205794780192214,
+      "pm10": {
+        "now": 21.027781747737794,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 43.1715289527011,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 83.95597431110698,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 152.75116055106275,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 152.75116055106275
+      }
+    },
+    {
+      "district_id": 54,
+      "district_name": "Mahmudiya",
+      "province_name": "Babil",
+      "latitude": 32.99181024914125,
+      "longitude": 44.16474154022843,
+      "pm10": {
+        "now": 18.27544979128263,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 37.453668700813346,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 72.2176714541217,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 148.3819902481203,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 148.3819902481203
+      }
+    },
+    {
+      "district_id": 55,
+      "district_name": "Adhamiya",
+      "province_name": "Baghdad",
+      "latitude": 33.32684542790276,
+      "longitude": 44.38813481412715,
+      "pm10": {
+        "now": 18.395145236605273,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 32.413584531786974,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 59.72321913884135,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 115.7223731407668,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 115.7223731407668
+      }
+    },
+    {
+      "district_id": 56,
+      "district_name": "An Nasiriyah",
+      "province_name": "Dhi-Qar",
+      "latitude": 31.07190576959777,
+      "longitude": 46.20454230615835,
+      "pm10": {
+        "now": 37.52054573245276,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 100.00355444120964,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 144.17791020494562,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 120.76009193652038,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 120.76009193652038
+      }
+    },
+    {
+      "district_id": 57,
+      "district_name": "Chibayish",
+      "province_name": "Dhi-Qar",
+      "latitude": 30.846690799784025,
+      "longitude": 46.93749421705343,
+      "pm10": {
+        "now": 35.63836207842497,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 103.2710898309382,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 114.40922331891875,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 109.56815829431281,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 109.56815829431281
+      }
+    },
+    {
+      "district_id": 58,
+      "district_name": "Refai",
+      "province_name": "Dhi-Qar",
+      "latitude": 31.691869488271003,
+      "longitude": 46.040599148346814,
+      "pm10": {
+        "now": 50.706738181303955,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 93.258061917962,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 132.7223271491075,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 126.20693001693306,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 126.20693001693306
+      }
+    },
+    {
+      "district_id": 59,
+      "district_name": "Shatrah",
+      "province_name": "Dhi-Qar",
+      "latitude": 31.370076781406347,
+      "longitude": 46.27437951895734,
+      "pm10": {
+        "now": 36.436001676300044,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 95.59840389422646,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 140.5922843803407,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 120.71998310545473,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 120.71998310545473
+      }
+    },
+    {
+      "district_id": 6,
+      "district_name": "Ar Ramadi",
+      "province_name": "Al-Anbar",
+      "latitude": 33.33897119558584,
+      "longitude": 43.146785912239935,
+      "pm10": {
+        "now": 18.504362210007088,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 38.16331913209932,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 49.932613682141515,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 134.94804201761184,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 134.94804201761184
+      }
+    },
+    {
+      "district_id": 60,
+      "district_name": "Suq ash Shuyukh",
+      "province_name": "Dhi-Qar",
+      "latitude": 30.848459053271625,
+      "longitude": 46.502609996009,
+      "pm10": {
+        "now": 38.06003032218621,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 108.10534145676873,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 134.91377656769504,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 130.8691556706866,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 130.8691556706866
+      }
+    },
+    {
+      "district_id": 61,
+      "district_name": "Amedi",
+      "province_name": "Dihok",
+      "latitude": 37.09417753408788,
+      "longitude": 43.51527763533789,
+      "pm10": {
+        "now": 3.4328557087343645,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 2.767057739094446,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 2.105845227074967,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 2.82256452140572,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 2.82256452140572
+      }
+    },
+    {
+      "district_id": 62,
+      "district_name": "Dahuk",
+      "province_name": "Dihok",
+      "latitude": 36.93310710113811,
+      "longitude": 43.04661068219852,
+      "pm10": {
+        "now": 6.745368594697791,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 7.765358312743383,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 6.3498841341168015,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 7.338733687519877,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 7.338733687519877
+      }
+    },
+    {
+      "district_id": 63,
+      "district_name": "Simele",
+      "province_name": "Dihok",
+      "latitude": 36.89815044166084,
+      "longitude": 42.71167707762135,
+      "pm10": {
+        "now": 10.34136665301542,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 9.957553557906985,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 7.801286008566279,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 7.807152360977735,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 7.807152360977735
+      }
+    },
+    {
+      "district_id": 64,
+      "district_name": "Zakho",
+      "province_name": "Dihok",
+      "latitude": 37.19439779935592,
+      "longitude": 42.84944778352461,
+      "pm10": {
+        "now": 6.941213305905487,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 5.25245187512524,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 4.022053896190381,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 4.051198700175162,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 4.051198700175162
+      }
+    },
+    {
+      "district_id": 65,
+      "district_name": "Al Khalis",
+      "province_name": "Diyala",
+      "latitude": 34.04353273578466,
+      "longitude": 44.52330952743335,
+      "pm10": {
+        "now": 21.096145473410235,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 29.714024760777264,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 41.49237784109965,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 57.534296253507314,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 57.534296253507314
+      }
+    },
+    {
+      "district_id": 66,
+      "district_name": "Al Miqdadiyah",
+      "province_name": "Diyala",
+      "latitude": 33.82225180806976,
+      "longitude": 44.77287411440991,
+      "pm10": {
+        "now": 19.691709826627065,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 29.01358349854497,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 39.93562582172115,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 84.29491346463028,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 84.29491346463028
+      }
+    },
+    {
+      "district_id": 67,
+      "district_name": "Ba`qubah",
+      "province_name": "Diyala",
+      "latitude": 33.54106113544986,
+      "longitude": 44.5166965637291,
+      "pm10": {
+        "now": 19.83774186073647,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 26.334816141058003,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 35.436197883142164,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 74.06366947400095,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 74.06366947400095
+      }
+    },
+    {
+      "district_id": 68,
+      "district_name": "Balad Ruz",
+      "province_name": "Diyala",
+      "latitude": 33.45921096533995,
+      "longitude": 45.230436441906626,
+      "pm10": {
+        "now": 65.34537811198031,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 65.87464983782674,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 77.40949577910388,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 98.92286938847438,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 98.92286938847438
+      }
+    },
+    {
+      "district_id": 69,
+      "district_name": "Khanaqin",
+      "province_name": "Diyala",
+      "latitude": 34.36150293342428,
+      "longitude": 45.28965167467581,
+      "pm10": {
+        "now": 37.861691400829244,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 41.24517479648747,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 49.43870239605107,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 51.45164562273135,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 51.45164562273135
+      }
+    },
+    {
+      "district_id": 7,
+      "district_name": "Ar Rutbah",
+      "province_name": "Al-Anbar",
+      "latitude": 32.44739391785713,
+      "longitude": 41.32672676898627,
+      "pm10": {
+        "now": 52.68331068401347,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 42.99433935147917,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 49.417664983530194,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 65.28679805951239,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 65.28679805951239
+      }
+    },
+    {
+      "district_id": 70,
+      "district_name": "Kifri",
+      "province_name": "Diyala",
+      "latitude": 34.51834370904484,
+      "longitude": 44.837354344456614,
+      "pm10": {
+        "now": 30.888052992920514,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 37.31030256683872,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 42.713806594700586,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 44.21292856814452,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 44.21292856814452
+      }
+    },
+    {
+      "district_id": 71,
+      "district_name": "Ain Al Tamur",
+      "province_name": "Karbala'",
+      "latitude": 32.44144064559491,
+      "longitude": 43.51528113780361,
+      "pm10": {
+        "now": 34.271137198902125,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 46.87222579276291,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 73.09196765063834,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 140.28880896968946,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 140.28880896968946
+      }
+    },
+    {
+      "district_id": 72,
+      "district_name": "Al Jadwal al Gharbi",
+      "province_name": "Karbala'",
+      "latitude": 32.43804041290849,
+      "longitude": 44.16832825952361,
+      "pm10": {
+        "now": 29.974969210311357,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 56.50744138820195,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 103.0702962721243,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 175.17225011972857,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 175.17225011972857
+      }
+    },
+    {
+      "district_id": 73,
+      "district_name": "Karbala",
+      "province_name": "Karbala'",
+      "latitude": 32.426309916614414,
+      "longitude": 43.890249236730085,
+      "pm10": {
+        "now": 32.07359927683648,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 50.62109890393529,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 85.42053371015234,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 166.74106809379484,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "mean_24h",
+        "value": 166.74106809379484
+      }
+    },
+    {
+      "district_id": 74,
+      "district_name": "Al Amarah",
+      "province_name": "Maysan",
+      "latitude": 31.99405901142912,
+      "longitude": 47.157453294534136,
+      "pm10": {
+        "now": 49.53251098083143,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 90.79722539543324,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 81.76047823464135,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 71.43763281965809,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 71.43763281965809
+      }
+    },
+    {
+      "district_id": 75,
+      "district_name": "Al Kahla",
+      "province_name": "Maysan",
+      "latitude": 31.648353139934745,
+      "longitude": 47.55506738090843,
+      "pm10": {
+        "now": 54.15341024839329,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 85.53926119759093,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 77.63708216870788,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 69.522967780281,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 69.522967780281
+      }
+    },
+    {
+      "district_id": 76,
+      "district_name": "Al Miamona",
+      "province_name": "Maysan",
+      "latitude": 31.49408603401158,
+      "longitude": 46.83842736762396,
+      "pm10": {
+        "now": 52.880844648122576,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 111.84252046212741,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 131.82985856789992,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 111.93378430201376,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 111.93378430201376
+      }
+    },
+    {
+      "district_id": 77,
+      "district_name": "Al Mijar al Kabir",
+      "province_name": "Maysan",
+      "latitude": 31.4293978232381,
+      "longitude": 47.20354501217153,
+      "pm10": {
+        "now": 56.998114738100426,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 106.74592741707106,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 113.79040644746897,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 94.68380338271429,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 94.68380338271429
+      }
+    },
+    {
+      "district_id": 78,
+      "district_name": "Ali al Gharbi",
+      "province_name": "Maysan",
+      "latitude": 32.396088677477536,
+      "longitude": 46.72321440612597,
+      "pm10": {
+        "now": 41.907651003463705,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 84.33000221091599,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 78.58466854712938,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 66.92552575474151,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 66.92552575474151
+      }
+    },
+    {
+      "district_id": 79,
+      "district_name": "Qal`at Salih",
+      "province_name": "Maysan",
+      "latitude": 31.428508971329393,
+      "longitude": 47.512448178169265,
+      "pm10": {
+        "now": 54.955651759914076,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 103.50921075179313,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 104.71472346245818,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 84.84340585064179,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 84.84340585064179
+      }
+    },
+    {
+      "district_id": 8,
+      "district_name": "Hit",
+      "province_name": "Al-Anbar",
+      "latitude": 33.734816369757134,
+      "longitude": 42.68227852661513,
+      "pm10": {
+        "now": 10.359110856199598,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 28.65669370440534,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 37.17354249578377,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 105.87428577612692,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 105.87428577612692
+      }
+    },
+    {
+      "district_id": 80,
+      "district_name": "Akre",
+      "province_name": "Ninawa",
+      "latitude": 36.66346783449737,
+      "longitude": 43.83002031016732,
+      "pm10": {
+        "now": 5.140562798482002,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 5.3159858169677925,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 4.136543813415824,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 5.198933109139112,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 5.198933109139112
+      }
+    },
+    {
+      "district_id": 81,
+      "district_name": "Al Ba'aj",
+      "province_name": "Ninawa",
+      "latitude": 35.62056584683228,
+      "longitude": 41.681830678771604,
+      "pm10": {
+        "now": 4.000000000000001,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 7.753996993509364,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 7.473800901947189,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 8.840565328147765,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 8.840565328147765
+      }
+    },
+    {
+      "district_id": 82,
+      "district_name": "Al Hamdaniyah",
+      "province_name": "Ninawa",
+      "latitude": 36.29335231457684,
+      "longitude": 43.409231571027405,
+      "pm10": {
+        "now": 9.482965079474328,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 12.192240932995125,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 11.334096103699284,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 12.632695657152794,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 12.632695657152794
+      }
+    },
+    {
+      "district_id": 83,
+      "district_name": "Al Shikhan",
+      "province_name": "Ninawa",
+      "latitude": 36.64229670129565,
+      "longitude": 43.37599194906899,
+      "pm10": {
+        "now": 6.346897349299679,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 6.410934292102873,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 5.223741680663513,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 6.546661557090221,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 6.546661557090221
+      }
+    },
+    {
+      "district_id": 84,
+      "district_name": "Hatra",
+      "province_name": "Ninawa",
+      "latitude": 35.419410363899516,
+      "longitude": 42.44538995122619,
+      "pm10": {
+        "now": 5.283475061041892,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 11.756254887924696,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 10.67980257893748,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 13.188777720829874,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 13.188777720829874
+      }
+    },
+    {
+      "district_id": 85,
+      "district_name": "Mosul",
+      "province_name": "Ninawa",
+      "latitude": 36.07587527830808,
+      "longitude": 42.98592624333245,
+      "pm10": {
+        "now": 9.616247606796332,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 12.384691057545176,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 11.108119295023588,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 11.777541726242578,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 11.777541726242578
+      }
+    },
+    {
+      "district_id": 86,
+      "district_name": "Shekhan",
+      "province_name": "Ninawa",
+      "latitude": 36.775989750235034,
+      "longitude": 43.41230455135135,
+      "pm10": {
+        "now": 5.809370853422822,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 6.182284755704704,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 5.05686753616108,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 6.437584299793198,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 6.437584299793198
+      }
+    },
+    {
+      "district_id": 87,
+      "district_name": "Sinjar",
+      "province_name": "Ninawa",
+      "latitude": 36.295478427982616,
+      "longitude": 41.89315428750927,
+      "pm10": {
+        "now": 6.585776471862275,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 8.949232197842667,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 7.4695393187056,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 7.1147412149006435,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 7.1147412149006435
+      }
+    },
+    {
+      "district_id": 88,
+      "district_name": "Talafar",
+      "province_name": "Ninawa",
+      "latitude": 36.58683783797396,
+      "longitude": 42.42180688184613,
+      "pm10": {
+        "now": 9.82204028943771,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 10.440680096479236,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 7.770725124996277,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 7.154527233275077,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 7.154527233275077
+      }
+    },
+    {
+      "district_id": 89,
+      "district_name": "Tilkef",
+      "province_name": "Ninawa",
+      "latitude": 36.59214605317314,
+      "longitude": 43.06208705570715,
+      "pm10": {
+        "now": 8.382487710681973,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 8.174004513300568,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 6.569373072306574,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 7.254137995474169,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 7.254137995474169
+      }
+    },
+    {
+      "district_id": 9,
+      "district_name": "Kadhimiya",
+      "province_name": "Al-Anbar",
+      "latitude": 33.35933808504119,
+      "longitude": 44.17000854725623,
+      "pm10": {
+        "now": 17.16067377680745,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 31.053288073142994,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 56.907153768022546,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 114.18299023960913,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 114.18299023960913
+      }
+    },
+    {
+      "district_id": 90,
+      "district_name": "Al-Faris",
+      "province_name": "Sala ad-Din",
+      "latitude": 33.567576470388715,
+      "longitude": 44.23120815369178,
+      "pm10": {
+        "now": 17.0,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 24.744381009174713,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 37.33244549762858,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 87.49614677424175,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 87.49614677424175
+      }
+    },
+    {
+      "district_id": 91,
+      "district_name": "Al Door",
+      "province_name": "Sala ad-Din",
+      "latitude": 34.40288351578535,
+      "longitude": 44.124870824825855,
+      "pm10": {
+        "now": 21.127346880688872,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 26.081334720437496,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 34.75757671410519,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 60.72010622863747,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 60.72010622863747
+      }
+    },
+    {
+      "district_id": 92,
+      "district_name": "Al Shirkat",
+      "province_name": "Sala ad-Din",
+      "latitude": 35.437079041085134,
+      "longitude": 43.12198982022632,
+      "pm10": {
+        "now": 10.1605638330076,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 20.47335334484138,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 16.566923842170223,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 20.598646427766532,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 20.598646427766532
+      }
+    },
+    {
+      "district_id": 93,
+      "district_name": "Balad",
+      "province_name": "Sala ad-Din",
+      "latitude": 33.827073019073126,
+      "longitude": 43.96109496433048,
+      "pm10": {
+        "now": 20.908691003797394,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 26.724915053785697,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 35.821851586413935,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 96.24453060871579,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 96.24453060871579
+      }
+    },
+    {
+      "district_id": 94,
+      "district_name": "Bayji",
+      "province_name": "Sala ad-Din",
+      "latitude": 34.81981751236421,
+      "longitude": 42.9906765324779,
+      "pm10": {
+        "now": 8.514454254496536,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 17.760576603686836,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 18.101064181207384,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 37.69551467574634,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 37.69551467574634
+      }
+    },
+    {
+      "district_id": 95,
+      "district_name": "Samarra",
+      "province_name": "Sala ad-Din",
+      "latitude": 34.14255395182311,
+      "longitude": 43.469253323818855,
+      "pm10": {
+        "now": 12.938808118255746,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 22.889612994408637,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 27.55426831106135,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 62.24953825068253,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 62.24953825068253
+      }
+    },
+    {
+      "district_id": 96,
+      "district_name": "Tikrit",
+      "province_name": "Sala ad-Din",
+      "latitude": 34.6659931287577,
+      "longitude": 43.618385938906165,
+      "pm10": {
+        "now": 15.178260395653508,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 22.882250179462204,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 24.42094747907282,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 38.06061523760199,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 38.06061523760199
+      }
+    },
+    {
+      "district_id": 97,
+      "district_name": "Touz Hourmato",
+      "province_name": "Sala ad-Din",
+      "latitude": 34.784153602950724,
+      "longitude": 44.547033355815174,
+      "pm10": {
+        "now": 31.78484940996412,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 36.27894027279925,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 37.42812169318134,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 35.080921680232585,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "mean_24h",
+        "value": 35.080921680232585
+      }
+    },
+    {
+      "district_id": 98,
+      "district_name": "Al Hayy",
+      "province_name": "Wasit",
+      "latitude": 32.139078935764644,
+      "longitude": 45.94443905824454,
+      "pm10": {
+        "now": 52.52495352132629,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 99.51865093956862,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 111.59381825169608,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 111.31458885052233,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "mean_24h",
+        "value": 111.31458885052233
+      }
+    },
+    {
+      "district_id": 99,
+      "district_name": "Al Kut",
+      "province_name": "Wasit",
+      "latitude": 32.52238566305417,
+      "longitude": 46.09669435212531,
+      "pm10": {
+        "now": 46.99406980149496,
+        "timestamp": "2026-02-05T15:00:00Z",
+        "mean_6h": 94.56300880098813,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-05T09:00:00Z",
+        "mean_12h": 89.82975312408436,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-05T03:00:00Z",
+        "mean_24h": 78.6103623410122,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-04T15:00:00Z"
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "mean_24h",
+        "value": 78.6103623410122
+      }
+    }
+  ]
+}
