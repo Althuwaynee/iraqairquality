@@ -16,7 +16,7 @@ async function init() {
 }
 
 function initMap() {
-  map = L.map('map').setView([33, 44], 6);
+  map = L.map('map').setView([33, 44], 6.45);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap'
