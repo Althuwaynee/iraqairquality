@@ -169,7 +169,7 @@ header p {
   position: absolute;
   left: 12px;
   right: 12px;
-  bottom: 10px;
+  bottom: 2px;
   display: flex;
   border-radius: 10px;
   overflow: hidden;
@@ -179,7 +179,7 @@ header p {
 
 .aqi-bar span {
   flex: 1;
-  padding: 6px 0;
+  padding: 6px 5;
   text-align: center;
   color: white;
   font-weight: 500;

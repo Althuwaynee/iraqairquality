@@ -1,37 +1,33 @@
 /* ===============================
    Iraq Air Quality – Main JS
-   Uses pm10_alerts.json
    =============================== */
 
-/* ---------- Globals ---------- */
+let map;
 let pm10Data = null;
 let districtLayer = L.layerGroup();
 let showAllDistricts = false;
 
 const MAX_VISIBLE_DISTRICTS = 15;
 
-
 /* ---------- Init ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   initMap();
   loadPM10Alerts();
+
+  // Search bar listener (FIX #1)
+  const search = document.getElementById("search");
+  search.addEventListener("input", () => {
+    renderDistrictList(pm10Data?.districts || [], search.value);
+  });
 });
 
 /* ---------- Map ---------- */
 function initMap() {
+  map = L.map("map").setView([33.2, 44.3], 6);
 
-  map = L.map("map", {
-    center: [33.2, 44.3],
-    zoom: 6,
-    zoomControl: true
-  });
-
-  L.tileLayer(
-    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-    {
-      attribution: "&copy; OpenStreetMap contributors"
-    }
-  ).addTo(map);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap"
+  }).addTo(map);
 
   districtLayer.addTo(map);
 }
@@ -44,10 +40,8 @@ async function loadPM10Alerts() {
 
     updateHeaderInfo(pm10Data.metadata);
 
-    // sort by AQI DESC
-    pm10Data.districts.sort(
-      (a, b) => b.aqi.value - a.aqi.value
-    );
+    // Sort by AQI descending
+    pm10Data.districts.sort((a, b) => b.aqi.value - a.aqi.value);
 
     drawDistrictMarkers(pm10Data.districts);
     renderDistrictList(pm10Data.districts);
@@ -57,14 +51,87 @@ async function loadPM10Alerts() {
   }
 }
 
-function renderDistrictList(districts) {
+/* ---------- Header ---------- */
+function updateHeaderInfo(metadata) {
+  const refTime = document.getElementById("ref-time");
+  const note = document.getElementById("data-note");
+
+  if (refTime)
+    refTime.textContent =
+      `Reference time: ${new Date(metadata.reference_time).toUTCString()}`;
+
+  if (note)
+    note.textContent = metadata.note;
+}
+
+/* ---------- Colors ---------- */
+function getAlertColor(level) {
+  switch (level) {
+    case "good": return "#22c55e";
+    case "moderate": return "#eab308";
+    case "unhealthy": return "#f97316";
+    case "very_unhealthy": return "#ef4444";
+    case "hazardous": return "#7c2d12";
+    default: return "#94a3b8";
+  }
+}
+
+/* ---------- Markers ---------- */
+function drawDistrictMarkers(districts) {
+  districtLayer.clearLayers();
+
+  districts.forEach(d => {
+    if (!d.latitude || !d.longitude) return;
+
+    const marker = L.circleMarker(
+      [d.latitude, d.longitude],
+      {
+        radius: 8,
+        fillColor: getAlertColor(d.alert.level),
+        fillOpacity: 0.85,
+        color: "#0f172a",
+        weight: 1
+      }
+    );
+
+    marker.bindPopup(buildDistrictPopup(d));
+
+    // Attach district id for lookup
+    marker._district_id = d.district_id;
+
+    districtLayer.addLayer(marker);
+  });
+}
+
+/* ---------- Popup ---------- */
+function buildDistrictPopup(d) {
+  return `
+    <div>
+      <strong>${d.district_name}</strong><br>
+      <small>${d.province_name}</small>
+      <hr>
+      PM10 now: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
+      AQI: <b>${d.aqi.value}</b> (${d.aqi.level})<br>
+      24h mean: ${d.pm10.mean_24h.toFixed(1)} µg/m³
+    </div>
+  `;
+}
+
+/* ---------- District List (FIXED) ---------- */
+function renderDistrictList(districts, filter = "") {
 
   const list = document.getElementById("district-list");
   list.innerHTML = "";
 
+  // Filter by district or province (FIX #1)
+  const filtered = districts.filter(d =>
+    d.district_name.toLowerCase().includes(filter.toLowerCase()) ||
+    d.province_name.toLowerCase().includes(filter.toLowerCase())
+  );
+
   const visible = showAllDistricts
-    ? districts
-    : districts.slice(0, MAX_VISIBLE_DISTRICTS);
+    ? filtered
+    : filtered.slice(0, MAX_VISIBLE_DISTRICTS);
 
   visible.forEach(d => {
 
@@ -82,17 +149,28 @@ function renderDistrictList(districts) {
       </div>
     `;
 
-    li.onclick = () => {
-      map.setView([d.latitude, d.longitude], 10);
-    };
+    // FIX #2 + #3: zoom + popup immediately
+    li.onclick = () => zoomToDistrict(d);
 
     list.appendChild(li);
   });
 
-  updateViewAllButton(districts.length);
+  updateViewAllButton(filtered.length);
 }
 
+/* ---------- Zoom + Open Popup ---------- */
+function zoomToDistrict(d) {
+  map.setView([d.latitude, d.longitude], 10);
 
+  // Open popup automatically (KEY FIX)
+  districtLayer.eachLayer(layer => {
+    if (layer._district_id === d.district_id) {
+      layer.openPopup();
+    }
+  });
+}
+
+/* ---------- View All ---------- */
 function updateViewAllButton(total) {
   const btn = document.querySelector(".view-all");
 
@@ -108,97 +186,6 @@ function updateViewAllButton(total) {
 
   btn.onclick = () => {
     showAllDistricts = !showAllDistricts;
-    renderDistrictList(pm10Data.districts);
+    renderDistrictList(pm10Data.districts, document.getElementById("search").value);
   };
-}
-
-/* ---------- Header ---------- */
-function updateHeaderInfo(metadata) {
-  const refTimeEl = document.getElementById("ref-time");
-  const noteEl = document.getElementById("data-note");
-
-  if (refTimeEl) {
-    refTimeEl.textContent =
-      `Reference time: ${new Date(metadata.reference_time).toUTCString()}`;
-  }
-
-  if (noteEl) {
-    noteEl.textContent =
-      `3-hourly data • Rolling windows: ${metadata.rolling_windows_hours.join(", ")}h • Gov limit: ${metadata.government_compliance_limit}`;
-  }
-}
-
-/* ---------- Colors ---------- */
-function getAlertColor(level) {
-  switch (level) {
-    case "good": return "#22c55e";
-    case "moderate": return "#eab308";
-    case "unhealthy": return "#f97316";
-    case "very_unhealthy": return "#ef4444";
-    case "hazardous": return "#7c2d12";
-    default: return "#94a3b8";
-  }
-}
-
-/* ---------- Draw Markers ---------- */
-function drawDistrictMarkers(districts) {
-
-  districtLayer.clearLayers();
-
-  districts.forEach(d => {
-
-    if (!d.latitude || !d.longitude) return;
-
-    const color = getAlertColor(d.alert.level);
-
-    const marker = L.circleMarker(
-      [d.latitude, d.longitude],
-      {
-        radius: 8,
-        fillColor: color,
-        fillOpacity: 0.85,
-        color: "#0f172a",
-        weight: 1
-      }
-    );
-
-    marker.bindPopup(buildDistrictPopup(d));
-    marker.addTo(districtLayer);
-  });
-}
-
-/* ---------- Popup ---------- */
-function buildDistrictPopup(d) {
-
-  return `
-    <div class="popup">
-      <h4>${d.district_name}</h4>
-      <small>${d.province_name}</small>
-      <hr>
-
-      <b>PM10 (µg/m³)</b><br>
-      Now: ${d.pm10.now.toFixed(1)}<br>
-      6h mean: ${d.pm10.mean_6h.toFixed(1)} (${d.pm10.mean_6h_points} pts)<br>
-      12h mean: ${d.pm10.mean_12h.toFixed(1)} (${d.pm10.mean_12h_points} pts)<br>
-      24h mean: ${d.pm10.mean_24h.toFixed(1)} (${d.pm10.mean_24h_points} pts)<br>
-
-      <hr>
-      <b>AQI</b>: ${d.aqi.value} (${d.aqi.level})<br>
-
-      <b>Government compliance</b>:<br>
-      ${d.government_compliance.status}
-      (limit ${d.government_compliance.limit_24h_ug_m3} µg/m³)
-
-      <hr>
-      <b>Alert</b>:
-      <span style="color:${getAlertColor(d.alert.level)}; font-weight:600">
-        ${d.alert.level.toUpperCase()}
-      </span>
-    </div>
-  `;
-}
-
-/* ---------- Optional: Refresh ---------- */
-async function refreshData() {
-  await loadPM10Alerts();
 }
