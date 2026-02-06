@@ -56,6 +56,10 @@ header p {
   border-radius: 14px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
+#map {
+  position: relative;
+  z-index: 1;
+}
 
 /* ===============================
    Sidebar
@@ -251,4 +255,10 @@ footer {
   }
 }
 
+@media (max-width: 900px) {
+  .aqi-bar span {
+    padding: 4px;
+    font-size: 0.65rem;
+  }
+}
 
