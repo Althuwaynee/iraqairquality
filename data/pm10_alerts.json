@@ -1,14 +1,16 @@
 {
   "metadata": {
-    "generated_at": "2026-02-06T08:52:18.299973Z",
-    "reference_time": "2026-02-06T09:00:00Z",
+    "generated_at": "2026-02-06T13:53:15.163289Z",
+    "reference_time": "2026-02-06T15:00:00Z",
     "rolling_windows_hours": [
       6,
       12,
       24
     ],
     "data_resolution_hours": 3,
-    "note": "Data is at 3-hour resolution. Means use available data points within window."
+    "note": "Data is at 3-hour resolution. Means use available data points within window.",
+    "aqi_calculation": "Based on EPA PM10 AQI formula",
+    "government_compliance_limit": "Iraq Government daily PM10 limit: 100 \u03bcg/m\u00b3"
   },
   "districts": [
     {
@@ -18,22 +20,32 @@
       "latitude": 33.22284294208515,
       "longitude": 44.079107812464066,
       "pm10": {
-        "now": 61.140699885844526,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 51.17236363219547,
+        "now": 83.71104982876678,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 69.25556466645439,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 46.82662360089404,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 60.02861700202101,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 37.76118113449004,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 46.860748423943306,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 65,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 46.860748423943306
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 37.76118113449004
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 65
       }
     },
     {
@@ -43,22 +55,32 @@
       "latitude": 30.322295164959556,
       "longitude": 48.00084412853525,
       "pm10": {
-        "now": 48.006231818576154,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 63.18508522316512,
+        "now": 36.785832956812854,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 44.33748787905076,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 63.82254418695419,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 54.91229749761429,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 74.94179443441743,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 61.44532850785587,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 34,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 61.44532850785587
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 74.94179443441743
+        "level": "good",
+        "based_on": "AQI",
+        "value": 34
       }
     },
     {
@@ -68,22 +90,32 @@
       "latitude": 32.36105076371928,
       "longitude": 45.48407746387027,
       "pm10": {
-        "now": 60.17775326674376,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 57.10221732001543,
+        "now": 60.613303920092505,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 63.50103835879256,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 52.292327746818714,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 60.32640275393605,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 54.114802759516145,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 52.510391081673596,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 54,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 52.510391081673596
       },
       "alert": {
         "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 54.114802759516145
+        "based_on": "AQI",
+        "value": 54
       }
     },
     {
@@ -93,22 +125,32 @@
       "latitude": 32.826949654777835,
       "longitude": 45.04891490509748,
       "pm10": {
-        "now": 50.66365591158696,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 51.79082438312317,
+        "now": 58.25612883854373,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 54.752042946181234,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 57.25120470190018,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 53.79298921526525,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 57.18501736749912,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 55.82885775118885,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 52,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 55.82885775118885
       },
       "alert": {
         "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 57.18501736749912
+        "based_on": "AQI",
+        "value": 52
       }
     },
     {
@@ -118,22 +160,32 @@
       "latitude": 33.01018592191133,
       "longitude": 45.874173303288195,
       "pm10": {
-        "now": 38.8146091154794,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 42.037855202410285,
+        "now": 42.51043508248528,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 41.369005217425475,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 51.48895692568969,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 42.28119442880558,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 61.3750254965432,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 52.27547662637155,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 40,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 52.27547662637155
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 61.3750254965432
+        "level": "good",
+        "based_on": "AQI",
+        "value": 40
       }
     },
     {
@@ -143,22 +195,32 @@
       "latitude": 30.09346407757131,
       "longitude": 48.21259266486124,
       "pm10": {
-        "now": 46.14706575140336,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 53.78431141619888,
+        "now": 39.82537414194065,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 44.2570483727613,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 59.786162986824195,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 49.59540272309543,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 77.15720182306522,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 61.02711620427536,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 37,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 61.02711620427536
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 77.15720182306522
+        "level": "good",
+        "based_on": "AQI",
+        "value": 37
       }
     },
     {
@@ -168,22 +230,32 @@
       "latitude": 31.01278159959984,
       "longitude": 47.27969021111455,
       "pm10": {
-        "now": 60.82257138518714,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 59.95095224909815,
+        "now": 30.798857122441007,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 47.233714292519664,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 54.53390108110974,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 52.14628564793327,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 62.88490218891793,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 50.879631587153796,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 29,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 50.879631587153796
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 62.88490218891793
+        "level": "good",
+        "based_on": "AQI",
+        "value": 29
       }
     },
     {
@@ -193,22 +265,32 @@
       "latitude": 30.951507845907454,
       "longitude": 47.504821845711334,
       "pm10": {
-        "now": 50.14933276474117,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 63.93288850982744,
+        "now": 31.976622184316078,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 45.391340699675744,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 64.75973310589647,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 55.564670972753675,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 79.61619745172345,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 61.24353132073252,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 30,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 61.24353132073252
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 79.61619745172345
+        "level": "good",
+        "based_on": "AQI",
+        "value": 30
       }
     },
     {
@@ -218,22 +300,32 @@
       "latitude": 30.140320747885756,
       "longitude": 47.051652263129796,
       "pm10": {
-        "now": 92.30725584034707,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 76.43181000016814,
+        "now": 94.95542568059324,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 98.23906584051521,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 72.71391316174748,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 86.3410743363406,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 78.96324736934088,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 78.47158793899695,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 71,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 78.47158793899695
       },
       "alert": {
         "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 78.96324736934088
+        "based_on": "AQI",
+        "value": 71
       }
     },
     {
@@ -243,22 +335,32 @@
       "latitude": 30.58488009735456,
       "longitude": 47.60895459396477,
       "pm10": {
-        "now": 38.52640027293933,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 59.298388868607255,
+        "now": 30.999999999999996,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 44.15788983924989,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 63.12800838988626,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 54.36848717012642,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 78.24367713028063,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 61.469508250001695,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 29,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 61.469508250001695
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 78.24367713028063
+        "level": "good",
+        "based_on": "AQI",
+        "value": 29
       }
     },
     {
@@ -268,22 +370,32 @@
       "latitude": 30.733716653568777,
       "longitude": 47.89427749118113,
       "pm10": {
-        "now": 36.355306680765565,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 52.55108738077615,
+        "now": 30.28724443269536,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 44.02447258750132,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 58.308702765055344,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 50.674274644813366,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 76.72539130727799,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 59.63599223362701,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 28,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 59.63599223362701
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 76.72539130727799
+        "level": "good",
+        "based_on": "AQI",
+        "value": 28
       }
     },
     {
@@ -293,22 +405,32 @@
       "latitude": 31.211217356548065,
       "longitude": 45.59095280222517,
       "pm10": {
-        "now": 152.94959605719072,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 86.33429926072326,
+        "now": 250.351685953742,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 225.51622563937917,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 70.27620745171892,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 156.52039572862333,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 72.52096234000904,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 108.5393412919333,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 148,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 108.5393412919333
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 72.52096234000904
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 148
       }
     },
     {
@@ -318,22 +440,32 @@
       "latitude": 30.037772528935243,
       "longitude": 45.34324916086535,
       "pm10": {
-        "now": 423.77321840753444,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 210.6406080392596,
+        "now": 472.72833080330514,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 444.9081512750647,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 151.65244696839895,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 308.57461190708773,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 119.61726515646713,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 199.58323187449272,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 361,
+        "level": "hazardous",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 199.58323187449272
       },
       "alert": {
-        "level": "unhealthy",
-        "based_on": "mean_24h",
-        "value": 119.61726515646713
+        "level": "hazardous",
+        "based_on": "AQI",
+        "value": 361
       }
     },
     {
@@ -343,22 +475,32 @@
       "latitude": 31.22628548408288,
       "longitude": 45.26107498099238,
       "pm10": {
-        "now": 172.51354085414312,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 90.05667098215442,
+        "now": 320.44383910802344,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 263.86426283453244,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 72.49638107505007,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 177.8498521191835,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 73.55948191830912,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 121.91010757074248,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 183,
+        "level": "unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 121.91010757074248
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 73.55948191830912
+        "level": "unhealthy",
+        "based_on": "AQI",
+        "value": 183
       }
     },
     {
@@ -368,22 +510,32 @@
       "latitude": 33.105313260379475,
       "longitude": 43.777410959201084,
       "pm10": {
-        "now": 115.34446940571277,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 64.35428243310321,
+        "now": 156.0833994855828,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 109.74348003248951,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 47.62179301410362,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 81.38976359821308,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 39.9274765636945,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 55.35925108500069,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 101,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 55.35925108500069
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 39.9274765636945
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 101
       }
     },
     {
@@ -393,22 +545,32 @@
       "latitude": 31.49777407467573,
       "longitude": 45.295419354379,
       "pm10": {
-        "now": 125.81876209340686,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 73.21113373534808,
+        "now": 221.23232821868186,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 184.3904591340664,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 61.938643106369355,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 129.39720330296728,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 63.953542835022034,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 93.72635826330783,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 134,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 93.72635826330783
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 63.953542835022034
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 134
       }
     },
     {
@@ -418,22 +580,32 @@
       "latitude": 32.05638201510581,
       "longitude": 44.93432548754941,
       "pm10": {
-        "now": 57.172887669485895,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 44.66783545865773,
+        "now": 127.45288990475754,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 98.76350712106371,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 40.17938630642811,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 74.62422801393568,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 39.93970596401465,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 55.0190697889314,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 87,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 55.0190697889314
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 39.93970596401465
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 87
       }
     },
     {
@@ -443,22 +615,32 @@
       "latitude": 31.933401279365494,
       "longitude": 45.41428409276566,
       "pm10": {
-        "now": 74.43403030425243,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 56.74774534785454,
+        "now": 103.18605104298618,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 91.84448963735478,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 51.018532299177615,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 74.26853493027511,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 50.525492505235896,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 59.217384866176516,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 75,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 59.217384866176516
       },
       "alert": {
         "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 50.525492505235896
+        "based_on": "AQI",
+        "value": 75
       }
     },
     {
@@ -468,22 +650,32 @@
       "latitude": 31.568054071632826,
       "longitude": 44.83318162808363,
       "pm10": {
-        "now": 98.48539177547364,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 61.720175511706486,
+        "now": 260.44204362315895,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 179.9389214596197,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 53.8892260217272,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 125.298379827701,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 54.075134863934636,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 88.10463749734357,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 153,
+        "level": "unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 88.10463749734357
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 54.075134863934636
+        "level": "unhealthy",
+        "based_on": "AQI",
+        "value": 153
       }
     },
     {
@@ -493,22 +685,32 @@
       "latitude": 31.77676313071312,
       "longitude": 44.59017146056126,
       "pm10": {
-        "now": 91.50897407046412,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 57.80972428678492,
+        "now": 236.9837770079221,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 160.80024373313236,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 51.20798743770879,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 112.86418599785755,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 51.53929557849975,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 80.39023756899351,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 142,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 80.39023756899351
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 51.53929557849975
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 142
       }
     },
     {
@@ -518,22 +720,32 @@
       "latitude": 32.05113981282575,
       "longitude": 44.44017246858249,
       "pm10": {
-        "now": 165.35601073267844,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 80.34105715473315,
+        "now": 286.94576195072267,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 181.99885048760348,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 61.025299865984074,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 124.3327424388663,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 53.521741729434304,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 82.97314265655427,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 167,
+        "level": "unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 82.97314265655427
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 53.521741729434304
+        "level": "unhealthy",
+        "based_on": "AQI",
+        "value": 167
       }
     },
     {
@@ -543,22 +755,32 @@
       "latitude": 31.79653011163293,
       "longitude": 44.41160823199626,
       "pm10": {
-        "now": 106.71983104089419,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 63.91476211845413,
+        "now": 295.96465097489585,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 185.4273454947811,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 54.19183951785154,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 128.26129835976226,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 50.60090780363732,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 87.75368527102046,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 171,
+        "level": "unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 87.75368527102046
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 50.60090780363732
+        "level": "unhealthy",
+        "based_on": "AQI",
+        "value": 171
       }
     },
     {
@@ -568,22 +790,32 @@
       "latitude": 31.021296483611717,
       "longitude": 43.71875238029147,
       "pm10": {
-        "now": 259.2526926070578,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 141.8359731441743,
+        "now": 368.5848644236211,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 355.7183910126375,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 106.8094471498056,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 246.6820799726755,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 86.27904761348145,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 162.1868843086743,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 221,
+        "level": "very_unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 162.1868843086743
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 86.27904761348145
+        "level": "very_unhealthy",
+        "based_on": "AQI",
+        "value": 221
       }
     },
     {
@@ -593,22 +825,32 @@
       "latitude": 36.09412336633159,
       "longitude": 43.979899284467095,
       "pm10": {
-        "now": 10.951695076868958,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 8.557627164819701,
+        "now": 11.509322241688661,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 14.762711941366172,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 8.374640356047085,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 11.801864448337733,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 9.968728268508812,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 11.099059277945006,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 11,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 11.099059277945006
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 9.968728268508812
+        "based_on": "AQI",
+        "value": 11
       }
     },
     {
@@ -618,22 +860,32 @@
       "latitude": 36.62157561582655,
       "longitude": 44.836960413670944,
       "pm10": {
-        "now": 6.712642839750366,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 5.855682524222548,
+        "now": 7.0,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 8.18646027494534,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 4.776597117834852,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 7.08275711155066,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 3.4311292528387325,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 5.092677275024469,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 6,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 5.092677275024469
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 3.4311292528387325
+        "based_on": "AQI",
+        "value": 6
       }
     },
     {
@@ -643,22 +895,32 @@
       "latitude": 34.27452147741327,
       "longitude": 42.34318442112082,
       "pm10": {
-        "now": 98.46769614488537,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 44.21863290498726,
+        "now": 125.44122681526703,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 85.93434854722636,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 32.7490683261087,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 58.398249642351104,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 24.78561796803977,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 38.582589018693824,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 86,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 38.582589018693824
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 24.78561796803977
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 86
       }
     },
     {
@@ -668,22 +930,32 @@
       "latitude": 36.02310426460116,
       "longitude": 44.483131387922455,
       "pm10": {
-        "now": 8.536906382670747,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 7.536906382670747,
+        "now": 8.073812765341494,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 12.675599290010199,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 7.275533002368007,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 10.420122127074418,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 7.442526922575892,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 9.13594270195966,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 7,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 9.13594270195966
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 7.442526922575892
+        "based_on": "AQI",
+        "value": 7
       }
     },
     {
@@ -693,22 +965,32 @@
       "latitude": 35.8020605658091,
       "longitude": 43.594919062925335,
       "pm10": {
-        "now": 16.63097201224263,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 15.7732407607388,
+        "now": 16.901388588918042,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 18.10092572594536,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 15.442812046039688,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 16.998305489561968,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 16.2611847776653,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 16.209540599532435,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 16,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 16.209540599532435
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 16.2611847776653
+        "based_on": "AQI",
+        "value": 16
       }
     },
     {
@@ -718,22 +1000,32 @@
       "latitude": 36.98379036535986,
       "longitude": 44.17261192442923,
       "pm10": {
-        "now": 6.015242137385802,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 4.451218727727023,
+        "now": 5.558942697196844,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 7.622966106855622,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 3.6290805123835517,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 6.041462473272427,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 3.246162014692489,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 4.574004917782844,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 6,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 4.574004917782844
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 3.246162014692489
+        "based_on": "AQI",
+        "value": 6
       }
     },
     {
@@ -743,22 +1035,32 @@
       "latitude": 36.42382582668836,
       "longitude": 44.20208455950038,
       "pm10": {
-        "now": 8.769744709717969,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 7.38598589258125,
+        "now": 8.309234129153905,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 12.75880864535052,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 7.4139837390966505,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 10.332927780815469,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 7.81319121745851,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 9.391073469140196,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 7,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 9.391073469140196
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 7.81319121745851
+        "based_on": "AQI",
+        "value": 7
       }
     },
     {
@@ -768,22 +1070,32 @@
       "latitude": 36.808070484282545,
       "longitude": 44.58797960447272,
       "pm10": {
-        "now": 6.801811031180878,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 5.599597548626472,
+        "now": 6.798792645879415,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 7.968477697847547,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 4.6367531135826106,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 6.780482941648235,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 3.397042941820445,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 4.9724604365086185,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 6,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 4.9724604365086185
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 3.397042941820445
+        "based_on": "AQI",
+        "value": 6
       }
     },
     {
@@ -793,22 +1105,32 @@
       "latitude": 35.338345566641394,
       "longitude": 44.89128976375739,
       "pm10": {
-        "now": 16.48562696267767,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 14.851928337266289,
+        "now": 11.992813481338835,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 17.157084641785115,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 16.38521207409935,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 15.90828239489531,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 20.01535511112705,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 17.91436104987281,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 11,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 17.91436104987281
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 20.01535511112705
+        "based_on": "AQI",
+        "value": 11
       }
     },
     {
@@ -818,22 +1140,32 @@
       "latitude": 35.18624281956737,
       "longitude": 45.63370933688703,
       "pm10": {
-        "now": 9.26035997732773,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 8.979098639459943,
+        "now": 9.052071995465544,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 11.295074640971428,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 9.54863110087635,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 10.312431972793277,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 12.117338573575623,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 11.096424945499777,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 8,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 11.096424945499777
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 12.117338573575623
+        "based_on": "AQI",
+        "value": 8
       }
     },
     {
@@ -843,22 +1175,32 @@
       "latitude": 35.909791337834704,
       "longitude": 45.040271627253254,
       "pm10": {
-        "now": 10.356963982715042,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 10.248222659258829,
+        "now": 8.663111985184322,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 12.792346650204804,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 9.647974853961362,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 11.752948789135171,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 9.391508406967766,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 10.56707982414951,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 8,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 10.56707982414951
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 9.391508406967766
+        "based_on": "AQI",
+        "value": 8
       }
     },
     {
@@ -868,22 +1210,32 @@
       "latitude": 35.19889656704979,
       "longitude": 45.91233718388822,
       "pm10": {
-        "now": 8.104747799389562,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 8.268776799728693,
+        "now": 8.204220266124054,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 10.237377755035553,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 8.854634221023826,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 9.482743172980635,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 11.219946016692889,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 10.269542204148642,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 7,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 10.269542204148642
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 11.219946016692889
+        "based_on": "AQI",
+        "value": 7
       }
     },
     {
@@ -893,22 +1245,32 @@
       "latitude": 34.88576413332841,
       "longitude": 45.27184707332049,
       "pm10": {
-        "now": 17.19167165850596,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 15.898935335812121,
+        "now": 17.38077614254671,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 19.67094529077534,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 18.440294283949992,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 17.903594044251285,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 22.6800446786154,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 20.19983349515546,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 16,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 20.19983349515546
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 22.6800446786154
+        "based_on": "AQI",
+        "value": 16
       }
     },
     {
@@ -918,22 +1280,32 @@
       "latitude": 34.23773850679376,
       "longitude": 41.05757223341616,
       "pm10": {
-        "now": 586.1860871750288,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 308.25029814457685,
+        "now": 543.9774082475349,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 551.3414602066421,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 204.1942003358543,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 398.5178375757256,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 117.67049414446599,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 234.35194652121527,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 440,
+        "level": "hazardous",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 234.35194652121527
       },
       "alert": {
-        "level": "unhealthy",
-        "based_on": "mean_24h",
-        "value": 117.67049414446599
+        "level": "hazardous",
+        "based_on": "AQI",
+        "value": 440
       }
     },
     {
@@ -943,22 +1315,32 @@
       "latitude": 35.70007100609606,
       "longitude": 45.99337603708975,
       "pm10": {
-        "now": 7.025462372122827,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 7.946372767476631,
+        "now": 4.28819355818424,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 7.367283162830436,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 6.843895305293016,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 7.783101083759675,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 5.966572811349568,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 6.633450222753357,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 4,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 6.633450222753357
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 5.966572811349568
+        "based_on": "AQI",
+        "value": 4
       }
     },
     {
@@ -968,22 +1350,32 @@
       "latitude": 36.260580461317225,
       "longitude": 45.11872985685647,
       "pm10": {
-        "now": 8.000000000000002,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 8.034775350537442,
+        "now": 5.6695745493090035,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 9.707257782488783,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 6.212714254985292,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 9.045219879815736,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 4.46962115351888,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 6.393983089650006,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 6,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 6.393983089650006
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 4.46962115351888
+        "based_on": "AQI",
+        "value": 6
       }
     },
     {
@@ -993,22 +1385,32 @@
       "latitude": 36.23643102292312,
       "longitude": 44.74764456144559,
       "pm10": {
-        "now": 8.0036041225455,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 7.003337150505093,
+        "now": 7.002803206424279,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 11.33613653975761,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 5.535780814744226,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 9.402963389648523,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 5.001795009867046,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 6.854042301899497,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 6,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 6.854042301899497
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 5.001795009867046
+        "based_on": "AQI",
+        "value": 6
       }
     },
     {
@@ -1018,22 +1420,32 @@
       "latitude": 35.713649396902575,
       "longitude": 45.56328675629061,
       "pm10": {
-        "now": 7.900099803714145,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 8.811188736222112,
+        "now": 5.666833006190242,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 8.933566208666338,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 7.665085058520063,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 9.066833006190242,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 6.699809878412618,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 7.700780960451606,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 6,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 7.700780960451606
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 6.699809878412618
+        "based_on": "AQI",
+        "value": 6
       }
     },
     {
@@ -1043,22 +1455,32 @@
       "latitude": 35.456944001285265,
       "longitude": 45.29851493606642,
       "pm10": {
-        "now": 10.653402794536728,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 10.989388902296048,
+        "now": 8.822722235629382,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 13.043175941567611,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 11.445098344159508,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 12.288858347410851,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 14.34316000708982,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 13.167539411882125,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 8,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 13.167539411882125
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 14.34316000708982
+        "based_on": "AQI",
+        "value": 8
       }
     },
     {
@@ -1068,22 +1490,32 @@
       "latitude": 35.13084985740137,
       "longitude": 44.368064379349406,
       "pm10": {
-        "now": 24.202893914398132,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 21.570042900131156,
+        "now": 19.977351305448483,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 22.885865508431696,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 22.139205532307763,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 21.832966262258086,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 23.45861803306664,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 21.959476566589007,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 19,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 21.959476566589007
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 23.45861803306664
+        "based_on": "AQI",
+        "value": 19
       }
     },
     {
@@ -1094,21 +1526,31 @@
       "longitude": 43.900415982001164,
       "pm10": {
         "now": 15.64326468292851,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 15.149590642279648,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 17.381088227642838,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 14.865634246130616,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 16.38975438536779,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 15.692921042309754,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 15.676210063805472,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 15,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 15.676210063805472
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 15.692921042309754
+        "based_on": "AQI",
+        "value": 15
       }
     },
     {
@@ -1118,22 +1560,32 @@
       "latitude": 35.256724501356565,
       "longitude": 43.70095842908063,
       "pm10": {
-        "now": 25.553562509807666,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 23.216261583155248,
+        "now": 20.124979189551226,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 22.62101159623214,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 23.794557263148256,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 22.3916514056709,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 21.86452917753941,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 21.37091657744187,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 19,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 21.37091657744187
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 21.86452917753941
+        "based_on": "AQI",
+        "value": 19
       }
     },
     {
@@ -1143,22 +1595,32 @@
       "latitude": 35.4864951510407,
       "longitude": 44.239284367254385,
       "pm10": {
-        "now": 18.983873602414803,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 16.52240382441343,
+        "now": 16.768818668008223,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 19.602152001341555,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 18.17313673900747,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 17.877958774970033,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 20.37906749631516,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 18.940986643502242,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 16,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 18.940986643502242
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 20.37906749631516
+        "based_on": "AQI",
+        "value": 16
       }
     },
     {
@@ -1168,22 +1630,32 @@
       "latitude": 33.05982072936117,
       "longitude": 44.3981231333268,
       "pm10": {
-        "now": 64.33952413896895,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 51.629384395922074,
+        "now": 77.53374726662076,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 66.97882972300873,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 46.9037925051585,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 58.29702364356469,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 39.86445335472872,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 46.24800703930421,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 62,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 46.24800703930421
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 39.86445335472872
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 62
       }
     },
     {
@@ -1193,22 +1665,32 @@
       "latitude": 34.270706612798,
       "longitude": 41.81234282035886,
       "pm10": {
-        "now": 508.7992770216174,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 188.2645406651088,
+        "now": 398.38816968222136,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 413.975686284113,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 119.46429166180246,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 259.5842807652096,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 71.24058601798987,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 150.1535893418544,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 263,
+        "level": "very_unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 150.1535893418544
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 71.24058601798987
+        "level": "very_unhealthy",
+        "based_on": "AQI",
+        "value": 263
       }
     },
     {
@@ -1218,22 +1700,32 @@
       "latitude": 32.29782668302269,
       "longitude": 44.73249203228896,
       "pm10": {
-        "now": 40.631346516141,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 38.483443637494474,
+        "now": 76.1188373241276,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 68.11246016794183,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 35.81531967911819,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 55.831272980033575,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 38.19288998739149,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 44.19246386959739,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 61,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 44.19246386959739
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 38.19288998739149
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 61
       }
     },
     {
@@ -1243,22 +1735,32 @@
       "latitude": 32.29579786117719,
       "longitude": 44.36278554719627,
       "pm10": {
-        "now": 183.55680100545501,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 84.50028397628272,
+        "now": 253.2264190800064,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 165.81584187527343,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 63.10180644976926,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 113.4783153098427,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 55.261930082991434,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 76.52382456396279,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 150,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 76.52382456396279
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 55.261930082991434
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 150
       }
     },
     {
@@ -1268,22 +1770,32 @@
       "latitude": 32.61447742592752,
       "longitude": 44.61763573199641,
       "pm10": {
-        "now": 48.97686727801772,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 48.02118165106787,
+        "now": 83.66954658487316,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 64.66827699637363,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 50.0435077170023,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 57.81830173286136,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 40.70917980273222,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 48.983226805279344,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 65,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 48.983226805279344
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 40.70917980273222
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 65
       }
     },
     {
@@ -1293,22 +1805,32 @@
       "latitude": 32.698928485478795,
       "longitude": 44.205794780192214,
       "pm10": {
-        "now": 99.6929002452567,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 59.98389373942615,
+        "now": 108.62924990589985,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 84.86176606019579,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 46.203688851372135,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 66.96881583072181,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 40.5630462777707,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 47.61670101137762,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 78,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 47.61670101137762
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 40.5630462777707
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 78
       }
     },
     {
@@ -1318,22 +1840,32 @@
       "latitude": 32.99181024914125,
       "longitude": 44.16474154022843,
       "pm10": {
-        "now": 74.20122938253655,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 53.92048763432667,
+        "now": 85.70202837745452,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 71.69385377885587,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 44.74721702734852,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 60.52835897140221,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 38.35438665292057,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 44.98269764628935,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 66,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 44.98269764628935
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 38.35438665292057
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 66
       }
     },
     {
@@ -1343,22 +1875,32 @@
       "latitude": 33.32684542790276,
       "longitude": 44.38813481412715,
       "pm10": {
-        "now": 51.47381192799818,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 49.42871362619176,
+        "now": 66.9334411836429,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 60.06728457392546,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 46.82986131519632,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 55.402836534470694,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 38.43916317412444,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 45.18034907191615,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 57,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 45.18034907191615
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 38.43916317412444
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 57
       }
     },
     {
@@ -1368,22 +1910,32 @@
       "latitude": 31.07190576959777,
       "longitude": 46.20454230615835,
       "pm10": {
-        "now": 84.94017104171076,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 65.61342598092666,
+        "now": 136.56457747688614,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 113.70313004537486,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 60.430251807139676,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 90.60189940743876,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 67.86007074374318,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 73.82899843573233,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 92,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 73.82899843573233
       },
       "alert": {
         "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 67.86007074374318
+        "based_on": "AQI",
+        "value": 92
       }
     },
     {
@@ -1393,22 +1945,32 @@
       "latitude": 30.846690799784025,
       "longitude": 46.93749421705343,
       "pm10": {
-        "now": 66.2062731464026,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 67.8102083490433,
+        "now": 115.98709470230506,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 94.40886176430945,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 65.2710744461456,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 84.09018743873112,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 74.75645642059015,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 74.28007584002447,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 81,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 74.28007584002447
       },
       "alert": {
         "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 74.75645642059015
+        "based_on": "AQI",
+        "value": 81
       }
     },
     {
@@ -1418,22 +1980,32 @@
       "latitude": 31.691869488271003,
       "longitude": 46.040599148346814,
       "pm10": {
-        "now": 55.87117377794252,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 50.79755121788321,
+        "now": 76.4325524274179,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 72.65340243020076,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 51.288128812858744,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 62.89633743326188,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 59.062291121211565,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 56.385370667401034,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 61,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 56.385370667401034
       },
       "alert": {
         "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 59.062291121211565
+        "based_on": "AQI",
+        "value": 61
       }
     },
     {
@@ -1443,22 +2015,32 @@
       "latitude": 31.370076781406347,
       "longitude": 46.27437951895734,
       "pm10": {
-        "now": 65.99824006804633,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 55.40014336806532,
+        "now": 116.75831028281753,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 92.99048349990507,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 54.133786491658725,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 75.83472810717296,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 62.936112941035745,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 65.01943246010347,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 82,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 65.01943246010347
       },
       "alert": {
         "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 62.936112941035745
+        "based_on": "AQI",
+        "value": 82
       }
     },
     {
@@ -1468,22 +2050,32 @@
       "latitude": 33.33897119558584,
       "longitude": 43.146785912239935,
       "pm10": {
-        "now": 188.70659562144766,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 82.6497977381977,
+        "now": 158.9878060511508,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 139.0327054437681,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 59.32287178602546,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 95.26818278488994,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 45.27903402988183,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 62.95579037909985,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 103,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 62.95579037909985
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 45.27903402988183
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 103
       }
     },
     {
@@ -1493,22 +2085,32 @@
       "latitude": 30.848459053271625,
       "longitude": 46.502609996009,
       "pm10": {
-        "now": 102.34028020417635,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 79.89554894235557,
+        "now": 164.49243816190443,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 140.19070443954277,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 69.22151874460093,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 111.58369598830373,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 71.71993026878829,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 85.97237971293995,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 105,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 85.97237971293995
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 71.71993026878829
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 105
       }
     },
     {
@@ -1518,22 +2120,32 @@
       "latitude": 37.09417753408788,
       "longitude": 43.51527763533789,
       "pm10": {
-        "now": 2.9999999999999996,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 3.3187019453943307,
+        "now": 5.0,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 6.061386251424829,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 3.0265041989188735,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 5.028052918091496,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 2.8662370163702318,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 4.04544421616274,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 5,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 4.04544421616274
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 2.8662370163702318
+        "based_on": "AQI",
+        "value": 5
       }
     },
     {
@@ -1543,22 +2155,32 @@
       "latitude": 36.93310710113811,
       "longitude": 43.04661068219852,
       "pm10": {
-        "now": 9.0,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 6.90534077274565,
+        "now": 9.406691464707723,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 11.286679065687196,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 6.024255907438372,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 9.115211903059707,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 6.479376372491856,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 7.690681108844818,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 8,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 7.690681108844818
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 6.479376372491856
+        "based_on": "AQI",
+        "value": 8
       }
     },
     {
@@ -1568,22 +2190,32 @@
       "latitude": 36.89815044166084,
       "longitude": 42.71167707762135,
       "pm10": {
-        "now": 8.212517608282214,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 7.203347419959104,
+        "now": 11.397524651595099,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 11.86210505021473,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 7.455717546531534,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 9.796767960447857,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 8.65231129722401,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 9.556349999844507,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 10,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 9.556349999844507
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 8.65231129722401
+        "based_on": "AQI",
+        "value": 10
       }
     },
     {
@@ -1593,22 +2225,32 @@
       "latitude": 37.19439779935592,
       "longitude": 42.84944778352461,
       "pm10": {
-        "now": 3.9264569277880934,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 3.8088189759293645,
+        "now": 5.463228463894046,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 6.642152309262696,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 3.539928211120434,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 5.485291385557618,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 4.076584960345689,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 4.946577048782712,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 5,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 4.946577048782712
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 4.076584960345689
+        "based_on": "AQI",
+        "value": 5
       }
     },
     {
@@ -1618,22 +2260,32 @@
       "latitude": 34.04353273578466,
       "longitude": 44.52330952743335,
       "pm10": {
-        "now": 46.33640569928036,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 37.00368683913643,
+        "now": 24.001843419568218,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 35.74388138148659,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 37.52939223557395,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 34.38125979251774,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 34.18763805537954,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 34.08889159332531,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 22,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 34.08889159332531
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 34.18763805537954
+        "based_on": "AQI",
+        "value": 22
       }
     },
     {
@@ -1643,22 +2295,32 @@
       "latitude": 33.82225180806976,
       "longitude": 44.77287411440991,
       "pm10": {
-        "now": 56.57508092468609,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 50.4536754745964,
+        "now": 42.36262138702914,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 46.554846683004484,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 50.91133578915331,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 46.89009710962331,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 40.94506569730144,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 44.19781965124067,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 39,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 44.19781965124067
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 40.94506569730144
+        "based_on": "AQI",
+        "value": 39
       }
     },
     {
@@ -1668,22 +2330,32 @@
       "latitude": 33.54106113544986,
       "longitude": 44.5166965637291,
       "pm10": {
-        "now": 61.37742868569667,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 53.53430081803492,
+        "now": 40.23530819850737,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 48.151954917288606,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 52.68378879855099,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 48.736267704054775,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 41.73418156702047,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 44.99394496387499,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 37,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 44.99394496387499
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 41.73418156702047
+        "based_on": "AQI",
+        "value": 37
       }
     },
     {
@@ -1693,22 +2365,32 @@
       "latitude": 33.45921096533995,
       "longitude": 45.230436441906626,
       "pm10": {
-        "now": 51.38277309491173,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 50.71610642824506,
+        "now": 51.83067224820583,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 46.023389338225435,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 54.17792219600191,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 47.76714284089995,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 55.92899402037736,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 52.74875940046872,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 48,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 52.74875940046872
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 55.92899402037736
+        "level": "good",
+        "based_on": "AQI",
+        "value": 48
       }
     },
     {
@@ -1718,22 +2400,32 @@
       "latitude": 34.36150293342428,
       "longitude": 45.28965167467581,
       "pm10": {
-        "now": 29.44860823860948,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 28.253904458305737,
+        "now": 20.789721647721898,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 24.163554636355034,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 32.68039689200604,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 25.560753809074566,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 34.46270701308702,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 31.09774327140546,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 19,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 31.09774327140546
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 34.46270701308702
+        "based_on": "AQI",
+        "value": 19
       }
     },
     {
@@ -1743,22 +2435,32 @@
       "latitude": 32.44739391785713,
       "longitude": 41.32672676898627,
       "pm10": {
-        "now": 212.77099809796027,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 122.24079932371922,
+        "now": 218.4219392613706,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 176.73858483647643,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 97.41147779192724,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 136.83343087652534,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 73.08282152953122,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 99.28768395379588,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 132,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 99.28768395379588
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 73.08282152953122
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 132
       }
     },
     {
@@ -1768,22 +2470,32 @@
       "latitude": 34.51834370904484,
       "longitude": 44.837354344456614,
       "pm10": {
-        "now": 37.63175117285359,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 28.667729016688863,
+        "now": 20.587302940224628,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 28.18942195799224,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 29.576794930958563,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 26.587940350237943,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 30.801316528318644,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 28.284078880464776,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 19,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 28.284078880464776
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 30.801316528318644
+        "based_on": "AQI",
+        "value": 19
       }
     },
     {
@@ -1793,22 +2505,32 @@
       "latitude": 32.44144064559491,
       "longitude": 43.51528113780361,
       "pm10": {
-        "now": 400.5784195625484,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 161.34670650511381,
+        "now": 414.9974807364291,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 340.8324469257806,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 112.86738599311147,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 221.19180814602697,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 82.56835909786956,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 140.76509058440192,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 287,
+        "level": "very_unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 140.76509058440192
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 82.56835909786956
+        "level": "very_unhealthy",
+        "based_on": "AQI",
+        "value": 287
       }
     },
     {
@@ -1818,22 +2540,32 @@
       "latitude": 32.43804041290849,
       "longitude": 44.16832825952361,
       "pm10": {
-        "now": 168.71634434287654,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 80.46084882172003,
+        "now": 222.86304988746073,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 148.70845185049416,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 60.71151504156849,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 103.75831153475322,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 52.548271498021215,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 70.76440521097254,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 135,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 70.76440521097254
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 52.548271498021215
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 135
       }
     },
     {
@@ -1843,22 +2575,32 @@
       "latitude": 32.426309916614414,
       "longitude": 43.890249236730085,
       "pm10": {
-        "now": 305.92535404662044,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 126.56561973159315,
+        "now": 379.3386438769862,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 293.73403525449334,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 89.59505361728813,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 190.9947221823278,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 67.16600193654698,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 121.3086438080509,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 235,
+        "level": "very_unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 121.3086438080509
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 67.16600193654698
+        "level": "very_unhealthy",
+        "based_on": "AQI",
+        "value": 235
       }
     },
     {
@@ -1868,22 +2610,32 @@
       "latitude": 31.99405901142912,
       "longitude": 47.157453294534136,
       "pm10": {
-        "now": 29.53200820532384,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 30.17778537529985,
+        "now": 16.062668490071967,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 30.264600291414965,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 37.990169547510874,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 30.35902975896412,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 59.78672780494604,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 43.47126144216108,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 15,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 43.47126144216108
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 59.78672780494604
+        "level": "good",
+        "based_on": "AQI",
+        "value": 15
       }
     },
     {
@@ -1893,22 +2645,32 @@
       "latitude": 31.648353139934745,
       "longitude": 47.55506738090843,
       "pm10": {
-        "now": 30.207537010024062,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 32.98649090746418,
+        "now": 14.774135063540733,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 31.790225105901225,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 36.40627091470385,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 32.824522206014436,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 45.60142558754378,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 38.868647613677204,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 14,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 38.868647613677204
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 45.60142558754378
+        "based_on": "AQI",
+        "value": 14
       }
     },
     {
@@ -1918,22 +2680,32 @@
       "latitude": 31.49408603401158,
       "longitude": 46.83842736762396,
       "pm10": {
-        "now": 50.815223789068654,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 45.42862681380557,
+        "now": 44.180805845060505,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 49.66534321137639,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 46.10742747813529,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 46.89333725729544,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 56.623563260412766,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 48.27230577604735,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 41,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 48.27230577604735
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 56.623563260412766
+        "level": "good",
+        "based_on": "AQI",
+        "value": 41
       }
     },
     {
@@ -1943,22 +2715,32 @@
       "latitude": 31.4293978232381,
       "longitude": 47.20354501217153,
       "pm10": {
-        "now": 51.82232740821082,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 45.333570641265,
+        "now": 26.164607866401163,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 44.99794119973449,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 47.7531081220911,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 43.83444162295753,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 65.24940026402588,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 49.72151153213729,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 24,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 49.72151153213729
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 65.24940026402588
+        "level": "good",
+        "based_on": "AQI",
+        "value": 24
       }
     },
     {
@@ -1968,22 +2750,32 @@
       "latitude": 32.396088677477536,
       "longitude": 46.72321440612597,
       "pm10": {
-        "now": 38.57255089313756,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 34.551635507473954,
+        "now": 27.137255920183453,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 35.463399806067244,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 43.51849933291097,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 34.294511009497214,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 59.449641433184865,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 47.97929184838077,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 25,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 47.97929184838077
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 59.449641433184865
+        "level": "good",
+        "based_on": "AQI",
+        "value": 25
       }
     },
     {
@@ -1993,22 +2785,32 @@
       "latitude": 31.428508971329393,
       "longitude": 47.512448178169265,
       "pm10": {
-        "now": 46.874433031833966,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 44.602861292430056,
+        "now": 24.47014109318888,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 44.10286129243005,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 45.45971644591961,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 43.84854694454927,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 62.30630060876946,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 49.30750845888157,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 22,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 49.30750845888157
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 62.30630060876946
+        "level": "good",
+        "based_on": "AQI",
+        "value": 22
       }
     },
     {
@@ -2018,22 +2820,32 @@
       "latitude": 33.734816369757134,
       "longitude": 42.68227852661513,
       "pm10": {
-        "now": 194.61689184275937,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 79.99713279242694,
+        "now": 187.78398107171014,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 156.23951810066487,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 55.226941258222396,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 102.8186121673032,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 40.07219067125974,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 64.3086936226896,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 117,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 64.3086936226896
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 40.07219067125974
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 117
       }
     },
     {
@@ -2043,22 +2855,32 @@
       "latitude": 36.66346783449737,
       "longitude": 43.83002031016732,
       "pm10": {
-        "now": 8.790532144982528,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 5.290532144982527,
+        "now": 6.544747771842239,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 9.008431253719422,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 4.160234849952438,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 6.821271610224665,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 4.3549592422740275,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 5.363425539199478,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 6,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 5.363425539199478
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 4.3549592422740275
+        "based_on": "AQI",
+        "value": 6
       }
     },
     {
@@ -2068,22 +2890,32 @@
       "latitude": 35.62056584683228,
       "longitude": 41.681830678771604,
       "pm10": {
-        "now": 45.2398196105619,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 24.117760425935433,
+        "now": 54.477828630033805,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 51.38989477282777,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 18.022812917817504,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 36.25662919714555,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 13.248897421355322,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 23.67154769966766,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 50,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 23.67154769966766
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 13.248897421355322
+        "based_on": "AQI",
+        "value": 50
       }
     },
     {
@@ -2093,22 +2925,32 @@
       "latitude": 36.29335231457684,
       "longitude": 43.409231571027405,
       "pm10": {
-        "now": 13.31248456097791,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 9.406242280488955,
+        "now": 17.156180524400597,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 17.53121140244478,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 8.477075564772623,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 13.499975297564657,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 10.347035882342693,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 12.066110896815355,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 16,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 12.066110896815355
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 10.347035882342693
+        "based_on": "AQI",
+        "value": 16
       }
     },
     {
@@ -2118,22 +2960,32 @@
       "latitude": 36.64229670129565,
       "longitude": 43.37599194906899,
       "pm10": {
-        "now": 8.923238190876116,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 6.128635175669646,
+        "now": 7.269714572628353,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 10.051873366545763,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 5.357305666451231,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 7.923657487154022,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 5.919271526930643,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 6.824392560696061,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 6,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 6.824392560696061
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 5.919271526930643
+        "based_on": "AQI",
+        "value": 6
       }
     },
     {
@@ -2143,22 +2995,32 @@
       "latitude": 35.419410363899516,
       "longitude": 42.44538995122619,
       "pm10": {
-        "now": 62.993717473614566,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 34.33718971135836,
+        "now": 60.044131191803416,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 52.89426909786636,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 24.208001728006707,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 39.74013179081192,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 17.392315677024133,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 25.97764727163293,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 53,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 25.97764727163293
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 17.392315677024133
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 53
       }
     },
     {
@@ -2168,22 +3030,32 @@
       "latitude": 36.07587527830808,
       "longitude": 42.98592624333245,
       "pm10": {
-        "now": 12.962174434160806,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 9.948187971532667,
+        "now": 18.806738348758795,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 18.0,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 9.531669211821997,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 14.17647789608744,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 11.398383575518633,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 13.098043275604134,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 18,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 13.098043275604134
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 11.398383575518633
+        "based_on": "AQI",
+        "value": 18
       }
     },
     {
@@ -2193,22 +3065,32 @@
       "latitude": 36.775989750235034,
       "longitude": 43.41230455135135,
       "pm10": {
-        "now": 8.904685426711413,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 6.079161137897098,
+        "now": 7.214056280134234,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 9.983846564608507,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 5.312888784471597,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 7.856867536161081,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 5.8788107035477175,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 6.770917633126532,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 6,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 6.770917633126532
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 5.8788107035477175
+        "based_on": "AQI",
+        "value": 6
       }
     },
     {
@@ -2218,22 +3100,32 @@
       "latitude": 36.295478427982616,
       "longitude": 41.89315428750927,
       "pm10": {
-        "now": 15.128847023039494,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 13.53641095176493,
+        "now": 26.406155236863192,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 23.320257221503528,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 12.58194920874775,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 19.088231499353174,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 10.825550146568482,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 15.070202737971446,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 24,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 15.070202737971446
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 10.825550146568482
+        "based_on": "AQI",
+        "value": 24
       }
     },
     {
@@ -2243,22 +3135,32 @@
       "latitude": 36.58683783797396,
       "longitude": 42.42180688184613,
       "pm10": {
-        "now": 10.410522665403617,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 8.303507555134539,
+        "now": 14.968414664456327,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 14.47894310963755,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 8.557650196141408,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 11.587365865782532,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 9.542701828013668,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 11.017240720558355,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 14,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 11.017240720558355
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 9.542701828013668
+        "based_on": "AQI",
+        "value": 14
       }
     },
     {
@@ -2268,22 +3170,32 @@
       "latitude": 36.59214605317314,
       "longitude": 43.06208705570715,
       "pm10": {
-        "now": 9.0,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 6.8282444263120325,
+        "now": 9.149703643262333,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 11.1581851549645,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 6.065268603751788,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 8.99185774876592,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 6.5575845604559815,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 7.722390561632947,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 8,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 7.722390561632947
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 6.5575845604559815
+        "based_on": "AQI",
+        "value": 8
       }
     },
     {
@@ -2293,22 +3205,32 @@
       "latitude": 33.35933808504119,
       "longitude": 44.17000854725623,
       "pm10": {
-        "now": 49.91430954522421,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 48.73012699415909,
+        "now": 61.20614282588901,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 58.16639681420718,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 46.154139892659614,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 54.155052375974925,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 37.85102958884493,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 44.22879979819005,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 54,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 44.22879979819005
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 37.85102958884493
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 54
       }
     },
     {
@@ -2318,22 +3240,32 @@
       "latitude": 33.567576470388715,
       "longitude": 44.23120815369178,
       "pm10": {
-        "now": 61.88575358588979,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 54.338371049245666,
+        "now": 43.73430557735006,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 51.91104767584138,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 50.08242768069961,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 51.37250051787428,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 37.35459057709167,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 42.60603578252379,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 41,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 42.60603578252379
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 37.35459057709167
+        "based_on": "AQI",
+        "value": 41
       }
     },
     {
@@ -2343,22 +3275,32 @@
       "latitude": 34.40288351578535,
       "longitude": 44.124870824825855,
       "pm10": {
-        "now": 46.155282423983145,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 39.214924630758425,
+        "now": 26.277193970460676,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 37.51199933681085,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 38.42387360252327,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 36.805097895744936,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 30.84941932136392,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 33.330976848130064,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 24,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 33.330976848130064
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 30.84941932136392
+        "based_on": "AQI",
+        "value": 24
       }
     },
     {
@@ -2368,22 +3310,32 @@
       "latitude": 35.437079041085134,
       "longitude": 43.12198982022632,
       "pm10": {
-        "now": 26.743677528980932,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 23.66350959615311,
+        "now": 27.553803478601793,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 28.996842929486444,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 21.609808198150205,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 26.247476009587547,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 19.829917059253418,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 21.950725541979853,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 26,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 21.950725541979853
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 19.829917059253418
+        "based_on": "AQI",
+        "value": 26
       }
     },
     {
@@ -2393,22 +3345,32 @@
       "latitude": 33.827073019073126,
       "longitude": 43.96109496433048,
       "pm10": {
-        "now": 58.512022277965784,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 53.198302541559194,
+        "now": 41.153748415457805,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 51.20410191403398,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 42.9377569972552,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 50.93903821776274,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 33.13482602603207,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 38.18522245755135,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 38,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 38.18522245755135
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 33.13482602603207
+        "based_on": "AQI",
+        "value": 38
       }
     },
     {
@@ -2418,22 +3380,32 @@
       "latitude": 34.81981751236421,
       "longitude": 42.9906765324779,
       "pm10": {
-        "now": 54.5528178100472,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 39.2096903680174,
+        "now": 69.63105338476274,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 56.49523262150063,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 29.389077297947505,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 46.512390231701374,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 22.282948459620613,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 31.868922273239725,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 58,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 31.868922273239725
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 22.282948459620613
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 58
       }
     },
     {
@@ -2443,22 +3415,32 @@
       "latitude": 34.14255395182311,
       "longitude": 43.469253323818855,
       "pm10": {
-        "now": 59.24880015557652,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 45.54459490769714,
+        "now": 73.14389789464872,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 65.76756944618288,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 35.659623855293106,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 54.937538581212706,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 28.561714051937106,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 38.59088654879243,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 60,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 38.59088654879243
       },
       "alert": {
-        "level": "good",
-        "based_on": "mean_24h",
-        "value": 28.561714051937106
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 60
       }
     },
     {
@@ -2468,22 +3450,32 @@
       "latitude": 34.6659931287577,
       "longitude": 43.618385938906165,
       "pm10": {
-        "now": 37.45858081644467,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 35.420266755163084,
+        "now": 36.35473587782273,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 39.15305825863729,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 33.30592860419419,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 37.252278844991295,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 26.963917821771254,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 31.237525580023,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 33,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 31.237525580023
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 26.963917821771254
+        "based_on": "AQI",
+        "value": 33
       }
     },
     {
@@ -2493,22 +3485,32 @@
       "latitude": 34.784153602950724,
       "longitude": 44.547033355815174,
       "pm10": {
-        "now": 32.69621235249103,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 26.67297941251495,
+        "now": 21.42909035402153,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 26.23247439284709,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 27.46457428899804,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 25.204029812719018,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 29.441648672079207,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 26.714489724610946,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 19,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 26.714489724610946
       },
       "alert": {
         "level": "good",
-        "based_on": "mean_24h",
-        "value": 29.441648672079207
+        "based_on": "AQI",
+        "value": 19
       }
     },
     {
@@ -2518,22 +3520,32 @@
       "latitude": 32.139078935764644,
       "longitude": 45.94443905824454,
       "pm10": {
-        "now": 51.46500913563557,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 52.80775544622416,
+        "now": 47.87415600842517,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 52.98608573434563,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 54.26501257889821,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 53.183302881214765,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 64.41020241367906,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 54.6296052238408,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 44,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 54.6296052238408
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 64.41020241367906
+        "level": "good",
+        "based_on": "AQI",
+        "value": 44
       }
     },
     {
@@ -2543,22 +3555,32 @@
       "latitude": 32.52238566305417,
       "longitude": 46.09669435212531,
       "pm10": {
-        "now": 40.22965219676258,
-        "timestamp": "2026-02-06T09:00:00Z",
-        "mean_6h": 38.139391321039334,
+        "now": 29.97086959195621,
+        "timestamp": "2026-02-06T15:00:00Z",
+        "mean_6h": 36.88646378610387,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T03:00:00Z",
-        "mean_12h": 41.59518330107767,
+        "mean_6h_start": "2026-02-06T09:00:00Z",
+        "mean_12h": 36.96958262493341,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-05T21:00:00Z",
-        "mean_24h": 50.74675233698343,
+        "mean_12h_start": "2026-02-06T03:00:00Z",
+        "mean_24h": 43.337225012206574,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T09:00:00Z"
+        "mean_24h_start": "2026-02-05T15:00:00Z"
+      },
+      "aqi": {
+        "value": 28,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 43.337225012206574
       },
       "alert": {
-        "level": "moderate",
-        "based_on": "mean_24h",
-        "value": 50.74675233698343
+        "level": "good",
+        "based_on": "AQI",
+        "value": 28
       }
     }
   ]
