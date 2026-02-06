@@ -2,53 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Iraq Air Quality – PM10</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iraq Air Quality Monitor – PM10</title>
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Live PM10 and AQI monitoring for Iraq by district">
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- App styles -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-<header>
-  <h1>Iraq Air Quality Monitor</h1>
-  <p>Live PM10 concentration by district</p>
-</header>
 
-<main class="layout">
-  <!-- MAP -->
-  <section class="map-wrapper">
-    <div id="map"></div>
+  <!-- ================= HEADER ================= -->
+  <header>
+    <h1>Iraq Air Quality Monitor</h1>
+    <p>PM10 concentration & AQI by district</p>
+    <!-- optional metadata injected by JS -->
+    <div id="ref-time"></div>
+    <div id="data-note"></div>
+  </header>
 
-    <!-- AQI BAR OVERLAY -->
-    <div class="aqi-bar">
-      <span class="good">Good</span>
-      <span class="moderate">Moderate</span>
-      <span class="unhealthy">Unhealthy</span>
-      <span class="very">Very Unhealthy</span>
-      <span class="hazardous">Hazardous</span>
-    </div>
-  </section>
+  <!-- ================= MAIN LAYOUT ================= -->
+  <main class="layout">
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <input
-      type="text"
-      id="search"
-      placeholder="Search district..."
-    />
+    <!-- ===== MAP ===== -->
+    <section class="map-wrapper">
+      <div id="map"></div>
 
-    <ul id="district-list"></ul>
+      <!-- AQI legend bar -->
+      <div class="aqi-bar">
+        <span class="good">Good</span>
+        <span class="moderate">Moderate</span>
+        <span class="unhealthy">Unhealthy</span>
+        <span class="very">Very Unhealthy</span>
+        <span class="hazardous">Hazardous</span>
+      </div>
+    </section>
 
-    <div class="view-all">View all districts →</div>
-  </aside>
-</main>
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
 
-<footer>
-  Data source: Barcelona Dust Regional Center (https://dust.aemet.es/) and numerical simulation (Dr. Omar Althuwaynee) · Updated every 3 hours
-</footer>
+      <!-- Search -->
+      <input
+        type="text"
+        id="search"
+        placeholder="Search district or province…"
+        aria-label="Search district"
+      />
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="js/main.js"></script>
+      <!-- District list -->
+      <ul id="district-list"></ul>
+
+      <!-- View all toggle -->
+      <div class="view-all">View all districts →</div>
+
+    </aside>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    Data source: Barcelona Dust Regional Center (https://dust.aemet.es/) ·
+    Numerical simulation & processing: Dr. Omar Althuwaynee ·
+    Updated every 3 hours
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+
 </body>
 </html>

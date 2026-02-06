@@ -6,6 +6,10 @@
 /* ---------- Globals ---------- */
 let pm10Data = null;
 let districtLayer = L.layerGroup();
+let showAllDistricts = false;
+
+const MAX_VISIBLE_DISTRICTS = 15;
+
 
 /* ---------- Init ---------- */
 document.addEventListener("DOMContentLoaded", () => {
@@ -39,17 +43,73 @@ async function loadPM10Alerts() {
     pm10Data = await res.json();
 
     updateHeaderInfo(pm10Data.metadata);
-    drawDistrictMarkers(pm10Data.districts);
 
-    console.log(
-      "PM10 alerts loaded:",
-      pm10Data.districts.length,
-      "districts"
+    // sort by AQI DESC
+    pm10Data.districts.sort(
+      (a, b) => b.aqi.value - a.aqi.value
     );
+
+    drawDistrictMarkers(pm10Data.districts);
+    renderDistrictList(pm10Data.districts);
 
   } catch (err) {
     console.error("Failed to load pm10_alerts.json", err);
   }
+}
+
+function renderDistrictList(districts) {
+
+  const list = document.getElementById("district-list");
+  list.innerHTML = "";
+
+  const visible = showAllDistricts
+    ? districts
+    : districts.slice(0, MAX_VISIBLE_DISTRICTS);
+
+  visible.forEach(d => {
+
+    const li = document.createElement("li");
+    li.style.borderLeftColor = getAlertColor(d.alert.level);
+
+    li.innerHTML = `
+      <div>
+        <strong>${d.district_name}</strong><br>
+        <small>${d.province_name}</small>
+      </div>
+      <div class="value">
+        <span>${d.aqi.value}</span>
+        <em>AQI</em>
+      </div>
+    `;
+
+    li.onclick = () => {
+      map.setView([d.latitude, d.longitude], 10);
+    };
+
+    list.appendChild(li);
+  });
+
+  updateViewAllButton(districts.length);
+}
+
+
+function updateViewAllButton(total) {
+  const btn = document.querySelector(".view-all");
+
+  if (total <= MAX_VISIBLE_DISTRICTS) {
+    btn.style.display = "none";
+    return;
+  }
+
+  btn.style.display = "block";
+  btn.textContent = showAllDistricts
+    ? `Show top ${MAX_VISIBLE_DISTRICTS}`
+    : `View all ${total}`;
+
+  btn.onclick = () => {
+    showAllDistricts = !showAllDistricts;
+    renderDistrictList(pm10Data.districts);
+  };
 }
 
 /* ---------- Header ---------- */
