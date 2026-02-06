@@ -193,8 +193,8 @@ header p {
 
 .good { background: #22c55e; }
 .moderate { background: #eab308; color: #1e293b; }
-.unhealthy { background: #f97316; }
-.very { background: #ef4444; }
+.unhealthy { background: #ee60dbfb; }
+.very { background: #ed1515; }
 .hazardous { background: #7c2d12; }
 
 /* ===============================
