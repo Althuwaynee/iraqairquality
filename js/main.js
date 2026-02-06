@@ -33,6 +33,89 @@ function formatIraqTime(utcString, options = {}) {
   });
 }
 
+/* --------Geolocation--------*/
+/* ---------- Geo helpers ---------- */
+function haversineDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371; // km
+  const toRad = d => d * Math.PI / 180;
+
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) *
+    Math.cos(toRad(lat2)) *
+    Math.sin(dLon / 2) ** 2;
+
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function findNearestDistrict(lat, lon, districts) {
+  let nearest = null;
+  let minDist = Infinity;
+
+  districts.forEach(d => {
+    if (!d.latitude || !d.longitude) return;
+
+    const dist = haversineDistance(
+      lat,
+      lon,
+      d.latitude,
+      d.longitude
+    );
+
+    if (dist < minDist) {
+      minDist = dist;
+      nearest = d;
+    }
+  });
+
+  return nearest;
+}
+
+/* ---------- Auto locate user ---------- */
+function autoLocateUser(districts) {
+  if (!navigator.geolocation) return;
+
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      const { latitude, longitude } = pos.coords;
+
+      const nearest = findNearestDistrict(
+        latitude,
+        longitude,
+        districts
+      );
+
+      if (!nearest) return;
+
+      // Zoom map
+      map.setView(
+        [nearest.latitude, nearest.longitude],
+        11,
+        { animate: true }
+      );
+
+      // Open popup
+      districtLayer.eachLayer(layer => {
+        if (layer._district_id === nearest.district_id) {
+          layer.openPopup();
+        }
+      });
+    },
+    () => {
+      // silently ignore if denied
+      console.info("Geolocation not allowed");
+    },
+    {
+      enableHighAccuracy: false,
+      timeout: 8000,
+      maximumAge: 60000
+    }
+  );
+}
+
 
 /* ---------- Map ---------- */
 function initMap() {
@@ -58,6 +141,8 @@ async function loadPM10Alerts() {
 
     drawDistrictMarkers(pm10Data.districts);
     renderDistrictList(pm10Data.districts);
+    // 🔥 Auto zoom to nearest district
+    autoLocateUser(pm10Data.districts);
 
   } catch (err) {
     console.error("Failed to load pm10_alerts.json", err);
