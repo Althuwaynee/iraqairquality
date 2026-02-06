@@ -206,7 +206,7 @@ header p {
 }
 
 .leaflet-popup-content h4 {
-  margin: 0;
+  margin: 2;
 }
 
 /* ===============================
@@ -215,6 +215,10 @@ header p {
 
 /* ===============================
    Popup – 24h Forecast Circles
+   =============================== */
+
+/* ===============================
+   Forecast stacked layout
    =============================== */
 
 .forecast-row {
@@ -228,14 +232,20 @@ header p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  min-width: 38px;
   font-size: 0.6rem;
   color: #475569;
-  min-width: 36px;
+}
+
+.forecast-day {
+  font-weight: 600;
+  font-size: 0.6rem;
 }
 
 .forecast-time {
+  font-size: 0.55rem;
   margin-bottom: 3px;
-  white-space: nowrap;
 }
 
 .forecast-dot {
@@ -249,12 +259,25 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 2px 0;
 }
 
 .forecast-pm {
-  margin-top: 2px;
   font-size: 0.55rem;
-  color: #334155;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.forecast-unit {
+  font-size: 0.5rem;
+  color: #64748b;
+}
+
+.leaflet-popup-content hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 6px 0;
 }
 
 

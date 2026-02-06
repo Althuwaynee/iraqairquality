@@ -104,10 +104,13 @@ function drawDistrictMarkers(districts) {
   });
 }
 
+
+
+
 /* ---------- Popup ---------- */
 function buildDistrictPopup(d) {
 
-  // Collect forecast entries in order
+  // collect forecasts in order
   const forecasts = [
     d.pm10_forecast_3h,
     d.pm10_forecast_6h,
@@ -119,10 +122,22 @@ function buildDistrictPopup(d) {
     d.pm10_forecast_24h
   ].filter(Boolean);
 
-  const forecastHTML = forecasts.map(f => {
-    const date = new Date(f.timestamp);
-    const label = date.toLocaleString("en-GB", {
+  let forecastTitle = "";
+  if (forecasts.length > 0) {
+    const start = new Date(forecasts[0].timestamp);
+    forecastTitle = start.toLocaleString("en-GB", {
       weekday: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    });
+  }
+
+  const forecastHTML = forecasts.map(f => {
+    const t = new Date(f.timestamp);
+
+    const day = t.toLocaleString("en-GB", { weekday: "short" });
+    const time = t.toLocaleString("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false
@@ -130,24 +145,40 @@ function buildDistrictPopup(d) {
 
     return `
       <div class="forecast-item">
-        <div class="forecast-time">${label}</div>
-        <div
-          class="forecast-dot"
-          style="background:${getAlertColor(f.aqi_level)}"
-          title="AQI ${f.aqi}"
-        ></div>
+        <div class="forecast-day">${day}</div>
+        <div class="forecast-time">${time}</div>
+
+        <div class="forecast-dot"
+            style="background:${getAlertColor(f.aqi_level)}">
+          ${f.aqi}
+        </div>
+
+        <div class="forecast-pm">
+          ${f.value.toFixed(0)}
+        </div>
+        <div class="forecast-unit">µg/m³</div>
       </div>
     `;
   }).join("");
+
 
   return `
     <div>
       <strong>${d.district_name}</strong><br>
       <small>${d.province_name}</small>
+
       <hr>
+
       PM10 now: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
       AQI: <b>${d.aqi.value}</b> (${d.aqi.level})<br>
       24h mean: ${d.pm10.mean_24h.toFixed(1)} µg/m³
+
+      <hr>
+
+      <strong>Forecast for 24 hours</strong>
+      <div style="font-size:0.7rem; color:#475569; margin-bottom:4px;">
+        from ${forecastTitle}
+      </div>
 
       <div class="forecast-row">
         ${forecastHTML}
