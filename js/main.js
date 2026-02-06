@@ -106,6 +106,40 @@ function drawDistrictMarkers(districts) {
 
 /* ---------- Popup ---------- */
 function buildDistrictPopup(d) {
+
+  // Collect forecast entries in order
+  const forecasts = [
+    d.pm10_forecast_3h,
+    d.pm10_forecast_6h,
+    d.pm10_forecast_9h,
+    d.pm10_forecast_12h,
+    d.pm10_forecast_15h,
+    d.pm10_forecast_18h,
+    d.pm10_forecast_21h,
+    d.pm10_forecast_24h
+  ].filter(Boolean);
+
+  const forecastHTML = forecasts.map(f => {
+    const date = new Date(f.timestamp);
+    const label = date.toLocaleString("en-GB", {
+      weekday: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    });
+
+    return `
+      <div class="forecast-item">
+        <div class="forecast-time">${label}</div>
+        <div
+          class="forecast-dot"
+          style="background:${getAlertColor(f.aqi_level)}"
+          title="AQI ${f.aqi}"
+        ></div>
+      </div>
+    `;
+  }).join("");
+
   return `
     <div>
       <strong>${d.district_name}</strong><br>
@@ -114,9 +148,14 @@ function buildDistrictPopup(d) {
       PM10 now: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
       AQI: <b>${d.aqi.value}</b> (${d.aqi.level})<br>
       24h mean: ${d.pm10.mean_24h.toFixed(1)} µg/m³
+
+      <div class="forecast-row">
+        ${forecastHTML}
+      </div>
     </div>
   `;
 }
+
 
 /* ---------- District List (FIXED) ---------- */
 function renderDistrictList(districts, filter = "") {

@@ -210,6 +210,55 @@ header p {
 }
 
 /* ===============================
+   Popup – 24h Forecast Circles
+   =============================== */
+
+/* ===============================
+   Popup – 24h Forecast Circles
+   =============================== */
+
+.forecast-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  justify-content: space-between;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.6rem;
+  color: #475569;
+  min-width: 36px;
+}
+
+.forecast-time {
+  margin-bottom: 3px;
+  white-space: nowrap;
+}
+
+.forecast-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #0f172a;
+  color: white;
+  font-weight: 700;
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forecast-pm {
+  margin-top: 2px;
+  font-size: 0.55rem;
+  color: #334155;
+}
+
+
+/* ===============================
    Footer
    =============================== */
 footer {
