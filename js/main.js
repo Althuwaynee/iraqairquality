@@ -21,6 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function formatIraqTime(utcString, options = {}) {
+  const date = new Date(utcString);
+
+  // add 3 hours for Iraq (UTC+3)
+  date.setHours(date.getHours() + 3);
+
+  return date.toLocaleString("en-GB", {
+    timeZone: "UTC",
+    ...options
+  });
+}
+
+
 /* ---------- Map ---------- */
 function initMap() {
   map = L.map("map").setView([33.2, 44.3], 6);
@@ -136,12 +149,13 @@ function buildDistrictPopup(d) {
   const forecastHTML = forecasts.map(f => {
     const t = new Date(f.timestamp);
 
-    const day = t.toLocaleString("en-GB", { weekday: "short" });
-    const time = t.toLocaleString("en-GB", {
+    const day = formatIraqTime(f.timestamp, { weekday: "short" });
+    const time = formatIraqTime(f.timestamp, {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false
     });
+
 
     return `
       <div class="forecast-item">
@@ -160,12 +174,14 @@ function buildDistrictPopup(d) {
       </div>
     `;
   }).join("");
-  const measurementTime = new Date(d.pm10.timestamp).toLocaleString("en-GB", {
+  const measurementTime = formatIraqTime(d.pm10.timestamp, {
     weekday: "short",
     hour: "2-digit",
     minute: "2-digit",
     hour12: false
   });
+
+
 
 
   return `
