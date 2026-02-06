@@ -208,10 +208,33 @@ header p {
 .leaflet-popup-content h4 {
   margin: 0;
 }
+   Wider Leaflet popup
+  /* =============================== */
 
 /* ===============================
-   Popup – 24h Forecast Circles
+   Popup
    =============================== */
+/* ===============================
+   Popup
+   =============================== */
+.leaflet-popup-content-wrapper {
+  max-width: 480px !important;
+  width: auto !important;
+  padding: 16px 20px 12px 20px !important; /* top, right, bottom, left */
+}
+
+.leaflet-popup-content {
+  width: 100% !important;
+  max-width: 480px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin: 0;
+  /* Remove padding from here, it goes in the wrapper above */
+}
+
+.leaflet-popup-content h4 {
+  margin: 0 0 8px 0;
+}
 
 /* ===============================
    Popup – 24h Forecast Circles
@@ -278,17 +301,6 @@ header p {
   border: none;
   border-top: 1px solid #e2e8f0;
   margin: 6px 0;
-}
-/* ===============================
-   Wider Leaflet popup
-   =============================== */
-
-.leaflet-popup-content-wrapper {
-  max-width: 380px;
-}
-
-.leaflet-popup-content {
-  width: 380px;
 }
 
 

@@ -287,7 +287,7 @@ function buildDistrictPopup(d) {
 
       <hr>
 
-      <strong>Forecast for 24 hours</strong>
+      <strong>Forecast for 24 hours (Iraq local time)</strong>
       <div style="font-size:0.7rem; color:#475569; margin-bottom:4px;">
         from ${forecastTitle}
       </div>
