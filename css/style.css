@@ -47,6 +47,7 @@ header p {
    =============================== */
 .map-wrapper {
   position: relative;
+  z-index: 1;
 }
 
 #map {
@@ -175,6 +176,7 @@ header p {
   overflow: hidden;
   font-size: 0.85rem;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  z-index: 1000;;
 }
 
 .aqi-bar span {

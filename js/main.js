@@ -69,10 +69,10 @@ function getAlertColor(level) {
   switch (level) {
     case "good": return "#22c55e";
     case "moderate": return "#eab308";
-    case "unhealthy": return "#f97316";
-    case "very_unhealthy": return "#ef4444";
+    case "unhealthy": return "#ee60dbfb";
+    case "very_unhealthy": return "#ed1515";
     case "hazardous": return "#7c2d12";
-    default: return "#94a3b8";
+    default: return "#db6e15";
   }
 }
 
