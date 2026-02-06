@@ -1,236 +1,176 @@
-/* Reset & Base Styles */
-* {
-  box-sizing: border-box;
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #f8fafc;
-  color: #1e293b;
-  line-height: 1.6;
-}
-
-/* Header */
-header {
-  padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, #1e3a8a, #2563eb);
-  color: white;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.8rem;
-}
-
-header p {
-  margin: 0;
-  opacity: 0.9;
-  font-size: 0.95rem;
-}
-
-/* Main Content */
-main {
-  padding: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-h2 {
-  color: #1e293b;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid #e2e8f0;
-}
-
-/* Map Containers */
-.map-section, .risk-section, .stats-section {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+.map-wrapper {
   position: relative;
 }
 
-.map-container {
-  height: 450px;        /* height is REQUIRED for Leaflet */
-  border-radius: 8px;
-  overflow: hidden;
+#map {
+  height: 520px;
+  border-radius: 12px;
+}
+
+.sidebar {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar input {
+  padding: 0.6rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
   border: 1px solid #e2e8f0;
 }
 
-/* Remove the red background test after confirming */
-#map-risk {
-  height: 100%;          /* take full height of container */
-}
-
-
-/* Legend */
-.legend {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 12px 16px;
-  font-size: 0.85rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  z-index: 1000;
-  min-width: 160px;
-}
-
-.legend h4 {
-  margin: 0 0 8px 0;
-  color: #1e293b;
-}
-
-.legend div {
-  display: flex;
-  align-items: center;
-  margin-bottom: 6px;
-}
-
-.box {
-  width: 16px;
-  height: 16px;
-  margin-right: 10px;
-  border-radius: 3px;
-  flex-shrink: 0;
-}
-
-.green { background: #10b981; }
-.yellow { background: #f59e0b; }
-.orange { background: #f97316; }
-.red { background: #ef4444; }
-.purple { background: #8b5cf6; }
-
-/* Risk Section Layout */
-.risk-container {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.risk-list {
-  flex: 0 0 300px;
-  background: #f8fafc;
-  padding: 1.25rem;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-}
-
-.risk-list h3 {
-  margin-top: 0;
-  color: #1e293b;
-}
-
-.risk-list ul {
+#district-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  flex: 1;
+  overflow-y: auto;
 }
 
-.risk-list li {
-  padding: 0.75rem;
-  margin-bottom: 0.5rem;
-  background: white;
+#district-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem;
+  margin-bottom: 0.4rem;
+  background: #f8fafc;
+  border-left: 5px solid;
   border-radius: 6px;
-  border-left: 4px solid #ef4444;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
 }
 
-.risk-list strong {
-  display: block;
-  color: #1e293b;
-  margin-bottom: 0.25rem;
-}
-
-/* Statistics */
-.stats-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.stat-card {
-  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-  padding: 1.5rem;
-  border-radius: 10px;
+.view-all {
   text-align: center;
-  border: 1px solid #e2e8f0;
+  padding: 0.6rem;
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 500;
 }
 
-.stat-card h3 {
-  margin-top: 0;
-  color: #64748b;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+/* AQI BAR */
+.aqi-bar {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  font-size: 0.75rem;
+  color: white;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.stat-value {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #1e293b;
-  margin: 0.5rem 0;
-}
-
-.update-time {
+.aqi-bar span {
+  flex: 1;
   text-align: center;
-  color: #64748b;
-  font-size: 0.9rem;
-  margin-top: 1.5rem;
-  font-style: italic;
+  padding: 4px;
 }
 
-/* Footer */
-footer {
-  padding: 1.5rem;
-  text-align: center;
-  color: #64748b;
-  font-size: 0.9rem;
-  border-top: 1px solid #e2e8f0;
-  margin-top: 2rem;
-}
+.good { background: #2ecc71; }
+.moderate { background: #f1c40f; color: #1e293b; }
+.unhealthy { background: #e67e22; }
+.very { background: #e74c3c; }
+.hazardous { background: #8e44ad; }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .risk-container {
-    flex-direction: column;
-  }
-  
-  .risk-list {
-    width: 100%;
-    flex: none;
-  }
-  
-  .map-container {
-    height: 400px;
-  }
-}
-
-@media (max-width: 768px) {
-  main {
-    padding: 1rem;
-  }
-  
-  .map-section, .risk-section, .stats-section {
-    padding: 1rem;
-  }
-  
-  .legend {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin-top: 1rem;
-    width: 100%;
-  }
-  
-  .stats-container {
+@media (max-width: 900px) {
+  .layout {
     grid-template-columns: 1fr;
   }
 }
+/* Add to style.css */
 
+.sidebar {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 520px; /* Match map height */
+}
+
+.sidebar input {
+  padding: 0.6rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+}
+
+#district-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(100% - 100px); /* Leave space for input and button */
+}
+
+#district-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #f8fafc;
+  border-left: 5px solid;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#district-list li:hover {
+  background: #edf2f7;
+}
+
+.view-all {
+  text-align: center;
+  padding: 0.75rem;
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 500;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.view-all:hover {
+  background: #f1f5f9;
+}
+
+/* Scrollbar styling */
+#district-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+#district-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+#district-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+#district-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Make sure map and sidebar align on mobile */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    height: auto;
+    max-height: 400px;
+  }
+}

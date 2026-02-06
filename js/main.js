@@ -1,435 +1,207 @@
-/**
- * FINAL WORKING VERSION - Iraq Air Quality Monitor
- */
+let map;
+let districts = [];
+let showAllDistricts = false;
+const MAX_VISIBLE_DISTRICTS = 15; // Number of districts to show by default
 
-// Global variables
-let mapNow, mapRisk;
-let nowData = [], alertData = [];
+document.addEventListener('DOMContentLoaded', init);
 
-// Debug function
-function debugLog(message, data = null) {
-  console.log(`[DEBUG] ${message}`, data || '');
-  const debugEl = document.getElementById('debug-status');
-  if (debugEl) debugEl.textContent = message.substring(0, 100);
+async function init() {
+  initMap();
+  await loadData();
+  renderMap();
+  renderList();
+  
+  // Setup "View all districts" button
+  setupViewAllButton();
 }
 
-// Initialize when page loads
-document.addEventListener('DOMContentLoaded', function() {
-  debugLog('Page loaded, starting initialization...');
-  initApp();
-});
+function initMap() {
+  map = L.map('map').setView([33, 44], 6);
 
-async function initApp() {
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+}
+
+async function loadData() {
   try {
-    // 1. Initialize maps
-    debugLog('Step 1: Initializing maps...');
-    mapNow = L.map('map-now').setView([33.0, 44.0], 6);
-    mapRisk = L.map('map-risk').setView([33.0, 44.0], 6);
+    const res = await fetch('./data/pm10_now.json');
+    const data = await res.json();
     
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap'
-    }).addTo(mapNow);
+    // Extract the districts array from the response
+    districts = data.districts || [];
     
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap'
-    }).addTo(mapRisk);
+    // Add pm10_now field to match your code
+    districts.forEach(d => {
+      d.pm10_now = d.dust_final; // Copy dust_final to pm10_now
+    });
     
-    // Add test markers to verify maps work
-    L.marker([33.0, 44.0])
-      .addTo(mapNow)
-      .bindTooltip('TEST: Maps are working!')
-      .openTooltip();
+    // Sort districts by PM10 value (highest to lowest)
+    districts.sort((a, b) => b.pm10_now - a.pm10_now);
     
-    // 2. Load BOTH data files
-    debugLog('Step 2: Loading data files...');
-    
-    // IMPORTANT: Check which file we're actually loading
-    console.log('Testing file paths...');
-    
-    // Test 1: Try your REAL data file (the one you showed me earlier)
-    try {
-      const testResponse = await fetch('./data/pm10_now.json');
-      const testData = await testResponse.json();
-      console.log('ACTUAL pm10_now.json loaded:', testData);
-      console.log('Is array?', Array.isArray(testData));
-      console.log('Length:', testData.length);
-      console.log('First item:', testData[0]);
-      
-      if (testData.length === 5) {
-        console.warn('WARNING: Only 5 items found. This might be TEST data!');
-        console.warn('Your real data should have 100+ items');
-      }
-    } catch (error) {
-      console.error('Cannot load pm10_now.json:', error);
-    }
-    
-    // Load current data
-    try {
-      debugLog('Loading current PM10 data...');
-      const response = await fetch('./data/pm10_now.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      
-      const jsonData = await response.json();
-      console.log('Current data structure:', jsonData);
-      
-      // Handle different data structures
-      if (Array.isArray(jsonData)) {
-        nowData = jsonData; // Your data is already an array
-      } else if (jsonData.districts && Array.isArray(jsonData.districts)) {
-        nowData = jsonData.districts;
-      } else if (jsonData.data && Array.isArray(jsonData.data)) {
-        nowData = jsonData.data;
-      } else {
-        console.warn('Unexpected data structure:', jsonData);
-        nowData = [];
-      }
-      
-      debugLog(`Loaded ${nowData.length} current records`);
-      
-    } catch (error) {
-      console.error('Failed to load current data:', error);
-      debugLog(`Error: ${error.message}`);
-      // Use fallback test data
-      nowData = createTestData();
-    }
-    
-    // Load alert data
-    try {
-      debugLog('Loading alert data...');
-      const response = await fetch('./data/pm10_alerts.json');
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      
-      const jsonData = await response.json();
-      console.log('Alert data structure:', jsonData);
-      
-      // Handle different data structures
-      if (Array.isArray(jsonData)) {
-        alertData = jsonData;
-      } else if (jsonData.districts && Array.isArray(jsonData.districts)) {
-        alertData = jsonData.districts;
-      } else if (jsonData.data && Array.isArray(jsonData.data)) {
-        alertData = jsonData.data;
-      } else {
-        console.warn('Unexpected data structure:', jsonData);
-        alertData = [];
-      }
-      
-      debugLog(`Loaded ${alertData.length} alert records`);
-      
-    } catch (error) {
-      console.error('Failed to load alert data:', error);
-      debugLog(`Error: ${error.message}`);
-      // Use fallback test data
-      alertData = createTestAlertData();
-    }
-    
-    // 3. Render maps
-    debugLog('Step 3: Rendering maps...');
-    renderCurrentMap();
-    renderRiskMap();
-    updateStatistics();
-    
-    // 4. Finalize
-    debugLog('Dashboard ready!');
-    
-    // Fix map sizing
-    setTimeout(() => {
-      mapNow.invalidateSize();
-      mapRisk.invalidateSize();
-    }, 100);
-    
+    console.log(`Loaded ${districts.length} districts`);
   } catch (error) {
-    console.error('Fatal error:', error);
-    debugLog(`FATAL: ${error.message}`);
-    alert(`Dashboard failed to load: ${error.message}\nCheck console for details.`);
+    console.error('Error loading data:', error);
   }
 }
 
-function renderCurrentMap() {
-  debugLog(`Rendering current map with ${nowData.length} markers...`);
-  
-  // Clear existing markers (except base layers)
-  mapNow.eachLayer(layer => {
-    if (layer instanceof L.CircleMarker || layer instanceof L.Marker) {
-      mapNow.removeLayer(layer);
-    }
-  });
-  
-  if (nowData.length === 0) {
-    debugLog('No current data to display');
+function renderMap() {
+  if (districts.length === 0) {
+    console.log('No districts to display');
     return;
   }
   
-  let sumNow = 0;
-  let countNow = 0;
-  
-  nowData.forEach((district, index) => {
-    // Extract data - handle multiple field names
-    const lat = getNumber(district, ['latitude', 'lat']);
-    const lng = getNumber(district, ['longitude', 'lng', 'lon']);
-    const pm10 = getNumber(district, ['dust_final', 'pm10', 'pm10_now', 'value']);
-    const name = district.district_name || district.name || `District ${index + 1}`;
-    
-    if (!lat || !lng) {
-      console.warn(`Skipping ${name}: Invalid coordinates`, district);
+  districts.forEach(d => {
+    const lat = d.latitude;
+    const lon = d.longitude;
+    const pm10 = d.pm10_now;
+
+    if (!lat || !lon) {
+      console.warn(`Missing coordinates for ${d.district_name}`);
       return;
     }
-    
-    // Add to statistics
-    if (pm10 > 0) {
-      sumNow += pm10;
-      countNow++;
-    }
-    
-    // Determine color based on PM10
-    const color = getColorForPM10(pm10);
-    const radius = Math.min(Math.max(pm10 / 20, 5), 15);
-    
-    // Create marker
-    L.circleMarker([lat, lng], {
-      radius: radius,
-      color: color,
+
+    const color = getColor(pm10);
+
+    L.circleMarker([lat, lon], {
+      radius: getRadius(pm10),
+      color,
       fillColor: color,
       fillOpacity: 0.8,
       weight: 1
     })
-    .addTo(mapNow)
-    .bindTooltip(`
-      <div style="min-width: 200px;">
-        <strong>${name}</strong><br>
-        PM10: <b>${pm10.toFixed(1)} µg/m³</b><br>
-        ${district.province_name ? `Province: ${district.province_name}<br>` : ''}
-        AQI: <span style="color: ${color}"><b>${getAQILabel(pm10)}</b></span>
-      </div>
-    `);
+      .addTo(map)
+      .bindPopup(`
+        <div style="min-width: 200px;">
+          <strong>${d.district_name}</strong><br>
+          Province: ${d.province_name}<br>
+          PM10: ${Math.round(pm10)} µg/m³<br>
+          Status: ${getAQILevel(pm10)}
+        </div>
+      `)
+      .on('click', () => openDistrict(d));
   });
-  
-  // Update current average
-  const avgNow = countNow > 0 ? (sumNow / countNow).toFixed(1) : '0.0';
-  document.getElementById('avg-now').textContent = avgNow;
-  
-  debugLog(`Current map: ${countNow} markers, average: ${avgNow}`);
 }
 
-function renderRiskMap() {
-  debugLog(`Rendering risk map with ${alertData.length} markers...`);
-  
-  // Clear existing markers
-  mapRisk.eachLayer(layer => {
-    if (layer instanceof L.CircleMarker || layer instanceof L.Marker) {
-      mapRisk.removeLayer(layer);
-    }
-  });
-  
-  if (alertData.length === 0) {
-    debugLog('No alert data to display');
+function renderList(filter = '') {
+  const list = document.getElementById('district-list');
+  list.innerHTML = '';
+
+  // Filter districts based on search
+  const filteredDistricts = districts.filter(d =>
+    d.district_name.toLowerCase().includes(filter.toLowerCase()) ||
+    d.province_name.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  if (filteredDistricts.length === 0) {
+    const li = document.createElement('li');
+    li.innerHTML = '<span style="width: 100%; text-align: center;">No districts found</span>';
+    list.appendChild(li);
     return;
   }
-  
-  // Process and sort data
-  const processedAlerts = alertData.map(district => {
-    // Extract 24h PM10 from your data structure
-    let pm24h = 0;
-    
-    // Try the alert value first (this is the 24h mean)
-    if (district.alert && district.alert.value) {
-      pm24h = district.alert.value;
-    }
-    // Try the nested pm10.mean_24h
-    else if (district.pm10 && district.pm10.mean_24h) {
-      pm24h = district.pm10.mean_24h;
-    }
-    
-    // Extract coordinates
-    const lat = district.latitude;
-    const lng = district.longitude;
-    const name = district.district_name;
-    
-    return {
-      ...district,
-      pm24h: Number(pm24h) || 0,
-      lat: lat,
-      lng: lng,
-      name: name
-    };
-  });
-  
-  // Filter out invalid entries
-  const validAlerts = processedAlerts.filter(d => 
-    d.pm24h > 0 && d.lat && d.lng && d.name
-  );
-  
-  // Sort by 24h value (highest risk first)
-  const sortedAlerts = validAlerts.sort((a, b) => b.pm24h - a.pm24h);
-  
-  debugLog(`Found ${sortedAlerts.length} valid districts with 24h data`);
-  console.log('Top 5 districts by 24h PM10:', sortedAlerts.slice(0, 5));
-  
-  // Update risk list (top 5)
-  const riskList = document.getElementById('risk-list');
-  riskList.innerHTML = '';
-  
-  sortedAlerts.slice(0, 5).forEach((district, index) => {
+
+  // Determine how many districts to show
+  const districtsToShow = showAllDistricts ? filteredDistricts : filteredDistricts.slice(0, MAX_VISIBLE_DISTRICTS);
+
+  districtsToShow.forEach(d => {
     const li = document.createElement('li');
-    const color = getColorForPM10(district.pm24h);
-    
+    li.style.borderLeftColor = getColor(d.pm10_now);
+    li.style.borderLeftWidth = '5px';
+    li.style.borderLeftStyle = 'solid';
+    li.style.cursor = 'pointer';
+    li.style.transition = 'background-color 0.2s';
+
     li.innerHTML = `
-      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-        <span style="background: ${color}; width: 12px; height: 12px; border-radius: 50%;"></span>
-        <strong>${index + 1}. ${district.name}</strong>
+      <div style="flex: 1;">
+        <div style="font-weight: 500; margin-bottom: 2px;">${d.district_name}</div>
+        <div style="font-size: 0.8em; color: #666;">${d.province_name}</div>
       </div>
-      <div style="font-size: 0.9em; color: #475569;">
-        24h mean: <strong>${district.pm24h.toFixed(1)}</strong> µg/m³
-      </div>
-      <div style="font-size: 0.8em; color: #64748b; margin-top: 2px;">
-        ${getHealthAdvice(district.pm24h)}
+      <div style="text-align: right;">
+        <div style="font-weight: 600; font-size: 1.1em;">${Math.round(d.pm10_now)}</div>
+        <div style="font-size: 0.7em; color: #666;">µg/m³</div>
       </div>
     `;
-    riskList.appendChild(li);
+
+    li.onclick = () => openDistrict(d);
+    
+    // Add hover effect
+    li.onmouseenter = () => {
+      li.style.backgroundColor = '#edf2f7';
+    };
+    li.onmouseleave = () => {
+      li.style.backgroundColor = '#f8fafc';
+    };
+    
+    list.appendChild(li);
   });
-  
-  // Add markers to risk map
-  sortedAlerts.forEach(district => {
-    const color = getColorForPM10(district.pm24h);
-    const radius = Math.min(Math.max(district.pm24h / 25, 6), 20);
-    
-    // Create marker
-    L.circleMarker([district.lat, district.lng], {
-      radius: radius,
-      color: color,
-      fillColor: color,
-      fillOpacity: 0.7,
-      weight: 1
-    })
-    .addTo(mapRisk)
-    .bindTooltip(`
-      <div style="min-width: 200px;">
-        <strong>${district.name}</strong><br>
-        24h mean: <b>${district.pm24h.toFixed(1)} µg/m³</b><br>
-        ${district.province_name ? `Province: ${district.province_name}<br>` : ''}
-        Alert Level: <span style="color: ${color}; text-transform: capitalize;"><b>${district.alert?.level?.replace('_', ' ') || getAQILabel(district.pm24h)}</b></span>
-      </div>
-    `);
-  });
-  
-  debugLog(`Risk map rendered with ${sortedAlerts.length} markers`);
-  
-  // Force map refresh
-  setTimeout(() => {
-    mapRisk.invalidateSize();
-  }, 100);
+
+  // Update "View all districts" button text
+  updateViewAllButton(filteredDistricts.length);
 }
 
-// Add this to main.js after the maps are initialized
-function testRiskMap() {
-  // Check if map container exists and has proper dimensions
-  const riskMapDiv = document.getElementById('map-risk');
-  console.log('Risk map container:', riskMapDiv);
-  console.log('Risk map dimensions:', riskMapDiv?.offsetWidth, 'x', riskMapDiv?.offsetHeight);
-  
-  // Add a test marker
-  if (mapRisk) {
-    L.marker([33.0, 44.0])
-      .addTo(mapRisk)
-      .bindTooltip('Test marker - Risk map is working!')
-      .openTooltip();
-    
-    console.log('Test marker added to risk map');
-  }
+function setupViewAllButton() {
+  const viewAllBtn = document.querySelector('.view-all');
+  viewAllBtn.onclick = () => {
+    showAllDistricts = !showAllDistricts;
+    renderList(document.getElementById('search').value);
+  };
 }
 
-// Call it after initialization
-setTimeout(testRiskMap, 1000);
-function updateStatistics() {
-  // Update 3-hour average if available
-  if (alertData.length > 0) {
-    let sum3h = 0, count3h = 0;
-    
-    alertData.forEach(district => {
-      let pm3h = 0;
-      if (district.pm10 && district.pm10.mean_3h) {
-        pm3h = district.pm10.mean_3h;
-      } else if (district.pm10 && district.pm10.mean_6h) {
-        pm3h = district.pm10.mean_6h;
-      } else if (district.mean_3h) {
-        pm3h = district.mean_3h;
-      }
-      
-      if (pm3h > 0) {
-        sum3h += pm3h;
-        count3h++;
-      }
-    });
-    
-    const avg3h = count3h > 0 ? (sum3h / count3h).toFixed(1) : '0.0';
-    document.getElementById('avg-3h').textContent = avg3h;
-  }
+function updateViewAllButton(totalFilteredCount) {
+  const viewAllBtn = document.querySelector('.view-all');
   
-  // Update timestamp
-  const now = new Date();
-  document.getElementById('last-update').textContent = 
-    `Last update: ${now.toLocaleDateString()} ${now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
-}
-
-// Helper functions
-function getNumber(obj, keys) {
-  for (const key of keys) {
-    if (obj[key] !== undefined && obj[key] !== null) {
-      const num = Number(obj[key]);
-      if (!isNaN(num)) return num;
+  if (totalFilteredCount <= MAX_VISIBLE_DISTRICTS) {
+    viewAllBtn.style.display = 'none';
+  } else {
+    viewAllBtn.style.display = 'block';
+    if (showAllDistricts) {
+      viewAllBtn.innerHTML = `Show top ${MAX_VISIBLE_DISTRICTS} districts only ↑`;
+    } else {
+      const remaining = totalFilteredCount - MAX_VISIBLE_DISTRICTS;
+      viewAllBtn.innerHTML = `View all ${totalFilteredCount} districts (${remaining} more) →`;
     }
   }
-  return 0;
 }
 
-function getColorForPM10(pm10) {
-  if (pm10 <= 50) return '#2ecc71';      // Green
-  if (pm10 <= 100) return '#f1c40f';     // Yellow
-  if (pm10 <= 150) return '#e67e22';     // Orange
-  if (pm10 <= 300) return '#e74c3c';     // Red
-  return '#8e44ad';                      // Purple
+document.getElementById('search').addEventListener('input', e => {
+  renderList(e.target.value);
+});
+
+function openDistrict(d) {
+  // Fit the map to the district with some zoom
+  map.setView([d.latitude, d.longitude], 10);
+  
+  // Open the popup for this district
+  map.eachLayer(layer => {
+    if (layer.getPopup && layer.getPopup()) {
+      const popup = layer.getPopup();
+      if (popup.getContent().includes(d.district_name)) {
+        layer.openPopup();
+      }
+    }
+  });
 }
 
-function getAQILabel(pm10) {
+function getColor(pm10) {
+  if (pm10 <= 50) return '#2ecc71';
+  if (pm10 <= 100) return '#f1c40f';
+  if (pm10 <= 150) return '#e67e22';
+  if (pm10 <= 300) return '#e74c3c';
+  return '#8e44ad';
+}
+
+function getRadius(pm10) {
+  // Scale radius based on PM10 value (min 5, max 15)
+  const baseRadius = 5;
+  const scaleFactor = 10;
+  const scaledRadius = baseRadius + (pm10 / 300) * scaleFactor;
+  return Math.min(Math.max(scaledRadius, 5), 15);
+}
+
+function getAQILevel(pm10) {
   if (pm10 <= 50) return 'Good';
   if (pm10 <= 100) return 'Moderate';
   if (pm10 <= 150) return 'Unhealthy';
   if (pm10 <= 300) return 'Very Unhealthy';
   return 'Hazardous';
 }
-
-function getHealthAdvice(pm10) {
-  if (pm10 <= 50) return '✅ Good air quality';
-  if (pm10 <= 100) return '⚠️ Sensitive groups should limit outdoor exertion';
-  if (pm10 <= 150) return '🚫 Avoid prolonged outdoor activities';
-  if (pm10 <= 300) return '🚫 Stay indoors with air purifier if possible';
-  return '🚫🚫 Avoid all outdoor activities';
-}
-
-
-
-// Debug commands for console
-window.showData = function() {
-  console.log('=== CURRENT DATA ===');
-  console.log('Length:', nowData.length);
-  console.log('First 3 items:', nowData.slice(0, 3));
-  
-  console.log('=== ALERT DATA ===');
-  console.log('Length:', alertData.length);
-  console.log('First 3 items:', alertData.slice(0, 3));
-};
-
-window.testMaps = function() {
-  // Add test markers to verify maps work
-  L.marker([33.5, 44.5])
-    .addTo(mapNow)
-    .bindTooltip('Test marker 1')
-    .openTooltip();
-  
-  L.marker([32.5, 43.5])
-    .addTo(mapRisk)
-    .bindTooltip('Test marker 2')
-    .openTooltip();
-  
-  console.log('Test markers added to both maps');
-};

@@ -2,84 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Iraq Air Quality – PM10 Monitor</title>
+  <title>Iraq Air Quality – PM10</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Leaflet -->
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <header>
-    <h1>Iraq Air Quality Monitor</h1>
-    <p>Real-time PM10 concentration & 24-hour health risk</p>
-  </header>
+<header>
+  <h1>Iraq Air Quality Monitor</h1>
+  <p>Live PM10 concentration by district</p>
+</header>
 
-  <main>
-    <!-- Debug Panel (temporary) -->
-    <div id="debug-panel" style="background: #ffebee; padding: 10px; margin: 10px; border-radius: 5px;">
-      <strong>Debug Info:</strong> 
-      <span id="debug-status">Loading...</span>
+<main class="layout">
+  <!-- MAP -->
+  <section class="map-wrapper">
+    <div id="map"></div>
+
+    <!-- AQI BAR OVERLAY -->
+    <div class="aqi-bar">
+      <span class="good">Good</span>
+      <span class="moderate">Moderate</span>
+      <span class="unhealthy">Unhealthy</span>
+      <span class="very">Very Unhealthy</span>
+      <span class="hazardous">Hazardous</span>
     </div>
+  </section>
 
-    <!-- Current PM10 Map -->
-    <section class="map-section">
-      <h2>Current PM10 Concentration (µg/m³)</h2>
-      <div id="map-now" class="map-container"></div>
-      <div class="legend">
-        <h4>PM10 AQI</h4>
-        <div><span class="box green"></span> 0–50 Good</div>
-        <div><span class="box yellow"></span> 50–100 Moderate</div>
-        <div><span class="box orange"></span> 100–150 Unhealthy</div>
-        <div><span class="box red"></span> 150–300 Very Unhealthy</div>
-        <div><span class="box purple"></span> >300 Hazardous</div>
-      </div>
-    </section>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <input
+      type="text"
+      id="search"
+      placeholder="Search district..."
+    />
 
-    <!-- 24-Hour Risk -->
-    <section class="risk-section">
-      <h2>Risk Map</h2>
-      <div class="map-container" id="map-risk"></div>
-      
-      <div class="risk-container">
-        <div class="risk-list" id="risk-list"></div>
-      </div>
-    </section>
+    <ul id="district-list"></ul>
 
+    <div class="view-all">View all districts →</div>
+  </aside>
+</main>
 
-    <!-- Statistics -->
-    <section class="stats-section">
-      <h2>Air Quality Statistics</h2>
-      <div class="stats-container">
-        <div class="stat-card">
-          <h3>Current Average</h3>
-          <div class="stat-value" id="avg-now">--</div>
-          <p>µg/m³</p>
-        </div>
-        <div class="stat-card">
-          <h3>3-Hour Average</h3>
-          <div class="stat-value" id="avg-3h">--</div>
-          <p>µg/m³</p>
-        </div>
-        <div class="stat-card">
-          <h3>24-Hour Average</h3>
-          <div class="stat-value" id="avg-24h">--</div>
-          <p>µg/m³</p>
-        </div>
-      </div>
-      <p class="update-time" id="last-update">Last update: --</p>
-    </section>
-  </main>
+<footer>
+  Data source: Numerical dust forecast · Updated hourly
+</footer>
 
-  <footer>
-    <p>Data source: Numerical dust forecast · Updated hourly</p>
-  </footer>
-
-  <!-- JavaScript -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="js/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
