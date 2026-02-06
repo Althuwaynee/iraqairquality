@@ -218,6 +218,16 @@ footer {
 /* ===============================
    Mobile
    =============================== */
+.map-wrapper {
+  position: relative;
+  height: 720px;   /* desktop */
+}
+
+@media (max-width: 900px) {
+  .map-wrapper {
+    height: 70vh;  /* stable height on mobile */
+  }
+}
 
 
 @media (max-width: 900px) {
