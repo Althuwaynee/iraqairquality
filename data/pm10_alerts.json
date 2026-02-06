@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-02-06T17:06:28.483215Z",
-    "reference_time": "2026-02-06T18:00:00Z",
+    "generated_at": "2026-02-06T19:59:35.944645Z",
+    "reference_time": "2026-02-06T21:00:00Z",
     "rolling_windows_hours": [
       6,
       12,
@@ -20,32 +20,32 @@
       "latitude": 33.22284294208515,
       "longitude": 44.079107812464066,
       "pm10": {
-        "now": 54.1248015513884,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 59.6531534564711,
+        "now": 72.59419744460644,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 60.85082175062982,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 56.721144859645065,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 61.321621884497176,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 47.992876800230746,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 53.28894750456794,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 50,
-        "level": "good",
+        "value": 60,
+        "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 47.992876800230746
+        "pm10_mean_24h": 53.28894750456794
       },
       "alert": {
-        "level": "good",
+        "level": "moderate",
         "based_on": "AQI",
-        "value": 50
+        "value": 60
       }
     },
     {
@@ -55,32 +55,32 @@
       "latitude": 30.322295164959556,
       "longitude": 48.00084412853525,
       "pm10": {
-        "now": 39.75467386393211,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 38.58489128797737,
+        "now": 39.207935224611,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 37.06515719581956,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 48.225384316624215,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 41.48442045355962,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 56.904943023052155,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 53.16984348711032,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 37,
+        "value": 36,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 56.904943023052155
+        "pm10_mean_24h": 53.16984348711032
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 37
+        "value": 36
       }
     },
     {
@@ -90,32 +90,32 @@
       "latitude": 32.36105076371928,
       "longitude": 45.48407746387027,
       "pm10": {
-        "now": 45.83679668389983,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 58.02875809087221,
+        "now": 50.60186904582662,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 51.4996517258112,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 58.79750406063355,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 56.87775326674375,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 53.61878100904884,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 53.963627977896515,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 43,
+        "value": 47,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 53.61878100904884
+        "pm10_mean_24h": 53.963627977896515
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 43
+        "value": 47
       }
     },
     {
@@ -125,32 +125,32 @@
       "latitude": 32.826949654777835,
       "longitude": 45.04891490509748,
       "pm10": {
-        "now": 60.65784905819619,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 54.07741915155824,
+        "now": 60.04838673804396,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 51.82645134265979,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 54.21372030861755,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 52.29587080559586,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 57.26015953704377,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 55.23019129176592,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 54,
+        "value": 53,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 57.26015953704377
+        "pm10_mean_24h": 55.23019129176592
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 54
+        "value": 53
       }
     },
     {
@@ -160,32 +160,32 @@
       "latitude": 33.01018592191133,
       "longitude": 45.874173303288195,
       "pm10": {
-        "now": 22.640985727155876,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 31.396425337350482,
+        "now": 30.99478245875735,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 28.454743938028923,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 35.573623388323526,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 33.39216247677558,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 46.197926753086634,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 42.84344309964966,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 21,
+        "value": 29,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 46.197926753086634
+        "pm10_mean_24h": 42.84344309964966
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 21
+        "value": 29
       }
     },
     {
@@ -195,32 +195,32 @@
       "latitude": 30.09346407757131,
       "longitude": 48.21259266486124,
       "pm10": {
-        "now": 40.41084580473135,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 38.71446107297514,
+        "now": 33.12407936688052,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 34.136948601577124,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 44.88841768877306,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 39.071323356214926,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 55.219472953789946,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 49.79337399597691,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 37,
+        "value": 31,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 55.219472953789946
+        "pm10_mean_24h": 49.79337399597691
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 37
+        "value": 31
       }
     },
     {
@@ -230,32 +230,32 @@
       "latitude": 31.01278159959984,
       "longitude": 47.27969021111455,
       "pm10": {
-        "now": 77.5957137625507,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 51.149237932759654,
+        "now": 115.2997138340072,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 61.415523640239996,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 56.41268558362242,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 59.029771335167595,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 53.17822063457219,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 56.33286563291106,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 62,
+        "value": 81,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 53.17822063457219
+        "pm10_mean_24h": 56.33286563291106
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 62
+        "value": 81
       }
     },
     {
@@ -265,32 +265,32 @@
       "latitude": 30.951507845907454,
       "longitude": 47.504821845711334,
       "pm10": {
-        "now": 94.599954096169,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 56.21556990917895,
+        "now": 103.62070887464859,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 58.516858475865604,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 60.573235187865954,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 55.9495950684616,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 63.337426321393046,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 61.48858978967213,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 71,
+        "value": 75,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 63.337426321393046
+        "pm10_mean_24h": 61.48858978967213
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 71
+        "value": 75
       }
     },
     {
@@ -300,32 +300,32 @@
       "latitude": 30.140320747885756,
       "longitude": 47.051652263129796,
       "pm10": {
-        "now": 305.48089672025424,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 170.51269952057035,
+        "now": 269.92904496094434,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 187.75419117438662,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 135.03397883243503,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 152.60486907282245,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 104.44750788542032,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 114.92073948138916,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 176,
+        "value": 158,
         "level": "unhealthy",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 104.44750788542032
+        "pm10_mean_24h": 114.92073948138916
       },
       "alert": {
         "level": "unhealthy",
         "based_on": "AQI",
-        "value": 176
+        "value": 158
       }
     },
     {
@@ -335,32 +335,32 @@
       "latitude": 30.58488009735456,
       "longitude": 47.60895459396477,
       "pm10": {
-        "now": 52.26302565974713,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 42.75434188658238,
+        "now": 45.99999999999999,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 38.77194206854193,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 51.38948176523767,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 43.55789914467509,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 59.18120925087814,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 54.98923748887416,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 48,
+        "value": 43,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 59.18120925087814
+        "pm10_mean_24h": 54.98923748887416
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 48
+        "value": 43
       }
     },
     {
@@ -370,32 +370,32 @@
       "latitude": 30.733716653568777,
       "longitude": 47.89427749118113,
       "pm10": {
-        "now": 54.576631071164215,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 43.50178517147791,
+        "now": 43.93300885481654,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 37.4067510958373,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 50.00235642635086,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 42.80128532346409,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 57.13883298005879,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 52.13273708464796,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 51,
-        "level": "moderate",
+        "value": 41,
+        "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 57.13883298005879
+        "pm10_mean_24h": 52.13273708464796
       },
       "alert": {
-        "level": "moderate",
+        "level": "good",
         "based_on": "AQI",
-        "value": 51
+        "value": 41
       }
     },
     {
@@ -405,32 +405,32 @@
       "latitude": 31.211217356548065,
       "longitude": 45.59095280222517,
       "pm10": {
-        "now": 230.68888299663504,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 244.54345702868844,
+        "now": 212.3864593397795,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 265.1973812168948,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 191.66593489077633,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 244.35782692301595,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 127.16959744897423,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 157.80228620183152,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 139,
+        "value": 129,
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 127.16959744897423
+        "pm10_mean_24h": 157.80228620183152
       },
       "alert": {
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "AQI",
-        "value": 139
+        "value": 129
       }
     },
     {
@@ -440,17 +440,17 @@
       "latitude": 30.037772528935243,
       "longitude": 45.34324916086535,
       "pm10": {
-        "now": 650.1145546798684,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 575.4037684293725,
+        "now": 665.5588305017858,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 645.5479912939245,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 437.73591324419294,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 559.7280193807325,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 273.8875393865782,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 348.1254570375692,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
         "value": 501,
@@ -460,7 +460,7 @@
       "government_compliance": {
         "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 273.8875393865782
+        "pm10_mean_24h": 348.1254570375692
       },
       "alert": {
         "level": "beyond_index",
@@ -475,32 +475,32 @@
       "latitude": 31.22628548408288,
       "longitude": 45.26107498099238,
       "pm10": {
-        "now": 315.58376126750204,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 292.74206652320805,
+        "now": 415.3239946273242,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 359.0685515619914,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 217.24523991392485,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 309.67092081630966,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 142.19496813724658,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 193.1469965114062,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 181,
-        "level": "unhealthy",
+        "value": 287,
+        "level": "very_unhealthy",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 142.19496813724658
+        "pm10_mean_24h": 193.1469965114062
       },
       "alert": {
-        "level": "unhealthy",
+        "level": "very_unhealthy",
         "based_on": "AQI",
-        "value": 181
+        "value": 287
       }
     },
     {
@@ -510,32 +510,32 @@
       "latitude": 33.105313260379475,
       "longitude": 43.777410959201084,
       "pm10": {
-        "now": 100.99071619060514,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 105.35481165109881,
+        "now": 118.39644524164073,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 108.70171413744868,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 84.87541675917154,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 99.85043660484635,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 58.60078907292507,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 69.1129642987819,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 74,
+        "value": 82,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 58.60078907292507
+        "pm10_mean_24h": 69.1129642987819
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 74
+        "value": 82
       }
     },
     {
@@ -545,32 +545,32 @@
       "latitude": 31.49777407467573,
       "longitude": 45.295419354379,
       "pm10": {
-        "now": 200.01674031428635,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 196.18636262747304,
+        "now": 283.53822458736335,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 238.51815603974424,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 152.5307535437366,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 209.49870346055,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 105.23507732810077,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 136.81866341568775,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 123,
-        "level": "unhealthy_for_sensitive_groups",
+        "value": 165,
+        "level": "unhealthy",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 105.23507732810077
+        "pm10_mean_24h": 136.81866341568775
       },
       "alert": {
-        "level": "unhealthy_for_sensitive_groups",
+        "level": "unhealthy",
         "based_on": "AQI",
-        "value": 123
+        "value": 165
       }
     },
     {
@@ -580,32 +580,32 @@
       "latitude": 32.05638201510581,
       "longitude": 44.93432548754941,
       "pm10": {
-        "now": 125.22876370466129,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 117.0638502259812,
+        "now": 123.93134257972146,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 115.95539717847203,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 92.06730006596835,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 103.34076459876994,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 65.44881809513588,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 73.38087409516714,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 86,
+        "value": 85,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 65.44881809513588
+        "pm10_mean_24h": 73.38087409516714
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 86
+        "value": 85
       }
     },
     {
@@ -615,32 +615,32 @@
       "latitude": 31.933401279365494,
       "longitude": 45.41428409276566,
       "pm10": {
-        "now": 72.60892504321717,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 86.76950133302539,
+        "now": 120.58353908608784,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 97.3413274922197,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 79.11941339979212,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 92.87428006914745,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 62.3315571685609,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 71.67000350415256,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 60,
+        "value": 84,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 62.3315571685609
+        "pm10_mean_24h": 71.67000350415256
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 60
+        "value": 84
       }
     },
     {
@@ -650,32 +650,32 @@
       "latitude": 31.568054071632826,
       "longitude": 44.83318162808363,
       "pm10": {
-        "now": 193.80644484571255,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 192.55064971745333,
+        "now": 264.9928521810338,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 227.2739473926991,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 144.624927757673,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 192.23931258675947,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 98.28827829869213,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 125.79525569632887,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 120,
-        "level": "unhealthy_for_sensitive_groups",
+        "value": 156,
+        "level": "unhealthy",
         "based_on": "pm10_now"
       },
       "government_compliance": {
-        "status": "WITHIN_LIMIT",
+        "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 98.28827829869213
+        "pm10_mean_24h": 125.79525569632887
       },
       "alert": {
-        "level": "unhealthy_for_sensitive_groups",
+        "level": "unhealthy",
         "based_on": "AQI",
-        "value": 120
+        "value": 156
       }
     },
     {
@@ -685,32 +685,32 @@
       "latitude": 31.77676313071312,
       "longitude": 44.59017146056126,
       "pm10": {
-        "now": 153.70523249732196,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 169.07197723887882,
+        "now": 190.27605963696718,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 184.55352261476216,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 128.94937165024538,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 159.8155044071523,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 88.82689537480769,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 107.06760946153793,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 100,
-        "level": "moderate",
+        "value": 118,
+        "level": "unhealthy_for_sensitive_groups",
         "based_on": "pm10_now"
       },
       "government_compliance": {
-        "status": "WITHIN_LIMIT",
+        "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 88.82689537480769
+        "pm10_mean_24h": 107.06760946153793
       },
       "alert": {
-        "level": "moderate",
+        "level": "unhealthy_for_sensitive_groups",
         "based_on": "AQI",
-        "value": 100
+        "value": 118
       }
     },
     {
@@ -720,32 +720,32 @@
       "latitude": 32.05113981282575,
       "longitude": 44.44017246858249,
       "pm10": {
-        "now": 246.00689707437897,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 219.78468146335067,
+        "now": 192.43934902440716,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 215.29931227592024,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 157.35049307317522,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 180.9897452679697,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 101.84767937730102,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 116.07991277078784,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 146,
+        "value": 119,
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 101.84767937730102
+        "pm10_mean_24h": 116.07991277078784
       },
       "alert": {
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "AQI",
-        "value": 146
+        "value": 119
       }
     },
     {
@@ -755,32 +755,32 @@
       "latitude": 31.79653011163293,
       "longitude": 44.41160823199626,
       "pm10": {
-        "now": 172.95162294970285,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 210.35858901576046,
+        "now": 191.20733659434046,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 229.1513413511932,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 150.36874166983063,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 189.5542819126054,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 100.35152045466651,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 123.55675290126561,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 110,
+        "value": 119,
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 100.35152045466651
+        "pm10_mean_24h": 123.55675290126561
       },
       "alert": {
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "AQI",
-        "value": 110
+        "value": 119
       }
     },
     {
@@ -790,32 +790,32 @@
       "latitude": 31.021296483611717,
       "longitude": 43.71875238029147,
       "pm10": {
-        "now": 357.7583945984743,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 389.3583534246016,
+        "now": 437.96517044341147,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 375.4779418123776,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 305.25047835525385,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 365.0008268102848,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 195.18438602308578,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 233.31096413259937,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 205,
-        "level": "very_unhealthy",
+        "value": 317,
+        "level": "hazardous",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 195.18438602308578
+        "pm10_mean_24h": 233.31096413259937
       },
       "alert": {
-        "level": "very_unhealthy",
+        "level": "hazardous",
         "based_on": "AQI",
-        "value": 205
+        "value": 317
       }
     },
     {
@@ -825,262 +825,17 @@
       "latitude": 36.09412336633159,
       "longitude": 43.979899284467095,
       "pm10": {
-        "now": 10.78813582409851,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 13.916384380885376,
+        "now": 8.836440747229554,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 11.339548161125775,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 13.259491613157433,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 13.359491613157436,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 11.21289416893462,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 10.857662752128185,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 10,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 11.21289416893462
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 10
-      }
-    },
-    {
-      "district_id": 29,
-      "district_name": "Choman",
-      "province_name": "Arbil",
-      "latitude": 36.62157561582655,
-      "longitude": 44.836960413670944,
-      "pm10": {
-        "now": 9.503833373915812,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 8.18901585755588,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 8.111876164967203,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 5.896585187221078,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 9,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 5.896585187221078
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 9
-      }
-    },
-    {
-      "district_id": 3,
-      "district_name": "Al Haditha",
-      "province_name": "Al-Anbar",
-      "latitude": 34.27452147741327,
-      "longitude": 42.34318442112082,
-      "pm10": {
-        "now": 132.20008558595399,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 86.69806942249356,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 67.82942938534346,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 43.804117811634995,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 89,
-        "level": "moderate",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 43.804117811634995
-      },
-      "alert": {
-        "level": "moderate",
-        "based_on": "AQI",
-        "value": 89
-      }
-    },
-    {
-      "district_id": 30,
-      "district_name": "Koisnjaq",
-      "province_name": "Arbil",
-      "latitude": 36.02310426460116,
-      "longitude": 44.483131387922455,
-      "pm10": {
-        "now": 7.30535957400612,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 10.496630495786619,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 11.181194041875642,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 9.294076062284024,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 6,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 9.294076062284024
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 6
-      }
-    },
-    {
-      "district_id": 31,
-      "district_name": "Makhmur",
-      "province_name": "Arbil",
-      "latitude": 35.8020605658091,
-      "longitude": 43.594919062925335,
-      "pm10": {
-        "now": 16.950694294459023,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 18.24037029037815,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 17.488444348453775,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 16.491779447146477,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 16,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 16.491779447146477
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 16
-      }
-    },
-    {
-      "district_id": 32,
-      "district_name": "Mergasur",
-      "province_name": "Arbil",
-      "latitude": 36.98379036535986,
-      "longitude": 44.17261192442923,
-      "pm10": {
-        "now": 5.720528651401577,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 7.39735674299211,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 7.0532510127117956,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 5.099237181023298,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 6,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 5.099237181023298
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 6
-      }
-    },
-    {
-      "district_id": 33,
-      "district_name": "Shaqlawa",
-      "province_name": "Arbil",
-      "latitude": 36.42382582668836,
-      "longitude": 44.20208455950038,
-      "pm10": {
-        "now": 7.424361774294922,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 10.809234129153907,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 11.278978838871875,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 9.54341444663842,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 6,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 9.54341444663842
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 6
-      }
-    },
-    {
-      "district_id": 34,
-      "district_name": "Soran",
-      "province_name": "Arbil",
-      "latitude": 36.808070484282545,
-      "longitude": 44.58797960447272,
-      "pm10": {
-        "now": 9.094566906457363,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 8.100603677060294,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 7.880482941648235,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 5.757617602811733,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
         "value": 8,
@@ -1090,12 +845,257 @@
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 5.757617602811733
+        "pm10_mean_24h": 10.857662752128185
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
         "value": 8
+      }
+    },
+    {
+      "district_id": 29,
+      "district_name": "Choman",
+      "province_name": "Arbil",
+      "latitude": 36.62157561582655,
+      "longitude": 44.836960413670944,
+      "pm10": {
+        "now": 17.79502390808126,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 11.431674636027088,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 10.370880946583455,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 7.669416386926796,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 17,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 7.669416386926796
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 17
+      }
+    },
+    {
+      "district_id": 3,
+      "district_name": "Al Haditha",
+      "province_name": "Al-Anbar",
+      "latitude": 34.27452147741327,
+      "longitude": 42.34318442112082,
+      "pm10": {
+        "now": 111.6765335190838,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 67.69313599628498,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 67.0882453630534,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 44.524319144547235,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 79,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 44.524319144547235
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 79
+      }
+    },
+    {
+      "district_id": 30,
+      "district_name": "Koisnjaq",
+      "province_name": "Arbil",
+      "latitude": 36.02310426460116,
+      "longitude": 44.483131387922455,
+      "pm10": {
+        "now": 9.157734043323135,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 9.357937588447166,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 11.605359574006119,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 9.540839611022209,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 8,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 9.540839611022209
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 8
+      }
+    },
+    {
+      "district_id": 31,
+      "district_name": "Makhmur",
+      "province_name": "Arbil",
+      "latitude": 35.8020605658091,
+      "longitude": 43.594919062925335,
+      "pm10": {
+        "now": 11.811249730026239,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 15.221110871134435,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 16.612944240464266,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 15.96086771336413,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 11,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 15.96086771336413
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 11
+      }
+    },
+    {
+      "district_id": 32,
+      "district_name": "Mergasur",
+      "province_name": "Arbil",
+      "latitude": 36.98379036535986,
+      "longitude": 44.17261192442923,
+      "pm10": {
+        "now": 11.543700559811043,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 8.426490449532807,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 8.517885394393689,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 6.079954155166711,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 11,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 6.079954155166711
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 11
+      }
+    },
+    {
+      "district_id": 33,
+      "district_name": "Shaqlawa",
+      "province_name": "Arbil",
+      "latitude": 36.42382582668836,
+      "longitude": 44.20208455950038,
+      "pm10": {
+        "now": 8.460510580564064,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 9.398035494670964,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 11.63225965818211,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 9.60683025296398,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 7,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 9.60683025296398
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 7
+      }
+    },
+    {
+      "district_id": 34,
+      "district_name": "Soran",
+      "province_name": "Arbil",
+      "latitude": 36.808070484282545,
+      "longitude": 44.58797960447272,
+      "pm10": {
+        "now": 17.18913381291473,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 11.162642152931383,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 10.118913381291474,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 7.44183571590995,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 16,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 7.44183571590995
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 16
       }
     },
     {
@@ -1105,32 +1105,32 @@
       "latitude": 35.338345566641394,
       "longitude": 44.89128976375739,
       "pm10": {
-        "now": 9.908282394895307,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 13.18765717682001,
+        "now": 14.823751308451781,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 13.020990510153345,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 15.674469960317898,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 15.70828239489531,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 16.635184815570508,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 15.99798282025507,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 9,
+        "value": 14,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 16.635184815570508
+        "pm10_mean_24h": 15.99798282025507
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 9
+        "value": 14
       }
     },
     {
@@ -1140,32 +1140,32 @@
       "latitude": 35.18624281956737,
       "longitude": 45.63370933688703,
       "pm10": {
-        "now": 8.343784013603358,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 10.385405328798877,
+        "now": 11.499999999999998,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 10.666666666666664,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 10.449945578234622,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 11.366630385489747,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 10.461298865769463,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 10.590660828278082,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 7,
+        "value": 10,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 10.461298865769463
+        "pm10_mean_24h": 10.590660828278082
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 7
+        "value": 10
       }
     },
     {
@@ -1175,32 +1175,32 @@
       "latitude": 35.909791337834704,
       "longitude": 45.040271627253254,
       "pm10": {
-        "now": 8.163111985184322,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 10.496445318517656,
+        "now": 11.11229600493856,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 9.452321327571681,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 11.74680078666589,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 11.614178389629027,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 10.52710973012403,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 10.661533581692987,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 7,
+        "value": 10,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 10.52710973012403
+        "pm10_mean_24h": 10.661533581692987
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 7
+        "value": 10
       }
     },
     {
@@ -1210,402 +1210,17 @@
       "latitude": 35.19889656704979,
       "longitude": 45.91233718388822,
       "pm10": {
-        "now": 8.102110133062027,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 9.637026066191881,
+        "now": 12.992087001017396,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 10.799296622312658,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 9.642954186286838,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 10.981160573184116,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 9.724881701435734,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 10.119358463516683,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 7,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 9.724881701435734
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 7
-      }
-    },
-    {
-      "district_id": 39,
-      "district_name": "Kalar",
-      "province_name": "As-Sulaymaniyah",
-      "latitude": 34.88576413332841,
-      "longitude": 45.27184707332049,
-      "pm10": {
-        "now": 14.00513434893041,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 16.08718409503114,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 17.2409015061664,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 18.912089147677822,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 13,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 18.912089147677822
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 13
-      }
-    },
-    {
-      "district_id": 4,
-      "district_name": "Al Qa'im",
-      "province_name": "Al-Anbar",
-      "latitude": 34.23773850679376,
-      "longitude": 41.05757223341616,
-      "pm10": {
-        "now": 513.249701855423,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 546.382085608469,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 493.70975224797047,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 296.1316940180823,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 409,
-        "level": "hazardous",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "EXCEEDS_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 296.1316940180823
-      },
-      "alert": {
-        "level": "hazardous",
-        "based_on": "AQI",
-        "value": 409
-      }
-    },
-    {
-      "district_id": 40,
-      "district_name": "Penjwin",
-      "province_name": "As-Sulaymaniyah",
-      "latitude": 35.70007100609606,
-      "longitude": 45.99337603708975,
-      "pm10": {
-        "now": 5.78819355818424,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 6.92939785272808,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 7.978008609335109,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 6.983490592892075,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 6,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 6.983490592892075
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 6
-      }
-    },
-    {
-      "district_id": 41,
-      "district_name": "Pshdar",
-      "province_name": "As-Sulaymaniyah",
-      "latitude": 36.260580461317225,
-      "longitude": 45.11872985685647,
-      "pm10": {
-        "now": 6.056524849769668,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 8.298557982795893,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 9.467829819723601,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 6.985066246069048,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 6,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 6.985066246069048
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 6
-      }
-    },
-    {
-      "district_id": 42,
-      "district_name": "Rania",
-      "province_name": "As-Sulaymaniyah",
-      "latitude": 36.23643102292312,
-      "longitude": 44.74764456144559,
-      "pm10": {
-        "now": 6.502803206424279,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 9.335736081697,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 10.002723114812156,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 7.224551033545789,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 6,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 7.224551033545789
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 6
-      }
-    },
-    {
-      "district_id": 43,
-      "district_name": "Sharbazher",
-      "province_name": "As-Sulaymaniyah",
-      "latitude": 35.713649396902575,
-      "longitude": 45.56328675629061,
-      "pm10": {
-        "now": 6.633366601238048,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 7.744588605364876,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 9.086813045447414,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 7.909692248474422,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 6,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 7.909692248474422
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 6
-      }
-    },
-    {
-      "district_id": 44,
-      "district_name": "Sulaymaniya",
-      "province_name": "As-Sulaymaniyah",
-      "latitude": 35.456944001285265,
-      "longitude": 45.29851493606642,
-      "pm10": {
-        "now": 6.999999999999999,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 10.32537501005537,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 11.956586123847911,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 12.149157791136664,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 6,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 12.149157791136664
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 6
-      }
-    },
-    {
-      "district_id": 45,
-      "district_name": "Daquq",
-      "province_name": "At-Ta'mim",
-      "latitude": 35.13084985740137,
-      "longitude": 44.368064379349406,
-      "pm10": {
-        "now": 14.300723478599533,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 18.035021450065575,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 20.262315131518505,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 21.043818294939896,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 13,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 21.043818294939896
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 13
-      }
-    },
-    {
-      "district_id": 46,
-      "district_name": "Dibis",
-      "province_name": "At-Ta'mim",
-      "latitude": 35.67937289131292,
-      "longitude": 43.900415982001164,
-      "pm10": {
-        "now": 15.608161707321278,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 17.52435291057135,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 16.843264682928513,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 15.94432849433176,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 15,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 15.94432849433176
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 15
-      }
-    },
-    {
-      "district_id": 47,
-      "district_name": "Haweeja",
-      "province_name": "At-Ta'mim",
-      "latitude": 35.256724501356565,
-      "longitude": 43.70095842908063,
-      "pm10": {
-        "now": 19.095222239658078,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 21.24800232970794,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 22.388080571683723,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 21.92622350188417,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 18,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 21.92622350188417
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 18
-      }
-    },
-    {
-      "district_id": 48,
-      "district_name": "Kirkuk",
-      "province_name": "At-Ta'mim",
-      "latitude": 35.4864951510407,
-      "longitude": 44.239284367254385,
-      "pm10": {
-        "now": 12.884409334004111,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 16.440860800536623,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 17.470431307766738,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 18.223409167958888,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
         "value": 12,
@@ -1615,7 +1230,392 @@
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 18.223409167958888
+        "pm10_mean_24h": 10.119358463516683
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 12
+      }
+    },
+    {
+      "district_id": 39,
+      "district_name": "Kalar",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 34.88576413332841,
+      "longitude": 45.27184707332049,
+      "pm10": {
+        "now": 20.694238832971166,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 16.066457727300527,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 17.966286582336178,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 18.315692519213876,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 19,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 18.315692519213876
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 19
+      }
+    },
+    {
+      "district_id": 4,
+      "district_name": "Al Qa'im",
+      "province_name": "Al-Anbar",
+      "latitude": 34.23773850679376,
+      "longitude": 41.05757223341616,
+      "pm10": {
+        "now": 362.4328210317585,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 520.6837109831307,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 534.4196210643566,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 345.20922442511403,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 211,
+        "level": "very_unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 345.20922442511403
+      },
+      "alert": {
+        "level": "very_unhealthy",
+        "based_on": "AQI",
+        "value": 211
+      }
+    },
+    {
+      "district_id": 40,
+      "district_name": "Penjwin",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 35.70007100609606,
+      "longitude": 45.99337603708975,
+      "pm10": {
+        "now": 10.686344069692932,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 8.720293899190034,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 8.794907525575434,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 7.907616864691047,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 10,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 7.907616864691047
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 10
+      }
+    },
+    {
+      "district_id": 41,
+      "district_name": "Pshdar",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 36.260580461317225,
+      "longitude": 45.11872985685647,
+      "pm10": {
+        "now": 10.05652484976967,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 8.260874749616114,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 9.646964609401138,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 7.922043813548017,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 9,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 7.922043813548017
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 9
+      }
+    },
+    {
+      "district_id": 42,
+      "district_name": "Rania",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 36.23643102292312,
+      "longitude": 44.74764456144559,
+      "pm10": {
+        "now": 10.5,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 9.000934402141427,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 10.801681923854566,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 8.18707884116094,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 9,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 8.18707884116094
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 9
+      }
+    },
+    {
+      "district_id": 43,
+      "district_name": "Sharbazher",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 35.713649396902575,
+      "longitude": 45.56328675629061,
+      "pm10": {
+        "now": 10.033466404952193,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 8.388944335396747,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 9.260139725199803,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 8.525113790542798,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 9,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 8.525113790542798
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 9
+      }
+    },
+    {
+      "district_id": 44,
+      "district_name": "Sulaymaniya",
+      "province_name": "As-Sulaymaniyah",
+      "latitude": 35.456944001285265,
+      "longitude": 45.29851493606642,
+      "pm10": {
+        "now": 11.5,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 10.102268529691152,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 12.122722235629382,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 11.909522233823079,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 11,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 11.909522233823079
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 11
+      }
+    },
+    {
+      "district_id": 45,
+      "district_name": "Daquq",
+      "province_name": "At-Ta'mim",
+      "latitude": 35.13084985740137,
+      "longitude": 44.368064379349406,
+      "pm10": {
+        "now": 17.304340871597194,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 16.61895768223185,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 19.70742365330843,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 20.558916890409208,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 16,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 20.558916890409208
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 16
+      }
+    },
+    {
+      "district_id": 46,
+      "district_name": "Dibis",
+      "province_name": "At-Ta'mim",
+      "latitude": 35.67937289131292,
+      "longitude": 43.900415982001164,
+      "pm10": {
+        "now": 10.643264682928512,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 14.11353673983922,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 15.768122043903535,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 15.280612974138027,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 10,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 15.280612974138027
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 10
+      }
+    },
+    {
+      "district_id": 47,
+      "district_name": "Haweeja",
+      "province_name": "At-Ta'mim",
+      "latitude": 35.256724501356565,
+      "longitude": 43.70095842908063,
+      "pm10": {
+        "now": 18.041659729850405,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 19.396814826438717,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 21.18570001569227,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 22.149747098266104,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 17,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 22.149747098266104
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 17
+      }
+    },
+    {
+      "district_id": 48,
+      "district_name": "Kirkuk",
+      "province_name": "At-Ta'mim",
+      "latitude": 35.4864951510407,
+      "longitude": 44.239284367254385,
+      "pm10": {
+        "now": 12.599464268410689,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 14.179212445338814,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 16.915054934406577,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 17.38412052940616,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 12,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 17.38412052940616
       },
       "alert": {
         "level": "good",
@@ -1630,32 +1630,32 @@
       "latitude": 33.05982072936117,
       "longitude": 44.3981231333268,
       "pm10": {
-        "now": 64.7957579950514,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 63.30071858911024,
+        "now": 71.07265050565859,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 62.969006224070164,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 58.78043115346615,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 62.46195211492318,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 49.26936150277569,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 53.609910995715495,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 56,
+        "value": 59,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 49.26936150277569
+        "pm10_mean_24h": 53.609910995715495
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 56
+        "value": 59
       }
     },
     {
@@ -1665,32 +1665,32 @@
       "latitude": 34.270706612798,
       "longitude": 41.81234282035886,
       "pm10": {
-        "now": 182.90074994284558,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 364.1115780098392,
+        "now": 164.34578743998782,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 232.78819897367518,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 300.4785622285164,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 308.38069721822865,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 173.42294591673067,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 181.15840748650422,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 115,
+        "value": 105,
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 173.42294591673067
+        "pm10_mean_24h": 181.15840748650422
       },
       "alert": {
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "AQI",
-        "value": 115
+        "value": 105
       }
     },
     {
@@ -1700,32 +1700,32 @@
       "latitude": 32.29782668302269,
       "longitude": 44.73249203228896,
       "pm10": {
-        "now": 112.56254596006717,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 94.68113816383664,
+        "now": 87.29396601231558,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 85.06046109473158,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 74.95371598955032,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 76.67998529277853,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 55.580854465479206,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 57.98279759370473,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 80,
+        "value": 67,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 55.580854465479206
+        "pm10_mean_24h": 57.98279759370473
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 80
+        "value": 67
       }
     },
     {
@@ -1735,32 +1735,32 @@
       "latitude": 32.29579786117719,
       "longitude": 44.36278554719627,
       "pm10": {
-        "now": 270.59143295825766,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 206.75781564864155,
+        "now": 183.58612042406517,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 188.57190900819566,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 150.17315976401298,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 161.98736671408017,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 97.3038160066918,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 104.6543405348658,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 159,
-        "level": "unhealthy",
+        "value": 115,
+        "level": "unhealthy_for_sensitive_groups",
         "based_on": "pm10_now"
       },
       "government_compliance": {
-        "status": "WITHIN_LIMIT",
+        "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 97.3038160066918
+        "pm10_mean_24h": 104.6543405348658
       },
       "alert": {
-        "level": "unhealthy",
+        "level": "unhealthy_for_sensitive_groups",
         "based_on": "AQI",
-        "value": 159
+        "value": 115
       }
     },
     {
@@ -1770,32 +1770,32 @@
       "latitude": 32.61447742592752,
       "longitude": 44.61763573199641,
       "pm10": {
-        "now": 116.53660346572272,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 85.01093156674138,
+        "now": 105.9720362888968,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 88.9020500168653,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 72.01291343536518,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 75.40828689096872,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 59.573631621151016,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 64.25356730687082,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 82,
+        "value": 76,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 59.573631621151016
+        "pm10_mean_24h": 64.25356730687082
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 82
+        "value": 76
       }
     },
     {
@@ -1805,32 +1805,32 @@
       "latitude": 32.698928485478795,
       "longitude": 44.205794780192214,
       "pm10": {
-        "now": 110.92529143900951,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 95.7338156390867,
+        "now": 92.74772275138812,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 94.66511726078961,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 78.37405629841268,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 85.99028001141127,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 56.175723181999935,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 62.36410489651783,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 79,
+        "value": 70,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 56.175723181999935
+        "pm10_mean_24h": 62.36410489651783
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 79
+        "value": 70
       }
     },
     {
@@ -1840,17 +1840,17 @@
       "latitude": 32.99181024914125,
       "longitude": 44.16474154022843,
       "pm10": {
-        "now": 77.34701921413743,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 72.13308759513376,
+        "now": 76.85021519380929,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 71.7017620458152,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 64.07985255708026,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 68.89696381931174,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 49.776512764110784,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 54.8910749834183,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
         "value": 62,
@@ -1860,7 +1860,7 @@
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 49.776512764110784
+        "pm10_mean_24h": 54.8910749834183
       },
       "alert": {
         "level": "moderate",
@@ -1875,32 +1875,32 @@
       "latitude": 33.32684542790276,
       "longitude": 44.38813481412715,
       "pm10": {
-        "now": 45.080741488710544,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 49.51582069351067,
+        "now": 63.81587461866545,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 50.91880237949503,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 50.88003235509287,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 53.20496393532371,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 45.81590647623423,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 49.85559048051133,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 42,
-        "level": "good",
+        "value": 55,
+        "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 45.81590647623423
+        "pm10_mean_24h": 49.85559048051133
       },
       "alert": {
-        "level": "good",
+        "level": "moderate",
         "based_on": "AQI",
-        "value": 42
+        "value": 55
       }
     },
     {
@@ -1910,32 +1910,32 @@
       "latitude": 31.07190576959777,
       "longitude": 46.20454230615835,
       "pm10": {
-        "now": 155.00804265487153,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 136.74130472082535,
+        "now": 195.17580736696303,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 155.28984659920715,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 110.75327051248323,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 134.08287049137198,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 84.44615643343208,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 98.62504893898306,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 101,
+        "value": 121,
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 84.44615643343208
+        "pm10_mean_24h": 98.62504893898306
       },
       "alert": {
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "AQI",
-        "value": 101
+        "value": 121
       }
     },
     {
@@ -1945,32 +1945,32 @@
       "latitude": 30.846690799784025,
       "longitude": 46.93749421705343,
       "pm10": {
-        "now": 225.81550903233747,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 140.23567883546306,
+        "now": 228.97712946903886,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 159.35782001909294,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 112.31137026703368,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 129.06259012958043,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 90.19823513745283,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 100.60689441469192,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 136,
+        "value": 138,
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "pm10_now"
       },
       "government_compliance": {
-        "status": "WITHIN_LIMIT",
+        "status": "EXCEEDS_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 90.19823513745283
+        "pm10_mean_24h": 100.60689441469192
       },
       "alert": {
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "AQI",
-        "value": 136
+        "value": 138
       }
     },
     {
@@ -1980,32 +1980,32 @@
       "latitude": 31.691869488271003,
       "longitude": 46.040599148346814,
       "pm10": {
-        "now": 50.32515304888229,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 63.889592676003666,
+        "now": 102.69326584917883,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 73.04909938410128,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 60.99204145812045,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 72.13499060309763,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 55.8883099127314,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 62.36049147798216,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 46,
-        "level": "good",
+        "value": 75,
+        "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 55.8883099127314
+        "pm10_mean_24h": 62.36049147798216
       },
       "alert": {
-        "level": "good",
+        "level": "moderate",
         "based_on": "AQI",
-        "value": 46
+        "value": 75
       }
     },
     {
@@ -2015,822 +2015,17 @@
       "latitude": 31.370076781406347,
       "longitude": 46.27437951895734,
       "pm10": {
-        "now": 120.7258503295994,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 110.8991002764382,
+        "now": 162.50743031684073,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 126.53389363387127,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 90.50156418117334,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 108.3629642237023,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 72.49377475792383,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 82.94283483430652,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 84,
-        "level": "moderate",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 72.49377475792383
-      },
-      "alert": {
-        "level": "moderate",
-        "based_on": "AQI",
-        "value": 84
-      }
-    },
-    {
-      "district_id": 6,
-      "district_name": "Ar Ramadi",
-      "province_name": "Al-Anbar",
-      "latitude": 33.33897119558584,
-      "longitude": 43.146785912239935,
-      "pm10": {
-        "now": 123.19945652706807,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 142.72346454991666,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 105.58598670928288,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 68.92174429756305,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 85,
-        "level": "moderate",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 68.92174429756305
-      },
-      "alert": {
-        "level": "moderate",
-        "based_on": "AQI",
-        "value": 85
-      }
-    },
-    {
-      "district_id": 60,
-      "district_name": "Suq ash Shuyukh",
-      "province_name": "Dhi-Qar",
-      "latitude": 30.848459053271625,
-      "longitude": 46.502609996009,
-      "pm10": {
-        "now": 251.97141280818735,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 183.99243816190446,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 145.36171148648253,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 105.49285127765961,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 149,
-        "level": "unhealthy_for_sensitive_groups",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "EXCEEDS_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 105.49285127765961
-      },
-      "alert": {
-        "level": "unhealthy_for_sensitive_groups",
-        "based_on": "AQI",
-        "value": 149
-      }
-    },
-    {
-      "district_id": 61,
-      "district_name": "Amedi",
-      "province_name": "Dihok",
-      "latitude": 37.09417753408788,
-      "longitude": 43.51527763533789,
-      "pm10": {
-        "now": 5.8597354095425205,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 5.862596109211339,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 5.654389416381701,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 4.372536701869195,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 6,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 4.372536701869195
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 6
-      }
-    },
-    {
-      "district_id": 62,
-      "district_name": "Dahuk",
-      "province_name": "Dihok",
-      "latitude": 36.93310710113811,
-      "longitude": 43.04661068219852,
-      "pm10": {
-        "now": 7.144014878824635,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 10.72312268353027,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 9.762676585883089,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 7.717759608556018,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 6,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 7.717759608556018
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 6
-      }
-    },
-    {
-      "district_id": 63,
-      "district_name": "Simele",
-      "province_name": "Dihok",
-      "latitude": 36.89815044166084,
-      "longitude": 42.71167707762135,
-      "pm10": {
-        "now": 8.370014086625773,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 11.195438383548066,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 10.212517608282216,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 9.20087320431206,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 7,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 9.20087320431206
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 7
-      }
-    },
-    {
-      "district_id": 64,
-      "district_name": "Zakho",
-      "province_name": "Dihok",
-      "latitude": 37.19439779935592,
-      "longitude": 42.84944778352461,
-      "pm10": {
-        "now": 4.963228463894046,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 5.963228463894045,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 5.970582771115237,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 4.930389320029724,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 5,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 4.930389320029724
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 5
-      }
-    },
-    {
-      "district_id": 65,
-      "district_name": "Al Khalis",
-      "province_name": "Diyala",
-      "latitude": 34.04353273578466,
-      "longitude": 44.52330952743335,
-      "pm10": {
-        "now": 33.38970818647476,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 30.539221830599363,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 34.169493243337925,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 34.673424463107025,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 31,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 34.673424463107025
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 31
-      }
-    },
-    {
-      "district_id": 66,
-      "district_name": "Al Miqdadiyah",
-      "province_name": "Diyala",
-      "latitude": 33.82225180806976,
-      "longitude": 44.77287411440991,
-      "pm10": {
-        "now": 39.287540462343046,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 37.86315304144245,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 43.51150255971301,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 44.843690225872905,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 36,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 44.843690225872905
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 36
-      }
-    },
-    {
-      "district_id": 67,
-      "district_name": "Ba`qubah",
-      "province_name": "Diyala",
-      "latitude": 33.54106113544986,
-      "longitude": 44.5166965637291,
-      "pm10": {
-        "now": 41.11273688420404,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 40.16338852330024,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 45.83528426104484,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 46.403784187130235,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 38,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 46.403784187130235
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 38
-      }
-    },
-    {
-      "district_id": 68,
-      "district_name": "Balad Ruz",
-      "province_name": "Diyala",
-      "latitude": 33.45921096533995,
-      "longitude": 45.230436441906626,
-      "pm10": {
-        "now": 38.63361342096072,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 35.31708681916336,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 40.69873947934309,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 49.03129928655364,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 36,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 49.03129928655364
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 36
-      }
-    },
-    {
-      "district_id": 69,
-      "district_name": "Khanaqin",
-      "province_name": "Diyala",
-      "latitude": 34.36150293342428,
-      "longitude": 45.28965167467581,
-      "pm10": {
-        "now": 15.0,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 17.138629553029585,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 21.563554636355036,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 28.35011350902748,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 14,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 28.35011350902748
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 14
-      }
-    },
-    {
-      "district_id": 7,
-      "district_name": "Ar Rutbah",
-      "province_name": "Al-Anbar",
-      "latitude": 32.44739391785713,
-      "longitude": 41.32672676898627,
-      "pm10": {
-        "now": 255.18704523696547,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 213.39690762402935,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 168.38173837375203,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 120.53086531659329,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 151,
-        "level": "unhealthy",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "EXCEEDS_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 120.53086531659329
-      },
-      "alert": {
-        "level": "unhealthy",
-        "based_on": "AQI",
-        "value": 151
-      }
-    },
-    {
-      "district_id": 70,
-      "district_name": "Kifri",
-      "province_name": "Diyala",
-      "latitude": 34.51834370904484,
-      "longitude": 44.837354344456614,
-      "pm10": {
-        "now": 22.89365999352748,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 22.70423803553523,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 26.070798467199676,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 27.488772507773447,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 21,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 27.488772507773447
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 21
-      }
-    },
-    {
-      "district_id": 71,
-      "district_name": "Ain Al Tamur",
-      "province_name": "Karbala'",
-      "latitude": 32.44144064559491,
-      "longitude": 43.51528113780361,
-      "pm10": {
-        "now": 347.26642082140177,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 324.31842061159284,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 253.30648435310832,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 158.6632252502762,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 197,
-        "level": "unhealthy",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "EXCEEDS_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 158.6632252502762
-      },
-      "alert": {
-        "level": "unhealthy",
-        "based_on": "AQI",
-        "value": 197
-      }
-    },
-    {
-      "district_id": 72,
-      "district_name": "Al Jadwal al Gharbi",
-      "province_name": "Karbala'",
-      "latitude": 32.43804041290849,
-      "longitude": 44.16832825952361,
-      "pm10": {
-        "now": 234.47725637374904,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 181.78304261411947,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 134.21402257338713,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 88.52619966144077,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 140,
-        "level": "unhealthy_for_sensitive_groups",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 88.52619966144077
-      },
-      "alert": {
-        "level": "unhealthy_for_sensitive_groups",
-        "based_on": "AQI",
-        "value": 140
-      }
-    },
-    {
-      "district_id": 73,
-      "district_name": "Karbala",
-      "province_name": "Karbala'",
-      "latitude": 32.426309916614414,
-      "longitude": 43.890249236730085,
-      "pm10": {
-        "now": 335.65503612760125,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 302.3914079062315,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 229.14028323729636,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 142.879082542689,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 191,
-        "level": "unhealthy",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "EXCEEDS_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 142.879082542689
-      },
-      "alert": {
-        "level": "unhealthy",
-        "based_on": "AQI",
-        "value": 191
-      }
-    },
-    {
-      "district_id": 74,
-      "district_name": "Al Amarah",
-      "province_name": "Maysan",
-      "latitude": 31.99405901142912,
-      "longitude": 47.157453294534136,
-      "pm10": {
-        "now": 15.562668490071964,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 24.34770897131901,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 28.81111870863318,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 37.66680092985043,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 15,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 37.66680092985043
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 15
-      }
-    },
-    {
-      "district_id": 75,
-      "district_name": "Al Kahla",
-      "province_name": "Maysan",
-      "latitude": 31.648353139934745,
-      "longitude": 47.55506738090843,
-      "pm10": {
-        "now": 13.933401946483324,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 23.16184783276727,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 30.029736361196278,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 35.05416893603442,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 13,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 35.05416893603442
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 13
-      }
-    },
-    {
-      "district_id": 76,
-      "district_name": "Al Miamona",
-      "province_name": "Maysan",
-      "latitude": 31.49408603401158,
-      "longitude": 46.83842736762396,
-      "pm10": {
-        "now": 40.14313406902788,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 41.687810818150915,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 45.89674616797553,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 46.10367634871859,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 37,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 46.10367634871859
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 37
-      }
-    },
-    {
-      "district_id": 77,
-      "district_name": "Al Mijar al Kabir",
-      "province_name": "Maysan",
-      "latitude": 31.4293978232381,
-      "longitude": 47.20354501217153,
-      "pm10": {
-        "now": 27.92494035328842,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 34.77870135246461,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 42.4097860391871,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 45.66925297312525,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 26,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 45.66925297312525
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 26
-      }
-    },
-    {
-      "district_id": 78,
-      "district_name": "Ali al Gharbi",
-      "province_name": "Maysan",
-      "latitude": 32.396088677477536,
-      "longitude": 46.72321440612597,
-      "pm10": {
-        "now": 24.211765683376115,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 29.75098116600609,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 33.8180402990752,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 42.68722908763688,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 22,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 42.68722908763688
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 22
-      }
-    },
-    {
-      "district_id": 79,
-      "district_name": "Qal`at Salih",
-      "province_name": "Maysan",
-      "latitude": 31.428508971329393,
-      "longitude": 47.512448178169265,
-      "pm10": {
-        "now": 29.368301690912414,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 35.76748417878954,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 42.8215941486396,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 45.32591649895386,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 27,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 45.32591649895386
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 27
-      }
-    },
-    {
-      "district_id": 8,
-      "district_name": "Hit",
-      "province_name": "Al-Anbar",
-      "latitude": 33.734816369757134,
-      "longitude": 42.68227852661513,
-      "pm10": {
-        "now": 164.16511536703646,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 172.45727549918172,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 126.3228423611566,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 77.39065636666622,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
         "value": 105,
@@ -2840,12 +2035,817 @@
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 77.39065636666622
+        "pm10_mean_24h": 82.94283483430652
       },
       "alert": {
         "level": "unhealthy_for_sensitive_groups",
         "based_on": "AQI",
         "value": 105
+      }
+    },
+    {
+      "district_id": 6,
+      "district_name": "Ar Ramadi",
+      "province_name": "Al-Anbar",
+      "latitude": 33.33897119558584,
+      "longitude": 43.146785912239935,
+      "pm10": {
+        "now": 107.51440481370915,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 107.00077916326997,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 115.82252955399267,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 76.33560123096032,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 77,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 76.33560123096032
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 77
+      }
+    },
+    {
+      "district_id": 60,
+      "district_name": "Suq ash Shuyukh",
+      "province_name": "Dhi-Qar",
+      "latitude": 30.848459053271625,
+      "longitude": 46.502609996009,
+      "pm10": {
+        "now": 265.57377347919777,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 208.2108077607348,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 176.14241968778566,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 124.94215688419519,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 156,
+        "level": "unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 124.94215688419519
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "AQI",
+        "value": 156
+      }
+    },
+    {
+      "district_id": 61,
+      "district_name": "Amedi",
+      "province_name": "Dihok",
+      "latitude": 37.09417753408788,
+      "longitude": 43.51527763533789,
+      "pm10": {
+        "now": 10.956105836182992,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 7.242684306030498,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 6.9824423344731965,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 5.22719251855115,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 10,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 5.22719251855115
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 10
+      }
+    },
+    {
+      "district_id": 62,
+      "district_name": "Dahuk",
+      "province_name": "Dihok",
+      "latitude": 36.93310710113811,
+      "longitude": 43.04661068219852,
+      "pm10": {
+        "now": 7.572007439412317,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 9.596009919216423,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 10.648275098000626,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 8.262517225243888,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 7,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 8.262517225243888
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 7
+      }
+    },
+    {
+      "district_id": 63,
+      "district_name": "Simele",
+      "province_name": "Dihok",
+      "latitude": 36.89815044166084,
+      "longitude": 42.71167707762135,
+      "pm10": {
+        "now": 8.893741195858892,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 10.360843898302662,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 11.054264438791416,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 9.370821368703615,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 8,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 9.370821368703615
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 8
+      }
+    },
+    {
+      "district_id": 64,
+      "district_name": "Zakho",
+      "province_name": "Dihok",
+      "latitude": 37.19439779935592,
+      "longitude": 42.84944778352461,
+      "pm10": {
+        "now": 11.036771536105952,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 7.79656179722738,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 7.5705827711152365,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 5.7362331092655845,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 10,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 5.7362331092655845
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 10
+      }
+    },
+    {
+      "district_id": 65,
+      "district_name": "Al Khalis",
+      "province_name": "Diyala",
+      "latitude": 34.04353273578466,
+      "longitude": 44.52330952743335,
+      "pm10": {
+        "now": 35.55514590676262,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 26.852944248633012,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 32.757726694158116,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 33.899909883264435,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 33,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 33.899909883264435
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 33
+      }
+    },
+    {
+      "district_id": 66,
+      "district_name": "Al Miqdadiyah",
+      "province_name": "Diyala",
+      "latitude": 33.82225180806976,
+      "longitude": 44.77287411440991,
+      "pm10": {
+        "now": 54.423324112073985,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 36.65601789141255,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 41.453994467244385,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 45.02795226192249,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 50,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 45.02795226192249
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 50
+      }
+    },
+    {
+      "district_id": 67,
+      "district_name": "Ba`qubah",
+      "province_name": "Diyala",
+      "latitude": 33.54106113544986,
+      "longitude": 44.5166965637291,
+      "pm10": {
+        "now": 55.00000000000001,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 39.150315845605384,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 44.33430081803492,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 47.079224377470325,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 51,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 47.079224377470325
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 51
+      }
+    },
+    {
+      "district_id": 68,
+      "district_name": "Balad Ruz",
+      "province_name": "Diyala",
+      "latitude": 33.45921096533995,
+      "longitude": 45.230436441906626,
+      "pm10": {
+        "now": 33.09285713383331,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 29.4478991532941,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 34.91663864527057,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 43.787781234605625,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 31,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 43.787781234605625
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 31
+      }
+    },
+    {
+      "district_id": 69,
+      "district_name": "Khanaqin",
+      "province_name": "Diyala",
+      "latitude": 34.36150293342428,
+      "longitude": 45.28965167467581,
+      "pm10": {
+        "now": 25.663554636355034,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 19.27570309090336,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 21.905610306810654,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 27.05349197283044,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 24,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 27.05349197283044
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 24
+      }
+    },
+    {
+      "district_id": 7,
+      "district_name": "Ar Rutbah",
+      "province_name": "Al-Anbar",
+      "latitude": 32.44739391785713,
+      "longitude": 41.32672676898627,
+      "pm10": {
+        "now": 191.41236950388267,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 203.145800380408,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 184.24624327785654,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 132.83528969455097,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 119,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 132.83528969455097
+      },
+      "alert": {
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 119
+      }
+    },
+    {
+      "district_id": 70,
+      "district_name": "Kifri",
+      "province_name": "Diyala",
+      "latitude": 34.51834370904484,
+      "longitude": 44.837354344456614,
+      "pm10": {
+        "now": 29.784132936988367,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 22.087834115235726,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 26.048893055891853,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 26.721854306822053,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 28,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 26.721854306822053
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 28
+      }
+    },
+    {
+      "district_id": 71,
+      "district_name": "Ain Al Tamur",
+      "province_name": "Karbala'",
+      "latitude": 32.44144064559491,
+      "longitude": 43.51528113780361,
+      "pm10": {
+        "now": 314.9182214193571,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 269.36846097456225,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 283.12104859291986,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 175.4848614852898,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 181,
+        "level": "unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 175.4848614852898
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "AQI",
+        "value": 181
+      }
+    },
+    {
+      "district_id": 72,
+      "district_name": "Al Jadwal al Gharbi",
+      "province_name": "Karbala'",
+      "latitude": 32.43804041290849,
+      "longitude": 44.16832825952361,
+      "pm10": {
+        "now": 163.49675295144849,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 168.06004615125872,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 145.48848882355958,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 95.80929722030709,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 105,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 95.80929722030709
+      },
+      "alert": {
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "AQI",
+        "value": 105
+      }
+    },
+    {
+      "district_id": 73,
+      "district_name": "Karbala",
+      "province_name": "Karbala'",
+      "latitude": 32.426309916614414,
+      "longitude": 43.890249236730085,
+      "pm10": {
+        "now": 341.0713899932449,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 278.4518190032667,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 267.44378377925875,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 164.36320365956823,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 194,
+        "level": "unhealthy",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "EXCEEDS_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 164.36320365956823
+      },
+      "alert": {
+        "level": "unhealthy",
+        "based_on": "AQI",
+        "value": 194
+      }
+    },
+    {
+      "district_id": 74,
+      "district_name": "Al Amarah",
+      "province_name": "Maysan",
+      "latitude": 31.99405901142912,
+      "longitude": 47.157453294534136,
+      "pm10": {
+        "now": 17.61556619208646,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 20.382524799136768,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 27.175741356316642,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 32.92194959042375,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 17,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 32.92194959042375
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 17
+      }
+    },
+    {
+      "district_id": 75,
+      "district_name": "Al Kahla",
+      "province_name": "Maysan",
+      "latitude": 31.648353139934745,
+      "longitude": 47.55506738090843,
+      "pm10": {
+        "now": 22.251935712368507,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 20.903802811587024,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 28.6615897377848,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 32.79241847249102,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 20,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 32.79241847249102
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 20
+      }
+    },
+    {
+      "district_id": 76,
+      "district_name": "Al Miamona",
+      "province_name": "Maysan",
+      "latitude": 31.49408603401158,
+      "longitude": 46.83842736762396,
+      "pm10": {
+        "now": 110.1058499896343,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 61.07176088283345,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 57.606101287513795,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 51.972491115464095,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 78,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 51.972491115464095
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 78
+      }
+    },
+    {
+      "district_id": 77,
+      "district_name": "Al Mijar al Kabir",
+      "province_name": "Maysan",
+      "latitude": 31.4293978232381,
+      "longitude": 47.20354501217153,
+      "pm10": {
+        "now": 63.29548603363978,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 41.28123476859344,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 46.534584007716525,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 46.62401480453637,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 55,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 46.62401480453637
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 55
+      }
+    },
+    {
+      "district_id": 78,
+      "district_name": "Ali al Gharbi",
+      "province_name": "Maysan",
+      "latitude": 32.396088677477536,
+      "longitude": 46.72321440612597,
+      "pm10": {
+        "now": 15.276470710422013,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 23.839869824097843,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 30.154510594062362,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 36.64361097130323,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 14,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 36.64361097130323
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 14
+      }
+    },
+    {
+      "district_id": 79,
+      "district_name": "Qal`at Salih",
+      "province_name": "Maysan",
+      "latitude": 31.428508971329393,
+      "longitude": 47.512448178169265,
+      "pm10": {
+        "now": 57.380564372755515,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 40.90429193864508,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 46.1102637200073,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 45.663940866422294,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 52,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 45.663940866422294
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 52
+      }
+    },
+    {
+      "district_id": 8,
+      "district_name": "Hit",
+      "province_name": "Al-Anbar",
+      "latitude": 33.734816369757134,
+      "longitude": 42.68227852661513,
+      "pm10": {
+        "now": 147.63804281202647,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 127.6142600268736,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 132.75547066218104,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 82.8105741954731,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 97,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 82.8105741954731
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 97
       }
     },
     {
@@ -2855,17 +2855,17 @@
       "latitude": 36.66346783449737,
       "longitude": 43.83002031016732,
       "pm10": {
-        "now": 6.508431253719423,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 9.341764587052756,
+        "now": 6.717899108736895,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 7.875270687269097,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 8.25758812834748,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 8.821271610224663,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 5.8474828442606395,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 6.235222239544775,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
         "value": 6,
@@ -2875,7 +2875,7 @@
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 5.8474828442606395
+        "pm10_mean_24h": 6.235222239544775
       },
       "alert": {
         "level": "good",
@@ -2890,32 +2890,32 @@
       "latitude": 35.62056584683228,
       "longitude": 41.681830678771604,
       "pm10": {
-        "now": 57.50181059109,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 50.258899282563725,
+        "now": 58.608824120297854,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 44.90373336751971,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 43.497217471832066,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 46.88061115820174,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 28.01357808153838,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 31.03081119661492,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 52,
+        "value": 53,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 28.01357808153838
+        "pm10_mean_24h": 31.03081119661492
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 52
+        "value": 53
       }
     },
     {
@@ -2925,32 +2925,32 @@
       "latitude": 36.29335231457684,
       "longitude": 43.409231571027405,
       "pm10": {
-        "now": 13.000000000000004,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 17.729130642281792,
+        "now": 10.31248456097791,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 14.697878069111445,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 14.993733017075703,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 15.906217578053614,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 12.142177507900824,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 12.067109017017028,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 12,
+        "value": 9,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 12.142177507900824
+        "pm10_mean_24h": 12.067109017017028
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 12
+        "value": 9
       }
     },
     {
@@ -2960,17 +2960,17 @@
       "latitude": 36.64229670129565,
       "longitude": 43.37599194906899,
       "pm10": {
-        "now": 6.0,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 9.679809715085568,
+        "now": 6.923238190876116,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 8.628635175669647,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 8.815771658102681,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 9.754362210803574,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 6.87474947354319,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 7.403900132821992,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
         "value": 6,
@@ -2980,7 +2980,7 @@
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 6.87474947354319
+        "pm10_mean_24h": 7.403900132821992
       },
       "alert": {
         "level": "good",
@@ -2995,32 +2995,32 @@
       "latitude": 35.419410363899516,
       "longitude": 42.44538995122619,
       "pm10": {
-        "now": 57.47900707634676,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 48.674379422716726,
+        "now": 67.42859335815791,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 48.560935764533035,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 44.85547044071827,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 48.86429667907895,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 29.466593200891776,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 33.59641939575708,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 52,
+        "value": 57,
         "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 29.466593200891776
+        "pm10_mean_24h": 33.59641939575708
       },
       "alert": {
         "level": "moderate",
         "based_on": "AQI",
-        "value": 52
+        "value": 57
       }
     },
     {
@@ -3030,32 +3030,32 @@
       "latitude": 36.07587527830808,
       "longitude": 42.98592624333245,
       "pm10": {
-        "now": 16.226953395035178,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 18.435579449586267,
+        "now": 12.382389480437187,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 16.780143364184255,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 16.006738348758795,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 17.106738348758796,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 13.315450162937191,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 13.35887370763813,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 15,
+        "value": 11,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 13.315450162937191
+        "pm10_mean_24h": 13.35887370763813
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 15
+        "value": 11
       }
     },
     {
@@ -3065,17 +3065,17 @@
       "latitude": 36.775989750235034,
       "longitude": 43.41230455135135,
       "pm10": {
-        "now": 6.000000000000001,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 9.642704186756156,
+        "now": 6.904685426711413,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 8.579161137897099,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 8.771245024107387,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 9.694993365476517,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 6.829489732264736,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 7.348302813669907,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
         "value": 6,
@@ -3085,7 +3085,7 @@
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 6.829489732264736
+        "pm10_mean_24h": 7.348302813669907
       },
       "alert": {
         "level": "good",
@@ -3100,32 +3100,32 @@
       "latitude": 36.295478427982616,
       "longitude": 41.89315428750927,
       "pm10": {
-        "now": 24.46077166451058,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 23.40615523686319,
+        "now": 31.441157496765868,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 26.535002259902683,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 21.665539713176873,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 24.631924641471088,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 16.5822059112481,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 18.993391358672746,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 22,
+        "value": 29,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 16.5822059112481
+        "pm10_mean_24h": 18.993391358672746
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 22
+        "value": 29
       }
     },
     {
@@ -3135,32 +3135,32 @@
       "latitude": 36.58683783797396,
       "longitude": 42.42180688184613,
       "pm10": {
-        "now": 14.28945999526356,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 15.575429774725402,
+        "now": 10.26315333175452,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 12.949117331438757,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 13.327362397915966,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 13.463153331754521,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 11.402754462670893,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 11.077054997119559,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 13,
+        "value": 9,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 11.402754462670893
+        "pm10_mean_24h": 11.077054997119559
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 13
+        "value": 9
       }
     },
     {
@@ -3170,17 +3170,17 @@
       "latitude": 36.59214605317314,
       "longitude": 43.06208705570715,
       "pm10": {
-        "now": 6.9898221859574,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 10.603195033522423,
+        "now": 7.4949110929786995,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 9.493214790638266,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 9.659881457304934,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 10.560899238709194,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 7.71746336691994,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 8.236759912478322,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
         "value": 6,
@@ -3190,7 +3190,7 @@
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 7.71746336691994
+        "pm10_mean_24h": 8.236759912478322
       },
       "alert": {
         "level": "good",
@@ -3205,32 +3205,32 @@
       "latitude": 33.35933808504119,
       "longitude": 44.17000854725623,
       "pm10": {
-        "now": 43.89652380836626,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 48.02856348492528,
+        "now": 60.827404754380694,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 47.79291269050278,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 49.8033952358959,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 51.33435713764818,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 45.04180605265284,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 48.61424173403498,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 41,
-        "level": "good",
+        "value": 54,
+        "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 45.04180605265284
+        "pm10_mean_24h": 48.61424173403498
       },
       "alert": {
-        "level": "good",
+        "level": "moderate",
         "based_on": "AQI",
-        "value": 41
+        "value": 54
       }
     },
     {
@@ -3240,32 +3240,32 @@
       "latitude": 33.567576470388715,
       "longitude": 44.23120815369178,
       "pm10": {
-        "now": 43.24941872508705,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 44.03808213803675,
+        "now": 56.621221713065765,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 43.37102795476144,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 48.573895577665375,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 48.42238426289168,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 44.97696166882721,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 47.84870068134074,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 40,
-        "level": "good",
+        "value": 52,
+        "level": "moderate",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 44.97696166882721
+        "pm10_mean_24h": 47.84870068134074
       },
       "alert": {
-        "level": "good",
+        "level": "moderate",
         "based_on": "AQI",
-        "value": 40
+        "value": 52
       }
     },
     {
@@ -3275,262 +3275,17 @@
       "latitude": 34.40288351578535,
       "longitude": 44.124870824825855,
       "pm10": {
-        "now": 30.378088453522466,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 30.93773066029775,
+        "now": 33.32895477845505,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 26.922228479584266,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 35.25948583666629,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 33.40509789574494,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 34.401099540316324,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 34.77661945192866,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 28,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 34.401099540316324
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 28
-      }
-    },
-    {
-      "district_id": 92,
-      "district_name": "Al Shirkat",
-      "province_name": "Sala ad-Din",
-      "latitude": 35.437079041085134,
-      "longitude": 43.12198982022632,
-      "pm10": {
-        "now": 24.51899240303309,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 25.31224176995251,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 26.319627149132582,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 22.624499851417035,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 23,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 22.624499851417035
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 23
-      }
-    },
-    {
-      "district_id": 93,
-      "district_name": "Balad",
-      "province_name": "Sala ad-Din",
-      "latitude": 33.827073019073126,
-      "longitude": 43.96109496433048,
-      "pm10": {
-        "now": 42.36096178223726,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 46.01471019769506,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 49.44198025730175,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 40.92559251819985,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 39,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 40.92559251819985
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 39
-      }
-    },
-    {
-      "district_id": 94,
-      "district_name": "Bayji",
-      "province_name": "Sala ad-Din",
-      "latitude": 34.81981751236421,
-      "longitude": 42.9906765324779,
-      "pm10": {
-        "now": 56.382044525118005,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 47.834654853807045,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 46.57497869147379,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 33.21333970775798,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 51,
-        "level": "moderate",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 33.21333970775798
-      },
-      "alert": {
-        "level": "moderate",
-        "based_on": "AQI",
-        "value": 51
-      }
-    },
-    {
-      "district_id": 95,
-      "district_name": "Samarra",
-      "province_name": "Sala ad-Din",
-      "latitude": 34.14255395182311,
-      "longitude": 43.469253323818855,
-      "pm10": {
-        "now": 43.96631816014245,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 50.140041153293545,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 50.34677752126506,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 38.15525276028911,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 41,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 38.15525276028911
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 41
-      }
-    },
-    {
-      "district_id": 96,
-      "district_name": "Tikrit",
-      "province_name": "Sala ad-Din",
-      "latitude": 34.6659931287577,
-      "longitude": 43.618385938906165,
-      "pm10": {
-        "now": 23.469084102200306,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 31.093935612333507,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 34.36266333885348,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 31.58901605441997,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 21,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 31.58901605441997
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 21
-      }
-    },
-    {
-      "district_id": 97,
-      "district_name": "Touz Hourmato",
-      "province_name": "Sala ad-Din",
-      "latitude": 34.784153602950724,
-      "longitude": 44.547033355815174,
-      "pm10": {
-        "now": 15.660757529501794,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 19.62530270651256,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 23.32530270651256,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 25.140038371637786,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
-      },
-      "aqi": {
-        "value": 15,
-        "level": "good",
-        "based_on": "pm10_now"
-      },
-      "government_compliance": {
-        "status": "WITHIN_LIMIT",
-        "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 25.140038371637786
-      },
-      "alert": {
-        "level": "good",
-        "based_on": "AQI",
-        "value": 15
-      }
-    },
-    {
-      "district_id": 98,
-      "district_name": "Al Hayy",
-      "province_name": "Wasit",
-      "latitude": 32.139078935764644,
-      "longitude": 45.94443905824454,
-      "pm10": {
-        "now": 34.17833028812148,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 44.25301850547796,
-        "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 48.00847167952973,
-        "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 51.568831672949315,
-        "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
         "value": 31,
@@ -3540,12 +3295,257 @@
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 51.568831672949315
+        "pm10_mean_24h": 34.77661945192866
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
         "value": 31
+      }
+    },
+    {
+      "district_id": 92,
+      "district_name": "Al Shirkat",
+      "province_name": "Sala ad-Din",
+      "latitude": 35.437079041085134,
+      "longitude": 43.12198982022632,
+      "pm10": {
+        "now": 19.639244302274815,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 22.75422331067134,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 25.53987904837431,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 23.222750967071292,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 19,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 23.222750967071292
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 19
+      }
+    },
+    {
+      "district_id": 93,
+      "district_name": "Balad",
+      "province_name": "Sala ad-Din",
+      "latitude": 33.827073019073126,
+      "longitude": 43.96109496433048,
+      "pm10": {
+        "now": 50.84625158454221,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 41.13413481853106,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 47.17219235644746,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 43.559747165616386,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 47,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 43.559747165616386
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 47
+      }
+    },
+    {
+      "district_id": 94,
+      "district_name": "Bayji",
+      "province_name": "Sala ad-Din",
+      "latitude": 34.81981751236421,
+      "longitude": 42.9906765324779,
+      "pm10": {
+        "now": 50.96743116758261,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 40.546728911074126,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 44.2989662425923,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 34.87637776585021,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 47,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 34.87637776585021
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 47
+      }
+    },
+    {
+      "district_id": 95,
+      "district_name": "Samarra",
+      "province_name": "Sala ad-Din",
+      "latitude": 34.14255395182311,
+      "longitude": 43.469253323818855,
+      "pm10": {
+        "now": 74.7213747459211,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 51.63089935007508,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 55.81030169882503,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 44.23342529055713,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 61,
+        "level": "moderate",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 44.23342529055713
+      },
+      "alert": {
+        "level": "moderate",
+        "based_on": "AQI",
+        "value": 61
+      }
+    },
+    {
+      "district_id": 96,
+      "district_name": "Tikrit",
+      "province_name": "Sala ad-Din",
+      "latitude": 34.6659931287577,
+      "longitude": 43.618385938906165,
+      "pm10": {
+        "now": 30.448077530689034,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 28.830030224570525,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 33.51890591436014,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 32.962843530703,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 28,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 32.962843530703
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 28
+      }
+    },
+    {
+      "district_id": 97,
+      "district_name": "Touz Hourmato",
+      "province_name": "Sala ad-Din",
+      "latitude": 34.784153602950724,
+      "longitude": 44.547033355815174,
+      "pm10": {
+        "now": 25.80378764750897,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 20.190706824009567,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 23.568090659309686,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 24.71856804322751,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 24,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 24.71856804322751
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 24
+      }
+    },
+    {
+      "district_id": 98,
+      "district_name": "Al Hayy",
+      "province_name": "Wasit",
+      "latitude": 32.139078935764644,
+      "longitude": 45.94443905824454,
+      "pm10": {
+        "now": 36.82166971187853,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 37.564149918001455,
+        "mean_6h_points": 3,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 44.75531018972322,
+        "mean_12h_points": 5,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 49.29295607860795,
+        "mean_24h_points": 9,
+        "mean_24h_start": "2026-02-05T21:00:00Z"
+      },
+      "aqi": {
+        "value": 34,
+        "level": "good",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 49.29295607860795
+      },
+      "alert": {
+        "level": "good",
+        "based_on": "AQI",
+        "value": 34
       }
     },
     {
@@ -3555,32 +3555,32 @@
       "latitude": 32.52238566305417,
       "longitude": 46.09669435212531,
       "pm10": {
-        "now": 23.05313045277054,
-        "timestamp": "2026-02-06T18:00:00Z",
-        "mean_6h": 27.906028999443844,
+        "now": 21.40617394075462,
+        "timestamp": "2026-02-06T21:00:00Z",
+        "mean_6h": 24.892318855974793,
         "mean_6h_points": 3,
-        "mean_6h_start": "2026-02-06T12:00:00Z",
-        "mean_12h": 33.68132175293739,
+        "mean_6h_start": "2026-02-06T15:00:00Z",
+        "mean_12h": 31.073095666855956,
         "mean_12h_points": 5,
-        "mean_12h_start": "2026-02-06T06:00:00Z",
-        "mean_24h": 39.168667166687044,
+        "mean_12h_start": "2026-02-06T09:00:00Z",
+        "mean_24h": 35.90130473810061,
         "mean_24h_points": 9,
-        "mean_24h_start": "2026-02-05T18:00:00Z"
+        "mean_24h_start": "2026-02-05T21:00:00Z"
       },
       "aqi": {
-        "value": 21,
+        "value": 19,
         "level": "good",
         "based_on": "pm10_now"
       },
       "government_compliance": {
         "status": "WITHIN_LIMIT",
         "limit_24h_ug_m3": 100,
-        "pm10_mean_24h": 39.168667166687044
+        "pm10_mean_24h": 35.90130473810061
       },
       "alert": {
         "level": "good",
         "based_on": "AQI",
-        "value": 21
+        "value": 19
       }
     }
   ]
