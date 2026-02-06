@@ -206,7 +206,7 @@ header p {
 }
 
 .leaflet-popup-content h4 {
-  margin: 2;
+  margin: 0;
 }
 
 /* ===============================
@@ -278,6 +278,17 @@ header p {
   border: none;
   border-top: 1px solid #e2e8f0;
   margin: 6px 0;
+}
+/* ===============================
+   Wider Leaflet popup
+   =============================== */
+
+.leaflet-popup-content-wrapper {
+  max-width: 380px;
+}
+
+.leaflet-popup-content {
+  width: 380px;
 }
 
 

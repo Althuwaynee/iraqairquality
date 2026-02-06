@@ -160,6 +160,12 @@ function buildDistrictPopup(d) {
       </div>
     `;
   }).join("");
+  const measurementTime = new Date(d.pm10.timestamp).toLocaleString("en-GB", {
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  });
 
 
   return `
@@ -169,7 +175,12 @@ function buildDistrictPopup(d) {
 
       <hr>
 
-      PM10 now: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
+      <div style="font-size:0.7rem; color:#475569; margin-bottom:4px;">
+        Measurement time: ${measurementTime}
+      </div>
+
+      PM10: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
+
       AQI: <b>${d.aqi.value}</b> (${d.aqi.level})<br>
       24h mean: ${d.pm10.mean_24h.toFixed(1)} µg/m³
 
