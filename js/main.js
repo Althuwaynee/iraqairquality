@@ -277,7 +277,7 @@ function buildDistrictPopup(d) {
       <hr>
 
       <div style="font-size:0.7rem; color:#475569; margin-bottom:4px;">
-        Measurement time: ${measurementTime}
+        Measurement time (Iraq local time): ${measurementTime}
       </div>
 
       PM10: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
@@ -287,7 +287,7 @@ function buildDistrictPopup(d) {
 
       <hr>
 
-      <strong>Forecast for 24 hours (Iraq local time)</strong>
+      <strong>Forecast for 24 hours </strong>
       <div style="font-size:0.7rem; color:#475569; margin-bottom:4px;">
         from ${forecastTitle}
       </div>
