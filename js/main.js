@@ -406,36 +406,7 @@ function getHealthAdvice(pm10) {
   return '🚫🚫 Avoid all outdoor activities';
 }
 
-// Test data fallback
-function createTestData() {
-  console.log('Creating test data...');
-  return [
-    { district_name: "Baghdad", latitude: 33.3152, longitude: 44.3661, dust_final: 150.5 },
-    { district_name: "Basra", latitude: 30.5, longitude: 47.8, dust_final: 85.3 },
-    { district_name: "Erbil", latitude: 36.19, longitude: 44.01, dust_final: 25.8 },
-    { district_name: "Mosul", latitude: 36.34, longitude: 43.13, dust_final: 280.2 },
-    { district_name: "Najaf", latitude: 32.03, longitude: 44.35, dust_final: 320.7 }
-  ];
-}
 
-function createTestAlertData() {
-  return [
-    {
-      district_name: "Najaf",
-      latitude: 32.03,
-      longitude: 44.35,
-      pm10: { mean_24h: 320.7, mean_3h: 280.2 },
-      alert: { level: "hazardous", value: 320.7 }
-    },
-    {
-      district_name: "Mosul", 
-      latitude: 36.34,
-      longitude: 43.13,
-      pm10: { mean_24h: 280.2, mean_3h: 250.1 },
-      alert: { level: "very_unhealthy", value: 280.2 }
-    }
-  ];
-}
 
 // Debug commands for console
 window.showData = function() {
