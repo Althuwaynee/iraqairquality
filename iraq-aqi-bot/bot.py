@@ -7,7 +7,34 @@ import time
 import sqlite3
 import requests
 from math import radians, cos, sin, asin, sqrt
+import logging
 
+# Add at the top after imports
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
+
+# Then modify your main() function:
+def main():
+    offset = 0
+    logger.info("🤖 Bot starting...")
+    print("🤖 Bot running...")  # Keep this too
+
+    while True:
+        try:
+            logger.debug("Checking for updates...")
+            updates = requests.get(
+                f"{API}/getUpdates",
+                params={"timeout": 30, "offset": offset}
+            ).json()
+
+            logger.debug(f"Got updates: {len(updates.get('result', []))}")
+            
+            for u in updates.get("result", []):
+                offset = u["update_id"] + 1
+                logger.info(f"Processing update: {u}")
 # =======================
 # CONFIG
 # =======================
