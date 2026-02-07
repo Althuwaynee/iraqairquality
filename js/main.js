@@ -376,3 +376,17 @@ function updateViewAllButton(total) {
     );
   };
 }
+// Mobile-friendly tooltip handling
+document.addEventListener("click", (e) => {
+  const icon = e.target.closest(".health-icon");
+
+  // Close all tooltips if click is outside
+  document.querySelectorAll(".health-icon.active").forEach(el => {
+    if (el !== icon) el.classList.remove("active");
+  });
+
+  if (!icon) return;
+
+  // Toggle tooltip on tap
+  icon.classList.toggle("active");
+});

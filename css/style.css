@@ -380,3 +380,21 @@ footer {
 .aqi-icon:hover {
   opacity: 1;
 }
+
+/* Desktop hover */
+@media (hover: hover) {
+  .health-icon:hover .tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile tap */
+.health-icon.active .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+.health-icon {
+  touch-action: manipulation;
+  user-select: none;
+}
