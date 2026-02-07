@@ -324,7 +324,7 @@ footer {
    =============================== */
 
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .layout {
     grid-template-columns: 1fr;
   }
@@ -338,26 +338,26 @@ footer {
     max-height: 420px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .aqi-bar {
     position: absolute;
     left: 10px;
     right: 10px;
-    bottom: 10px;
+    bottom: 1px;
     z-index: 1000;
     pointer-events: auto;
   }
 
 }
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .aqi-bar {
-    box-shadow: 0 -6px 20px rgba(0,0,0,0.25);
+    box-shadow: 1 -6px 20px rgba(0,0,0,0.25);
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .aqi-bar span {
-    padding: 4px;
+    padding: 1px;
     font-size: 0.65rem;
   }
 }
