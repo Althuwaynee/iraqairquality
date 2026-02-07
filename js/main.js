@@ -20,6 +20,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+/* ---------- Service Worker ---------- */
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js")
+      .then(reg => {
+        console.log("Service Worker registered", reg);
+      })
+      .catch(err => {
+        console.error("Service Worker registration failed", err);
+      });
+  });
+}
+
+
 /* ---------- Time helpers ---------- */
 function formatIraqTime(utcString, options = {}) {
   const d = new Date(utcString);
@@ -377,6 +392,26 @@ function updateViewAllButton(total) {
     );
   };
 }
+
+/* ---------- Notification Permission ---------- */
+function requestNotifications() {
+  if (!("Notification" in window)) {
+    alert("Notifications not supported on this browser.");
+    return;
+  }
+
+  Notification.requestPermission().then(permission => {
+    if (permission === "granted") {
+      console.log("Notifications enabled");
+      alert("Dust alerts enabled for your area 👍");
+    }
+  });
+}
+
+document.getElementById("enable-alerts")?.addEventListener("click", () => {
+  requestNotifications();
+});
+
 /* ---------- Mobile tooltip support for AQI icons ---------- */
 document.addEventListener("click", (e) => {
   const icon = e.target.closest(".aqi-icon");
