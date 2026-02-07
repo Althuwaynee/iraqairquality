@@ -292,9 +292,9 @@ function buildDistrictPopup(d) {
         Measurement time (Iraq local): ${measurementTime}
       </div>
 
-      PM10 now: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
+      Dust: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
       AQI: <b>${d.aqi.value}</b> (${d.aqi.level})<br>
-      24h mean: ${d.pm10.mean_24h.toFixed(1)} µg/m³
+      Dust (24h mean): ${d.pm10.mean_24h.toFixed(1)} µg/m³
 
       <hr>
 

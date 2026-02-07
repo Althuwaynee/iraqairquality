@@ -196,7 +196,7 @@ def handle_location(chat_id, lat, lon):
         chat_id,
         f"✅ تم ربط موقعك مع:\n<b>{nearest['district_name']}</b>\n\n"
         f"ستصلك التنبيهات عند تغيّر جودة الهواء 🌫️\n\n"
-        f"Use /current to check air quality now!"
+        f"Use الان to check air quality now!"
     )
 
 
@@ -208,7 +208,7 @@ def handle_status(chat_id):
     ).fetchone()
 
     if not row:
-        send_message(chat_id, "❌ لم يتم تسجيل موقعك بعد. Use /start to begin.")
+        send_message(chat_id, "❌ لم يتم تسجيل موقعك بعد. Use ابدا to begin.")
         return
 
     district_id, last_level, active, lat, lon, lang = row
@@ -231,7 +231,7 @@ def handle_status(chat_id):
             f"📈 آخر مستوى: <b>{last_level}</b>\n"
             f"🔔 الحالة: {status}\n"
             f"🌐 اللغة: {'عربي' if lang == 'ar' else 'إنجليزي'}\n\n"
-            f"استخدم /current للتحقق من جودة الهواء الآن"
+            f"استخدم الان للتحقق من جودة الهواء الآن"
         )
     else:
         message = (
@@ -242,7 +242,7 @@ def handle_status(chat_id):
             f"📈 Last level: <b>{last_level}</b>\n"
             f"🔔 Status: {status}\n"
             f"🌐 Language: {'Arabic' if lang == 'ar' else 'English'}\n\n"
-            f"Use /current to check air quality now"
+            f"Use الان to check air quality now"
         )
     
     send_message(chat_id, message)
@@ -253,7 +253,7 @@ def handle_stop(chat_id):
     cur.execute("UPDATE users SET active=0 WHERE chat_id=?", (chat_id,))
     db.commit()
     logger.info(f"User {chat_id} stopped alerts")
-    send_message(chat_id, "🔕 تم إيقاف التنبيهات. Use /resume to start again.")
+    send_message(chat_id, "🔕 تم تعطيل التنبيهات, اكتب -استئناف- لاعادة استلام التنبيهات")
 
 
 def handle_resume(chat_id):
@@ -297,7 +297,7 @@ def handle_current(chat_id):
     ).fetchone()
 
     if not row:
-        send_message(chat_id, "❌ Please share your location first with /start")
+        send_message(chat_id, "❌ Please share your location first with ابدا")
         return
 
     lat, lon, district_id, lang = row
@@ -373,14 +373,14 @@ def handle_help(chat_id):
     """Show help message with available commands."""
     help_text = (
         "<b>🤖 Iraq Air Quality Bot</b>\n\n"
-        "<b>Available Commands:</b>\n"
-        "/start - Share location and start bot\n"
-        "/current - Check current air quality\n"
-        "/status - Check your subscription status\n"
-        "/stop - Stop receiving alerts\n"
-        "/resume - Resume alerts\n"
-        "/lang - Switch language (AR/EN)\n"
-        "/help - Show this help message\n\n"
+        "<b>لسهولة الاستخدام, اكتب:</b>\n"
+        "ابدا - مشاركة الموقع وتفعيل الاشعارات\n"
+        "الان - فحص جودة الهواء الآن\n"
+        "وضعي - التحقق من حالة اشتراكك\n"
+        "توقف - إيقاف استلام التنبيهات\n"
+        "استئناف - استئناف استلام التنبيهات\n"
+        "لغة - تغيير اللغة  (AR/EN)\n"
+        "مساعدة - Show this help message\n\n"
         "📍 The bot will send automatic alerts when air quality changes."
     )
     send_message(chat_id, help_text)
@@ -535,23 +535,23 @@ def main():
                     text = msg["text"]
                     logger.info(f"Command from {chat_id}: {text}")
                     
-                    if text == "/start":
+                    if text == "ابدا":
                         handle_start(chat_id)
-                    elif text == "/status":
+                    elif text == "وضعي":
                         handle_status(chat_id)
-                    elif text == "/stop":
+                    elif text == "توقف":
                         handle_stop(chat_id)
-                    elif text == "/resume":
+                    elif text == "استئناف":
                         handle_resume(chat_id)
-                    elif text == "/lang":
+                    elif text == "لغة":
                         handle_lang(chat_id)
-                    elif text == "/current":
+                    elif text == "الان":
                         handle_current(chat_id)
-                    elif text == "/help":
+                    elif text == "مساعدة":
                         handle_help(chat_id)
                     elif text.startswith("/"):
                         # Unknown command
-                        send_message(chat_id, "❌ Unknown command. Use /help to see available commands.")
+                        send_message(chat_id, "❌ الامر غير مفهوم. اكتب -مساعدة- لعرض الاوامر المتاحة.")
             
             # Check for alerts
             check_alerts()
