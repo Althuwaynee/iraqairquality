@@ -1,0 +1,25 @@
+# Useful commands
+
+# Start the bot
+sudo systemctl start iraq-aqi-bot
+
+# Stop the bot
+sudo systemctl stop iraq-aqi-bot
+
+# Restart (useful after code changes)
+sudo systemctl restart iraq-aqi-bot
+
+# Check status (running, errors, etc.)
+sudo systemctl status iraq-aqi-bot
+
+# View recent logs
+sudo journalctl -u iraq-aqi-bot -n 50
+
+# Follow logs in real-time
+sudo journalctl -u iraq-aqi-bot -f
+
+# Enable auto-start on boot
+sudo systemctl enable iraq-aqi-bot
+
+# Disable auto-start on boot
+sudo systemctl disable iraq-aqi-bot
