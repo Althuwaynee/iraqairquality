@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-02-07T11:50:08.464809Z",
+    "generated_at": "2026-02-07T11:50:18.086210Z",
     "forecast_timestamp": "2026-02-07T12:00:00Z",
     "max_distance_km": 55.0,
     "method": "constrained_idw"
