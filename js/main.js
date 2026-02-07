@@ -14,29 +14,33 @@ document.addEventListener("DOMContentLoaded", () => {
   initMap();
   loadPM10Alerts();
 
-  // Search bar listener (FIX #1)
   const search = document.getElementById("search");
   search.addEventListener("input", () => {
     renderDistrictList(pm10Data?.districts || [], search.value);
   });
 });
 
+/* ---------- Time helpers ---------- */
 function formatIraqTime(utcString, options = {}) {
-  const date = new Date(utcString);
+  const d = new Date(utcString);
+  d.setHours(d.getHours() + 3); // Iraq UTC+3
 
-  // add 3 hours for Iraq (UTC+3)
-  date.setHours(date.getHours() + 3);
-
-  return date.toLocaleString("en-GB", {
+  return d.toLocaleString("en-GB", {
     timeZone: "UTC",
     ...options
   });
 }
 
-/* --------Geolocation--------*/
+function isNightTimeIraq(utcTimestamp) {
+  const d = new Date(utcTimestamp);
+  d.setHours(d.getHours() + 3);
+  const h = d.getHours();
+  return (h >= 19 || h < 6);
+}
+
 /* ---------- Geo helpers ---------- */
 function haversineDistance(lat1, lon1, lat2, lon2) {
-  const R = 6371; // km
+  const R = 6371;
   const toRad = d => d * Math.PI / 180;
 
   const dLat = toRad(lat2 - lat1);
@@ -57,14 +61,7 @@ function findNearestDistrict(lat, lon, districts) {
 
   districts.forEach(d => {
     if (!d.latitude || !d.longitude) return;
-
-    const dist = haversineDistance(
-      lat,
-      lon,
-      d.latitude,
-      d.longitude
-    );
-
+    const dist = haversineDistance(lat, lon, d.latitude, d.longitude);
     if (dist < minDist) {
       minDist = dist;
       nearest = d;
@@ -74,48 +71,60 @@ function findNearestDistrict(lat, lon, districts) {
   return nearest;
 }
 
-/* ---------- Auto locate user ---------- */
-function autoLocateUser(districts) {
-  if (!navigator.geolocation) return;
-
-  navigator.geolocation.getCurrentPosition(
-    pos => {
-      const { latitude, longitude } = pos.coords;
-
-      const nearest = findNearestDistrict(
-        latitude,
-        longitude,
-        districts
-      );
-
-      if (!nearest) return;
-
-      // Zoom map
-      map.setView(
-        [nearest.latitude, nearest.longitude],
-        11,
-        { animate: true }
-      );
-
-      // Open popup
-      districtLayer.eachLayer(layer => {
-        if (layer._district_id === nearest.district_id) {
-          layer.openPopup();
-        }
-      });
-    },
-    () => {
-      // silently ignore if denied
-      console.info("Geolocation not allowed");
-    },
-    {
-      enableHighAccuracy: false,
-      timeout: 8000,
-      maximumAge: 60000
-    }
-  );
+/* ---------- Dust storm logic ---------- */
+function isDustStormCondition(pm10, aqi) {
+  return (pm10 >= 300 || aqi >= 200);
 }
 
+/* ---------- Health icons logic ---------- */
+function getHealthIcons({ aqi, pm10, timestamp }) {
+  const icons = [];
+  const night = isNightTimeIraq(timestamp);
+  const dust = isDustStormCondition(pm10, aqi);
+
+  if (dust) {
+    icons.push({
+      icon: "🌪️",
+      label: "Possible dust storm conditions – severe dust exposure"
+    });
+  }
+
+  if (aqi <= 50) {
+    icons.push({
+      icon: "🚴",
+      label: night
+        ? "Night-time: light outdoor activity is acceptable"
+        : "Safe for outdoor activity"
+    });
+  }
+  else if (aqi <= 100) {
+    icons.push({ icon: "🚴", label: "Outdoor activity generally safe" });
+    icons.push({ icon: "👶", label: "Sensitive people should be cautious" });
+  }
+  else if (aqi <= 150) {
+    icons.push({ icon: "😷", label: "Wear a mask outdoors" });
+    icons.push({ icon: "👶", label: "Sensitive groups should limit exposure" });
+    if (night) {
+      icons.push({
+        icon: "🏠",
+        label: "Night-time: keep windows closed while sleeping"
+      });
+    }
+  }
+  else if (aqi <= 200) {
+    icons.push({ icon: "😷", label: "Wear a mask outdoors" });
+    icons.push({ icon: "🏠", label: "Stay indoors if possible" });
+    icons.push({ icon: "🚫", label: "Avoid outdoor activity" });
+  }
+  else {
+    icons.push({ icon: "😷", label: "Wear a mask outdoors" });
+    icons.push({ icon: "🏠", label: "Stay indoors" });
+    icons.push({ icon: "👶", label: "Sensitive groups at high risk" });
+    icons.push({ icon: "🚫", label: "Avoid outdoor activity" });
+  }
+
+  return icons;
+}
 
 /* ---------- Map ---------- */
 function initMap() {
@@ -136,12 +145,10 @@ async function loadPM10Alerts() {
 
     updateHeaderInfo(pm10Data.metadata);
 
-    // Sort by AQI descending
     pm10Data.districts.sort((a, b) => b.aqi.value - a.aqi.value);
 
     drawDistrictMarkers(pm10Data.districts);
     renderDistrictList(pm10Data.districts);
-    // 🔥 Auto zoom to nearest district
     autoLocateUser(pm10Data.districts);
 
   } catch (err) {
@@ -167,11 +174,11 @@ function getAlertColor(level) {
   switch (level) {
     case "good": return "#22c55e";
     case "moderate": return "#eab308";
-    case "unhealthy_for_sensitive_groups": return "#b675bdfb";
-    case "unhealthy": return "#ee60dbfb";
+    case "unhealthy_for_sensitive_groups": return "#b675bd";
+    case "unhealthy": return "#ee60db";
     case "very_unhealthy": return "#ed1515";
     case "hazardous": return "#7c2d12";
-    default: return "#261504";
+    default: return "#334155";
   }
 }
 
@@ -185,7 +192,7 @@ function drawDistrictMarkers(districts) {
     const marker = L.circleMarker(
       [d.latitude, d.longitude],
       {
-        radius: 8,
+        radius: 9,
         fillColor: getAlertColor(d.alert.level),
         fillOpacity: 0.85,
         color: "#0f172a",
@@ -194,21 +201,15 @@ function drawDistrictMarkers(districts) {
     );
 
     marker.bindPopup(buildDistrictPopup(d));
-
-    // Attach district id for lookup
     marker._district_id = d.district_id;
 
     districtLayer.addLayer(marker);
   });
 }
 
-
-
-
 /* ---------- Popup ---------- */
 function buildDistrictPopup(d) {
 
-  // collect forecasts in order
   const forecasts = [
     d.pm10_forecast_3h,
     d.pm10_forecast_6h,
@@ -220,19 +221,7 @@ function buildDistrictPopup(d) {
     d.pm10_forecast_24h
   ].filter(Boolean);
 
-  let forecastTitle = "";
-  if (forecasts.length > 0) {
-    const start = new Date(forecasts[0].timestamp);
-    forecastTitle = start.toLocaleString("en-GB", {
-      weekday: "short",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false
-    });
-  }
-
   const forecastHTML = forecasts.map(f => {
-    const t = new Date(f.timestamp);
 
     const day = formatIraqTime(f.timestamp, { weekday: "short" });
     const time = formatIraqTime(f.timestamp, {
@@ -241,6 +230,15 @@ function buildDistrictPopup(d) {
       hour12: false
     });
 
+    const icons = getHealthIcons({
+      aqi: f.aqi,
+      pm10: f.value,
+      timestamp: f.timestamp
+    });
+
+    const iconsHTML = icons.map(i =>
+      `<span class="aqi-icon" title="${i.label}">${i.icon}</span>`
+    ).join("");
 
     return `
       <div class="forecast-item">
@@ -248,26 +246,24 @@ function buildDistrictPopup(d) {
         <div class="forecast-time">${time}</div>
 
         <div class="forecast-dot"
-            style="background:${getAlertColor(f.aqi_level)}">
+             style="background:${getAlertColor(f.aqi_level)}">
           ${f.aqi}
         </div>
 
-        <div class="forecast-pm">
-          ${f.value.toFixed(0)}
-        </div>
+        <div class="forecast-pm">${f.value.toFixed(0)}</div>
         <div class="forecast-unit">µg/m³</div>
+
+        <div class="aqi-icons">${iconsHTML}</div>
       </div>
     `;
   }).join("");
+
   const measurementTime = formatIraqTime(d.pm10.timestamp, {
     weekday: "short",
     hour: "2-digit",
     minute: "2-digit",
     hour12: false
   });
-
-
-
 
   return `
     <div>
@@ -276,37 +272,27 @@ function buildDistrictPopup(d) {
 
       <hr>
 
-      <div style="font-size:0.7rem; color:#475569; margin-bottom:4px;">
-        Measurement time (Iraq local time): ${measurementTime}
+      <div style="font-size:0.7rem;color:#475569;">
+        Measurement time (Iraq local): ${measurementTime}
       </div>
 
-      PM10: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
-
+      PM10 now: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
       AQI: <b>${d.aqi.value}</b> (${d.aqi.level})<br>
       24h mean: ${d.pm10.mean_24h.toFixed(1)} µg/m³
 
       <hr>
 
-      <strong>Forecast for 24 hours </strong>
-      <div style="font-size:0.7rem; color:#475569; margin-bottom:4px;">
-        from ${forecastTitle}
-      </div>
-
-      <div class="forecast-row">
-        ${forecastHTML}
-      </div>
+      <strong>Forecast (next 24h)</strong>
+      <div class="forecast-row">${forecastHTML}</div>
     </div>
   `;
 }
 
-
-/* ---------- District List (FIXED) ---------- */
+/* ---------- Sidebar list ---------- */
 function renderDistrictList(districts, filter = "") {
-
   const list = document.getElementById("district-list");
   list.innerHTML = "";
 
-  // Filter by district or province (FIX #1)
   const filtered = districts.filter(d =>
     d.district_name.toLowerCase().includes(filter.toLowerCase()) ||
     d.province_name.toLowerCase().includes(filter.toLowerCase())
@@ -317,7 +303,6 @@ function renderDistrictList(districts, filter = "") {
     : filtered.slice(0, MAX_VISIBLE_DISTRICTS);
 
   visible.forEach(d => {
-
     const li = document.createElement("li");
     li.style.borderLeftColor = getAlertColor(d.alert.level);
 
@@ -332,20 +317,16 @@ function renderDistrictList(districts, filter = "") {
       </div>
     `;
 
-    // FIX #2 + #3: zoom + popup immediately
     li.onclick = () => zoomToDistrict(d);
-
     list.appendChild(li);
   });
 
   updateViewAllButton(filtered.length);
 }
 
-/* ---------- Zoom + Open Popup ---------- */
+/* ---------- Zoom + popup ---------- */
 function zoomToDistrict(d) {
-  map.setView([d.latitude, d.longitude], 10);
-
-  // Open popup automatically (KEY FIX)
+  map.setView([d.latitude, d.longitude], 11);
   districtLayer.eachLayer(layer => {
     if (layer._district_id === d.district_id) {
       layer.openPopup();
@@ -353,11 +334,31 @@ function zoomToDistrict(d) {
   });
 }
 
-/* ---------- View All ---------- */
+/* ---------- Auto locate ---------- */
+function autoLocateUser(districts) {
+  if (!navigator.geolocation) return;
+
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      const nearest = findNearestDistrict(
+        pos.coords.latitude,
+        pos.coords.longitude,
+        districts
+      );
+
+      if (!nearest) return;
+      zoomToDistrict(nearest);
+    },
+    () => {},
+    { timeout: 8000 }
+  );
+}
+
+/* ---------- View all ---------- */
 function updateViewAllButton(total) {
   const btn = document.querySelector(".view-all");
 
-  if (total <= MAX_VISIBLE_DISTRICTS) {
+  if (!btn || total <= MAX_VISIBLE_DISTRICTS) {
     btn.style.display = "none";
     return;
   }
@@ -369,6 +370,9 @@ function updateViewAllButton(total) {
 
   btn.onclick = () => {
     showAllDistricts = !showAllDistricts;
-    renderDistrictList(pm10Data.districts, document.getElementById("search").value);
+    renderDistrictList(
+      pm10Data.districts,
+      document.getElementById("search").value
+    );
   };
 }

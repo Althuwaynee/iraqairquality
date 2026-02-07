@@ -362,3 +362,21 @@ footer {
   }
 }
 
+.aqi-icons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.aqi-icon {
+  font-size: 18px;
+  line-height: 1;
+  cursor: default;
+  opacity: 0.85;
+}
+
+.aqi-icon:hover {
+  opacity: 1;
+}
