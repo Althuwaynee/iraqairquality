@@ -393,24 +393,6 @@ function updateViewAllButton(total) {
   };
 }
 
-/* ---------- Notification Permission ---------- */
-function requestNotifications() {
-  if (!("Notification" in window)) {
-    alert("Notifications not supported on this browser.");
-    return;
-  }
-
-  Notification.requestPermission().then(permission => {
-    if (permission === "granted") {
-      console.log("Notifications enabled");
-      alert("Dust alerts enabled for your area 👍");
-    }
-  });
-}
-
-document.getElementById("enable-alerts")?.addEventListener("click", () => {
-  requestNotifications();
-});
 
 /* ---------- Mobile tooltip support for AQI icons ---------- */
 document.addEventListener("click", (e) => {
