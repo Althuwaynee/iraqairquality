@@ -380,8 +380,8 @@ def handle_help(chat_id):
         "توقف - إيقاف استلام التنبيهات\n"
         "استئناف - استئناف استلام التنبيهات\n"
         "لغة - تغيير اللغة  (AR/EN)\n"
-        "مساعدة - Show this help message\n\n"
-        "📍 The bot will send automatic alerts when air quality changes."
+        "مساعدة - لعرض قائمة الاوامر الحالية المعروضة امامك\n\n"
+        "📍 التطبيق سوف يرسل لك رسالة تنبهك بتغير جودة الهواء حولك."
     )
     send_message(chat_id, help_text)
 
@@ -551,7 +551,13 @@ def main():
                         handle_help(chat_id)
                     elif text.startswith("/"):
                         # Unknown command
-                        send_message(chat_id, "❌ الامر غير مفهوم. اكتب -مساعدة- لعرض الاوامر المتاحة.")
+                        send_message(chat_id, 
+                            "❌ الامر غير مفهوم. اقرا الاوامر المتاحة.:\n\n" +
+                            get_commands_list()
+                        )
+                    else:
+                        # Any other text - show help
+                        handle_help(chat_id)
             
             # Check for alerts
             check_alerts()
