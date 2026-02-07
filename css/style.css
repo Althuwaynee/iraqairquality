@@ -398,3 +398,35 @@ footer {
   touch-action: manipulation;
   user-select: none;
 }
+.aqi-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.aqi-icon::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+}
+
+/* show on desktop hover */
+.aqi-icon:hover::after {
+  opacity: 1;
+}
+
+/* show on mobile tap */
+.aqi-icon.active::after {
+  opacity: 1;
+}

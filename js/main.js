@@ -237,8 +237,9 @@ function buildDistrictPopup(d) {
     });
 
     const iconsHTML = icons.map(i =>
-      `<span class="aqi-icon" title="${i.label}">${i.icon}</span>`
+      `<span class="aqi-icon" data-tip="${i.label}">${i.icon}</span>`
     ).join("");
+
 
     return `
       <div class="forecast-item">
@@ -376,12 +377,12 @@ function updateViewAllButton(total) {
     );
   };
 }
-// Mobile-friendly tooltip handling
+/* ---------- Mobile tooltip support for AQI icons ---------- */
 document.addEventListener("click", (e) => {
-  const icon = e.target.closest(".health-icon");
+  const icon = e.target.closest(".aqi-icon");
 
-  // Close all tooltips if click is outside
-  document.querySelectorAll(".health-icon.active").forEach(el => {
+  // Close any open tooltips
+  document.querySelectorAll(".aqi-icon.active").forEach(el => {
     if (el !== icon) el.classList.remove("active");
   });
 
@@ -390,3 +391,4 @@ document.addEventListener("click", (e) => {
   // Toggle tooltip on tap
   icon.classList.toggle("active");
 });
+
