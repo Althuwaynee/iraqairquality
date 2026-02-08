@@ -680,3 +680,31 @@ html[dir="rtl"] .menu-toggle {
   left: auto;
   right: 10px;
 }
+
+.image-container {
+    margin: 35px auto;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    max-width: 90%; /* لضمان عدم التصاق الصورة بحواف النص */
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto 15px; /* مسافة تحت الصورة قبل النص التوضيحي */
+}
+
+figcaption {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+    background-color: #fafafa;
+}
