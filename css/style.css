@@ -767,3 +767,21 @@ figcaption {
         text-align: center !important;
     }
 }
+
+/* استدعاء الخط الكوفي */
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    /* الخط الكوفي للغة العربية، وخط sans-serif كاحتياط */
+    font-family: 'Reem Kufi', 'Segoe UI', Tahoma, sans-serif;
+    background: #ffffff;
+    color: #423c3c;
+    line-height: 1.6;
+}
+
+h1, h2, .founder-name {
+    font-family: 'Reem Kufi', sans-serif;
+    color: #2c3e50;
+    letter-spacing: 0; /* الخط الكوفي لا يحتاج تباعد أحرف */
+}
