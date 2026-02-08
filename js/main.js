@@ -409,3 +409,56 @@ document.addEventListener("click", (e) => {
   icon.classList.toggle("active");
 });
 
+const menuToggle = document.getElementById("menu-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+const menuOverlay = document.getElementById("menu-overlay");
+
+menuToggle.onclick = () => {
+  mobileMenu.classList.add("open");
+  menuOverlay.classList.add("show");
+};
+
+menuOverlay.onclick = closeMenu;
+
+document.querySelectorAll(".nav-link").forEach(link => {
+  link.onclick = closeMenu;
+});
+
+function closeMenu() {
+  mobileMenu.classList.remove("open");
+  menuOverlay.classList.remove("show");
+}
+let currentLang = "en";
+
+const translations = {
+  en: {
+    about: "About AQI",
+    data: "Data",
+    faq: "FAQ"
+  },
+  ar: {
+    about: "حول جودة الهواء",
+    data: "البيانات",
+    faq: "الأسئلة الشائعة"
+  }
+};
+
+document.getElementById("lang-toggle").onclick = () => {
+  currentLang = currentLang === "en" ? "ar" : "en";
+  applyLanguage();
+};
+
+function applyLanguage() {
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (translations[currentLang][key]) {
+      el.textContent = translations[currentLang][key];
+    }
+  });
+}
+document.getElementById("logo").onclick = () => {
+  map.setView([33.2, 44.3], 6, { animate: true });
+};

@@ -20,12 +20,13 @@
 <body>
 
 
+
   <!-- ================= HEADER ================= -->
 
 
   <header class="site-header">
   <div class="header-left">
-    <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo">
+    <img src="assets/images/logo.svg" id="logo" alt="Iraq AQI" class="logo">
     <span class="site-title">Iraq Air Quality</span>
   </div>
 
@@ -41,7 +42,19 @@
   </div>
 </header>
 
- 
+ <!-- Mobile menu button -->
+<button id="menu-toggle" class="menu-toggle">☰</button>
+
+<!-- Slide-out menu -->
+<aside id="mobile-menu" class="mobile-menu">
+  <a href="#map" class="nav-link">Map</a>
+  <a href="#about" class="nav-link" data-i18n="about">About AQI</a>
+  <a href="#data" class="nav-link" data-i18n="data">Data</a>
+  <a href="#faq" class="nav-link" data-i18n="faq">FAQ</a>
+</aside>
+
+<div id="menu-overlay" class="menu-overlay"></div>
+
 
   <!-- ================= MAIN LAYOUT ================= -->
   <main class="layout">
