@@ -21,13 +21,26 @@
 
 
   <!-- ================= HEADER ================= -->
-  <header>
-    <h1>Iraq Air Quality Monitor</h1>
-    <p>Live updates of Dust & AQI by district, by Omar Althuwaynee. Raw data by Barcelona Dust Regional Center (https://dust.aemet.es/) </p>
-    <!-- optional metadata injected by JS -->
-    <div id="ref-time"></div>
-    <div id="data-note"></div>
-  </header>
+
+
+  <header class="site-header">
+  <div class="header-left">
+    <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo">
+    <span class="site-title">Iraq Air Quality</span>
+  </div>
+
+  <nav class="nav">
+    <a href="#map">Map</a>
+    <a href="#about">About AQI</a>
+    <a href="#data">Data</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <div class="header-right">
+    <button id="lang-toggle">EN | AR</button>
+  </div>
+</header>
+
  
 
   <!-- ================= MAIN LAYOUT ================= -->
@@ -73,11 +86,49 @@
  
 
   <!-- ================= FOOTER ================= -->
-  <footer>
-    Data source: Barcelona Dust Regional Center (https://dust.aemet.es/) ·
-    Numerical simulation & processing: Dr. Omar Althuwaynee ·
-    Updated every 3 hours
-  </footer>
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-content">
+    
+    <!-- Left: Copyright and author -->
+    <div class="footer-left">
+      <div class="footer-copyright">
+        © 2026 Iraq Air Quality Platform. "For research & public awareness"
+        <br>
+        Numerical simulation & processing by Dr. Omar Althuwaynee
+        <br>
+        <small>(omar.faisel@gmail.com)</small>
+      </div>
+    </div>
+    
+    <!-- Center: Data source with logo -->
+    <div class="footer-center">
+      <div class="data-source-wrapper">
+        <span class="data-source-label">Data source:</span>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
+          <img src="./assets/images/logo-bdrc-and-wmo.svg" 
+               alt="Barcelona Dust Regional Center" 
+               class="data-center-logo">
+        </a>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="data-center-link">
+          dust.aemet.es
+        </a>
+      </div>
+    </div>
+    
+    <!-- Right: Update time -->
+    <div class="footer-right">
+      <div id="ref-time"></div>
+    </div>
+    
+  </div>
+</footer>
 
   <!-- ================= SCRIPTS ================= -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
