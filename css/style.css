@@ -709,44 +709,61 @@ figcaption {
     background-color: #fafafa;
 }
 
+/* تنسيق قسم التعريف الشخصي في الأعلى */
 .profile-header {
     display: flex;
     align-items: center; /* لموازنة الصورة مع النص عمودياً */
-    gap: 25px; /* المسافة بين الصورة والنص */
+    gap: 30px; /* مسافة بين الصورة والنص */
     margin-bottom: 40px;
     border-bottom: 2px solid #eee;
     padding-bottom: 30px;
+    text-align: right; /* ضمان اتجاه النص لليمين */
 }
 
+/* التحكم بحجم الصورة الشخصية */
 .profile-pic {
-    width: 150px; /* يمكنك تعديل الحجم حسب الرغبة */
-    height: 150px;
-    border-radius: 50%; /* لجعل الصورة دائرية */
-    object-fit: cover; /* لضمان عدم تمدد الصورة */
-    border: 4px solid #d35400; /* إطار بلون المشروع */
+    width: 140px;  /* حجم ثابت للصورة */
+    height: 140px;
+    min-width: 10px; /* منع الصورة من الانكماش */
+    border-radius: 50%; /* لجعلها دائرية */
+    object-fit: cover; /* لضمان عدم تشوه ملامح الوجه */
+    border: 4px solid #0090d3; /* إطار أنيق بلون المشروع */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.profile-info h1 {
-    text-align: right !important; /* محاذاة النص لليمين */
-    margin: 0;
-    border-bottom: none; /* إزالة الخط القديم */
+.profile-info {
+    flex-grow: 1; /* جعل النص يأخذ المساحة المتبقية */
+}
+
+.founder-name {
+    margin: 0 !important; /* إزالة الحواف الزائدة */
+    padding: 0 !important;
+    font-size: 2.2em !important;
+    color: #2c3e50;
+    border: none !important; /* إزالة الخط السفلي القديم إذا وجد */
+    text-align: right !important;
 }
 
 .subtitle {
-    font-weight: bold;
+    margin-top: 5px;
     color: #636e72;
-    margin-top: 10px;
     font-size: 1.2em;
+    font-weight: 500;
 }
 
-/* لتحسين المظهر على الهواتف */
+/* إصلاح التجاوب للهواتف لكي لا تظهر الصورة كبيرة جداً */
 @media (max-width: 600px) {
     .profile-header {
-        flex-direction: column; /* وضع الصورة فوق الاسم في الشاشات الصغيرة */
+        flex-direction: column; /* الصورة فوق النص في الموبايل */
         text-align: center;
+        gap: 15px;
     }
-    .profile-info h1 {
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+    }
+    .founder-name {
         text-align: center !important;
     }
 }
