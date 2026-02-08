@@ -1,0 +1,140 @@
+Title: Our Data Sources and Partners
+
+Barcelona Dust Forecast Center
+
+    Who they are: World Meteorological Organization's designated regional center for dust forecasting
+
+    What they provide: Multi-model ensemble forecasts for dust concentration
+
+    Coverage: Middle East and North Africa region
+
+    Update frequency: Daily forecasts for up to 3 days ahead
+
+Multi-Model Analysis
+We combine data from:
+
+    NMMB/BSC-Dust Model - Barcelona Supercomputing Center
+
+    DREAM Model - NOAA/NESDIS
+
+    MONARCH Model - Barcelona Supercomputing Center
+
+    GEMS Model - Korean Meteorological Administration
+
+This ensemble approach gives us:
+
+    More accurate predictions
+
+    Better uncertainty estimates
+
+    Reduces individual model biases
+
+NASA Contributions
+
+    MODIS satellite data for validation
+
+    CALIPSO vertical dust profiles
+
+    MERRA-2 reanalysis data
+
+Why Multiple Sources Matter
+
+    No single model is perfect
+
+    Ensemble means better accuracy
+
+    Reduces risk of missing events
+
+    Provides confidence in forecasts
+
+7. Update Frequency
+
+Title: When and How Often We Update
+
+Real-time Data Updates
+
+    PM10 concentrations: Every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
+
+    AQI calculations: Immediately after data receipt
+
+    Alerts: Whenever levels change significantly
+
+Forecast Updates
+
+    Daily forecasts: Updated at 00:00 UTC each day
+
+    Forecast range: Up to 72 hours ahead
+
+    Trend analysis: Updated weekly
+
+Website Updates
+
+    Map visualization: Every 6 hours
+
+    District data: Every 6 hours
+
+    Historical data: Daily archive
+
+Telegram Bot
+
+    Alerts: Instant notifications when conditions change
+
+    On-demand queries: Real-time responses
+
+    Location updates: Whenever user location changes
+
+Maintenance Schedule
+
+    System checks: Hourly
+
+    Data validation: Every 6 hours
+
+    Full system backup: Daily
+
+    Model updates: As new versions become available
+    
+    
+    Title: How We Calculate Iraq's Air Quality
+
+Data Collection
+We gather dust concentration data from multiple sources:
+
+    Barcelona Dust Forecast Center - Primary source
+
+    NASA Satellite Data - Validation and backup
+
+    Regional Weather Stations - Ground truthing
+
+PM10 to AQI Conversion
+We use the US EPA's AQI formula for PM10:
+
+    Good (0-50): 0-54 µg/m³
+
+    Moderate (51-100): 55-154 µg/m³
+
+    Unhealthy for Sensitive Groups (101-150): 155-254 µg/m³
+
+    Unhealthy (151-200): 255-354 µg/m³
+
+    Very Unhealthy (201-300): 355-424 µg/m³
+
+    Hazardous (301-500): 425+ µg/m³
+
+Interpolation Method (IDW)
+We use Inverse Distance Weighting (IDW) to estimate values at unmeasured locations:
+
+    Nearby stations have more influence
+
+    Distance weighting ensures smooth transitions
+
+    Provides complete coverage for all Iraqi districts
+
+Quality Control
+
+    Automated error checking
+
+    Manual verification of extreme values
+
+    Cross-validation with multiple data sources
+
+    Regular calibration checks
