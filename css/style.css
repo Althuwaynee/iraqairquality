@@ -708,3 +708,45 @@ figcaption {
     border-top: 1px solid #eee;
     background-color: #fafafa;
 }
+
+.profile-header {
+    display: flex;
+    align-items: center; /* لموازنة الصورة مع النص عمودياً */
+    gap: 25px; /* المسافة بين الصورة والنص */
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 30px;
+}
+
+.profile-pic {
+    width: 150px; /* يمكنك تعديل الحجم حسب الرغبة */
+    height: 150px;
+    border-radius: 50%; /* لجعل الصورة دائرية */
+    object-fit: cover; /* لضمان عدم تمدد الصورة */
+    border: 4px solid #d35400; /* إطار بلون المشروع */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.profile-info h1 {
+    text-align: right !important; /* محاذاة النص لليمين */
+    margin: 0;
+    border-bottom: none; /* إزالة الخط القديم */
+}
+
+.subtitle {
+    font-weight: bold;
+    color: #636e72;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* لتحسين المظهر على الهواتف */
+@media (max-width: 600px) {
+    .profile-header {
+        flex-direction: column; /* وضع الصورة فوق الاسم في الشاشات الصغيرة */
+        text-align: center;
+    }
+    .profile-info h1 {
+        text-align: center !important;
+    }
+}
