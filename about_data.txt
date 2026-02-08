@@ -1,140 +1,86 @@
 Title: Our Data Sources and Partners
+--
 
-Barcelona Dust Forecast Center
+### **مصادر البيانات والشركاء: مركز برشلونة الإقليمي للتنبؤ بالغبار (BDRC)**
 
-    Who they are: World Meteorological Organization's designated regional center for dust forecasting
+#### **مقدمة عن الشراكة**
 
-    What they provide: Multi-model ensemble forecasts for dust concentration
+تعتمد منصة "جودة الهواء في العراق" في تحليلاتها وتوقعاتها على بيانات متقدمة وموثوقة عالمياً صادرة عن **مركز برشلونة الإقليمي للتنبؤ بالغبار (Barcelona Dust Regional Center)**. يُعد هذا المركز الركيزة الأساسية لنظام الإنذار المبكر وتقييم العواصف الرملية والغبارية (SDS-WAS) التابع للمنظمة العالمية للأرصاد الجوية (WMO) في منطقة شمال أفريقيا والشرق الأوسط وأوروبا.
 
-    Coverage: Middle East and North Africa region
+#### **حول مركز برشلونة الإقليمي (BDRC)**
 
-    Update frequency: Daily forecasts for up to 3 days ahead
+يتم إدارة المركز بالتعاون بين المنظمة العالمية للأرصاد الجوية (WMO)، والوكالة الحكومية للأرصاد الجوية في إسبانيا (AEMET)، ومركز برشلونة للحوسبة الفائقة (BSC). يهدف المركز إلى تعزيز قدرة الدول على تقديم تنبؤات غبارية عالية الجودة لدعم أنظمة الإنذار المبكر وخطط التخفيف من الآثار البيئية والصحية.
 
-Multi-Model Analysis
-We combine data from:
+#### **ما الذي يقدمه المركز لمنصتنا؟**
 
-    NMMB/BSC-Dust Model - Barcelona Supercomputing Center
+نستفيد من البنية التحتية المتطورة للمركز للحصول على:
 
-    DREAM Model - NOAA/NESDIS
+1. **نماذج التنبؤ الرقمي:** الوصول إلى مخرجات نماذج عالمية وإقليمية متخصصة في محاكاة حركة الغبار وتركيزه في الأجواء العراقية.
+2. **بيانات التركيز السطحي (SCONC_DUST):** الحصول على تقديرات دقيقة لتركيز الغبار عند مستوى سطح الأرض، وهي البيانات التي نعتمد عليها في حساب مؤشر جودة الهواء (AQI).
+3. **العمق البصري للهباء الجوي (OD550_DUST):** مراقبة كثافة الغبار في طبقات الجو لضمان دقة الرصد في حالات العواصف العابرة للحدود.
 
-    MONARCH Model - Barcelona Supercomputing Center
+#### **منهجية الحصول على البيانات**
 
-    GEMS Model - Korean Meteorological Administration
+نحن نقوم بعملية سحب آلي للبيانات عبر بروتوكول (NCSS) الخاص بالمركز، حيث يتم معالجة ملفات (NetCDF4) التي توفر تغطية جغرافية دقيقة تغطي كافة المحافظات والأقضية العراقية، مع تحديثات دورية تضمن مطابقة الواقع الميداني.
 
-This ensemble approach gives us:
+إليك صياغة القسم الخاص باستخدام "المنتج متعدد النماذج" (Multi-model product) لصفحة "مصادر البيانات"، مع توضيح أسباب كونه الخيار الأفضل بناءً على المعايير التقنية لمركز برشلونة (BDRC):
 
-    More accurate predictions
+---
 
-    Better uncertainty estimates
+### **لماذا نعتمد "المنتج متعدد النماذج" (Multi-model Product)؟**
 
-    Reduces individual model biases
+تستند منصة "جودة الهواء في العراق" في عرضها لبيانات تركيز الغبار والعمق البصري (AOD) على **المنتج متعدد النماذج (Multi-model forecast)**، وهو نتاج دمج مخرجات مجموعة واسعة من النماذج العالمية والإقليمية المرموقة.
 
-NASA Contributions
+#### **ما هو المنتج متعدد النماذج وكيف يتم تكوينه؟**
 
-    MODIS satellite data for validation
+يتم توليد هذا المنتج عبر حساب "الوسيط الحسابي" (Median) لنتائج جميع النماذج الفردية المشاركة في المركز، وذلك بعد إجراء عملية إعادة إسقاط مكاني (Interpolation) لتوحيد الشبكة الجغرافية. تضمن هذه العملية دمج نقاط القوة من نماذج مختلفة مثل MONARCH، CAMS، NASA-GEOS، وغيرها في تنبؤ واحد متماسك.
 
-    CALIPSO vertical dust profiles
+#### **لماذا يُعد الخيار الأفضل والأكثر موثوقية؟**
 
-    MERRA-2 reanalysis data
+وفقاً لدليل المستخدم الصادر عن مركز برشلونة الإقليمي (BDRC)، فإن الاعتماد على المنتج متعدد النماذج يتفوق على النماذج الفردية للأسباب التالية:
 
-Why Multiple Sources Matter
+* 
+**دقة التحقق (Better Verification Scores):** أثبتت نتائج التقييم أن التنبؤ متعدد النماذج يحقق درجات تحقق واختبار (Verification scores) أفضل من أي نموذج فردي بمفرده في معظم المناطق والفترات الزمنية.
 
-    No single model is perfect
 
-    Ensemble means better accuracy
+* 
+**موثوقية التنبؤات (Trust-worthy Predictions):** يُعتبر هذا المنتج الأداة الأكثر قيمة لإصدار تنبؤات جديرة بالثقة لغبار المعادن في منطقتنا، كونه يقلل من احتمالية الخطأ المرتبطة بنموذج واحد.
 
-    Reduces risk of missing events
 
-    Provides confidence in forecasts
+* 
+**تحديث مستمر:** يتم تحديث المنتج متعدد النماذج ثلاث مرات يومياً (في الساعات 01:00، 07:00، و11:30 بالتوقيت العالمي UTC) لضمان إدراج أحدث البيانات المتاحة من جميع النماذج المساهمة.
 
-7. Update Frequency
 
-Title: When and How Often We Update
+* 
+**تغطية شاملة:** يوفر المنتج تنبؤات تمتد حتى 72 ساعة، مع توفر البيانات كل 3 ساعات، مما يمنحنا دقة عالية في رصد العواصف الغبارية قبل وصولها.
 
-Real-time Data Updates
 
-    PM10 concentrations: Every 6 hours (00:00, 06:00, 12:00, 18:00 UTC)
 
-    AQI calculations: Immediately after data receipt
+#### **التزامنا بالمعايير الدولية**
 
-    Alerts: Whenever levels change significantly
+من خلال استخدامنا لهذا المنتج، فإننا نضمن أن البيانات المعروضة لمواطنينا في العراق تتبع أعلى المعايير التي وضعتها **المنظمة العالمية للأرصاد الجوية (WMO)** عبر نظام (SDS-WAS).
 
-Forecast Updates
+---
 
-    Daily forecasts: Updated at 00:00 UTC each day
+لمزيد من المعلومات التقنية حول النماذج المشاركة، يمكنك زيارة [كتالوج منتجات الغبار](https://www.google.com/search?q=https://dust.aemet.es/forecast-products/dust-products-catalogue) التابع للمركز.
 
-    Forecast range: Up to 72 hours ahead
 
-    Trend analysis: Updated weekly
 
-Website Updates
 
-    Map visualization: Every 6 hours
+#### **روابط هامة ومراجع**
 
-    District data: Every 6 hours
+للاطلاع على المزيد حول منهجية العمل أو استكشاف البيانات الأصلية، يمكنكم زيارة الروابط التالية:
 
-    Historical data: Daily archive
+* **الموقع الرسمي للمركز:** [dust.aemet.es](https://dust.aemet.es/)
+* **بوابة البيانات التشغيلية:** [Forecasts & Products](https://www.google.com/search?q=https://dust.aemet.es/forecast-products/dust-forecasts)
+* **النظام العالمي للإنذار المبكر (SDS-WAS):** [suspicious link removed]
 
-Telegram Bot
+#### **إخلاء المسؤولية وحقوق الملكية**
 
-    Alerts: Instant notifications when conditions change
+جميع البيانات المشتقة من مركز برشلونة الإقليمي للتنبؤ بالغبار يتم الإشارة إليها كمصدر أساسي للمعلومات. نحن نلتزم بمعايير الاقتباس العلمي الموصى بها من قبل المركز، مع التأكيد على أن هذه التوقعات هي أدوات مساعدة لاتخاذ القرار بناءً على أفضل التقنيات المتاحة للحوسبة الفائقة.
 
-    On-demand queries: Real-time responses
+---
 
-    Location updates: Whenever user location changes
+### **نصيحة إضافية للموقع:**
 
-Maintenance Schedule
-
-    System checks: Hourly
-
-    Data validation: Every 6 hours
-
-    Full system backup: Daily
-
-    Model updates: As new versions become available
-    
-    
-    Title: How We Calculate Iraq's Air Quality
-
-Data Collection
-We gather dust concentration data from multiple sources:
-
-    Barcelona Dust Forecast Center - Primary source
-
-    NASA Satellite Data - Validation and backup
-
-    Regional Weather Stations - Ground truthing
-
-PM10 to AQI Conversion
-We use the US EPA's AQI formula for PM10:
-
-    Good (0-50): 0-54 µg/m³
-
-    Moderate (51-100): 55-154 µg/m³
-
-    Unhealthy for Sensitive Groups (101-150): 155-254 µg/m³
-
-    Unhealthy (151-200): 255-354 µg/m³
-
-    Very Unhealthy (201-300): 355-424 µg/m³
-
-    Hazardous (301-500): 425+ µg/m³
-
-Interpolation Method (IDW)
-We use Inverse Distance Weighting (IDW) to estimate values at unmeasured locations:
-
-    Nearby stations have more influence
-
-    Distance weighting ensures smooth transitions
-
-    Provides complete coverage for all Iraqi districts
-
-Quality Control
-
-    Automated error checking
-
-    Manual verification of extreme values
-
-    Cross-validation with multiple data sources
-
-    Regular calibration checks
+بما أنك تستخدم بياناتهم، تأكد من وضع شعار **WMO** وشعار **Barcelona Dust Regional Center** بجانب بعضهما في أسفل الصفحة (Footer) لإعطاء مصداقية حكومية ودولية لمشروعك.

@@ -1,0 +1,71 @@
+Title: About the Creator
+
+Omar - Air Quality Advocate
+I'm a [Your field, e.g., environmental scientist/data analyst/developer] passionate about making air quality information accessible to everyone in Iraq.
+
+Background
+
+    [Your education/qualifications]
+
+    [Years of experience in relevant field]
+
+    [Specific expertise related to air quality or Iraq]
+    
+    
+Iraq faces rapidly increasing sand and dust storms with weak preventive action, so a real-time dust nowcast/forecast system and public website are needed to protect health, the economy, and critical services. [ouriraq](https://ouriraq.org/article/projects-paper-iraq-unable-cope-300-days-dust-annually)
+
+## Escalation of dust storms and weak response
+
+- Iraq’s Ministry of Environment has warned that the country may face around 272–300 dusty days per year in the coming years, compared with historical values of roughly a few dozen dusty days per year in the late 20th century. [scirp](https://www.scirp.org/journal/paperinformation?paperid=37734)
+- One study reports that the maximum annual number of recorded dust storms between 1951–1990 was about 24 days, while official projections now suggest up to 300 dusty days per year, showing a more than tenfold apparent increase in expected dusty days. [scirp](https://www.scirp.org/journal/paperinformation?paperid=37734)
+- Iraqi and international experts attribute this worsening mainly to climate change, prolonged drought, reduced rainfall, upstream damming on the Tigris–Euphrates, drying of marshes, land degradation, and desertification, with governments criticized for failing to implement effective vegetation restoration, water management, and anti-desertification programs. [ouriraq](https://ouriraq.org/article/projects-paper-iraq-unable-cope-300-days-dust-annually)
+- Reports also note that despite repeated warnings and plans “on paper”, Iraq has been unable to implement large-scale projects to cope with the predicted 272–300 dusty days, illustrating a gap between the scale of the problem and the strength of policy action. [ouriraq](https://ouriraq.org/article/projects-paper-iraq-unable-cope-300-days-dust-annually)
+
+## Impacts on health, economy, and daily life
+
+- During major dust storms, thousands of people in Iraq have been hospitalized with respiratory problems in a single event; for example, one severe storm sent more than 5,000 people to hospital in 2022, and another in 2025 caused at least 1,800 respiratory cases in central and southern Iraq. [phys](https://phys.org/news/2025-04-iraq-sandstorm-people-respiratory-problems.html)
+- Earlier analyses indicate that dust storms in Iraq cause hundreds of hospital visits during intense events, with typical summer “Shamal” winds capable of lifting dust to produce multi-day storms. [pmc.ncbi.nlm.nih](https://pmc.ncbi.nlm.nih.gov/articles/PMC6749189/)
+- Dust storms degrade visibility, disrupt air and road transport, infiltrate buildings, damage crops, erode fertile topsoil, and reduce agricultural productivity, leading to significant economic losses and social disruption. [scirp](https://www.scirp.org/journal/paperinformation?paperid=37734)
+- Comparative analyses of Iraqi dust events show substantial increases in particulate pollution (PM2.5 and other pollutants) during storms, with links drawn to respiratory disease burdens and even interactions with outbreaks such as SARS‑CoV‑2. [iasj.rdd.edu](https://iasj.rdd.edu.iq/journals/uploads/2024/12/24/3099f01c1b4135d0c2fb87afdff9973a.pdf)
+
+## Why real-time nowcasting and forecasting are needed
+
+- International air-quality research shows that near-real-time identification of high particulate episodes (via satellite and in situ data) enables early warnings and behavior change (staying indoors, mask use, schedule changes), which measurably reduce PM2.5 exposure and associated health impacts. [pmc.ncbi.nlm.nih](https://pmc.ncbi.nlm.nih.gov/articles/PMC10801669/)
+- A framework developed for PM2.5 alert systems demonstrates that timely alerts based on nowcasting can lower exposure during severe events and that improved spatial–temporal coverage of monitoring and forecasting directly increases public-health benefits. [pmc.ncbi.nlm.nih](https://pmc.ncbi.nlm.nih.gov/articles/PMC10801669/)
+- Integrated systems that combine real-time sensors (IoT) with prediction models have been proposed and tested elsewhere, showing that real-time dust monitoring and prediction help managers adjust work schedules and reduce workers’ time spent in dusty conditions. [pmc.ncbi.nlm.nih](https://pmc.ncbi.nlm.nih.gov/articles/PMC10981741/)
+- Applying these ideas in Iraq would mean moving from reactive closure of airports and emergency hospital responses toward preventive risk management, where populations, hospitals, airlines, and ministries anticipate events hours to days ahead instead of being surprised by them. [accuweather](https://www.accuweather.com/en/severe-weather/dangerous-dust-storm-hospitalizes-more-than-5000-in-iraq/1183126)
+
+## Value of a public website for users and experts
+
+- A dedicated website that displays real-time dust levels, nowcasts (next few hours), and forecasts (next days) can give the general public simple, actionable information (e.g., color-coded dust risk, health advice, and recommendations for outdoor activity), similar to existing air-quality alert systems documented in other regions. [pmc.ncbi.nlm.nih](https://pmc.ncbi.nlm.nih.gov/articles/PMC10801669/)
+- For experts and authorities, such a platform can provide higher-resolution data: time series of particulate concentrations, satellite-based aerosol optical depth, model output, and event archives, which support epidemiological research, contingency planning, and evaluation of adaptation measures. [pmc.ncbi.nlm.nih](https://pmc.ncbi.nlm.nih.gov/articles/PMC6749189/)
+- Public, transparent information about the true frequency, intensity, and impacts of dust events can counter underestimation or politicization, support advocacy for stronger land and water management policies, and help verify whether government projects (reforestation, marsh restoration) actually reduce dusty days over time. [ouriraq](https://ouriraq.org/article/projects-paper-iraq-unable-cope-300-days-dust-annually)
+- By integrating user feedback (e.g., crowdsourced visibility or symptom reports) with expert data, the website can act as a bridge between citizens, health services, and meteorological/environment agencies, improving situational awareness during increasingly frequent dust crises. [pmc.ncbi.nlm.nih](https://pmc.ncbi.nlm.nih.gov/articles/PMC10981741/)
+
+
+
+
+
+Why I Created This Project
+Growing up in Iraq, I experienced firsthand the impact of dust storms on daily life. I noticed that while dust was a constant reality, with increase the dusty days up to 250 days (add source). Nature of dust is a spatial continuos phenomena, and it is not scientifically correct to give a clear modeling without having connected ground stations, or remote sensing data, corrected with temp. humidity to give low uncertainty estimation and national coverage. Rather than few scattered private air monitoring stations, the open and reliable information and forecast, yet, no free, real-time online service Provide districts accurate, timely air quality coverage information. This project aims to:
+
+    Provide districts accurate, timely air quality coverage information
+
+    Help people protect their health
+
+    Raise awareness about environmental issues
+
+    Support research and policy decisions
+
+My Vision
+To create a comprehensive air quality monitoring system that:
+
+    Serves all Iraqis equally
+
+    Integrates modern technology with local knowledge
+
+    Empowers individuals to make informed decisions
+
+    Supports environmental protection efforts
+
+Download CV [Link to your CV PDF]
