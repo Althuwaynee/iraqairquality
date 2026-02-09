@@ -78,32 +78,73 @@
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <footer>
-    <div class="footer-content">
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-content">
 
-      <div class="footer-left">
-        © 2026 منصة جودة الهواء في العراق<br>
-        د. عمر فيصل الثويعيني
+    <!-- Left: Copyright and author -->
+    <div class="footer-left">
+      <div class="footer-logo">
+        <img src="assets/images/logo.svg" alt="Iraq AQI" class="footer-logo-img">
       </div>
-
-      <div class="footer-center">
-        <a
-          href="https://dust.aemet.es/"
-          target="_blank"
-          rel="noopener noreferrer">
-          <img
-            src="assets/images/logo-bdrc-and-wmo.svg"
-            alt="BDRC – WMO"
-            class="data-center-logo">
-        </a>
+      <div class="footer-copyright">
+        <p class="footer-title">منصة جودة الهواء في العراق</p>
+        <p class="footer-subtitle">للبحث العلمي والتوعية العامة</p>
+        <p class="footer-author">
+          <span class="author-label">المحاكاة العددية والتحليل:</span>
+          <span class="author-name">د. عمر فيصل الثويعيني</span>
+        </p>
+        <p class="footer-email">
+          <a href="mailto:omar.faisel@gmail.com">omar.faisel@gmail.com</a>
+        </p>
       </div>
-
-      <div class="footer-right">
-        <div id="ref-time"></div>
-      </div>
-
     </div>
-  </footer>
+
+    <!-- Center: Data source with logo -->
+    <div class="footer-center">
+      <div class="data-source-wrapper">
+        <p class="source-label">مزود البيانات العلمية</p>
+        <div class="source-logos">
+          <a href="https://dust.aemet.es/" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="data-source-link">
+            <img src="assets/images/logo-bdrc-and-wmo.svg"
+                 alt="BDRC – WMO"
+                 class="data-center-logo">
+          </a>
+        </div>
+        <p class="source-description">
+          مركز برشلونة الإقليمي للتنبؤ بالغبار<br>
+          المركز الإقليمي للمنظمة العالمية للأرصاد الجوية
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Update time and links -->
+    <div class="footer-right">
+      <div class="last-update">
+        <p class="update-label">آخر تحديث</p>
+        <div id="ref-time" class="update-time">جار التحميل...</div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html#map">الخريطة</a> •
+        <a href="omar.html">حول المؤشر</a> •
+        <a href="data_source.html">المصادر</a> •
+        <a href="index.html#faq">الأسئلة</a>
+      </div>
+      <p class="footer-note">
+        تقدير علمي باستخدام نماذج تنبؤ متقدمة
+      </p>
+    </div>
+
+    <!-- Right: Update time -->
+    <div class="footer-right">
+      <div id="ref-time"></div>
+    </div>
+    
+  </div>
+</footer>
 
   <!-- ================= SCRIPTS ================= -->
   <script src="js/main.js"></script>
