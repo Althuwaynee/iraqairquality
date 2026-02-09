@@ -27,6 +27,22 @@ function isNightTimeIraq(utcTimestamp) {
   return (h >= 19 || h < 6);
 }
 
+/* ---------- Search ---------- */
+function setupSearch() {
+  const searchInput = document.getElementById("search");
+  if (!searchInput) return;
+
+  searchInput.addEventListener("input", () => {
+    if (!pm10Data || !pm10Data.districts) return;
+
+    renderDistrictList(
+      pm10Data.districts,
+      searchInput.value
+    );
+  });
+}
+
+
 /* ---------- Geo helpers ---------- */
 function haversineDistance(lat1, lon1, lat2, lon2) {
   const R = 6371;
@@ -572,4 +588,6 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPM10Alerts();
   setupMobileMenu();
   setupLogoNavigation();
+  setupSearch();   // ✅ THIS WAS MISSING
 });
+
