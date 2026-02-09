@@ -94,7 +94,7 @@ html[dir="rtl"] .header-left {
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 #map {
-  position: relative;
+  
   z-index: 1;
 }
 
@@ -642,19 +642,12 @@ footer {
 
 .menu-toggle {
   position: fixed;
-  top: 14px;
-  right: 14px; /* RTL-friendly */
-  font-size: 1.5rem;
-  background: #fff;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  width: 44px;
-  height: 44px;
-  display: none;
-  z-index: 5000;
-  cursor: pointer;
-  touch-action: manipulation;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2000;
+  pointer-events: auto;
 }
+
 
 
 .mobile-menu {
@@ -869,21 +862,7 @@ html[dir="ltr"] .page-content h2 {
   }
 }
 /* Ensure menu button is visible and has proper styling */
-.menu-toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px; /* RTL-friendly */
-  font-size: 1.5rem;
-  background: #fff;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  width: 44px;
-  height: 44px;
-  display: none;
-  z-index: 5000;
-  cursor: pointer;
-  touch-action: manipulation;
-}
+
 
 
 /* For RTL pages */
@@ -942,21 +921,6 @@ html[dir="rtl"] .menu-toggle {
 }
 
 /* Make sure burger button is always visible on mobile */
-.menu-toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px; /* RTL-friendly */
-  font-size: 1.5rem;
-  background: #fff;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  width: 44px;
-  height: 44px;
-  display: none;
-  z-index: 5000;
-  cursor: pointer;
-  touch-action: manipulation;
-}
 
 
 /* RTL support for burger */
@@ -1028,21 +992,7 @@ html[dir="rtl"] .mobile-menu.open {
    Burger Button Fix
    =============================== */
 
-.menu-toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px; /* RTL-friendly */
-  font-size: 1.5rem;
-  background: #fff;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  width: 44px;
-  height: 44px;
-  display: none;
-  z-index: 5000;
-  cursor: pointer;
-  touch-action: manipulation;
-}
+
 
 
 /* Remove any existing tap highlight */
@@ -1052,9 +1002,6 @@ html[dir="rtl"] .mobile-menu.open {
 }
 
 /* Make sure nothing is covering the button */
-.site-header {
-  z-index: 9999; /* Lower than menu-toggle */
-}
 
 /* RTL support */
 html[dir="rtl"] .menu-toggle {
@@ -1097,7 +1044,7 @@ html[dir="rtl"] .menu-toggle {
 /* Ensure header doesn't block clicks */
 .site-header {
   position: relative;
-  z-index: 9000; /* Reasonable z-index */
+  z-index: 1000; /* Reasonable z-index */
 }
 
 .header-left {

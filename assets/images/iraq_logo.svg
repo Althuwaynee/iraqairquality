@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="500" height="500" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="45" fill="none" style="stroke-width: 7.43221px; stroke: rgb(255, 255, 255);" transform="matrix(0.937521, 0, 0, 0.946172, 6.312393, 4.113631)"/>
+  <g transform="translate(50, 50) scale(2.2) translate(-621, -361)">
+    <path d="M617.455884,348.027560L616.034399,350.192325L614.516314,351.044471L614.777737,353.548605L613.729897,357.643190L607.589909,361.120690L608.707977,365.137243L612.048710,366.023834L616.181162,368.301751L624.001048,374.755023L629.157549,375.008626L631.193032,371.946887L633.056527,372.213548L634.702457,372.370526L632.254345,368.966171L632.708967,366.613894L631.281893,364.125978L627.883544,362.318536L625.962433,359.157366L626.605240,356.535659L628.001213,355.368275L627.791960,353.381128L625.973326,352.354346L624.176333,348.234486L624.176272,348.234513L622.847149,348.821808L621.873121,347.935741L618.647190,347.485721L617.455884,348.027560Z" fill="none" style="paint-order: fill; stroke-linejoin: round; stroke-dashoffset: 12px; stroke-width: 2.27273px; stroke: rgb(255, 255, 255);"/>
+    <path d="M624,352 C624,352 630,355 624,362 C618,369 628,372 628,372" fill="none" style="paint-order: fill; stroke-linejoin: round; stroke-dashoffset: 12px; stroke-width: 2.27273px; stroke: rgb(255, 255, 255);"/>
+    <path d="M624,352 C622,352 622,350 624,350 C626,350 626,352 624,352" fill="none" style="paint-order: fill; stroke-linejoin: round; stroke-dashoffset: 12px; stroke-width: 2.27273px; stroke: rgb(255, 255, 255);"/>
+    <path d="M618,358 C618,358 624,361 618,368" fill="none" style="paint-order: fill; stroke-linejoin: round; stroke-dashoffset: 12px; stroke-width: 2.27273px; stroke: rgb(255, 255, 255);"/>
+    <path d="M618,358 C616,358 616,356 618,356 C620,356 620,358 618,358" fill="none" style="paint-order: fill; stroke-linejoin: round; stroke-dashoffset: 12px; stroke-width: 2.27273px; stroke: rgb(255, 255, 255);"/>
+    <path d="M628,368 C628,368 632,369 630,372" fill="none" style="paint-order: fill; stroke-linejoin: round; stroke-dashoffset: 12px; stroke-width: 2.27273px; stroke: rgb(255, 255, 255);"/>
+    <path d="M630,372 C632,372 632,374 630,374 C628,374 628,372 630,372" fill="none" style="paint-order: fill; stroke-linejoin: round; stroke-dashoffset: 12px; stroke-width: 2.27273px; stroke: rgb(255, 255, 255);"/>
+  </g>
+</svg>

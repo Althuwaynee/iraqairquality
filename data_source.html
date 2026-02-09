@@ -3,96 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <title>مصادر البيانات – جودة الهواء في العراق</title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="مصادر بيانات جودة الهواء والغبار في العراق">
+
+  <!-- Leaflet (shared styles, harmless on non-map pages) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- App styles -->
   <link rel="stylesheet" href="css/style.css">
-  
-  <!-- Add favicon if you have one -->
-  <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+
+  <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="header-left">
-    <img src="assets/images/logo.svg" id="logo" class="logo" alt="Iraq AQI">
-  </div>
-
-  <nav class="nav">
-    <a href="index.html#map">Map</a>
-    <a href="omar.html">About AQI</a>
-    <a href="data_source.html">Data</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-</header>
-
-<!-- Mobile menu button -->
-<button id="menu-toggle" class="menu-toggle">☰</button>
-
-<!-- Slide-out menu -->
-<aside id="mobile-menu" class="mobile-menu">
-  <a href="index.html#map" class="nav-link">Map</a>
-  <a href="omar.html" class="nav-link">About AQI</a>
-  <a href="data_source.html" class="nav-link">Data</a>
-  <a href="#faq" class="nav-link">FAQ</a>
-</aside>
-
-<!-- Add this overlay (was missing) -->
-<div id="menu-overlay" class="menu-overlay"></div>
-
-<!-- ================= CONTENT ================= -->
-<main class="page-container">
-  <article class="page-content">
-    <h1>مصادر البيانات</h1>
-    
-    <h2>مركز برشلونة الإقليمي للتنبؤ بالغبار (BDRC)</h2>
-    <p>
-      تعتمد منصة <strong>جودة الهواء في العراق</strong> على بيانات علمية متقدمة
-      صادرة عن مركز برشلونة الإقليمي للتنبؤ بالغبار، وهو المركز الإقليمي المعتمد
-      من قبل المنظمة العالمية للأرصاد الجوية (WMO) ضمن نظام الإنذار المبكر
-      للعواصف الرملية والغبارية (SDS-WAS).
-    </p>
-
-    <h2>لماذا هذه البيانات موثوقة؟</h2>
-    <ul>
-      <li>نماذج عددية متقدمة متعددة المصادر</li>
-      <li>تكامل بيانات الأقمار الصناعية</li>
-      <li>تحديثات زمنية منتظمة</li>
-      <li>اعتماد رسمي من WMO</li>
-    </ul>
-
-    <h2>رؤية المنصة</h2>
-    <p>
-      يهدف المشروع إلى تحويل المعرفة الأكاديمية والنماذج العلمية
-      إلى خدمة وطنية مجانية تساعد المواطنين والباحثين وصناع القرار
-      على فهم المخاطر البيئية واتخاذ قرارات مبنية على العلم.
-    </p>
-  </article>
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="footer-content">
-    <div class="footer-left">
-      © 2026 Iraq Air Quality Platform<br>
-      Dr. Omar Althuwaynee
-    </div>
-
-    <div class="footer-center">
-      <a href="https://dust.aemet.es/" target="_blank">
-        <img src="assets/images/logo-bdrc-and-wmo.svg"
-             alt="BDRC"
-             class="data-center-logo">
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="header-left">
+      <!-- Logo: always navigates home -->
+      <a href="index.html" class="logo-link">
+        <img
+          src="assets/images/logo.svg"
+          alt="Iraq AQI"
+          class="logo"
+        >
       </a>
     </div>
 
-    <div class="footer-right">
-      <div id="ref-time"></div>
-    </div>
-  </div>
-</footer>
+    <!-- Desktop navigation -->
+    <nav class="nav">
+      <a href="index.html#map">الخريطة</a>
+      <a href="omar.html">حول مؤشر الجودة</a>
+      <a href="data_source.html" class="active">مصادر البيانات</a>
+      <a href="index.html#faq">الأسئلة الشائعة</a>
+    </nav>
+  </header>
 
-<script src="js/main.js"></script>
+  <!-- ================= MOBILE MENU ================= -->
+
+  <!-- Burger button -->
+  <button
+    id="menu-toggle"
+    class="menu-toggle"
+    aria-label="فتح القائمة"
+    aria-expanded="false">
+    ☰
+  </button>
+
+  <!-- Slide-out menu -->
+  <aside id="mobile-menu" class="mobile-menu">
+    <a href="index.html#map" class="nav-link">الخريطة</a>
+    <a href="omar.html" class="nav-link">حول مؤشر الجودة</a>
+    <a href="data_source.html" class="nav-link">مصادر البيانات</a>
+    <a href="index.html#faq" class="nav-link">الأسئلة الشائعة</a>
+  </aside>
+
+  <!-- Overlay (REQUIRED for JS) -->
+  <div id="menu-overlay" class="menu-overlay"></div>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="page-container">
+    <article class="page-content">
+
+      <h1>مصادر البيانات</h1>
+
+      <h2>مركز برشلونة الإقليمي للتنبؤ بالغبار (BDRC)</h2>
+      <p>
+        تعتمد منصة <strong>جودة الهواء في العراق</strong> على بيانات علمية
+        متقدمة صادرة عن مركز برشلونة الإقليمي للتنبؤ بالغبار، وهو المركز
+        الإقليمي المعتمد من قبل المنظمة العالمية للأرصاد الجوية (WMO)
+        ضمن نظام الإنذار المبكر للعواصف الرملية والغبارية (SDS-WAS).
+      </p>
+
+      <h2>لماذا هذه البيانات موثوقة؟</h2>
+      <ul>
+        <li>نماذج عددية متقدمة متعددة المصادر</li>
+        <li>تكامل بيانات الأقمار الصناعية</li>
+        <li>تحديثات زمنية منتظمة</li>
+        <li>اعتماد رسمي من المنظمة العالمية للأرصاد الجوية</li>
+      </ul>
+
+      <h2>رؤية المنصة</h2>
+      <p>
+        يهدف هذا المشروع إلى تحويل المعرفة الأكاديمية والنماذج العلمية
+        إلى خدمة وطنية مجانية تساعد المواطنين والباحثين وصناع القرار
+        على فهم المخاطر البيئية واتخاذ قرارات مبنية على العلم.
+      </p>
+
+    </article>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer-content">
+
+      <div class="footer-left">
+        © 2026 منصة جودة الهواء في العراق<br>
+        د. عمر فيصل الثويعيني
+      </div>
+
+      <div class="footer-center">
+        <a
+          href="https://dust.aemet.es/"
+          target="_blank"
+          rel="noopener noreferrer">
+          <img
+            src="assets/images/logo-bdrc-and-wmo.svg"
+            alt="BDRC – WMO"
+            class="data-center-logo">
+        </a>
+      </div>
+
+      <div class="footer-right">
+        <div id="ref-time"></div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="js/main.js"></script>
+
 </body>
 </html>

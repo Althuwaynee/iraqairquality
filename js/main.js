@@ -395,30 +395,25 @@ document.addEventListener("click", (e) => {
 function setupLogoNavigation() {
   const logo = document.querySelector(".logo");
   if (!logo) return;
-  
-  logo.style.cursor = 'pointer';
-  
-  logo.addEventListener("click", function(e) {
+
+  logo.style.cursor = "pointer";
+
+  logo.addEventListener("click", e => {
     e.preventDefault();
-    
-    // Get current page
-    const currentPage = window.location.pathname.split('/').pop();
-    
-    // Check if we're on the main page (index.html or root)
-    const isMainPage = currentPage === 'index.html' || currentPage === '' || currentPage.endsWith('/');
-    
-    if (isMainPage) {
-      // If on main page, scroll to map
-      const mapSection = document.getElementById('map');
-      if (mapSection) {
-        mapSection.scrollIntoView({ behavior: 'smooth' });
-      }
+
+    const isIndex =
+      window.location.pathname === "/" ||
+      window.location.pathname.endsWith("index.html");
+
+    if (isIndex) {
+      const map = document.getElementById("map");
+      if (map) map.scrollIntoView({ behavior: "smooth" });
     } else {
-      // If on another page, navigate to main page
-      window.location.href = 'index.html';
+      window.location.href = "index.html";
     }
   });
 }
+
 
 /* ---------- Mobile Menu ---------- */
 function setupMobileMenu() {
@@ -430,6 +425,9 @@ function setupMobileMenu() {
     console.log("Mobile menu elements not found");
     return;
   }
+
+
+
   
   // Ensure burger button is visible on mobile
   if (window.innerWidth <= 768) {
