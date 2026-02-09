@@ -507,7 +507,64 @@ window.addEventListener('scroll', () => {
 backToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+// Define the bounds for all of Iraq (approximate coordinates)
+const IRAQ_BOUNDS = [
+  [29.0, 38.5], // Southwest corner (lat, lng)
+  [37.5, 48.5]  // Northeast corner (lat, lng)
+];
 
+// Function to fit map to Iraq bounds
+function fitMapToIraq() {
+  if (window.map) { // Make sure map exists
+    map.fitBounds(IRAQ_BOUNDS, {
+      padding: [50, 50], // Optional padding
+      animate: true,
+      duration: 1 // Animation duration in seconds
+    });
+  }
+}
+
+// Event listener for logo clicks
+document.addEventListener('DOMContentLoaded', function() {
+  // Home page logo
+  const logoHome = document.getElementById('logo-home');
+  const footerLogo = document.getElementById('footer-logo');
+  
+  if (logoHome) {
+    logoHome.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default link behavior
+      fitMapToIraq();
+      
+      // If on a different page, navigate to index.html first
+      if (!window.location.pathname.includes('index.html')) {
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 300); // Small delay to show animation first
+      }
+    });
+  }
+  
+  if (footerLogo) {
+    footerLogo.addEventListener('click', function(e) {
+      e.preventDefault();
+      fitMapToIraq();
+      
+      if (!window.location.pathname.includes('index.html')) {
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 300);
+      }
+    });
+  }
+  
+  // Optional: Add keyboard shortcut (Home key) to reset view
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Home' && window.map) {
+      e.preventDefault();
+      fitMapToIraq();
+    }
+  });
+});
 
 /* ---------- App Bootstrap ---------- */
 document.addEventListener("DOMContentLoaded", () => {
