@@ -69,12 +69,6 @@ body {
   cursor: pointer;
 }
 
-/* Hide desktop nav on mobile */
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-}
 
 /* RTL-safe header */
 html[dir="rtl"] .site-header {
@@ -657,84 +651,19 @@ footer {
   background: #f8fafc;
 }
 
-.menu-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2000;
-  pointer-events: auto;
-}
 
 
 
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: -240px;
-  width: 220px;
-  height: 100%;
-  background: #ffffff;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-  padding: 4rem 1rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: left 0.3s ease;
-  z-index: 2500;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #1e293b;
-  font-size: 0.95rem;
-}
-
-.mobile-menu.open {
-  left: 0;
-}
-
-.menu-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 4000;
-  display: none;
-  pointer-events: none;
-}
-
-.menu-overlay.show {
-  display: block;
-  pointer-events: auto;
-}
 
 
-/* Desktop: hide mobile menu button */
-@media (min-width: 768px) {
-  .menu-toggle,
-  .mobile-menu,
-  .menu-overlay {
-    display: none;
-  }
-}
+
 
 
 html[dir="rtl"] {
   direction: rtl;
 }
 
-html[dir="rtl"] .mobile-menu {
-  left: auto;
-  right: -240px;
-}
 
-html[dir="rtl"] .mobile-menu.open {
-  right: 0;
-}
-
-html[dir="rtl"] .menu-toggle {
-  left: auto;
-  right: 10px;
-}
 
 .image-container {
     margin: 35px auto;
@@ -882,164 +811,6 @@ html[dir="ltr"] .page-content h2 {
 
 
 
-/* For RTL pages */
-html[dir="rtl"] .menu-toggle {
-  left: auto;
-  right: 15px;
-}
-
-/* Hide on desktop - but only when screen is wide enough */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-}
-
-/* Make sure overlay covers everything */
-.menu-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 4000;
-  display: none;
-  pointer-events: none;
-}
-
-.menu-overlay.show {
-  display: block;
-  pointer-events: auto;
-}
-
-
-/* ===============================
-   Mobile Menu Fixes
-   =============================== */
-
-/* Hide desktop nav on mobile */
-@media (max-width: 768px) {
-  .nav {
-    display: none !important;
-  }
-  
-  .menu-toggle {
-    display: block !important;
-  }
-}
-
-/* Show desktop nav on larger screens */
-@media (min-width: 769px) {
-  .nav {
-    display: flex !important;
-  }
-  
-  .menu-toggle {
-    display: none !important;
-  }
-}
-
-/* Make sure burger button is always visible on mobile */
-
-
-/* RTL support for burger */
-html[dir="rtl"] .menu-toggle {
-  left: auto;
-  right: 15px;
-}
-
-/* Mobile menu styling */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: -240px;
-  width: 220px;
-  height: 100%;
-  background: #ffffff;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-  padding: 4rem 1rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: left 0.3s ease;
-  z-index: 2500;
-}
-
-.mobile-menu.open {
-  left: 0;
-}
-
-html[dir="rtl"] .mobile-menu {
-  left: auto;
-  right: -240px;
-}
-
-html[dir="rtl"] .mobile-menu.open {
-  right: 0;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  color: #1e293b;
-  font-size: 0.95rem;
-  padding: 0.5rem;
-  border-radius: 4px;
-}
-
-.mobile-menu a:hover {
-  background: #f1f5f9;
-}
-
-/* Menu overlay */
-.menu-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 4000;
-  display: none;
-  pointer-events: none;
-}
-
-.menu-overlay.show {
-  display: block;
-  pointer-events: auto;
-}
-
-
-
-/* ===============================
-   Burger Button Fix
-   =============================== */
-
-
-
-
-/* Remove any existing tap highlight */
-.menu-toggle:active, .menu-toggle:focus {
-  outline: none;
-  background: #f1f5f9;
-}
-
-/* Make sure nothing is covering the button */
-
-/* RTL support */
-html[dir="rtl"] .menu-toggle {
-  left: auto;
-  right: 15px;
-}
-
-/* Mobile-only display */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block !important;
-  }
-}
-
-/* Hide on desktop */
-@media (min-width: 769px) {
-  .menu-toggle {
-    display: none !important;
-  }
-}
-
 /* ===============================
    Logo Fix
    =============================== */
@@ -1069,11 +840,7 @@ html[dir="rtl"] .menu-toggle {
   z-index: 9001;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-}
+
 
 
 .nav a {
@@ -1110,5 +877,35 @@ html[dir="rtl"] .menu-toggle {
     display: flex;
     justify-content: space-around;
     margin-top: 0.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .site-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+
+  .header-left {
+    margin-bottom: 0.4rem;
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav a {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .nav a.active::after {
+    bottom: -4px;
   }
 }
