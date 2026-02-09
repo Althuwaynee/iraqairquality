@@ -459,6 +459,6 @@ function applyLanguage() {
     }
   });
 }
-document.getElementById("logo").onclick = () => {
-  map.setView([33.2, 44.3], 6, { animate: true });
-};
+document.getElementById("logo")?.addEventListener("click", () => {
+  window.location.href = "index.html#map";
+});
