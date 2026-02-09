@@ -19,7 +19,7 @@
   <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
 </head>
 
-<body >
+<body  class="data-source-page">
 
   <!-- ================= HEADER ================= -->
   <header class="site-header">
@@ -36,9 +36,11 @@
 
     <!-- Desktop navigation -->
     <nav class="nav">
+    
       <a href="index.html#map">الخريطة</a>
-      <a href="omar.html">حول مؤشر الجودة</a>
+      
       <a href="data_source.html" class="active">مصادر البيانات</a>
+      <a href="omar.html">حول مؤشر الجودة</a>
       <a href="index.html#faq">الأسئلة الشائعة</a>
     </nav>
   </header>
@@ -79,69 +81,57 @@
 
   <!-- ================= FOOTER ================= -->
 <!-- ================= FOOTER ================= -->
-<footer class="site-footer">
+<footer>
   <div class="footer-content">
 
-    <!-- Left: Copyright and author -->
+    <!-- Left: Logo + Copyright -->
     <div class="footer-left">
-      <div class="footer-logo">
-        <img src="assets/images/logo.svg" alt="Iraq AQI" class="footer-logo-img">
-      </div>
-      <div class="footer-copyright">
-        <p class="footer-title">منصة جودة الهواء في العراق</p>
-        <p class="footer-subtitle">للبحث العلمي والتوعية العامة</p>
-        <p class="footer-author">
-          <span class="author-label">المحاكاة العددية والتحليل:</span>
-          <span class="author-name">د. عمر فيصل الثويني</span>
-        </p>
-        <p class="footer-email">
-          <a href="mailto:omar.faisel@gmail.com">omar.faisel@gmail.com</a>
-        </p>
-      </div>
-    </div>
-
-    <!-- Center: Data source with logo -->
-    <div class="footer-center">
-      <div class="data-source-wrapper">
-        <p class="source-label">مزود البيانات العلمية</p>
-        <div class="source-logos">
-          <a href="https://dust.aemet.es/" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             class="data-source-link">
-            <img src="assets/images/logo-bdrc-and-wmo.svg"
-                 alt="BDRC – WMO"
-                 class="data-center-logo">
-          </a>
-        </div>
-        <p class="source-description">
-          مركز برشلونة الإقليمي للتنبؤ بالغبار<br>
-          المركز الإقليمي للمنظمة العالمية للأرصاد الجوية
-        </p>
-      </div>
-    </div>
-
-    <!-- Right: Update time and links -->
-    <div class="footer-right">
-      <div class="last-update">
-        <p class="update-label">آخر تحديث</p>
-        <div id="ref-time" class="update-time">جار التحميل...</div>
-      </div>
-      <div class="footer-links">
-        <a href="index.html#map">الخريطة</a> •
-        <a href="omar.html">حول المؤشر</a> •
-        <a href="data_source.html">المصادر</a> •
-        <a href="index.html#faq">الأسئلة</a>
-      </div>
-      <p class="footer-note">
-        تقدير علمي باستخدام نماذج تنبؤ متقدمة
+      <a href="index.html" class="footer-logo-link">
+        <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
+      </a>
+      <p class="footer-copyright">
+        © 2026 Iraq Air Quality Platform. "For research & public awareness"
+        <br>
+        Numerical simulation & processing by Dr. Omar Althuwaynee
+        <br>
+        <small>(omar.faisel@gmail.com)</small>
       </p>
     </div>
 
+    <!-- Center: Data source -->
+    <div class="footer-center">
+      <div class="data-source-wrapper">
+        <span class="data-source-label">Data source:</span>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
+          <img src="./assets/images/logo-bdrc-and-wmo.svg" 
+               alt="Barcelona Dust Regional Center" 
+               class="data-center-logo">
+        </a>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="data-center-link">
+          dust.aemet.es
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Update time -->
+    <div class="footer-right">
+      <div id="ref-time"></div>
+    </div>
+
   </div>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" title="Back to top">↑</button>
 </footer>
 
   <!-- ================= SCRIPTS ================= -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/main.js"></script>
 
 </body>

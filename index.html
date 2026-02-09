@@ -39,10 +39,15 @@
 
     <!-- Desktop navigation -->
     <nav class="nav">
-      <a href="index.html#map"class="active">الخريطة</a>
+      
+      
+      
+      
+      <a href="index.html#faq">الأسئلة الشائعة</a>
       <a href="omar.html">حول مؤشر الجودة</a>
       <a href="data_source.html">مصادر البيانات</a>
-      <a href="index.html#faq">الأسئلة الشائعة</a>
+      <a href="index.html#map"class="active">الخريطة</a>
+      
     </nav>
   </header>
 
@@ -96,19 +101,22 @@
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-content">
-    
-    <!-- Left: Copyright and author -->
+
+    <!-- Left: Logo + Copyright -->
     <div class="footer-left">
-      <div class="footer-copyright">
+      <a href="index.html" class="footer-logo-link">
+        <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
+      </a>
+      <p class="footer-copyright">
         © 2026 Iraq Air Quality Platform. "For research & public awareness"
         <br>
         Numerical simulation & processing by Dr. Omar Althuwaynee
         <br>
         <small>(omar.faisel@gmail.com)</small>
-      </div>
+      </p>
     </div>
-    
-    <!-- Center: Data source with logo -->
+
+    <!-- Center: Data source -->
     <div class="footer-center">
       <div class="data-source-wrapper">
         <span class="data-source-label">Data source:</span>
@@ -128,14 +136,19 @@
         </a>
       </div>
     </div>
-    
+
     <!-- Right: Update time -->
     <div class="footer-right">
       <div id="ref-time"></div>
     </div>
-    
+
   </div>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" title="Back to top">↑</button>
 </footer>
+
+
 
   <!-- ================= SCRIPTS ================= -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
