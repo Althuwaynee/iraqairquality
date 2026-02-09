@@ -34,11 +34,28 @@ header p {
 
 
 /* ---------- Header behavior ---------- */
+/* ================= HEADER ================= */
+
 .site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding: 0.75rem 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
 }
+
+/* Push content below fixed header */
+body {
+  padding-top: 72px; /* adjust if header height changes */
+}
+
 
 .header-left {
   display: flex;
@@ -1055,5 +1072,43 @@ html[dir="rtl"] .menu-toggle {
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+  }
+}
+
+
+.nav a {
+  text-decoration: none;
+  color: #334155;
+  margin-left: 1.25rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav a.active {
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #1e3a8a;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.5rem;
   }
 }
