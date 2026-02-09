@@ -426,7 +426,15 @@ function setupMobileMenu() {
   const mobileMenu = document.getElementById("mobile-menu");
   const overlay = document.getElementById("menu-overlay");
   
-  if (!menuBtn || !mobileMenu || !overlay) return;
+  if (!menuBtn || !mobileMenu || !overlay) {
+    console.log("Mobile menu elements not found");
+    return;
+  }
+  
+  // Ensure burger button is visible on mobile
+  if (window.innerWidth <= 768) {
+    menuBtn.style.display = "block";
+  }
   
   // Toggle menu function
   function toggleMenu() {
@@ -438,12 +446,14 @@ function setupMobileMenu() {
       overlay.classList.remove("show");
       document.body.style.overflow = "";
       menuBtn.innerHTML = "☰";
+      menuBtn.setAttribute("aria-expanded", "false");
     } else {
       // Open menu
       mobileMenu.classList.add("open");
       overlay.classList.add("show");
       document.body.style.overflow = "hidden";
       menuBtn.innerHTML = "✕";
+      menuBtn.setAttribute("aria-expanded", "true");
     }
   }
   
@@ -456,53 +466,41 @@ function setupMobileMenu() {
     overlay.classList.remove("show");
     document.body.style.overflow = "";
     menuBtn.innerHTML = "☰";
+    menuBtn.setAttribute("aria-expanded", "false");
   });
   
   // Close menu when clicking any link inside
   const menuLinks = mobileMenu.querySelectorAll("a");
   menuLinks.forEach(link => {
     link.addEventListener("click", function() {
+      // Small delay to allow navigation
+      setTimeout(() => {
+        mobileMenu.classList.remove("open");
+        overlay.classList.remove("show");
+        document.body.style.overflow = "";
+        menuBtn.innerHTML = "☰";
+        menuBtn.setAttribute("aria-expanded", "false");
+      }, 100);
+    });
+  });
+  
+  // Close menu on window resize (if resizing to desktop)
+  window.addEventListener("resize", function() {
+    if (window.innerWidth > 768) {
       mobileMenu.classList.remove("open");
       overlay.classList.remove("show");
       document.body.style.overflow = "";
       menuBtn.innerHTML = "☰";
-    });
-  });
-}
-
-/* ---------- Initialize Everything ---------- */
-document.addEventListener("DOMContentLoaded", () => {
-  // Setup logo navigation (works on all pages)
-  setupLogoNavigation();
-  
-  // Setup mobile menu (works on all pages)
-  setupMobileMenu();
-  
-  // Only run map-related functions if on main page
-  const mapElement = document.getElementById("map");
-  if (mapElement) {
-    initMap();
-    loadPM10Alerts();
-    
-    // Setup search functionality (only on main page)
-    const search = document.getElementById("search");
-    if (search) {
-      search.addEventListener("input", () => {
-        renderDistrictList(pm10Data?.districts || [], search.value);
-      });
+      menuBtn.setAttribute("aria-expanded", "false");
     }
-  }
-});
-
-/* ---------- Service Worker ---------- */
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js")
-      .then(reg => {
-        console.log("Service Worker registered", reg);
-      })
-      .catch(err => {
-        console.error("Service Worker registration failed", err);
-      });
   });
 }
+
+
+/* ---------- App Bootstrap ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+  initMap();
+  loadPM10Alerts();
+  setupMobileMenu();
+  setupLogoNavigation();
+});

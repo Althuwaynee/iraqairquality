@@ -642,15 +642,20 @@ footer {
 
 .menu-toggle {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  font-size: 1.4rem;
+  top: 14px;
+  right: 14px; /* RTL-friendly */
+  font-size: 1.5rem;
   background: #fff;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  padding: 4px 8px;
-  z-index: 3000;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: none;
+  z-index: 5000;
+  cursor: pointer;
+  touch-action: manipulation;
 }
+
 
 .mobile-menu {
   position: fixed;
@@ -681,14 +686,17 @@ footer {
 .menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.4);
+  z-index: 4000;
   display: none;
-  z-index: 2400;
+  pointer-events: none;
 }
 
 .menu-overlay.show {
   display: block;
+  pointer-events: auto;
 }
+
 
 /* Desktop: hide mobile menu button */
 @media (min-width: 768px) {
@@ -863,22 +871,20 @@ html[dir="ltr"] .page-content h2 {
 /* Ensure menu button is visible and has proper styling */
 .menu-toggle {
   position: fixed;
-  top: 15px;
-  left: 15px;
+  top: 14px;
+  right: 14px; /* RTL-friendly */
   font-size: 1.5rem;
   background: #fff;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  padding: 6px 12px;
-  z-index: 3000;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: none;
+  z-index: 5000;
   cursor: pointer;
-  display: block; /* Force display */
-  width: 44px; /* Fixed width for consistent tap area */
-  height: 44px; /* Fixed height for consistent tap area */
-  text-align: center;
-  line-height: 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  touch-action: manipulation;
 }
+
 
 /* For RTL pages */
 html[dir="rtl"] .menu-toggle {
@@ -896,15 +902,211 @@ html[dir="rtl"] .menu-toggle {
 /* Make sure overlay covers everything */
 .menu-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 2400;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 4000;
   display: none;
+  pointer-events: none;
 }
 
 .menu-overlay.show {
   display: block;
+  pointer-events: auto;
+}
+
+
+/* ===============================
+   Mobile Menu Fixes
+   =============================== */
+
+/* Hide desktop nav on mobile */
+@media (max-width: 768px) {
+  .nav {
+    display: none !important;
+  }
+  
+  .menu-toggle {
+    display: block !important;
+  }
+}
+
+/* Show desktop nav on larger screens */
+@media (min-width: 769px) {
+  .nav {
+    display: flex !important;
+  }
+  
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Make sure burger button is always visible on mobile */
+.menu-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px; /* RTL-friendly */
+  font-size: 1.5rem;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: none;
+  z-index: 5000;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+
+/* RTL support for burger */
+html[dir="rtl"] .menu-toggle {
+  left: auto;
+  right: 15px;
+}
+
+/* Mobile menu styling */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -240px;
+  width: 220px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  padding: 4rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: left 0.3s ease;
+  z-index: 2500;
+}
+
+.mobile-menu.open {
+  left: 0;
+}
+
+html[dir="rtl"] .mobile-menu {
+  left: auto;
+  right: -240px;
+}
+
+html[dir="rtl"] .mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #1e293b;
+  font-size: 0.95rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.mobile-menu a:hover {
+  background: #f1f5f9;
+}
+
+/* Menu overlay */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 4000;
+  display: none;
+  pointer-events: none;
+}
+
+.menu-overlay.show {
+  display: block;
+  pointer-events: auto;
+}
+
+
+
+/* ===============================
+   Burger Button Fix
+   =============================== */
+
+.menu-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px; /* RTL-friendly */
+  font-size: 1.5rem;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  display: none;
+  z-index: 5000;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+
+/* Remove any existing tap highlight */
+.menu-toggle:active, .menu-toggle:focus {
+  outline: none;
+  background: #f1f5f9;
+}
+
+/* Make sure nothing is covering the button */
+.site-header {
+  z-index: 9999; /* Lower than menu-toggle */
+}
+
+/* RTL support */
+html[dir="rtl"] .menu-toggle {
+  left: auto;
+  right: 15px;
+}
+
+/* Mobile-only display */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important;
+  }
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+/* ===============================
+   Logo Fix
+   =============================== */
+
+.logo {
+  height: 45px;
+  margin-left: 2.5rem;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 9998; /* High but lower than burger */
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Ensure header doesn't block clicks */
+.site-header {
+  position: relative;
+  z-index: 9000; /* Reasonable z-index */
+}
+
+.header-left {
+  position: relative;
+  z-index: 9001;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
 }

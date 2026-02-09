@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>مصادر البيانات – جودة الهواء في العراق</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="مصادر بيانات جودة الهواء والغبار في العراق">
-
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Add favicon if you have one -->
+  <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
 </head>
 
 <body>
@@ -24,25 +25,27 @@
     <a href="data_source.html">Data</a>
     <a href="#faq">FAQ</a>
   </nav>
-
-
 </header>
 
-<!-- Mobile menu -->
-<!-- Mobile menu -->
+<!-- Mobile menu button -->
+<button id="menu-toggle" class="menu-toggle">☰</button>
+
+<!-- Slide-out menu -->
 <aside id="mobile-menu" class="mobile-menu">
   <a href="index.html#map" class="nav-link">Map</a>
   <a href="omar.html" class="nav-link">About AQI</a>
   <a href="data_source.html" class="nav-link">Data</a>
-  <a href="#faq" class="nav-link">FAQ</a> <!-- Fixed: was missing -->
+  <a href="#faq" class="nav-link">FAQ</a>
 </aside>
+
+<!-- Add this overlay (was missing) -->
+<div id="menu-overlay" class="menu-overlay"></div>
 
 <!-- ================= CONTENT ================= -->
 <main class="page-container">
   <article class="page-content">
-
     <h1>مصادر البيانات</h1>
-
+    
     <h2>مركز برشلونة الإقليمي للتنبؤ بالغبار (BDRC)</h2>
     <p>
       تعتمد منصة <strong>جودة الهواء في العراق</strong> على بيانات علمية متقدمة
@@ -65,14 +68,12 @@
       إلى خدمة وطنية مجانية تساعد المواطنين والباحثين وصناع القرار
       على فهم المخاطر البيئية واتخاذ قرارات مبنية على العلم.
     </p>
-
   </article>
 </main>
 
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-content">
-
     <div class="footer-left">
       © 2026 Iraq Air Quality Platform<br>
       Dr. Omar Althuwaynee
@@ -89,7 +90,6 @@
     <div class="footer-right">
       <div id="ref-time"></div>
     </div>
-
   </div>
 </footer>
 
