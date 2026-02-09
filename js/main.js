@@ -9,32 +9,6 @@ let showAllDistricts = false;
 
 const MAX_VISIBLE_DISTRICTS = 15;
 
-/* ---------- Init ---------- */
-document.addEventListener("DOMContentLoaded", () => {
-  initMap();
-  loadPM10Alerts();
-
-  const search = document.getElementById("search");
-  search.addEventListener("input", () => {
-    renderDistrictList(pm10Data?.districts || [], search.value);
-  });
-});
-
-
-/* ---------- Service Worker ---------- */
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js")
-      .then(reg => {
-        console.log("Service Worker registered", reg);
-      })
-      .catch(err => {
-        console.error("Service Worker registration failed", err);
-      });
-  });
-}
-
-
 /* ---------- Time helpers ---------- */
 function formatIraqTime(utcString, options = {}) {
   const d = new Date(utcString);
@@ -143,6 +117,10 @@ function getHealthIcons({ aqi, pm10, timestamp }) {
 
 /* ---------- Map ---------- */
 function initMap() {
+  // Only initialize map if #map element exists
+  const mapElement = document.getElementById("map");
+  if (!mapElement) return;
+  
   map = L.map("map").setView([33.2, 44.3], 6);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -307,6 +285,8 @@ function buildDistrictPopup(d) {
 /* ---------- Sidebar list ---------- */
 function renderDistrictList(districts, filter = "") {
   const list = document.getElementById("district-list");
+  if (!list) return; // Only run if element exists
+  
   list.innerHTML = "";
 
   const filtered = districts.filter(d =>
@@ -342,6 +322,8 @@ function renderDistrictList(districts, filter = "") {
 
 /* ---------- Zoom + popup ---------- */
 function zoomToDistrict(d) {
+  if (!map) return; // Only if map exists
+  
   map.setView([d.latitude, d.longitude], 11);
   districtLayer.eachLayer(layer => {
     if (layer._district_id === d.district_id) {
@@ -373,8 +355,9 @@ function autoLocateUser(districts) {
 /* ---------- View all ---------- */
 function updateViewAllButton(total) {
   const btn = document.querySelector(".view-all");
+  if (!btn) return;
 
-  if (!btn || total <= MAX_VISIBLE_DISTRICTS) {
+  if (total <= MAX_VISIBLE_DISTRICTS) {
     btn.style.display = "none";
     return;
   }
@@ -388,11 +371,10 @@ function updateViewAllButton(total) {
     showAllDistricts = !showAllDistricts;
     renderDistrictList(
       pm10Data.districts,
-      document.getElementById("search").value
+      document.getElementById("search")?.value || ""
     );
   };
 }
-
 
 /* ---------- Mobile tooltip support for AQI icons ---------- */
 document.addEventListener("click", (e) => {
@@ -409,70 +391,36 @@ document.addEventListener("click", (e) => {
   icon.classList.toggle("active");
 });
 
-const menuToggle = document.getElementById("menu-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
-const menuOverlay = document.getElementById("menu-overlay");
-
-menuToggle.onclick = () => {
-  mobileMenu.classList.add("open");
-  menuOverlay.classList.add("show");
-};
-
-menuOverlay.onclick = closeMenu;
-
-document.querySelectorAll(".nav-link").forEach(link => {
-  link.onclick = closeMenu;
-});
-
-function closeMenu() {
-  mobileMenu.classList.remove("open");
-  menuOverlay.classList.remove("show");
-}
-let currentLang = "en";
-
-const translations = {
-  en: {
-    about: "About AQI",
-    data: "Data",
-    faq: "FAQ"
-  },
-  ar: {
-    about: "حول جودة الهواء",
-    data: "البيانات",
-    faq: "الأسئلة الشائعة"
-  }
-};
-
-document.getElementById("lang-toggle").onclick = () => {
-  currentLang = currentLang === "en" ? "ar" : "en";
-  applyLanguage();
-};
-
-function applyLanguage() {
-  document.documentElement.lang = currentLang;
-  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
-
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.dataset.i18n;
-    if (translations[currentLang][key]) {
-      el.textContent = translations[currentLang][key];
+/* ---------- Logo Navigation ---------- */
+function setupLogoNavigation() {
+  const logo = document.querySelector(".logo");
+  if (!logo) return;
+  
+  logo.style.cursor = 'pointer';
+  
+  logo.addEventListener("click", function(e) {
+    e.preventDefault();
+    
+    // Get current page
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    // Check if we're on the main page (index.html or root)
+    const isMainPage = currentPage === 'index.html' || currentPage === '' || currentPage.endsWith('/');
+    
+    if (isMainPage) {
+      // If on main page, scroll to map
+      const mapSection = document.getElementById('map');
+      if (mapSection) {
+        mapSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If on another page, navigate to main page
+      window.location.href = 'index.html';
     }
   });
 }
-document.addEventListener("DOMContentLoaded", () => {
-  const logo = document.querySelector(".logo");
-  if (logo) {
-    logo.addEventListener("click", () => {
-      window.location.href = "index.html#map";
-    });
-  }
 
-  
-});
-
-// Remove ALL existing menu toggle code and replace with:
-
-/* ---------- Mobile Menu - Simplified ---------- */
+/* ---------- Mobile Menu ---------- */
 function setupMobileMenu() {
   const menuBtn = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -480,7 +428,8 @@ function setupMobileMenu() {
   
   if (!menuBtn || !mobileMenu || !overlay) return;
   
-  menuBtn.addEventListener("click", function() {
+  // Toggle menu function
+  function toggleMenu() {
     const isOpen = mobileMenu.classList.contains("open");
     
     if (isOpen) {
@@ -488,24 +437,28 @@ function setupMobileMenu() {
       mobileMenu.classList.remove("open");
       overlay.classList.remove("show");
       document.body.style.overflow = "";
-      this.innerHTML = "☰";
+      menuBtn.innerHTML = "☰";
     } else {
       // Open menu
       mobileMenu.classList.add("open");
       overlay.classList.add("show");
       document.body.style.overflow = "hidden";
-      this.innerHTML = "✕";
+      menuBtn.innerHTML = "✕";
     }
-  });
+  }
   
-  // Close menu when clicking overlay or links
+  // Attach event listeners
+  menuBtn.addEventListener("click", toggleMenu);
+  
+  // Close menu when clicking overlay
   overlay.addEventListener("click", function() {
     mobileMenu.classList.remove("open");
-    this.classList.remove("show");
+    overlay.classList.remove("show");
     document.body.style.overflow = "";
     menuBtn.innerHTML = "☰";
   });
   
+  // Close menu when clicking any link inside
   const menuLinks = mobileMenu.querySelectorAll("a");
   menuLinks.forEach(link => {
     link.addEventListener("click", function() {
@@ -517,79 +470,39 @@ function setupMobileMenu() {
   });
 }
 
-// Call this in DOMContentLoaded
+/* ---------- Initialize Everything ---------- */
 document.addEventListener("DOMContentLoaded", () => {
-  initMap();
-  loadPM10Alerts();
+  // Setup logo navigation (works on all pages)
   setupLogoNavigation();
-  setupMobileMenu(); // Add this
   
-  // ... rest of your code
-});
-
-// Add this function to handle logo click
-function setupLogoNavigation() {
-  const logo = document.querySelector(".logo");
-  if (logo) {
-    logo.addEventListener("click", () => {
-      // If we're already on the main page, just scroll to map
-      if (window.location.pathname.endsWith("index.html") || 
-          window.location.pathname === "/") {
-        window.location.href = "#map";
-        // Optionally scroll to map if #map exists
-        const mapElement = document.getElementById("map");
-        if (mapElement) {
-          mapElement.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        // Navigate to main page
-        window.location.href = "index.html";
-      }
-    });
-  }
-}
-
-// Call this function when DOM loads
-document.addEventListener("DOMContentLoaded", () => {
-  initMap();
-  loadPM10Alerts();
-  setupLogoNavigation(); // Add this line
+  // Setup mobile menu (works on all pages)
+  setupMobileMenu();
   
-  const search = document.getElementById("search");
-  if (search) {
-    search.addEventListener("input", () => {
-      renderDistrictList(pm10Data?.districts || [], search.value);
-    });
-  }
-});
-
-
-function setupLogoNavigation() {
-  const logo = document.querySelector(".logo");
-  if (!logo) return;
-  
-  logo.addEventListener("click", function(e) {
-    e.preventDefault();
+  // Only run map-related functions if on main page
+  const mapElement = document.getElementById("map");
+  if (mapElement) {
+    initMap();
+    loadPM10Alerts();
     
-    // Get current page
-    const currentPage = window.location.pathname.split('/').pop();
-    
-    // If we're on index.html or root, scroll to map
-    if (currentPage === 'index.html' || currentPage === '' || currentPage.endsWith('/')) {
-      // Check if map section exists on current page
-      const mapSection = document.getElementById('map');
-      if (mapSection) {
-        mapSection.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        // If no map on this page, go to index.html
-        window.location.href = 'index.html';
-      }
-    } else {
-      // Navigate to main page
-      window.location.href = 'index.html';
+    // Setup search functionality (only on main page)
+    const search = document.getElementById("search");
+    if (search) {
+      search.addEventListener("input", () => {
+        renderDistrictList(pm10Data?.districts || [], search.value);
+      });
     }
+  }
+});
+
+/* ---------- Service Worker ---------- */
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js")
+      .then(reg => {
+        console.log("Service Worker registered", reg);
+      })
+      .catch(err => {
+        console.error("Service Worker registration failed", err);
+      });
   });
-  
-  // Add cursor pointer to indicate it's clickable
-  logo.style.cursor = 'pointer';
 }
