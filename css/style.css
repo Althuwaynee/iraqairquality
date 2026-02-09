@@ -860,3 +860,51 @@ html[dir="ltr"] .page-content h2 {
     padding: 1.5rem;
   }
 }
+/* Ensure menu button is visible and has proper styling */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 1.5rem;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 6px 12px;
+  z-index: 3000;
+  cursor: pointer;
+  display: block; /* Force display */
+  width: 44px; /* Fixed width for consistent tap area */
+  height: 44px; /* Fixed height for consistent tap area */
+  text-align: center;
+  line-height: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* For RTL pages */
+html[dir="rtl"] .menu-toggle {
+  left: auto;
+  right: 15px;
+}
+
+/* Hide on desktop - but only when screen is wide enough */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+/* Make sure overlay covers everything */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2400;
+  display: none;
+}
+
+.menu-overlay.show {
+  display: block;
+}

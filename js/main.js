@@ -459,6 +459,137 @@ function applyLanguage() {
     }
   });
 }
-document.getElementById("logo")?.addEventListener("click", () => {
-  window.location.href = "index.html#map";
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector(".logo");
+  if (logo) {
+    logo.addEventListener("click", () => {
+      window.location.href = "index.html#map";
+    });
+  }
+
+  
 });
+
+// Remove ALL existing menu toggle code and replace with:
+
+/* ---------- Mobile Menu - Simplified ---------- */
+function setupMobileMenu() {
+  const menuBtn = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const overlay = document.getElementById("menu-overlay");
+  
+  if (!menuBtn || !mobileMenu || !overlay) return;
+  
+  menuBtn.addEventListener("click", function() {
+    const isOpen = mobileMenu.classList.contains("open");
+    
+    if (isOpen) {
+      // Close menu
+      mobileMenu.classList.remove("open");
+      overlay.classList.remove("show");
+      document.body.style.overflow = "";
+      this.innerHTML = "☰";
+    } else {
+      // Open menu
+      mobileMenu.classList.add("open");
+      overlay.classList.add("show");
+      document.body.style.overflow = "hidden";
+      this.innerHTML = "✕";
+    }
+  });
+  
+  // Close menu when clicking overlay or links
+  overlay.addEventListener("click", function() {
+    mobileMenu.classList.remove("open");
+    this.classList.remove("show");
+    document.body.style.overflow = "";
+    menuBtn.innerHTML = "☰";
+  });
+  
+  const menuLinks = mobileMenu.querySelectorAll("a");
+  menuLinks.forEach(link => {
+    link.addEventListener("click", function() {
+      mobileMenu.classList.remove("open");
+      overlay.classList.remove("show");
+      document.body.style.overflow = "";
+      menuBtn.innerHTML = "☰";
+    });
+  });
+}
+
+// Call this in DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+  initMap();
+  loadPM10Alerts();
+  setupLogoNavigation();
+  setupMobileMenu(); // Add this
+  
+  // ... rest of your code
+});
+
+// Add this function to handle logo click
+function setupLogoNavigation() {
+  const logo = document.querySelector(".logo");
+  if (logo) {
+    logo.addEventListener("click", () => {
+      // If we're already on the main page, just scroll to map
+      if (window.location.pathname.endsWith("index.html") || 
+          window.location.pathname === "/") {
+        window.location.href = "#map";
+        // Optionally scroll to map if #map exists
+        const mapElement = document.getElementById("map");
+        if (mapElement) {
+          mapElement.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Navigate to main page
+        window.location.href = "index.html";
+      }
+    });
+  }
+}
+
+// Call this function when DOM loads
+document.addEventListener("DOMContentLoaded", () => {
+  initMap();
+  loadPM10Alerts();
+  setupLogoNavigation(); // Add this line
+  
+  const search = document.getElementById("search");
+  if (search) {
+    search.addEventListener("input", () => {
+      renderDistrictList(pm10Data?.districts || [], search.value);
+    });
+  }
+});
+
+
+function setupLogoNavigation() {
+  const logo = document.querySelector(".logo");
+  if (!logo) return;
+  
+  logo.addEventListener("click", function(e) {
+    e.preventDefault();
+    
+    // Get current page
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    // If we're on index.html or root, scroll to map
+    if (currentPage === 'index.html' || currentPage === '' || currentPage.endsWith('/')) {
+      // Check if map section exists on current page
+      const mapSection = document.getElementById('map');
+      if (mapSection) {
+        mapSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // If no map on this page, go to index.html
+        window.location.href = 'index.html';
+      }
+    } else {
+      // Navigate to main page
+      window.location.href = 'index.html';
+    }
+  });
+  
+  // Add cursor pointer to indicate it's clickable
+  logo.style.cursor = 'pointer';
+}
