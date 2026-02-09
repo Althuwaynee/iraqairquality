@@ -1,6 +1,59 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Iraq Air Quality Monitor  PM10</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Live PM10 and AQI monitoring for Iraq by district">
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+
+
+  <!-- ================= HEADER ================= -->
+
+
+  <header class="site-header">
+  <div class="header-left">
+    <img src="assets/images/logo.svg" id="logo" alt="Iraq AQI" class="logo">
     
+  </div>
+
+  <nav class="nav">
+    <a href="#map">Map</a>
+    <a href="omar.html">About AQI</a>
+    <a href="data_source.html">Data</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <div class="header-right">
+    <button id="lang-toggle">EN | AR</button>
+  </div>
+</header>
+
+ <!-- Mobile menu button -->
+<button id="menu-toggle" class="menu-toggle">☰</button>
+
+<!-- Slide-out menu -->
+<aside id="mobile-menu" class="mobile-menu">
+  <a href="#map" class="nav-link">Map</a>
+  <a href="omar.html" class="nav-link" data-i18n="about">About AQI</a>
+  <a href="#data" class="nav-link" data-i18n="data">Data</a>
+  <a href="#faq" class="nav-link" data-i18n="faq">FAQ</a>
+</aside>
+
+<div id="menu-overlay" class="menu-overlay"></div>
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,9 +85,7 @@
             border-top: 5px solid #ffffff;
         }
 
-        .side-column {
-            /* أعمدة جانبية لتركيز النظر على المحتوى */
-        }
+
 
         h1 {
             color: #2c3e50;
@@ -182,14 +233,62 @@
 
         <p>هدفي هو تحويل البحث الأكاديمي الرصين المنشور في المجلات العالمية إلى خدمة وطنية مجانية، تساهم في حماية صحة المواطن ودعم الاستقرار البيئي في العراق.</p>
 
-        <div class="cv-link-box">
-            <p>للاطلاع على أرشيفي البحثي الكامل ومساهماتي الأكاديمية عالمياً:</p>
-            <a href="https://scholar.google.com/citations?user=IMTD_McAAAAJ&hl=en" target="_blank" class="cv-link">زيارة ملف Google Scholar</a>
-        </div>
+        
     </div>
 
     <div class="side-column"></div>
 </div>
+
+ 
+
+  <!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-content">
+    
+    <!-- Left: Copyright and author -->
+    <div class="footer-left">
+      <div class="footer-copyright">
+        © 2026 Iraq Air Quality Platform. "For research & public awareness"
+        <br>
+        Numerical simulation & processing by Dr. Omar Althuwaynee
+        <br>
+        <small>(omar.faisel@gmail.com)</small>
+      </div>
+    </div>
+    
+    <!-- Center: Data source with logo -->
+    <div class="footer-center">
+      <div class="data-source-wrapper">
+        <span class="data-source-label">Data source:</span>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
+          <img src="./assets/images/logo-bdrc-and-wmo.svg" 
+               alt="Barcelona Dust Regional Center" 
+               class="data-center-logo">
+        </a>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="data-center-link">
+          dust.aemet.es
+        </a>
+      </div>
+    </div>
+    
+    <!-- Right: Update time -->
+    <div class="footer-right">
+      <div id="ref-time"></div>
+    </div>
+    
+  </div>
+</footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
