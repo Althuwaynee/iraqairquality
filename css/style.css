@@ -625,7 +625,7 @@ html[dir="rtl"] .page-content h2 { border-left: none; }
 
 /* ================= PROFESSIONAL FOOTER STYLES ================= */
 .site-footer {
-  background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #303f9f 100%);
+  background: linear-gradient(135deg, #8a8b97 0%, #38393b 50%, #9296af 100%);
   color: #ffffff;
   padding: 2.5rem 2rem;
   border-top: 4px solid #00bcd4;
