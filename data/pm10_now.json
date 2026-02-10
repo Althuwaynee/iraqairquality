@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2026-02-09T17:44:15.793961Z",
-    "forecast_timestamp": "2026-02-09T18:00:00Z",
+    "generated_at": "2026-02-10T07:50:08.169191Z",
+    "forecast_timestamp": "2026-02-10T09:00:00Z",
     "max_distance_km": 55.0,
     "method": "constrained_idw"
   },
@@ -12,9 +12,9 @@
       "province_name": "Al-Anbar",
       "latitude": 33.22284294208515,
       "longitude": 44.079107812464066,
-      "dust_final": 216.3457869039599,
-      "points_used": 4,
-      "avg_distance_km": 27.93109194282722,
+      "dust_final": 206.09300488247618,
+      "points_used": 2,
+      "avg_distance_km": 27.931091942827223,
       "method": "constrained_idw"
     },
     {
@@ -23,9 +23,9 @@
       "province_name": "Al-Anbar",
       "latitude": 33.105313260379475,
       "longitude": 43.777410959201084,
-      "dust_final": 210.9794478137268,
-      "points_used": 4,
-      "avg_distance_km": 27.95143016119765,
+      "dust_final": 223.8634893179865,
+      "points_used": 3,
+      "avg_distance_km": 36.9212220414229,
       "method": "constrained_idw"
     },
     {
@@ -34,9 +34,9 @@
       "province_name": "Al-Anbar",
       "latitude": 34.27452147741327,
       "longitude": 42.34318442112082,
-      "dust_final": 117.34993581053449,
-      "points_used": 4,
-      "avg_distance_km": 27.967048157570108,
+      "dust_final": 215.15269119289525,
+      "points_used": 3,
+      "avg_distance_km": 36.57207360680909,
       "method": "constrained_idw"
     },
     {
@@ -45,9 +45,9 @@
       "province_name": "Al-Anbar",
       "latitude": 34.23773850679376,
       "longitude": 41.05757223341616,
-      "dust_final": 65.93638531960558,
-      "points_used": 4,
-      "avg_distance_km": 27.78521824716246,
+      "dust_final": 247.20095406264596,
+      "points_used": 2,
+      "avg_distance_km": 27.785218247162465,
       "method": "constrained_idw"
     },
     {
@@ -56,9 +56,9 @@
       "province_name": "Al-Anbar",
       "latitude": 34.270706612798,
       "longitude": 41.81234282035886,
-      "dust_final": 93.50565502629104,
-      "points_used": 4,
-      "avg_distance_km": 27.96303019032176,
+      "dust_final": 193.8640502520162,
+      "points_used": 3,
+      "avg_distance_km": 36.5252641683286,
       "method": "constrained_idw"
     },
     {
@@ -67,9 +67,9 @@
       "province_name": "Al-Anbar",
       "latitude": 33.33897119558584,
       "longitude": 43.146785912239935,
-      "dust_final": 281.2235911748666,
-      "points_used": 4,
-      "avg_distance_km": 30.131326067433175,
+      "dust_final": 231.56010779828614,
+      "points_used": 3,
+      "avg_distance_km": 35.76777468174787,
       "method": "constrained_idw"
     },
     {
@@ -78,9 +78,9 @@
       "province_name": "Al-Anbar",
       "latitude": 32.44739391785713,
       "longitude": 41.32672676898627,
-      "dust_final": 342.98453812014674,
-      "points_used": 4,
-      "avg_distance_km": 29.079953481739633,
+      "dust_final": 213.03442543420806,
+      "points_used": 3,
+      "avg_distance_km": 36.66704535640154,
       "method": "constrained_idw"
     },
     {
@@ -89,9 +89,9 @@
       "province_name": "Al-Anbar",
       "latitude": 33.734816369757134,
       "longitude": 42.68227852661513,
-      "dust_final": 163.12746732739294,
-      "points_used": 4,
-      "avg_distance_km": 27.858105461248186,
+      "dust_final": 191.84802036990442,
+      "points_used": 3,
+      "avg_distance_km": 36.68443426304214,
       "method": "constrained_idw"
     },
     {
@@ -100,9 +100,9 @@
       "province_name": "Al-Anbar",
       "latitude": 33.35933808504119,
       "longitude": 44.17000854725623,
-      "dust_final": 219.48302382052054,
-      "points_used": 4,
-      "avg_distance_km": 29.650442599870242,
+      "dust_final": 203.52640087967075,
+      "points_used": 3,
+      "avg_distance_km": 35.82521734702372,
       "method": "constrained_idw"
     },
     {
@@ -111,9 +111,9 @@
       "province_name": "Al-Basrah",
       "latitude": 30.322295164959556,
       "longitude": 48.00084412853525,
-      "dust_final": 171.455546572277,
-      "points_used": 4,
-      "avg_distance_km": 28.887021371487087,
+      "dust_final": 303.5334065304922,
+      "points_used": 3,
+      "avg_distance_km": 37.57245640632055,
       "method": "constrained_idw"
     },
     {
@@ -122,9 +122,9 @@
       "province_name": "Al-Basrah",
       "latitude": 30.09346407757131,
       "longitude": 48.21259266486124,
-      "dust_final": 135.10934923696877,
-      "points_used": 4,
-      "avg_distance_km": 28.107342566150017,
+      "dust_final": 300.37271246698145,
+      "points_used": 3,
+      "avg_distance_km": 36.807547581687295,
       "method": "constrained_idw"
     },
     {
@@ -133,9 +133,9 @@
       "province_name": "Al-Basrah",
       "latitude": 31.01278159959984,
       "longitude": 47.27969021111455,
-      "dust_final": 196.4059996605817,
-      "points_used": 4,
-      "avg_distance_km": 27.94551187994153,
+      "dust_final": 182.61085644360435,
+      "points_used": 2,
+      "avg_distance_km": 27.945511879941527,
       "method": "constrained_idw"
     },
     {
@@ -144,9 +144,9 @@
       "province_name": "Al-Basrah",
       "latitude": 30.951507845907454,
       "longitude": 47.504821845711334,
-      "dust_final": 182.34279812364585,
+      "dust_final": 198.78742199804884,
       "points_used": 4,
-      "avg_distance_km": 35.643717726075074,
+      "avg_distance_km": 39.43205312885541,
       "method": "constrained_idw"
     },
     {
@@ -155,9 +155,9 @@
       "province_name": "Al-Basrah",
       "latitude": 30.140320747885756,
       "longitude": 47.051652263129796,
-      "dust_final": 209.1481698402462,
+      "dust_final": 247.74011543346194,
       "points_used": 4,
-      "avg_distance_km": 30.393212640602208,
+      "avg_distance_km": 41.03535430260203,
       "method": "constrained_idw"
     },
     {
@@ -166,9 +166,9 @@
       "province_name": "Al-Basrah",
       "latitude": 30.58488009735456,
       "longitude": 47.60895459396477,
-      "dust_final": 156.36904549563852,
+      "dust_final": 236.3572831712509,
       "points_used": 4,
-      "avg_distance_km": 32.21946088070188,
+      "avg_distance_km": 40.69683581524641,
       "method": "constrained_idw"
     },
     {
@@ -177,8 +177,8 @@
       "province_name": "Al-Basrah",
       "latitude": 30.733716653568777,
       "longitude": 47.89427749118113,
-      "dust_final": 136.06699114518347,
-      "points_used": 4,
+      "dust_final": 189.29367105001586,
+      "points_used": 2,
       "avg_distance_km": 27.821509848965405,
       "method": "constrained_idw"
     },
@@ -188,9 +188,9 @@
       "province_name": "Al-Muthannia",
       "latitude": 31.211217356548065,
       "longitude": 45.59095280222517,
-      "dust_final": 229.7190024642558,
-      "points_used": 4,
-      "avg_distance_km": 28.13066389644646,
+      "dust_final": 260.27348395380665,
+      "points_used": 3,
+      "avg_distance_km": 36.80497822464987,
       "method": "constrained_idw"
     },
     {
@@ -199,9 +199,9 @@
       "province_name": "Al-Muthannia",
       "latitude": 30.037772528935243,
       "longitude": 45.34324916086535,
-      "dust_final": 160.3970604504167,
-      "points_used": 4,
-      "avg_distance_km": 29.654408903680576,
+      "dust_final": 289.5727026185331,
+      "points_used": 3,
+      "avg_distance_km": 36.744774664634804,
       "method": "constrained_idw"
     },
     {
@@ -210,9 +210,9 @@
       "province_name": "Al-Muthannia",
       "latitude": 31.22628548408288,
       "longitude": 45.26107498099238,
-      "dust_final": 217.46690013431692,
-      "points_used": 4,
-      "avg_distance_km": 27.8935992015358,
+      "dust_final": 290.777658058695,
+      "points_used": 3,
+      "avg_distance_km": 36.70722533589559,
       "method": "constrained_idw"
     },
     {
@@ -221,8 +221,8 @@
       "province_name": "Al-Muthannia",
       "latitude": 31.49777407467573,
       "longitude": 45.295419354379,
-      "dust_final": 249.19410363131854,
-      "points_used": 4,
+      "dust_final": 256.6032983846156,
+      "points_used": 2,
       "avg_distance_km": 28.20428443267855,
       "method": "constrained_idw"
     },
@@ -232,9 +232,9 @@
       "province_name": "Al-Qadisiyah",
       "latitude": 32.05638201510581,
       "longitude": 44.93432548754941,
-      "dust_final": 319.2496889703026,
+      "dust_final": 227.7110363200497,
       "points_used": 4,
-      "avg_distance_km": 34.680978904337806,
+      "avg_distance_km": 39.82441027770078,
       "method": "constrained_idw"
     },
     {
@@ -243,9 +243,9 @@
       "province_name": "Al-Qadisiyah",
       "latitude": 31.933401279365494,
       "longitude": 45.41428409276566,
-      "dust_final": 287.3251052610353,
+      "dust_final": 228.8943669610774,
       "points_used": 4,
-      "avg_distance_km": 33.46132694851875,
+      "avg_distance_km": 40.15165847315301,
       "method": "constrained_idw"
     },
     {
@@ -254,9 +254,9 @@
       "province_name": "Al-Qadisiyah",
       "latitude": 31.568054071632826,
       "longitude": 44.83318162808363,
-      "dust_final": 262.79803139762356,
-      "points_used": 4,
-      "avg_distance_km": 29.348971242389645,
+      "dust_final": 216.26304456341708,
+      "points_used": 3,
+      "avg_distance_km": 36.39353348057557,
       "method": "constrained_idw"
     },
     {
@@ -265,8 +265,8 @@
       "province_name": "Al-Qadisiyah",
       "latitude": 31.77676313071312,
       "longitude": 44.59017146056126,
-      "dust_final": 283.0147035425126,
-      "points_used": 4,
+      "dust_final": 216.52119273934383,
+      "points_used": 2,
       "avg_distance_km": 27.93184104951689,
       "method": "constrained_idw"
     },
@@ -276,9 +276,9 @@
       "province_name": "An-Najaf",
       "latitude": 32.05113981282575,
       "longitude": 44.44017246858249,
-      "dust_final": 312.824459999537,
+      "dust_final": 235.4117419083516,
       "points_used": 4,
-      "avg_distance_km": 35.03811289002367,
+      "avg_distance_km": 39.72511504795357,
       "method": "constrained_idw"
     },
     {
@@ -287,9 +287,9 @@
       "province_name": "An-Najaf",
       "latitude": 31.79653011163293,
       "longitude": 44.41160823199626,
-      "dust_final": 325.2325922767676,
-      "points_used": 4,
-      "avg_distance_km": 28.291078251906093,
+      "dust_final": 236.02801629014007,
+      "points_used": 3,
+      "avg_distance_km": 36.672757108114446,
       "method": "constrained_idw"
     },
     {
@@ -298,8 +298,8 @@
       "province_name": "An-Najaf",
       "latitude": 31.021296483611717,
       "longitude": 43.71875238029147,
-      "dust_final": 269.0392644388014,
-      "points_used": 4,
+      "dust_final": 183.33565636687337,
+      "points_used": 2,
       "avg_distance_km": 27.96747146227122,
       "method": "constrained_idw"
     },
@@ -309,9 +309,9 @@
       "province_name": "Arbil",
       "latitude": 36.09412336633159,
       "longitude": 43.979899284467095,
-      "dust_final": 99.84915041829369,
+      "dust_final": 117.62402402498924,
       "points_used": 4,
-      "avg_distance_km": 32.723547161191796,
+      "avg_distance_km": 39.985846286043895,
       "method": "constrained_idw"
     },
     {
@@ -320,9 +320,9 @@
       "province_name": "Arbil",
       "latitude": 36.62157561582655,
       "longitude": 44.836960413670944,
-      "dust_final": 76.45399951301025,
-      "points_used": 4,
-      "avg_distance_km": 29.787529869396074,
+      "dust_final": 37.71701737083349,
+      "points_used": 3,
+      "avg_distance_km": 35.86249024465321,
       "method": "constrained_idw"
     },
     {
@@ -331,9 +331,9 @@
       "province_name": "Arbil",
       "latitude": 36.02310426460116,
       "longitude": 44.483131387922455,
-      "dust_final": 119.47978297471971,
+      "dust_final": 128.80306400939074,
       "points_used": 4,
-      "avg_distance_km": 37.49605176655766,
+      "avg_distance_km": 39.308577807973,
       "method": "constrained_idw"
     },
     {
@@ -342,9 +342,9 @@
       "province_name": "Arbil",
       "latitude": 35.8020605658091,
       "longitude": 43.594919062925335,
-      "dust_final": 94.97611195102947,
-      "points_used": 4,
-      "avg_distance_km": 28.438860208167817,
+      "dust_final": 123.22927231304956,
+      "points_used": 3,
+      "avg_distance_km": 36.49817033420221,
       "method": "constrained_idw"
     },
     {
@@ -353,9 +353,9 @@
       "province_name": "Arbil",
       "latitude": 36.98379036535986,
       "longitude": 44.17261192442923,
-      "dust_final": 45.40343430003121,
-      "points_used": 4,
-      "avg_distance_km": 29.054018547718883,
+      "dust_final": 39.66633495581828,
+      "points_used": 3,
+      "avg_distance_km": 37.23918792120399,
       "method": "constrained_idw"
     },
     {
@@ -364,9 +364,9 @@
       "province_name": "Arbil",
       "latitude": 36.42382582668836,
       "longitude": 44.20208455950038,
-      "dust_final": 112.49057609906522,
-      "points_used": 4,
-      "avg_distance_km": 28.304097178627664,
+      "dust_final": 98.31885186185445,
+      "points_used": 3,
+      "avg_distance_km": 36.79038419328648,
       "method": "constrained_idw"
     },
     {
@@ -375,9 +375,9 @@
       "province_name": "Arbil",
       "latitude": 36.808070484282545,
       "longitude": 44.58797960447272,
-      "dust_final": 70.19818896881912,
-      "points_used": 4,
-      "avg_distance_km": 28.584985213141803,
+      "dust_final": 33.46091603784678,
+      "points_used": 3,
+      "avg_distance_km": 36.47231373385048,
       "method": "constrained_idw"
     },
     {
@@ -386,9 +386,9 @@
       "province_name": "As-Sulaymaniyah",
       "latitude": 35.338345566641394,
       "longitude": 44.89128976375739,
-      "dust_final": 148.9099895323858,
-      "points_used": 4,
-      "avg_distance_km": 29.751651497445685,
+      "dust_final": 180.19704109023652,
+      "points_used": 3,
+      "avg_distance_km": 35.93781753267681,
       "method": "constrained_idw"
     },
     {
@@ -397,9 +397,9 @@
       "province_name": "As-Sulaymaniyah",
       "latitude": 35.18624281956737,
       "longitude": 45.63370933688703,
-      "dust_final": 180.8751360544134,
-      "points_used": 4,
-      "avg_distance_km": 28.948347687031227,
+      "dust_final": 141.30435757866698,
+      "points_used": 3,
+      "avg_distance_km": 36.003540673207205,
       "method": "constrained_idw"
     },
     {
@@ -408,9 +408,9 @@
       "province_name": "As-Sulaymaniyah",
       "latitude": 35.909791337834704,
       "longitude": 45.040271627253254,
-      "dust_final": 176.19510411852545,
+      "dust_final": 122.45728624456098,
       "points_used": 4,
-      "avg_distance_km": 33.02317372348746,
+      "avg_distance_km": 40.012308572195835,
       "method": "constrained_idw"
     },
     {
@@ -419,9 +419,9 @@
       "province_name": "As-Sulaymaniyah",
       "latitude": 35.19889656704979,
       "longitude": 45.91233718388822,
-      "dust_final": 181.102110133062,
-      "points_used": 4,
-      "avg_distance_km": 28.399287603072707,
+      "dust_final": 131.19380548659845,
+      "points_used": 3,
+      "avg_distance_km": 36.59474897723744,
       "method": "constrained_idw"
     },
     {
@@ -430,8 +430,8 @@
       "province_name": "As-Sulaymaniyah",
       "latitude": 34.88576413332841,
       "longitude": 45.27184707332049,
-      "dust_final": 189.07244780105265,
-      "points_used": 4,
+      "dust_final": 195.02567174465204,
+      "points_used": 2,
       "avg_distance_km": 27.883265780568095,
       "method": "constrained_idw"
     },
@@ -441,9 +441,9 @@
       "province_name": "As-Sulaymaniyah",
       "latitude": 35.70007100609606,
       "longitude": 45.99337603708975,
-      "dust_final": 131.00113997762338,
-      "points_used": 4,
-      "avg_distance_km": 28.298380250647686,
+      "dust_final": 108.20369897698261,
+      "points_used": 2,
+      "avg_distance_km": 28.298380250647682,
       "method": "constrained_idw"
     },
     {
@@ -452,8 +452,8 @@
       "province_name": "As-Sulaymaniyah",
       "latitude": 36.260580461317225,
       "longitude": 45.11872985685647,
-      "dust_final": 116.04780120184267,
-      "points_used": 4,
+      "dust_final": 89.33914909861802,
+      "points_used": 2,
       "avg_distance_km": 27.78204982452895,
       "method": "constrained_idw"
     },
@@ -463,8 +463,8 @@
       "province_name": "As-Sulaymaniyah",
       "latitude": 36.23643102292312,
       "longitude": 44.74764456144559,
-      "dust_final": 112.5392448899399,
-      "points_used": 4,
+      "dust_final": 92.05045771563701,
+      "points_used": 2,
       "avg_distance_km": 27.761578728981863,
       "method": "constrained_idw"
     },
@@ -474,9 +474,9 @@
       "province_name": "As-Sulaymaniyah",
       "latitude": 35.713649396902575,
       "longitude": 45.56328675629061,
-      "dust_final": 155.8026947002819,
-      "points_used": 4,
-      "avg_distance_km": 28.061211169139675,
+      "dust_final": 116.00099803714144,
+      "points_used": 2,
+      "avg_distance_km": 28.06121116913967,
       "method": "constrained_idw"
     },
     {
@@ -485,8 +485,8 @@
       "province_name": "As-Sulaymaniyah",
       "latitude": 35.456944001285265,
       "longitude": 45.29851493606642,
-      "dust_final": 178.88638882185307,
-      "points_used": 4,
+      "dust_final": 148.8249168878848,
+      "points_used": 2,
       "avg_distance_km": 28.282765675827783,
       "method": "constrained_idw"
     },
@@ -496,9 +496,9 @@
       "province_name": "At-Ta'mim",
       "latitude": 35.13084985740137,
       "longitude": 44.368064379349406,
-      "dust_final": 113.64218261673889,
-      "points_used": 4,
-      "avg_distance_km": 31.438974178367353,
+      "dust_final": 203.05272227172068,
+      "points_used": 3,
+      "avg_distance_km": 35.76262608342103,
       "method": "constrained_idw"
     },
     {
@@ -507,9 +507,9 @@
       "province_name": "At-Ta'mim",
       "latitude": 35.67937289131292,
       "longitude": 43.900415982001164,
-      "dust_final": 103.9212357072868,
-      "points_used": 4,
-      "avg_distance_km": 29.016465384314465,
+      "dust_final": 145.95995759292205,
+      "points_used": 3,
+      "avg_distance_km": 36.17772639612614,
       "method": "constrained_idw"
     },
     {
@@ -518,8 +518,8 @@
       "province_name": "At-Ta'mim",
       "latitude": 35.256724501356565,
       "longitude": 43.70095842908063,
-      "dust_final": 121.82740969061972,
-      "points_used": 4,
+      "dust_final": 202.0120692635474,
+      "points_used": 2,
       "avg_distance_km": 27.77825023392865,
       "method": "constrained_idw"
     },
@@ -529,8 +529,8 @@
       "province_name": "At-Ta'mim",
       "latitude": 35.4864951510407,
       "longitude": 44.239284367254385,
-      "dust_final": 118.54837919275559,
-      "points_used": 4,
+      "dust_final": 187.59678561046414,
+      "points_used": 2,
       "avg_distance_km": 27.77555380214411,
       "method": "constrained_idw"
     },
@@ -540,9 +540,9 @@
       "province_name": "Babil",
       "latitude": 33.05982072936117,
       "longitude": 44.3981231333268,
-      "dust_final": 216.35440592114546,
+      "dust_final": 228.78355639908978,
       "points_used": 4,
-      "avg_distance_km": 32.43784729434024,
+      "avg_distance_km": 40.328590081894504,
       "method": "constrained_idw"
     },
     {
@@ -551,9 +551,9 @@
       "province_name": "Babil",
       "latitude": 32.29782668302269,
       "longitude": 44.73249203228896,
-      "dust_final": 345.16777105056997,
-      "points_used": 4,
-      "avg_distance_km": 27.941069128645548,
+      "dust_final": 230.6690257144648,
+      "points_used": 3,
+      "avg_distance_km": 36.56707477398049,
       "method": "constrained_idw"
     },
     {
@@ -562,9 +562,9 @@
       "province_name": "Babil",
       "latitude": 32.29579786117719,
       "longitude": 44.36278554719627,
-      "dust_final": 301.85169904925294,
-      "points_used": 4,
-      "avg_distance_km": 28.396171352033594,
+      "dust_final": 242.40964487313147,
+      "points_used": 3,
+      "avg_distance_km": 36.2466292073155,
       "method": "constrained_idw"
     },
     {
@@ -573,9 +573,9 @@
       "province_name": "Babil",
       "latitude": 32.61447742592752,
       "longitude": 44.61763573199641,
-      "dust_final": 260.520346180106,
-      "points_used": 4,
-      "avg_distance_km": 32.034925188996425,
+      "dust_final": 256.5752621333256,
+      "points_used": 3,
+      "avg_distance_km": 35.85393257690641,
       "method": "constrained_idw"
     },
     {
@@ -584,9 +584,9 @@
       "province_name": "Babil",
       "latitude": 32.698928485478795,
       "longitude": 44.205794780192214,
-      "dust_final": 213.87492970969447,
-      "points_used": 4,
-      "avg_distance_km": 28.784808015112972,
+      "dust_final": 223.11706693056072,
+      "points_used": 3,
+      "avg_distance_km": 36.1598154727306,
       "method": "constrained_idw"
     },
     {
@@ -595,9 +595,9 @@
       "province_name": "Babil",
       "latitude": 32.99181024914125,
       "longitude": 44.16474154022843,
-      "dust_final": 215.0594345255255,
+      "dust_final": 218.12108903892695,
       "points_used": 4,
-      "avg_distance_km": 29.320813148322014,
+      "avg_distance_km": 41.539816088653595,
       "method": "constrained_idw"
     },
     {
@@ -606,9 +606,9 @@
       "province_name": "Baghdad",
       "latitude": 33.32684542790276,
       "longitude": 44.38813481412715,
-      "dust_final": 222.20539938986474,
-      "points_used": 4,
-      "avg_distance_km": 29.304313606813444,
+      "dust_final": 213.02164736918164,
+      "points_used": 3,
+      "avg_distance_km": 36.00603161680588,
       "method": "constrained_idw"
     },
     {
@@ -617,9 +617,9 @@
       "province_name": "Dhi-Qar",
       "latitude": 31.07190576959777,
       "longitude": 46.20454230615835,
-      "dust_final": 205.97219252748073,
-      "points_used": 4,
-      "avg_distance_km": 28.2441548025893,
+      "dust_final": 190.47755694816402,
+      "points_used": 3,
+      "avg_distance_km": 36.89234477359472,
       "method": "constrained_idw"
     },
     {
@@ -628,9 +628,9 @@
       "province_name": "Dhi-Qar",
       "latitude": 30.846690799784025,
       "longitude": 46.93749421705343,
-      "dust_final": 239.00332174442207,
-      "points_used": 4,
-      "avg_distance_km": 29.86344335595263,
+      "dust_final": 172.49756357465526,
+      "points_used": 3,
+      "avg_distance_km": 36.36512112100335,
       "method": "constrained_idw"
     },
     {
@@ -639,9 +639,9 @@
       "province_name": "Dhi-Qar",
       "latitude": 31.691869488271003,
       "longitude": 46.040599148346814,
-      "dust_final": 214.0859195028285,
-      "points_used": 4,
-      "avg_distance_km": 28.509017399016813,
+      "dust_final": 208.9483734540868,
+      "points_used": 3,
+      "avg_distance_km": 37.09811727203128,
       "method": "constrained_idw"
     },
     {
@@ -650,9 +650,9 @@
       "province_name": "Dhi-Qar",
       "latitude": 31.370076781406347,
       "longitude": 46.27437951895734,
-      "dust_final": 207.96754004678186,
-      "points_used": 4,
-      "avg_distance_km": 27.92933913524036,
+      "dust_final": 182.94954701850938,
+      "points_used": 3,
+      "avg_distance_km": 36.769682124186225,
       "method": "constrained_idw"
     },
     {
@@ -661,9 +661,9 @@
       "province_name": "Dhi-Qar",
       "latitude": 30.848459053271625,
       "longitude": 46.502609996009,
-      "dust_final": 219.40667658646657,
+      "dust_final": 161.92969225144608,
       "points_used": 4,
-      "avg_distance_km": 29.824751913388365,
+      "avg_distance_km": 41.16452370754109,
       "method": "constrained_idw"
     },
     {
@@ -672,9 +672,9 @@
       "province_name": "Dihok",
       "latitude": 37.09417753408788,
       "longitude": 43.51527763533789,
-      "dust_final": 12.780529180914957,
+      "dust_final": 23.775600421005,
       "points_used": 4,
-      "avg_distance_km": 32.71132014319236,
+      "avg_distance_km": 39.9748739441631,
       "method": "constrained_idw"
     },
     {
@@ -683,9 +683,9 @@
       "province_name": "Dihok",
       "latitude": 36.93310710113811,
       "longitude": 43.04661068219852,
-      "dust_final": 41.31338292941545,
+      "dust_final": 33.642820292009475,
       "points_used": 4,
-      "avg_distance_km": 34.53473885382715,
+      "avg_distance_km": 39.76144859054383,
       "method": "constrained_idw"
     },
     {
@@ -694,9 +694,9 @@
       "province_name": "Dihok",
       "latitude": 36.89815044166084,
       "longitude": 42.71167707762135,
-      "dust_final": 42.46011269300617,
-      "points_used": 4,
-      "avg_distance_km": 28.136126633457835,
+      "dust_final": 41.408651366387204,
+      "points_used": 3,
+      "avg_distance_km": 36.697430735374326,
       "method": "constrained_idw"
     },
     {
@@ -705,9 +705,9 @@
       "province_name": "Dihok",
       "latitude": 37.19439779935592,
       "longitude": 42.84944778352461,
-      "dust_final": 15.499999999999996,
-      "points_used": 4,
-      "avg_distance_km": 28.76727164635923,
+      "dust_final": 17.29689478048522,
+      "points_used": 3,
+      "avg_distance_km": 36.027579151246634,
       "method": "constrained_idw"
     },
     {
@@ -716,9 +716,9 @@
       "province_name": "Diyala",
       "latitude": 34.04353273578466,
       "longitude": 44.52330952743335,
-      "dust_final": 228.6691245594243,
+      "dust_final": 241.31914898722445,
       "points_used": 4,
-      "avg_distance_km": 36.02796096015685,
+      "avg_distance_km": 39.435604226791014,
       "method": "constrained_idw"
     },
     {
@@ -727,9 +727,9 @@
       "province_name": "Diyala",
       "latitude": 33.82225180806976,
       "longitude": 44.77287411440991,
-      "dust_final": 239.5750809246861,
-      "points_used": 4,
-      "avg_distance_km": 27.980078829816833,
+      "dust_final": 340.43125699197157,
+      "points_used": 3,
+      "avg_distance_km": 36.50830833915452,
       "method": "constrained_idw"
     },
     {
@@ -738,9 +738,9 @@
       "province_name": "Diyala",
       "latitude": 33.54106113544986,
       "longitude": 44.5166965637291,
-      "dust_final": 234.47061639701474,
+      "dust_final": 264.3073659746992,
       "points_used": 4,
-      "avg_distance_km": 36.185024515321714,
+      "avg_distance_km": 39.39881235585655,
       "method": "constrained_idw"
     },
     {
@@ -749,9 +749,9 @@
       "province_name": "Diyala",
       "latitude": 33.45921096533995,
       "longitude": 45.230436441906626,
-      "dust_final": 196.52436977125495,
-      "points_used": 4,
-      "avg_distance_km": 27.837138612544617,
+      "dust_final": 342.1957981802546,
+      "points_used": 2,
+      "avg_distance_km": 27.83713861254462,
       "method": "constrained_idw"
     },
     {
@@ -760,9 +760,9 @@
       "province_name": "Diyala",
       "latitude": 34.36150293342428,
       "longitude": 45.28965167467581,
-      "dust_final": 207.94394019314205,
-      "points_used": 4,
-      "avg_distance_km": 28.241659532793392,
+      "dust_final": 219.2199787510921,
+      "points_used": 3,
+      "avg_distance_km": 36.3531808824197,
       "method": "constrained_idw"
     },
     {
@@ -771,9 +771,9 @@
       "province_name": "Diyala",
       "latitude": 34.51834370904484,
       "longitude": 44.837354344456614,
-      "dust_final": 187.5746399741099,
+      "dust_final": 228.30965264120852,
       "points_used": 4,
-      "avg_distance_km": 29.402965889205475,
+      "avg_distance_km": 41.49267740011109,
       "method": "constrained_idw"
     },
     {
@@ -782,9 +782,9 @@
       "province_name": "Karbala'",
       "latitude": 32.44144064559491,
       "longitude": 43.51528113780361,
-      "dust_final": 315.4614200346184,
+      "dust_final": 271.1839445473893,
       "points_used": 4,
-      "avg_distance_km": 34.96693179824861,
+      "avg_distance_km": 39.53380028102525,
       "method": "constrained_idw"
     },
     {
@@ -793,9 +793,9 @@
       "province_name": "Karbala'",
       "latitude": 32.43804041290849,
       "longitude": 44.16832825952361,
-      "dust_final": 272.8899744131595,
-      "points_used": 4,
-      "avg_distance_km": 29.275375635877378,
+      "dust_final": 244.0624787418047,
+      "points_used": 3,
+      "avg_distance_km": 36.48688267176106,
       "method": "constrained_idw"
     },
     {
@@ -804,9 +804,9 @@
       "province_name": "Karbala'",
       "latitude": 32.426309916614414,
       "longitude": 43.890249236730085,
-      "dust_final": 291.2029872653351,
+      "dust_final": 263.997611921676,
       "points_used": 4,
-      "avg_distance_km": 32.08214010144743,
+      "avg_distance_km": 40.58787754598993,
       "method": "constrained_idw"
     },
     {
@@ -815,9 +815,9 @@
       "province_name": "Maysan",
       "latitude": 31.99405901142912,
       "longitude": 47.157453294534136,
-      "dust_final": 149.2409031722304,
+      "dust_final": 224.96130419286706,
       "points_used": 4,
-      "avg_distance_km": 29.591265226500024,
+      "avg_distance_km": 41.328105799725314,
       "method": "constrained_idw"
     },
     {
@@ -826,9 +826,9 @@
       "province_name": "Maysan",
       "latitude": 31.648353139934745,
       "longitude": 47.55506738090843,
-      "dust_final": 156.4112025953111,
-      "points_used": 4,
-      "avg_distance_km": 30.04762147439177,
+      "dust_final": 201.30347881658636,
+      "points_used": 3,
+      "avg_distance_km": 36.44090142612854,
       "method": "constrained_idw"
     },
     {
@@ -837,9 +837,9 @@
       "province_name": "Maysan",
       "latitude": 31.49408603401158,
       "longitude": 46.83842736762396,
-      "dust_final": 186.88223891275322,
+      "dust_final": 172.90939377689696,
       "points_used": 4,
-      "avg_distance_km": 29.435578113374177,
+      "avg_distance_km": 41.445380223190284,
       "method": "constrained_idw"
     },
     {
@@ -848,9 +848,9 @@
       "province_name": "Maysan",
       "latitude": 31.4293978232381,
       "longitude": 47.20354501217153,
-      "dust_final": 165.0206649737745,
-      "points_used": 4,
-      "avg_distance_km": 28.26422562056878,
+      "dust_final": 144.969917750867,
+      "points_used": 3,
+      "avg_distance_km": 36.8890586142567,
       "method": "constrained_idw"
     },
     {
@@ -859,9 +859,9 @@
       "province_name": "Maysan",
       "latitude": 32.396088677477536,
       "longitude": 46.72321440612597,
-      "dust_final": 151.02156834234862,
-      "points_used": 4,
-      "avg_distance_km": 27.941334705728217,
+      "dust_final": 233.83055073920292,
+      "points_used": 3,
+      "avg_distance_km": 36.95185179504799,
       "method": "constrained_idw"
     },
     {
@@ -870,9 +870,9 @@
       "province_name": "Maysan",
       "latitude": 31.428508971329393,
       "longitude": 47.512448178169265,
-      "dust_final": 159.3055182068294,
+      "dust_final": 177.97200454480353,
       "points_used": 4,
-      "avg_distance_km": 34.107508797458536,
+      "avg_distance_km": 39.662977610727665,
       "method": "constrained_idw"
     },
     {
@@ -881,9 +881,9 @@
       "province_name": "Ninawa",
       "latitude": 36.66346783449737,
       "longitude": 43.83002031016732,
-      "dust_final": 54.92477546050924,
-      "points_used": 4,
-      "avg_distance_km": 29.914520313238185,
+      "dust_final": 62.24716893128462,
+      "points_used": 3,
+      "avg_distance_km": 35.808670299199946,
       "method": "constrained_idw"
     },
     {
@@ -892,9 +892,9 @@
       "province_name": "Ninawa",
       "latitude": 35.62056584683228,
       "longitude": 41.681830678771604,
-      "dust_final": 45.72047519645225,
-      "points_used": 4,
-      "avg_distance_km": 29.030504833672925,
+      "dust_final": 50.58116278797663,
+      "points_used": 3,
+      "avg_distance_km": 36.03369237708733,
       "method": "constrained_idw"
     },
     {
@@ -903,9 +903,9 @@
       "province_name": "Ninawa",
       "latitude": 36.29335231457684,
       "longitude": 43.409231571027405,
-      "dust_final": 61.625339658486,
-      "points_used": 4,
-      "avg_distance_km": 28.22411478626207,
+      "dust_final": 82.6848620665263,
+      "points_used": 3,
+      "avg_distance_km": 36.70976777789917,
       "method": "constrained_idw"
     },
     {
@@ -914,9 +914,9 @@
       "province_name": "Ninawa",
       "latitude": 36.64229670129565,
       "longitude": 43.37599194906899,
-      "dust_final": 39.87961608284035,
-      "points_used": 4,
-      "avg_distance_km": 30.80026101605523,
+      "dust_final": 51.724165636891904,
+      "points_used": 3,
+      "avg_distance_km": 35.77870499586488,
       "method": "constrained_idw"
     },
     {
@@ -925,9 +925,9 @@
       "province_name": "Ninawa",
       "latitude": 35.419410363899516,
       "longitude": 42.44538995122619,
-      "dust_final": 71.07140664184207,
+      "dust_final": 74.64171657784729,
       "points_used": 4,
-      "avg_distance_km": 33.69716645843762,
+      "avg_distance_km": 39.97941548672289,
       "method": "constrained_idw"
     },
     {
@@ -936,9 +936,9 @@
       "province_name": "Ninawa",
       "latitude": 36.07587527830808,
       "longitude": 42.98592624333245,
-      "dust_final": 65.83629627050755,
+      "dust_final": 78.00026170958911,
       "points_used": 4,
-      "avg_distance_km": 33.82937139289805,
+      "avg_distance_km": 39.71832739882913,
       "method": "constrained_idw"
     },
     {
@@ -947,8 +947,8 @@
       "province_name": "Ninawa",
       "latitude": 36.775989750235034,
       "longitude": 43.41230455135135,
-      "dust_final": 40.454751771946256,
-      "points_used": 4,
+      "dust_final": 47.85943719865766,
+      "points_used": 2,
       "avg_distance_km": 27.920181239335932,
       "method": "constrained_idw"
     },
@@ -958,9 +958,9 @@
       "province_name": "Ninawa",
       "latitude": 36.295478427982616,
       "longitude": 41.89315428750927,
-      "dust_final": 30.504226075586743,
-      "points_used": 4,
-      "avg_distance_km": 28.301487118803408,
+      "dust_final": 51.94411531136834,
+      "points_used": 3,
+      "avg_distance_km": 36.49935226758679,
       "method": "constrained_idw"
     },
     {
@@ -969,9 +969,9 @@
       "province_name": "Ninawa",
       "latitude": 36.58683783797396,
       "longitude": 42.42180688184613,
-      "dust_final": 34.10003467866565,
+      "dust_final": 49.7244135916978,
       "points_used": 4,
-      "avg_distance_km": 33.49157963853571,
+      "avg_distance_km": 40.28919684377425,
       "method": "constrained_idw"
     },
     {
@@ -980,9 +980,9 @@
       "province_name": "Ninawa",
       "latitude": 36.59214605317314,
       "longitude": 43.06208705570715,
-      "dust_final": 40.79940728652466,
+      "dust_final": 55.3145188119769,
       "points_used": 4,
-      "avg_distance_km": 33.031024437063536,
+      "avg_distance_km": 40.1988426690746,
       "method": "constrained_idw"
     },
     {
@@ -991,8 +991,8 @@
       "province_name": "Sala ad-Din",
       "latitude": 33.567576470388715,
       "longitude": 44.23120815369178,
-      "dust_final": 225.63052211167314,
-      "points_used": 4,
+      "dust_final": 202.0,
+      "points_used": 2,
       "avg_distance_km": 27.834406419589378,
       "method": "constrained_idw"
     },
@@ -1002,9 +1002,9 @@
       "province_name": "Sala ad-Din",
       "latitude": 34.40288351578535,
       "longitude": 44.124870824825855,
-      "dust_final": 214.62112969593255,
-      "points_used": 4,
-      "avg_distance_km": 31.443141483668033,
+      "dust_final": 172.17888866748405,
+      "points_used": 3,
+      "avg_distance_km": 35.94145211710626,
       "method": "constrained_idw"
     },
     {
@@ -1013,9 +1013,9 @@
       "province_name": "Sala ad-Din",
       "latitude": 35.437079041085134,
       "longitude": 43.12198982022632,
-      "dust_final": 100.05697720909926,
+      "dust_final": 104.51665826876663,
       "points_used": 4,
-      "avg_distance_km": 31.345005863112334,
+      "avg_distance_km": 40.716490846596145,
       "method": "constrained_idw"
     },
     {
@@ -1024,9 +1024,9 @@
       "province_name": "Sala ad-Din",
       "latitude": 33.827073019073126,
       "longitude": 43.96109496433048,
-      "dust_final": 228.31951910888137,
-      "points_used": 4,
-      "avg_distance_km": 29.067236933084285,
+      "dust_final": 213.83315216522402,
+      "points_used": 3,
+      "avg_distance_km": 36.86739360067257,
       "method": "constrained_idw"
     },
     {
@@ -1035,9 +1035,9 @@
       "province_name": "Sala ad-Din",
       "latitude": 34.81981751236421,
       "longitude": 42.9906765324779,
-      "dust_final": 125.62708882334164,
-      "points_used": 4,
-      "avg_distance_km": 28.813167317770336,
+      "dust_final": 159.47093445864618,
+      "points_used": 3,
+      "avg_distance_km": 37.44727006811519,
       "method": "constrained_idw"
     },
     {
@@ -1046,9 +1046,9 @@
       "province_name": "Sala ad-Din",
       "latitude": 34.14255395182311,
       "longitude": 43.469253323818855,
-      "dust_final": 191.8724717071107,
+      "dust_final": 203.61535896021329,
       "points_used": 4,
-      "avg_distance_km": 30.234747796260656,
+      "avg_distance_km": 40.98728210169917,
       "method": "constrained_idw"
     },
     {
@@ -1057,9 +1057,9 @@
       "province_name": "Sala ad-Din",
       "latitude": 34.6659931287577,
       "longitude": 43.618385938906165,
-      "dust_final": 144.70828383671108,
-      "points_used": 4,
-      "avg_distance_km": 29.6360076044381,
+      "dust_final": 181.38037034596118,
+      "points_used": 3,
+      "avg_distance_km": 35.90106824088449,
       "method": "constrained_idw"
     },
     {
@@ -1068,8 +1068,8 @@
       "province_name": "Sala ad-Din",
       "latitude": 34.784153602950724,
       "longitude": 44.547033355815174,
-      "dust_final": 156.71393976398565,
-      "points_used": 4,
+      "dust_final": 211.07090964597847,
+      "points_used": 2,
       "avg_distance_km": 28.016986800789862,
       "method": "constrained_idw"
     },
@@ -1079,9 +1079,9 @@
       "province_name": "Wasit",
       "latitude": 32.139078935764644,
       "longitude": 45.94443905824454,
-      "dust_final": 218.34315671104557,
+      "dust_final": 201.87752092046262,
       "points_used": 4,
-      "avg_distance_km": 30.465249513965823,
+      "avg_distance_km": 41.03126223506669,
       "method": "constrained_idw"
     },
     {
@@ -1090,9 +1090,9 @@
       "province_name": "Wasit",
       "latitude": 32.52238566305417,
       "longitude": 46.09669435212531,
-      "dust_final": 166.57669567356496,
+      "dust_final": 235.43879945937206,
       "points_used": 4,
-      "avg_distance_km": 32.578102434270114,
+      "avg_distance_km": 40.03286777313118,
       "method": "constrained_idw"
     },
     {
@@ -1101,9 +1101,9 @@
       "province_name": "Wasit",
       "latitude": 32.36105076371928,
       "longitude": 45.48407746387027,
-      "dust_final": 271.0103900516995,
+      "dust_final": 216.97644524403245,
       "points_used": 4,
-      "avg_distance_km": 30.373091187178773,
+      "avg_distance_km": 40.85857905817017,
       "method": "constrained_idw"
     },
     {
@@ -1112,9 +1112,9 @@
       "province_name": "Wasit",
       "latitude": 32.826949654777835,
       "longitude": 45.04891490509748,
-      "dust_final": 218.13763425315238,
-      "points_used": 4,
-      "avg_distance_km": 29.08011972672221,
+      "dust_final": 252.4522203631589,
+      "points_used": 3,
+      "avg_distance_km": 36.717872324104405,
       "method": "constrained_idw"
     },
     {
@@ -1123,9 +1123,9 @@
       "province_name": "Wasit",
       "latitude": 33.01018592191133,
       "longitude": 45.874173303288195,
-      "dust_final": 185.2297960418853,
+      "dust_final": 251.06402140032642,
       "points_used": 4,
-      "avg_distance_km": 30.988600289874103,
+      "avg_distance_km": 40.55042307424388,
       "method": "constrained_idw"
     }
   ]
