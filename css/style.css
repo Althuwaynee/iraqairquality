@@ -94,6 +94,18 @@ header p {
 body {
   padding-top: 15px;
 }
+/* ===============================
+   add latest update to pages
+   =============================== */
+
+.last-updated {
+  color: #898989;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+  text-align: right;
+  direction: rtl;
+}
 
 /* ===============================
    Layout
