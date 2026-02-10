@@ -867,7 +867,7 @@ footer {
 
 
 .telegram-bar {
-  background: linear-gradient(135deg, #229ED9, #5d6c9c);
+  background: linear-gradient(135deg, #f4f6f7, #67b0f5);
   text-align: center;
   padding: 0.5rem 1rem;
   font-size: 0.95rem;
@@ -881,4 +881,14 @@ footer {
 
 .telegram-bar a:hover {
   text-decoration: underline;
+}
+.telegram-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-inline-end: 0.5rem;
+}
+
+.telegram-icon svg {
+  width: 20px;
+  height: 20px;
 }
