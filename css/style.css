@@ -812,3 +812,55 @@ footer {
   }
 }
 
+
+
+/***** Tabs tree and location*******/
+
+/* Dropdown container */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Main dropdown link */
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+/* Hidden menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  display: none;
+  z-index: 1000;
+}
+
+/* Dropdown links */
+.dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1rem;
+  white-space: nowrap;
+  color: #1e293b;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background: #f1f5f9;
+}
+
+/* Active page */
+.dropdown-menu a.active {
+  font-weight: 600;
+  background: #e0f2fe;
+}
+
+/* Show menu on hover */
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
