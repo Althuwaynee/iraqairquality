@@ -376,7 +376,7 @@ function buildDistrictPopup(d) {
       Dust (24h mean): ${mean24h.toFixed(1)} µg/m³
       <hr>
       ${forecasts.length > 0 ? `
-        <strong>التنبؤ(next 24h)</strong>
+        <strong>التنبؤ (next 24h)</strong>
         <div class="forecast-row">${forecastHTML}</div>
       ` : '<em>No forecast data available</em>'}
     </div>
