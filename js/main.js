@@ -11,20 +11,32 @@ const MAX_VISIBLE_DISTRICTS = 15;
 
 /* ---------- Time helpers ---------- */
 function formatIraqTime(utcString, options = {}) {
-  const d = new Date(utcString);
-  d.setHours(d.getHours() + 3); // Iraq UTC+3
+  if (!utcString) return "N/A";
+  
+  try {
+    const d = new Date(utcString);
+    d.setHours(d.getHours() + 3); // Iraq UTC+3
 
-  return d.toLocaleString("en-GB", {
-    timeZone: "UTC",
-    ...options
-  });
+    return d.toLocaleString("en-GB", {
+      timeZone: "UTC",
+      ...options
+    });
+  } catch (e) {
+    return "N/A";
+  }
 }
 
 function isNightTimeIraq(utcTimestamp) {
-  const d = new Date(utcTimestamp);
-  d.setHours(d.getHours() + 3);
-  const h = d.getHours();
-  return (h >= 19 || h < 6);
+  if (!utcTimestamp) return false;
+  
+  try {
+    const d = new Date(utcTimestamp);
+    d.setHours(d.getHours() + 3);
+    const h = d.getHours();
+    return (h >= 19 || h < 6);
+  } catch (e) {
+    return false;
+  }
 }
 
 /* ---------- Search ---------- */
@@ -78,13 +90,19 @@ function findNearestDistrict(lat, lon, districts) {
 
 /* ---------- Dust storm logic ---------- */
 function isDustStormCondition(pm10, aqi) {
+  pm10 = pm10 || 0;
+  aqi = aqi || 0;
   return (pm10 >= 300 || aqi >= 200);
 }
 
 /* ---------- Health icons logic ---------- */
 function getHealthIcons({ aqi, pm10, timestamp }) {
+  // Handle null/undefined values
+  aqi = aqi || 0;
+  pm10 = pm10 || 0;
+  
   const icons = [];
-  const night = isNightTimeIraq(timestamp);
+  const night = timestamp ? isNightTimeIraq(timestamp) : false;
   const dust = isDustStormCondition(pm10, aqi);
 
   if (dust) {
@@ -149,19 +167,76 @@ function initMap() {
 /* ---------- Load JSON ---------- */
 async function loadPM10Alerts() {
   try {
+    console.log("Loading PM10 data from: data/pm10_alerts.json");
     const res = await fetch("data/pm10_alerts.json");
+    
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+    }
+    
     pm10Data = await res.json();
-
-    updateHeaderInfo(pm10Data.metadata);
-
-    pm10Data.districts.sort((a, b) => b.aqi.value - a.aqi.value);
-
-    drawDistrictMarkers(pm10Data.districts);
-    renderDistrictList(pm10Data.districts);
-    autoLocateUser(pm10Data.districts);
-
+    
+    if (!pm10Data || !pm10Data.districts || !Array.isArray(pm10Data.districts)) {
+      throw new Error("Invalid JSON structure: missing 'districts' array");
+    }
+    
+    console.log(`Loaded ${pm10Data.districts.length} districts`);
+    
+    // Filter out invalid districts
+    const validDistricts = pm10Data.districts.filter(d => {
+      const hasCoords = d.latitude && d.longitude;
+      const hasAQI = d.aqi && typeof d.aqi.value === 'number';
+      const hasPM10 = d.pm10 && typeof d.pm10.now === 'number';
+      
+      if (!hasCoords || !hasAQI || !hasPM10) {
+        console.warn(`Skipping district ${d.district_name || 'Unknown'}: missing required data`);
+        return false;
+      }
+      return true;
+    });
+    
+    console.log(`${validDistricts.length} valid districts after filtering`);
+    
+    if (validDistricts.length === 0) {
+      throw new Error("No valid district data found. Check JSON structure.");
+    }
+    
+    if (pm10Data.metadata) {
+      updateHeaderInfo(pm10Data.metadata);
+    }
+    
+    validDistricts.sort((a, b) => (b.aqi.value || 0) - (a.aqi.value || 0));
+    drawDistrictMarkers(validDistricts);
+    renderDistrictList(validDistricts);
+    autoLocateUser(validDistricts);
+    
   } catch (err) {
-    console.error("Failed to load pm10_alerts.json", err);
+    console.error("Failed to load PM10 data:", err);
+    
+    // Show user-friendly error
+    const list = document.getElementById("district-list");
+    if (list) {
+      list.innerHTML = `
+        <li style="color: #dc2626; text-align: center; padding: 2rem;">
+          <strong>⚠️ Data Loading Error</strong><br>
+          <small>${err.message}</small><br>
+          <small>Check console for details</small>
+        </li>
+      `;
+    }
+    
+    // Still show map with message
+    if (map) {
+      L.marker([33.2, 44.3]).addTo(map)
+        .bindPopup(`
+          <div style="padding: 10px;">
+            <strong>⚠️ Data Loading Failed</strong><br>
+            <small>${err.message}</small><br>
+            <small>Check that <code>data/pm10_alerts.json</code> exists and has valid data.</small>
+          </div>
+        `)
+        .openPopup();
+    }
   }
 }
 
@@ -170,16 +245,23 @@ function updateHeaderInfo(metadata) {
   const refTime = document.getElementById("ref-time");
   const note = document.getElementById("data-note");
 
-  if (refTime)
-    refTime.textContent =
-      `Reference time: ${new Date(metadata.reference_time).toUTCString()}`;
+  if (refTime && metadata.reference_time) {
+    try {
+      refTime.textContent = `Reference time: ${new Date(metadata.reference_time).toUTCString()}`;
+    } catch (e) {
+      refTime.textContent = "Reference time: N/A";
+    }
+  }
 
-  if (note)
+  if (note && metadata.note) {
     note.textContent = metadata.note;
+  }
 }
 
 /* ---------- Colors ---------- */
 function getAlertColor(level) {
+  if (!level) return "#334155";
+  
   switch (level) {
     case "good": return "#22c55e";
     case "moderate": return "#eab308";
@@ -196,13 +278,16 @@ function drawDistrictMarkers(districts) {
   districtLayer.clearLayers();
 
   districts.forEach(d => {
-    if (!d.latitude || !d.longitude) return;
+    if (!d.latitude || !d.longitude) {
+      console.warn(`Skipping ${d.district_name}: missing coordinates`);
+      return;
+    }
 
     const marker = L.circleMarker(
       [d.latitude, d.longitude],
       {
         radius: 9,
-        fillColor: getAlertColor(d.alert.level),
+        fillColor: getAlertColor(d.alert?.level),
         fillOpacity: 0.85,
         color: "#0f172a",
         weight: 1
@@ -218,6 +303,21 @@ function drawDistrictMarkers(districts) {
 
 /* ---------- Popup ---------- */
 function buildDistrictPopup(d) {
+  // Safely get values with defaults
+  const pm10Now = d.pm10?.now ?? 0;
+  const mean24h = d.pm10?.mean_24h ?? 0;
+  const pm10Timestamp = d.pm10?.timestamp;
+  const aqiValue = d.aqi?.value ?? 0;
+  const aqiLevel = d.aqi?.level ?? 'unknown';
+  
+  const measurementTime = pm10Timestamp 
+    ? formatIraqTime(pm10Timestamp, {
+        weekday: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+      })
+    : "N/A";
 
   const forecasts = [
     d.pm10_forecast_3h,
@@ -228,20 +328,19 @@ function buildDistrictPopup(d) {
     d.pm10_forecast_18h,
     d.pm10_forecast_21h,
     d.pm10_forecast_24h
-  ].filter(Boolean);
+  ].filter(f => f && typeof f.value === 'number' && typeof f.aqi === 'number');
 
   const forecastHTML = forecasts.map(f => {
-
-    const day = formatIraqTime(f.timestamp, { weekday: "short" });
-    const time = formatIraqTime(f.timestamp, {
+    const day = f.timestamp ? formatIraqTime(f.timestamp, { weekday: "short" }) : "N/A";
+    const time = f.timestamp ? formatIraqTime(f.timestamp, {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false
-    });
+    }) : "N/A";
 
     const icons = getHealthIcons({
-      aqi: f.aqi,
-      pm10: f.value,
+      aqi: f.aqi || 0,
+      pm10: f.value || 0,
       timestamp: f.timestamp
     });
 
@@ -249,51 +348,37 @@ function buildDistrictPopup(d) {
       `<span class="aqi-icon" data-tip="${i.label}">${i.icon}</span>`
     ).join("");
 
-
     return `
       <div class="forecast-item">
         <div class="forecast-day">${day}</div>
         <div class="forecast-time">${time}</div>
-
         <div class="forecast-dot"
-             style="background:${getAlertColor(f.aqi_level)}">
-          ${f.aqi}
+             style="background:${getAlertColor(f.aqi_level || 'unknown')}">
+          ${f.aqi || 0}
         </div>
-
-        <div class="forecast-pm">${f.value.toFixed(0)}</div>
+        <div class="forecast-pm">${(f.value || 0).toFixed(0)}</div>
         <div class="forecast-unit">µg/m³</div>
-
         <div class="aqi-icons">${iconsHTML}</div>
       </div>
     `;
   }).join("");
 
-  const measurementTime = formatIraqTime(d.pm10.timestamp, {
-    weekday: "short",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false
-  });
-
   return `
     <div>
-      <strong>${d.district_name}</strong><br>
-      <small>${d.province_name}</small>
-
+      <strong>${d.district_name || "Unknown District"}</strong><br>
+      <small>${d.province_name || "Unknown Province"}</small>
       <hr>
-
       <div style="font-size:0.7rem;color:#475569;">
         Measurement time (Iraq local): ${measurementTime}
       </div>
-
-      Dust: <b>${d.pm10.now.toFixed(1)}</b> µg/m³<br>
-      AQI: <b>${d.aqi.value}</b> (${d.aqi.level})<br>
-      Dust (24h mean): ${d.pm10.mean_24h.toFixed(1)} µg/m³
-
+      Dust: <b>${pm10Now.toFixed(1)}</b> µg/m³<br>
+      AQI: <b>${aqiValue}</b> (${aqiLevel})<br>
+      Dust (24h mean): ${mean24h.toFixed(1)} µg/m³
       <hr>
-
-      <strong>Forecast (next 24h)</strong>
-      <div class="forecast-row">${forecastHTML}</div>
+      ${forecasts.length > 0 ? `
+        <strong>Forecast (next 24h)</strong>
+        <div class="forecast-row">${forecastHTML}</div>
+      ` : '<em>No forecast data available</em>'}
     </div>
   `;
 }
@@ -306,8 +391,8 @@ function renderDistrictList(districts, filter = "") {
   list.innerHTML = "";
 
   const filtered = districts.filter(d =>
-    d.district_name.toLowerCase().includes(filter.toLowerCase()) ||
-    d.province_name.toLowerCase().includes(filter.toLowerCase())
+    d.district_name?.toLowerCase().includes(filter.toLowerCase()) ||
+    d.province_name?.toLowerCase().includes(filter.toLowerCase())
   );
 
   const visible = showAllDistricts
@@ -316,15 +401,15 @@ function renderDistrictList(districts, filter = "") {
 
   visible.forEach(d => {
     const li = document.createElement("li");
-    li.style.borderLeftColor = getAlertColor(d.alert.level);
+    li.style.borderLeftColor = getAlertColor(d.alert?.level);
 
     li.innerHTML = `
       <div>
-        <strong>${d.district_name}</strong><br>
-        <small>${d.province_name}</small>
+        <strong>${d.district_name || "Unknown"}</strong><br>
+        <small>${d.province_name || "Unknown"}</small>
       </div>
       <div class="value">
-        <span>${d.aqi.value}</span>
+        <span>${d.aqi?.value ?? 0}</span>
         <em>AQI</em>
       </div>
     `;
@@ -437,14 +522,29 @@ function setupMobileMenu() {
   const mobileMenu = document.getElementById("mobile-menu");
   const overlay = document.getElementById("menu-overlay");
   
-  if (!menuBtn || !mobileMenu || !overlay) {
-    console.log("Mobile menu elements not found");
-    return;
+  // Early exit if no mobile menu elements exist
+  if (!menuBtn) {
+    return; // No mobile menu on this page
+  }
+  
+  // If mobile menu exists but overlay doesn't, create it
+  if (!overlay && mobileMenu) {
+    const newOverlay = document.createElement("div");
+    newOverlay.id = "menu-overlay";
+    newOverlay.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 9998;
+      display: none;
+    `;
+    document.body.appendChild(newOverlay);
+    overlay = newOverlay;
   }
 
-
-
-  
   // Ensure burger button is visible on mobile
   if (window.innerWidth <= 768) {
     menuBtn.style.display = "block";
@@ -475,34 +575,38 @@ function setupMobileMenu() {
   menuBtn.addEventListener("click", toggleMenu);
   
   // Close menu when clicking overlay
-  overlay.addEventListener("click", function() {
-    mobileMenu.classList.remove("open");
-    overlay.classList.remove("show");
-    document.body.style.overflow = "";
-    menuBtn.innerHTML = "☰";
-    menuBtn.setAttribute("aria-expanded", "false");
-  });
+  if (overlay) {
+    overlay.addEventListener("click", function() {
+      mobileMenu.classList.remove("open");
+      overlay.classList.remove("show");
+      document.body.style.overflow = "";
+      menuBtn.innerHTML = "☰";
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  }
   
   // Close menu when clicking any link inside
-  const menuLinks = mobileMenu.querySelectorAll("a");
-  menuLinks.forEach(link => {
-    link.addEventListener("click", function() {
-      // Small delay to allow navigation
-      setTimeout(() => {
-        mobileMenu.classList.remove("open");
-        overlay.classList.remove("show");
-        document.body.style.overflow = "";
-        menuBtn.innerHTML = "☰";
-        menuBtn.setAttribute("aria-expanded", "false");
-      }, 100);
+  if (mobileMenu) {
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    menuLinks.forEach(link => {
+      link.addEventListener("click", function() {
+        // Small delay to allow navigation
+        setTimeout(() => {
+          mobileMenu.classList.remove("open");
+          if (overlay) overlay.classList.remove("show");
+          document.body.style.overflow = "";
+          menuBtn.innerHTML = "☰";
+          menuBtn.setAttribute("aria-expanded", "false");
+        }, 100);
+      });
     });
-  });
+  }
   
   // Close menu on window resize (if resizing to desktop)
   window.addEventListener("resize", function() {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 768 && mobileMenu && mobileMenu.classList.contains("open")) {
       mobileMenu.classList.remove("open");
-      overlay.classList.remove("show");
+      if (overlay) overlay.classList.remove("show");
       document.body.style.overflow = "";
       menuBtn.innerHTML = "☰";
       menuBtn.setAttribute("aria-expanded", "false");
@@ -512,17 +616,20 @@ function setupMobileMenu() {
 
 const backToTopBtn = document.getElementById('back-to-top');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTopBtn.style.display = 'block';
-  } else {
-    backToTopBtn.style.display = 'none';
-  }
-});
+if (backToTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
 
-backToTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 // Define the bounds for all of Iraq (approximate coordinates)
 const IRAQ_BOUNDS = [
   [29.0, 38.5], // Southwest corner (lat, lng)
@@ -531,7 +638,7 @@ const IRAQ_BOUNDS = [
 
 // Function to fit map to Iraq bounds
 function fitMapToIraq() {
-  if (window.map) { // Make sure map exists
+  if (map) { // Make sure map exists
     map.fitBounds(IRAQ_BOUNDS, {
       padding: [50, 50], // Optional padding
       animate: true,
@@ -552,7 +659,8 @@ document.addEventListener('DOMContentLoaded', function() {
       fitMapToIraq();
       
       // If on a different page, navigate to index.html first
-      if (!window.location.pathname.includes('index.html')) {
+      if (!window.location.pathname.includes('index.html') && 
+          !window.location.pathname.endsWith('/')) {
         setTimeout(() => {
           window.location.href = 'index.html';
         }, 300); // Small delay to show animation first
@@ -565,7 +673,8 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       fitMapToIraq();
       
-      if (!window.location.pathname.includes('index.html')) {
+      if (!window.location.pathname.includes('index.html') && 
+          !window.location.pathname.endsWith('/')) {
         setTimeout(() => {
           window.location.href = 'index.html';
         }, 300);
@@ -575,7 +684,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Optional: Add keyboard shortcut (Home key) to reset view
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Home' && window.map) {
+    if (e.key === 'Home' && map) {
       e.preventDefault();
       fitMapToIraq();
     }
@@ -588,6 +697,5 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPM10Alerts();
   setupMobileMenu();
   setupLogoNavigation();
-  setupSearch();   // ✅ THIS WAS MISSING
+  setupSearch();
 });
-
