@@ -792,6 +792,8 @@ function showMobileZoomHint() {
   }, 1500);
 }
 
+
+
 /* ---------- App Bootstrap ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   initMap();
