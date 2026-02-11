@@ -923,3 +923,20 @@ footer {
   }
 }
 
+/* Mobile zoom hint styling */
+.mobile-zoom-hint .leaflet-popup-content-wrapper {
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  border-radius: 12px;
+  padding: 5px;
+  font-family: system-ui, -apple-system, sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-zoom-hint .leaflet-popup-tip {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.mobile-zoom-hint .leaflet-popup-close-button {
+  color: white !important;
+}
