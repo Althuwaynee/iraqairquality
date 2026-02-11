@@ -692,34 +692,105 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-/* ---------- Enable double-click only on mobile ---------- */
-(function enableMobileFeatures() {
-  function updateMobileSettings() {
-    if (!map) return;
-    
-    const isMobile = window.innerWidth <= 768;
-    
-    if (isMobile) {
-      map.doubleClickZoom.enable();
-      console.log('📱 Mobile: Double-click zoom enabled');
-    } else {
-      map.doubleClickZoom.disable();
-      console.log('💻 Desktop: Double-click zoom disabled');
-    }
-  }
+//* ---------- Mobile double-click zoom (BOTH in AND out) ---------- */
+function enableMobileDoubleClickZoom() {
+  if (!map) return;
   
-  // Run after map is initialized
-  const checkMapInterval = setInterval(() => {
-    if (map) {
-      clearInterval(checkMapInterval);
-      updateMobileSettings();
+  const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+  
+  if (isMobile) {
+    // Disable Leaflet's default doubleClickZoom
+    map.doubleClickZoom.disable();
+    
+    // Remove any existing double-click handlers to avoid duplicates
+    map.off('dblclick');
+    
+    // Add custom double-click handler
+    map.on('dblclick', function(e) {
+      // Get current zoom level
+      const currentZoom = map.getZoom();
       
-      // Update on resize
-      window.addEventListener('resize', updateMobileSettings);
-    }
-  }, 100);
-})();
+      // Check if it's a double-tap on touch device
+      const isTouch = e.originalEvent && e.originalEvent.pointerType === 'touch';
+      
+      if (isTouch || isMobile) {
+        e.originalEvent.preventDefault();
+          /* 
+        // Determine zoom direction based on tap position
+        // Option A: Tap on upper half = zoom in, lower half = zoom out
+        const mapContainer = map.getContainer();
+        const containerHeight = mapContainer.clientHeight;
+        const clickY = e.containerPoint.y;
+        
+        if (clickY < containerHeight / 2) {
+          // Tap on top half - ZOOM IN
+          map.setView(e.latlng, currentZoom + 1, { animate: true });
+        } else {
+          // Tap on bottom half - ZOOM OUT
+          map.setView(e.latlng, currentZoom - 1, { animate: true });
+        }
+        
+         */ 
+        // Option B: Single tap = zoom in, Double tap = zoom out
+        // Uncomment this and comment Option A to use this instead
+        const now = Date.now();
+        if (!map._lastDoubleTap) {
+          map._lastDoubleTap = now;
+          // Zoom in
+          map.setView(e.latlng, currentZoom + 1, { animate: true });
+        } else {
+          const timeSince = now - map._lastDoubleTap;
+          map._lastDoubleTap = now;
+          
+          if (timeSince < 500) {
+            // Zoom out on rapid double tap
+            map.setView(e.latlng, currentZoom - 1, { animate: true });
+          } else {
+            // Zoom in on slower double tap
+            map.setView(e.latlng, currentZoom + 1, { animate: true });
+          }
+        }
+       
+      }
+    });
+    
+    // Optional: Visual hint for mobile users
+    showMobileZoomHint();
+    
+  } else {
+    // On desktop, restore default double-click behavior
+    map.doubleClickZoom.enable();
+    map.off('dblclick');
+  }
+}
 
+/* ---------- Show mobile hint (optional) ---------- */
+function showMobileZoomHint() {
+  // Only show once per session
+  if (sessionStorage.getItem('mobileZoomHintShown')) return;
+  
+  setTimeout(() => {
+    map.openPopup(`
+      <div style="text-align: center; padding: 10px; direction: rtl;">
+        <strong>👆 تكبير/تصغير</strong><br>
+        <small style="color: #666;">
+          اضغط مرتين على:<br>
+          • النصف العلوي = تكبير<br>
+          • النصف السفلي = تصغير
+        </small>
+      </div>
+    `, [33.2, 44.3], { 
+      className: 'mobile-zoom-hint',
+      closeButton: true,
+      closeOnClick: true
+    });
+    
+    sessionStorage.setItem('mobileZoomHintShown', 'true');
+    
+    // Auto close after 5 seconds
+    setTimeout(() => map.closePopup(), 5000);
+  }, 1500);
+}
 
 /* ---------- App Bootstrap ---------- */
 document.addEventListener("DOMContentLoaded", () => {
