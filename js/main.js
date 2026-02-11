@@ -371,12 +371,12 @@ function buildDistrictPopup(d) {
       <div style="font-size:0.7rem;color:#475569;">
         Measurement time (Iraq local): ${measurementTime}
       </div>
-      Dust: <b>${pm10Now.toFixed(1)}</b> µg/m³<br>
+      PM10: <b>${pm10Now.toFixed(1)}</b> µg/m³<br>
       AQI: <b>${aqiValue}</b> (${aqiLevel})<br>
-      Dust (24h mean): ${mean24h.toFixed(1)} µg/m³
+      PM10 (24h mean): ${mean24h.toFixed(1)} µg/m³
       <hr>
       ${forecasts.length > 0 ? `
-        <strong>التنبؤ (next 24h)</strong>
+        <strong>التنبؤ (PM10 next 24h)</strong>
         <div class="forecast-row">${forecastHTML}</div>
       ` : '<em>No forecast data available</em>'}
     </div>
