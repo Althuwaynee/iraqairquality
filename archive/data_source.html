@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مصادر البيانات – جودة الهواء في العراق</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مصادر بيانات جودة الهواء والغبار في العراق">
+
+  <!-- Leaflet (shared styles, harmless on non-map pages) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
+</head>
+
+<body  class="data-source-page">
+
+
+  
+      <!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="header-left">
+    <a href="index.html" class="logo-link" id="logo-home">
+      <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo">
+    </a>
+  </div>
+
+
+
+  <nav class="nav">
+
+    <a href="index.html#map">الخريطة</a>
+    <a href="shako_mako.html">شكو ماكو</a>
+    <!-- ABOUT dropdown -->
+    <div class="nav-dropdown">
+      <a href="#" class="dropdown-toggle">
+        حول المنصة ▾
+      </a>
+
+      <div class="dropdown-menu">
+        <a href="about_AQI.html" >مؤشر الجودة </a>
+        <a href="why_IAQ.html">منصتنا</a>
+        <a href="data_source.html"class="active">مصادر البيانات</a>
+      </div>
+    </div>
+
+
+
+
+  </nav>
+</header>
+
+ 
+
+ 
+
+  <!-- ================= CONTENT ================= -->
+  <main class="page-container">
+    <article class="page-content">
+
+      <h1>مصادر البيانات</h1>
+      <p class="last-updated" id="last-updated-text">
+      آخر تحديث: جاري التحميل...
+      </p>
+
+      <h2>مركز برشلونة الإقليمي للتنبؤ بالغبار (BDRC)</h2>
+      <p>
+        تعتمد منصة <strong>جودة الهواء في العراق</strong> على بيانات علمية
+        متقدمة صادرة عن مركز برشلونة الإقليمي للتنبؤ بالغبار، وهو المركز
+        الإقليمي المعتمد من قبل المنظمة العالمية للأرصاد الجوية (WMO)
+        ضمن نظام الإنذار المبكر للعواصف الرملية والغبارية (SDS-WAS) في منطقة شمال أفريقيا والشرق الأوسط.
+      </p>
+
+
+<h2>حول مركز برشلونة الإقليمي (BDRC)</h2>
+<p>
+يتم إدارة المركز بالتعاون بين المنظمة العالمية للأرصاد الجوية (WMO)، والوكالة الحكومية للأرصاد الجوية في إسبانيا (AEMET)، ومركز برشلونة للحوسبة الفائقة (BSC). يهدف المركز إلى تعزيز قدرة الدول على تقديم تنبؤات غبارية عالية الجودة لدعم أنظمة الإنذار المبكر وخطط التخفيف من الآثار البيئية والصحية.
+</p>
+
+<h2>ما الذي يقدمه المركز لمنصتنا؟</h2>
+ <p>
+نستفيد من البنية التحتية المتطورة للمركز للحصول على:
+ </p>
+ <ul>
+<li> نماذج التنبؤ الرقمي: الوصول إلى مخرجات نماذج عالمية وإقليمية متخصصة في محاكاة حركة الغبار وتركيزه في الأجواء العراقية.</li>
+<li>
+ بيانات التركيز السطحي (SCONC_DUST): الحصول على تقديرات دقيقة لتركيز الغبار عند مستوى سطح الأرض، وهي البيانات التي نعتمد عليها في حساب مؤشر جودة الهواء (AQI).
+</li>
+<li>
+3. العمق البصري للهباء الجوي (OD550_DUST): مراقبة كثافة الغبار في طبقات الجو لضمان دقة الرصد في حالات العواصف العابرة للحدود.
+</li>
+ </ul>
+
+<h2>
+منهجية الحصول على البيانات
+
+</h2>
+<p>
+
+نحن نقوم بعملية سحب آلي للبيانات من "المنتج متعدد النماذج" (Multi-model product) عبر بروتوكول (NCSS) الخاص بالمركز، حيث يتم معالجة ملفات (NetCDF4) التي توفر تغطية جغرافية دقيقة تغطي كافة المحافظات والأقضية العراقية، مع تحديثات دورية تضمن مطابقة الواقع الميداني.
+
+ </p>
+
+
+
+
+
+
+<p><strong>
+لماذا نعتمد "المنتج متعدد النماذج" (Multi-model Product)؟
+</strong> </p>
+تستند منصة "جودة الهواء في العراق" في عرضها لبيانات تركيز الغبار والعمق البصري (AOD) على المنتج متعدد النماذج (Multi-model forecast)، وهو نتاج دمج مخرجات مجموعة واسعة من النماذج العالمية والإقليمية المرموقة.
+<p>
+ما هو المنتج متعدد النماذج وكيف يتم تكوينه؟
+</p>
+يتم توليد هذا المنتج عبر حساب "الوسيط الحسابي" (Median) لنتائج جميع النماذج الفردية المشاركة في المركز، وذلك بعد إجراء عملية إعادة إسقاط مكاني (Interpolation) لتوحيد الشبكة الجغرافية. تضمن هذه العملية دمج نقاط القوة من نماذج مختلفة مثل MONARCH، CAMS، NASA-GEOS، وغيرها في تنبؤ واحد متماسك.
+
+<p><strong>
+وفقاً لدليل المستخدم الصادر عن مركز برشلونة الإقليمي (BDRC)، فإن الاعتماد على المنتج متعدد النماذج يتفوق على النماذج الفردية للأسباب التالية:
+</strong> </p>
+      <ul>
+        <li>
+دقة التحقق (Better Verification Scores): أثبتت نتائج التقييم أن التنبؤ متعدد النماذج يحقق درجات تحقق واختبار (Verification scores) أفضل من أي نموذج فردي بمفرده في معظم المناطق والفترات الزمنية.
+
+</li>
+ <li>
+موثوقية التنبؤات (Trust-worthy Predictions): يُعتبر هذا المنتج الأداة الأكثر قيمة لإصدار تنبؤات جديرة بالثقة لغبار المعادن في منطقتنا، كونه يقلل من احتمالية الخطأ المرتبطة بنموذج واحد.
+</li>
+<li>
+ 
+تحديث مستمر:يتم تحديث المنتج متعدد النماذج ثلاث مرات يومياً (في الساعات 01:00، 07:00، و11:30 بالتوقيت العالمي UTC) لضمان إدراج أحدث البيانات المتاحة من جميع النماذج المساهمة.
+</li>
+<li>
+ 
+تغطية شاملة: يوفر المنتج تنبؤات تمتد حتى 72 ساعة، مع توفر البيانات كل 3 ساعات، مما يمنحنا دقة عالية في رصد العواصف الغبارية قبل وصولها.
+</li>
+
+
+
+<h2>
+
+
+التزامنا بالمعايير الدولية
+</h2>
+<p>
+من خلال استخدامنا لهذا المنتج، فإننا نضمن أن البيانات المعروضة لمواطنينا في العراق تتبع أعلى المعايير التي
+وضعتها 
+<strong>
+المنظمة العالمية للأرصاد الجوية (WMO)
+</strong>
+عبر نظام (SDS-WAS).
+
+</p>
+
+
+<p>
+        لمزيد من المعلومات التقنية حول النماذج المشاركة، يمكنك زيارة 
+        <a href="https://dust.aemet.es/products">
+          [دليل منتجات مركز برشلونة الإقليمي]
+        </a>.
+      </p>
+
+
+
+
+
+      <h2>لماذا هذه البيانات موثوقة؟</h2>
+      <ul>
+        <li>نماذج عددية متقدمة متعددة المصادر</li>
+        <li>تكامل بيانات الأقمار الصناعية</li>
+        <li>تحديثات زمنية منتظمة</li>
+        <li>اعتماد رسمي من المنظمة العالمية للأرصاد الجوية</li>
+      </ul>
+
+      <h2>رؤية منصة جودة هواء العراق</h2>
+      <p>
+        يهدف هذا المشروع إلى تحويل المعرفة الأكاديمية والنماذج العلمية
+        إلى خدمة وطنية مجانية تساعد المواطنين والباحثين وصناع القرار
+        على فهم المخاطر البيئية واتخاذ قرارات مبنية على العلم.
+      </p>
+<p><strong>
+الدكتور المهندس: عمر فيصل الثويني. يمكنك زيارة 
+        <a href="https://scholar.google.com/citations?user=IMTD_McAAAAJ&hl=en">
+          [ملخص عن ابحاثي العلمية و اهتماماتي البحثية]
+ </a></p></strong>
+<hr>
+
+<h2>إخلاء المسؤولية وحقوق الملكية</h2>
+<p>
+جميع البيانات المشتقة من مركز برشلونة الإقليمي للتنبؤ بالغبار يتم الإشارة إليها كمصدر أساسي للمعلومات. نحن نلتزم بمعايير الاقتباس العلمي الموصى بها من قبل المركز، مع التأكيد على أن هذه التوقعات هي أدوات مساعدة لاتخاذ القرار بناءً على أفضل التقنيات المتاحة للحوسبة الفائقة.
+</p>
+
+<p>
+Dust data and/or images were provided by the WMO Barcelona Dust Regional Center and the partners of the Sand and Dust Storm Warning Advisory and Assessment System (SDS-WAS) for Northern Africa, the Middle East and Europe</p>
+<hr>
+
+    </article>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-content">
+
+    <!-- Left: Logo + Copyright -->
+    <div class="footer-left">
+      <a href="index.html" class="footer-logo-link" id="footer-logo">
+        <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
+      </a>
+      <p class="footer-copyright">
+        © 2026 Iraq Air Quality Platform. "For research & public awareness"
+        <br>
+        Numerical simulation & processing by Dr. Omar Althuwaynee
+        <br>
+        <small>(omar.faisel@gmail.com)</small>
+      </p>
+    </div>
+
+    <!-- Center: Data source -->
+    <div class="footer-center">
+      <div class="data-source-wrapper">
+        <span class="data-source-label">Data source:</span>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
+          <img src="./assets/images/logo-bdrc-and-wmo.svg" 
+               alt="Barcelona Dust Regional Center" 
+               class="data-center-logo">
+        </a>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="data-center-link">
+          dust.aemet.es
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Update time -->
+    <div class="footer-right">
+      <div id="ref-time"></div>
+    </div>
+
+  </div>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" title="Back to top">↑</button>
+</footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+    <script>
+    // Function to get file last modified date
+    function updateLastModified() {
+      const lastModified = new Date(document.lastModified);
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+      const formattedDate = lastModified.toLocaleDateString('ar-IQ', options);
+      
+      const updateElement = document.getElementById('last-updated-text');
+      if (updateElement) {
+        updateElement.textContent = `آخر تحديث: ${formattedDate} (توقيت بغداد)` ;
+      }
+    }
+    
+    // Run when page loads
+    document.addEventListener('DOMContentLoaded', updateLastModified);
+  </script>
+
+</body>
+</html>

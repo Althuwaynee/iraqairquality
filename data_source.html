@@ -2,10 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>مصادر البيانات – جودة الهواء في العراق</title>
+  <title>منهجية المعالجة – جودة الهواء في العراق</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="مصادر بيانات جودة الهواء والغبار في العراق">
+  <meta name="description" content="شرح منهجية معالجة بيانات الغبار وتحويلها إلى خرائط تفاعلية">
 
   <!-- Leaflet (shared styles, harmless on non-map pages) -->
   <link
@@ -17,248 +17,503 @@
   <link rel="stylesheet" href="css/style.css">
 
   <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
+  
+  <style>
+    /* تنسيق إضافي لصفحة المنهجية */
+    .pipeline-image {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin: 30px 0;
+      text-align: center;
+    }
+    
+    .pipeline-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .image-caption {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #555;
+      font-style: italic;
+    }
+    
+    .tech-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+    
+    .tech-table th {
+      background-color: #2c3e50;
+      color: white;
+      padding: 12px 8px;
+      font-weight: 600;
+    }
+    
+    .tech-table td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .tech-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .tech-table tr:hover {
+      background-color: #f9f9f9;
+    }
+    
+    .code-badge {
+      background: #e8f5e9;
+      color: #1b5e20;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-family: monospace;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    
+    .param-box {
+      background: #fff9c4;
+      border-right: 4px solid #ff6f00;
+      padding: 16px 20px;
+      margin: 25px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .json-sample {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 16px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      direction: ltr;
+      text-align: left;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+    
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin: 30px 0;
+    }
+    
+    @media (max-width: 768px) {
+      .two-col-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .metric-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-top: 5px solid #01579b;
+    }
+    
+    .metric-card h4 {
+      margin-top: 0;
+      color: #01579b;
+    }
+  </style>
 </head>
 
-<body  class="data-source-page">
+<body class="data-source-page">
 
-
-  
-      <!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="header-left">
-    <a href="index.html" class="logo-link" id="logo-home">
-      <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo">
-    </a>
-  </div>
-
-
-
-  <nav class="nav">
-
-    <a href="index.html#map">الخريطة</a>
-    <a href="shako_mako.html">شكو ماكو</a>
-    <!-- ABOUT dropdown -->
-    <div class="nav-dropdown">
-      <a href="#" class="dropdown-toggle">
-        حول المنصة ▾
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="header-left">
+      <a href="index.html" class="logo-link" id="logo-home">
+        <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo">
       </a>
-
-      <div class="dropdown-menu">
-        <a href="about_AQI.html" >مؤشر الجودة </a>
-        <a href="why_IAQ.html">منصتنا</a>
-        <a href="data_source.html"class="active">مصادر البيانات</a>
-      </div>
     </div>
 
-
-
-
-  </nav>
-</header>
-
- 
-
- 
+    <nav class="nav">
+      <a href="index.html#map">الخريطة</a>
+      <a href="shako_mako.html">شكو ماكو</a>
+      <!-- ABOUT dropdown -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          حول المنصة ▾
+        </a>
+        <div class="dropdown-menu">
+          <a href="why_IAQ.html">منصتنا </a>
+          <a href="about_AQI.html">مؤشر الجودة</a>
+          <a href="data_source.html" class="active">منهجية معالجة البيانات</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
   <!-- ================= CONTENT ================= -->
   <main class="page-container">
     <article class="page-content">
 
-      <h1>مصادر البيانات</h1>
+      <h1>من بيانات الغبار إلى خرائط تفاعلية</h1>
       <p class="last-updated" id="last-updated-text">
-      آخر تحديث: جاري التحميل...
+        آخر تحديث: جاري التحميل...
       </p>
 
-      <h2>مركز برشلونة الإقليمي للتنبؤ بالغبار (BDRC)</h2>
-      <p>
-        تعتمد منصة <strong>جودة الهواء في العراق</strong> على بيانات علمية
-        متقدمة صادرة عن مركز برشلونة الإقليمي للتنبؤ بالغبار، وهو المركز
-        الإقليمي المعتمد من قبل المنظمة العالمية للأرصاد الجوية (WMO)
-        ضمن نظام الإنذار المبكر للعواصف الرملية والغبارية (SDS-WAS) في منطقة شمال أفريقيا والشرق الأوسط.
+      <!-- مقدمة المنهجية -->
+      <div class="param-box">
+        <p style="font-size: 1.1rem; margin: 0;">
+          <strong>نافذة شفافة على التقنية:</strong> نوضح هنا خطوات معالجة بيانات الغبار الصادرة عن مركز برشلونة الإقليمي (BDRC) وتحويلها إلى مؤشرات جودة هواء (AQI) وخرائط ملونة تبين حالة الهواء في كل قضاء عراقي. نعتمد على <strong>الاستيفاء المقيّد بالوزن العكسي للمسافة (Constrained IDW)</strong>، وقواعد بيانات SQLite، ونماذج التنبؤ حتى 24 ساعة قادمة.
+        </p>
+      </div>
+
+      <!-- ================= صورة المخطط الانسيابي (FLOWCHART) ================= -->
+      <h2>📊 مخطط سير عمل النظام</h2>
+      <p>يوضح المخطط التالي المسار الكامل للبيانات: من تنزيل ملفات NetCDF من مركز برشلونة، مروراً بالمعالجة والاستيفاء، وصولاً إلى ملفات JSON والخرائط التفاعلية.</p>
+      
+      <div class="pipeline-image">
+        <!-- المخطط التفصيلي (النسخة الكاملة) -->
+        <img src="assets/images/iraq_aqi_pipeline_detailed.png" 
+             alt="مخطط سير عمل منصة جودة الهواء - تفصيلي"
+             loading="lazy">
+        <div class="image-caption">
+          ⚙️ الشكل 1: مخطط تفصيلي لخطوات المعالجة – بيانات المصدر، قواعد البيانات، نصوص المعالجة، والمخرجات.
+        </div>
+      </div>
+      
+      <div class="pipeline-image">
+        <!-- النسخة المبسطة -->
+        <img src="assets/images/iraq_aqi_pipeline_simplified.png" 
+             alt="مخطط سير عمل منصة جودة الهواء - مبسط"
+             loading="lazy">
+        <div class="image-caption">
+          🗺️ الشكل 2: نسخة مبسطة تظهر تدفق المعلومات من المصدر إلى الخريطة التفاعلية.
+        </div>
+      </div>
+
+      <!-- ================= الشرح التفصيلي خطوة بخطوة ================= -->
+      <h2>🔬 شرح خطوات المعالجة</h2>
+      
+      <!-- الخطوة 1: استحواذ البيانات -->
+      <h3>📡 ١. استحواذ البيانات ومعالجة الشبكة</h3>
+      <table class="tech-table">
+        <thead>
+          <tr><th>المكون</th><th>الوصف</th><th>ملف البرمجة</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>المصدر</strong></td>
+            <td>مركز برشلونة الإقليمي للغبار (WMO) – تنبؤات الغبار المعدني الطبيعي</td>
+            <td><span class="code-badge">.nc</span></td>
+          </tr>
+          <tr>
+            <td><strong>المدخلات</strong></td>
+            <td>ملفات NetCDF من مجلد <code>*/latest</code> تحتوي تراكيز الغبار</td>
+            <td><span class="code-badge">*.nc</span></td>
+          </tr>
+          <tr>
+            <td><strong>المعالجة</strong></td>
+            <td>• مسح أحدث ملفات .nc<br>• استخراج بيانات (زمن، خط العرض، خط الطول)<br>• تحويل القيم الى µg/m³<br>• إدراجها في قاعدة البيانات اللحظية</td>
+            <td><code>create_realtime_database_full_grid.py</code><br><small>دالة: process_nc_file()</small></td>
+          </tr>
+          <tr>
+            <td><strong>السياق التاريخي</strong></td>
+            <td>• استعلام قاعدة البيانات السنوية (مثل 2024_dust.db)<br>• استخراج 4 ملفات تنبؤ سابقة<br>• إضافة استمرارية تاريخية</td>
+            <td><code>find_previous_nc_files_from_db()</code><br><code>extract_data_from_year_db()</code></td>
+          </tr>
+          <tr>
+            <td><strong>المخرجات</strong></td>
+            <td>جدول <code>dust_measurements_realtime</code> – نقاط شبكية بدقة زمنية 3 ساعات</td>
+            <td><span class="code-badge">SQLite</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- الخطوة 2: التعبئة الراجعة (Backfill) -->
+      <h3>⏮️ ٢. التعبئة الراجعة (التغطية التاريخية)</h3>
+      <table class="tech-table">
+        <thead><tr><th>المكون</th><th>الوصف</th><th>ملف البرمجة</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>الغرض</strong></td>
+            <td>معالجة ساعات التنبؤ السابقة لبناء سياق تاريخي (آخر 72 ساعة)</td>
+            <td><code>backfill_district_pm10.py</code></td>
+          </tr>
+          <tr>
+            <td><strong>المعالجة</strong></td>
+            <td>• استرجاع الطوابع الزمنية لآخر 72 ساعة<br>• تحميل بيانات الشبكة لكل طابع<br>• تشغيل أنبوب الاستيفاء للساعات الماضية</td>
+            <td><code>get_past_forecast_timestamps()</code><br><code>load_grid_at_timestamp()</code></td>
+          </tr>
+          <tr>
+            <td><strong>المخرجات</strong></td>
+            <td>ملء جدول <code>district_pm10_hourly</code> ببيانات تاريخية على مستوى الأقضية</td>
+            <td><span class="code-badge">SQLite</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- الخطوة 3: الاستيفاء على مستوى الأقضية (Constrained IDW) -->
+      <h3>📍 ٣. الاستيفاء المكاني على مستوى الأقضية (IDW المقيّد)</h3>
+      <div class="param-box" style="background: #e1f5fe; border-right-color: #01579b;">
+        <strong>⚙️ المعايير التقنية للاستيفاء:</strong><br>
+        • المسافة القصوى: 55 كم<br>
+        • عدد الجيران: 4 نقاط شبكية أقرب<br>
+        • قوة الوزن: 2 (وزن = 1/المسافة²)<br>
+        • هيكل البحث: KD-tree لتسريع الاستعلامات المكانية
+      </div>
+      <table class="tech-table">
+        <thead><tr><th>المكون</th><th>الوصف</th><th>ملف البرمجة</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>المنهجية</strong></td>
+            <td>الاستيفاء بالوزن العكسي للمسافة المقيّد (Constrained IDW)</td>
+            <td><code>realtime_IRQ_csv_json_dust.py</code></td>
+          </tr>
+          <tr>
+            <td><strong>المدخل 1</strong></td>
+            <td><code>dust_measurements_realtime</code> – نقاط شبكية بقيم PM10</td>
+            <td><span class="code-badge">SQLite</span></td>
+          </tr>
+          <tr>
+            <td><strong>المدخل 2</strong></td>
+            <td>Shapefile لأقضية العراق – حدود إدارية مع المراكز الهندسية</td>
+            <td><code>load_iraq_districts()</code></td>
+          </tr>
+          <tr>
+            <td><strong>المعالجة</strong></td>
+            <td>بناء KD-tree → لكل مركز قضاء:<br>١. إيجاد 4 نقاط شبكية أقرب<br>٢. تصفية النقاط التي تبعد >55 كم<br>٣. حساب أوزان IDW = 1/المسافة²<br>٤. المتوسط الموزون لـ PM10</td>
+            <td><code>constrained_idw()</code></td>
+          </tr>
+          <tr>
+            <td><strong>المخرجات</strong></td>
+            <td>جدول <code>district_pm10_hourly</code> – PM10 على مستوى الأقضية بفواصل 3 ساعات</td>
+            <td><code>store_hourly_results_sqlite()</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- الخطوة 4: المتوسطات المتحركة، مؤشر الجودة والتنبؤات -->
+      <h3>⚠️ ٤. المتوسطات المتحركة، مؤشر جودة الهواء (AQI) والتنبؤات</h3>
+      <table class="tech-table">
+        <thead><tr><th>المكون</th><th>الوصف</th><th>ملف البرمجة</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>الغرض</strong></td>
+            <td>توليد تنبيهات صحية ومؤشرات امتثال للمعايير</td>
+            <td><code>rolling_means_alerts.py</code></td>
+          </tr>
+          <tr>
+            <td><strong>الدقة الزمنية</strong></td>
+            <td>بيانات بفواصل <strong>3 ساعات</strong> (00:00، 03:00، ...، 21:00)</td>
+            <td><code>DATA_RESOLUTION_HOURS = 3</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="two-col-grid">
+        <div class="metric-card">
+          <h4>📋 أ. المقاييس اللحظية والمتجددة</h4>
+          <ul style="list-style-type: none; padding-right: 0;">
+            <li>✅ <strong>PM10 الحالي:</strong> أقرب فترة 3 ساعات للوقت الحالي</li>
+            <li>✅ <strong>المتوسطات المتحركة:</strong> 6، 12، 24 ساعة</li>
+            <li>✅ <strong>مؤشر AQI:</strong> وفق معادلة EPA PM10</li>
+            <li>✅ <strong>فئات AQI:</strong> جيد – معتدل – غير صحي – خطير ...</li>
+          </ul>
+        </div>
+        <div class="metric-card">
+          <h4>🔮 ب. نوافذ التنبؤ (3h → 24h)</h4>
+          <ul style="list-style-type: none; padding-right: 0;">
+            <li>• 3، 6، 9، 12 ساعة: توصيات صحية قريبة</li>
+            <li>• 15، 18، 21، 24 ساعة: تخطيط موسع (مدارس، أعمال إنشائية)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>🏛️ ج. الامتثال للحكومة العراقية</h4>
+      <table class="tech-table">
+        <thead><tr><th>المعيار</th><th>الحد المسموح</th><th>الدالة</th></tr></thead>
+        <tbody>
+          <tr><td>الحكومة العراقية</td><td>المتوسط اليومي PM10 ≤ 100 μg/m³</td><td><code>check_government_compliance()</code></td></tr>
+        </tbody>
+      </table>
+
+      <h4>📦 د. هيكل مخرجات JSON</h4>
+      <div class="json-sample">
+{
+  "metadata": {
+    "generated_at": "2026-02-11T14:00:00Z",
+    "reference_time": "2026-02-11T12:00:00Z",
+    "rolling_windows_hours": [6, 12, 24],
+    "forecast_windows_hours": [3, 6, 9, 12, 15, 18, 21, 24]
+  },
+  "districts": [
+    {
+      "district_id": 123,
+      "district_name": "...",
+      "province_name": "...",
+      "pm10": {
+        "now": 85.3,
+        "timestamp": "2026-02-11T12:00:00Z",
+        "mean_6h": 92.1,
+        "mean_12h": 78.4,
+        "mean_24h": 65.2
+      },
+      "aqi": {
+        "value": 112,
+        "level": "unhealthy_for_sensitive_groups",
+        "based_on": "pm10_now"
+      },
+      "government_compliance": {
+        "status": "WITHIN_LIMIT",
+        "limit_24h_ug_m3": 100,
+        "pm10_mean_24h": 65.2
+      },
+      "pm10_forecast_6h": {
+        "value": 75.0,
+        "aqi": 95,
+        "aqi_level": "moderate",
+        "timestamp": "2026-02-11T18:00:00Z",
+        "data_source": "exact"
+      }
+    }
+  ]
+}
+      </div>
+
+      <!-- الخطوة 5: الخرائط التفاعلية -->
+      <h3>🌐 ٥. إنتاج الخرائط والمرئيات</h3>
+      <table class="tech-table">
+        <thead><tr><th>المكون</th><th>التقنية</th><th>الوصف</th></tr></thead>
+        <tbody>
+          <tr><td>محرك الخريطة</td><td>Leaflet.js</td><td>خرائط تفاعلية في المتصفح</td></tr>
+          <tr><td>صيغة البيانات</td><td>GeoJSON + JSON</td><td>حدود الأقضية + قيم AQI</td></tr>
+          <tr><td>التلوين</td><td>ألوان EPA AQI</td><td>أخضر ← ماروني حسب مستوى المؤشر</td></tr>
+          <tr><td>الميزات</td><td>مضلعات ملونة، نوافذ منبثقة، وسيلة إيضاح</td><td>عرض PM10 الحالي، المتوسطات، التنبؤات</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ================= المواصفات الفنية الأساسية ================= -->
+      <h2>📐 المواصفات الفنية الأساسية</h2>
+      <table class="tech-table">
+        <thead><tr><th>المعيار</th><th>القيمة</th><th>ملاحظات</th></tr></thead>
+        <tbody>
+          <tr><td>الدقة المكانية</td><td>مستوى الأقضية (الإداري الثاني)</td><td>~١٢٠ قضاء</td></tr>
+          <tr><td>الدقة الزمنية</td><td>٣ ساعات</td><td>توفر البيانات</td></tr>
+          <tr><td>منهجية الاستيفاء</td><td>Constrained IDW</td><td>نصف قطر ٥٥ كم، ٤ جيران</td></tr>
+          <tr><td>أفق التنبؤ</td><td>٢٤ ساعة</td><td>٨ نوافذ (زيادات ٣ ساعات)</td></tr>
+          <tr><td>نافذة التعبئة الراجعة</td><td>٧٢ ساعة</td><td>استمرارية تاريخية</td></tr>
+          <tr><td>معيار AQI</td><td>EPA PM10</td><td>قابلية المقارنة دولياً</td></tr>
+          <tr><td>معيار الامتثال</td><td>الحكومة العراقية</td><td>المتوسط اليومي ≤ ١٠٠ μg/m³</td></tr>
+          <tr><td>قاعدة البيانات</td><td>SQLite</td><td>خفيفة الوزن، قائمة على ملفات</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ================= لماذا هذا النهج؟ ================= -->
+      <h2>💡 لماذا هذا النهج؟</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+        <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-bottom: 4px solid #2c3e50;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">✅</div>
+          <h4 style="margin: 0 0 10px 0;">مُثبت علمياً</h4>
+          <p style="margin: 0; color: #555;">IDW مع قيود المسافة يتبع أفضل الممارسات في الاستيفاء المكاني.</p>
+        </div>
+        <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-bottom: 4px solid #2c3e50;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">⚡</div>
+          <h4 style="margin: 0 0 10px 0;">كفاءة حسابية</h4>
+          <p style="margin: 0; color: #555;">فهرسة KD-tree تتيح معالجة ١٢٠ قضاء بشكل لحظي.</p>
+        </div>
+        <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-bottom: 4px solid #2c3e50;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">❤️</div>
+          <h4 style="margin: 0 0 10px 0;">مركز على الصحة</h4>
+          <p style="margin: 0; color: #555;">تحويل PM10 إلى مؤشر AQI يسهل فهم الجمهور.</p>
+        </div>
+        <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-bottom: 4px solid #2c3e50;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">📋</div>
+          <h4 style="margin: 0 0 10px 0;">قابل للتنفيذ</h4>
+          <p style="margin: 0; color: #555;">تتبع امتثال الحكومة يدعم القرارات السياسية.</p>
+        </div>
+        <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-bottom: 4px solid #2c3e50;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">🔮</div>
+          <h4 style="margin: 0 0 10px 0;">تنبؤات استباقية</h4>
+          <p style="margin: 0; color: #555;">أفق ٢٤ ساعة يمكّن من إجراءات وقائية مسبقة.</p>
+        </div>
+        <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border-bottom: 4px solid #2c3e50;">
+          <div style="font-size: 2rem; margin-bottom: 10px;">🔍</div>
+          <h4 style="margin: 0 0 10px 0;">شفافية كاملة</h4>
+          <p style="margin: 0; color: #555;">منهجية موثقة ومعايير معلنة.</p>
+        </div>
+      </div>
+
+      <!-- شكر وتقدير -->
+      <hr>
+      <p style="text-align: center; font-size: 1.1rem; padding: 20px; background: #f0f7f0; border-radius: 50px;">
+        <strong>© 2026 منصة جودة الهواء في العراق</strong> – أبحاث علمية تتحول إلى خدمة وطنية مجتمعية.
       </p>
-
-
-<h2>حول مركز برشلونة الإقليمي (BDRC)</h2>
-<p>
-يتم إدارة المركز بالتعاون بين المنظمة العالمية للأرصاد الجوية (WMO)، والوكالة الحكومية للأرصاد الجوية في إسبانيا (AEMET)، ومركز برشلونة للحوسبة الفائقة (BSC). يهدف المركز إلى تعزيز قدرة الدول على تقديم تنبؤات غبارية عالية الجودة لدعم أنظمة الإنذار المبكر وخطط التخفيف من الآثار البيئية والصحية.
-</p>
-
-<h2>ما الذي يقدمه المركز لمنصتنا؟</h2>
- <p>
-نستفيد من البنية التحتية المتطورة للمركز للحصول على:
- </p>
- <ul>
-<li> نماذج التنبؤ الرقمي: الوصول إلى مخرجات نماذج عالمية وإقليمية متخصصة في محاكاة حركة الغبار وتركيزه في الأجواء العراقية.</li>
-<li>
- بيانات التركيز السطحي (SCONC_DUST): الحصول على تقديرات دقيقة لتركيز الغبار عند مستوى سطح الأرض، وهي البيانات التي نعتمد عليها في حساب مؤشر جودة الهواء (AQI).
-</li>
-<li>
-3. العمق البصري للهباء الجوي (OD550_DUST): مراقبة كثافة الغبار في طبقات الجو لضمان دقة الرصد في حالات العواصف العابرة للحدود.
-</li>
- </ul>
-
-<h2>
-منهجية الحصول على البيانات
-
-</h2>
-<p>
-
-نحن نقوم بعملية سحب آلي للبيانات من "المنتج متعدد النماذج" (Multi-model product) عبر بروتوكول (NCSS) الخاص بالمركز، حيث يتم معالجة ملفات (NetCDF4) التي توفر تغطية جغرافية دقيقة تغطي كافة المحافظات والأقضية العراقية، مع تحديثات دورية تضمن مطابقة الواقع الميداني.
-
- </p>
-
-
-
-
-
-
-<p><strong>
-لماذا نعتمد "المنتج متعدد النماذج" (Multi-model Product)؟
-</strong> </p>
-تستند منصة "جودة الهواء في العراق" في عرضها لبيانات تركيز الغبار والعمق البصري (AOD) على المنتج متعدد النماذج (Multi-model forecast)، وهو نتاج دمج مخرجات مجموعة واسعة من النماذج العالمية والإقليمية المرموقة.
-<p>
-ما هو المنتج متعدد النماذج وكيف يتم تكوينه؟
-</p>
-يتم توليد هذا المنتج عبر حساب "الوسيط الحسابي" (Median) لنتائج جميع النماذج الفردية المشاركة في المركز، وذلك بعد إجراء عملية إعادة إسقاط مكاني (Interpolation) لتوحيد الشبكة الجغرافية. تضمن هذه العملية دمج نقاط القوة من نماذج مختلفة مثل MONARCH، CAMS، NASA-GEOS، وغيرها في تنبؤ واحد متماسك.
-
-<p><strong>
-وفقاً لدليل المستخدم الصادر عن مركز برشلونة الإقليمي (BDRC)، فإن الاعتماد على المنتج متعدد النماذج يتفوق على النماذج الفردية للأسباب التالية:
-</strong> </p>
-      <ul>
-        <li>
-دقة التحقق (Better Verification Scores): أثبتت نتائج التقييم أن التنبؤ متعدد النماذج يحقق درجات تحقق واختبار (Verification scores) أفضل من أي نموذج فردي بمفرده في معظم المناطق والفترات الزمنية.
-
-</li>
- <li>
-موثوقية التنبؤات (Trust-worthy Predictions): يُعتبر هذا المنتج الأداة الأكثر قيمة لإصدار تنبؤات جديرة بالثقة لغبار المعادن في منطقتنا، كونه يقلل من احتمالية الخطأ المرتبطة بنموذج واحد.
-</li>
-<li>
- 
-تحديث مستمر:يتم تحديث المنتج متعدد النماذج ثلاث مرات يومياً (في الساعات 01:00، 07:00، و11:30 بالتوقيت العالمي UTC) لضمان إدراج أحدث البيانات المتاحة من جميع النماذج المساهمة.
-</li>
-<li>
- 
-تغطية شاملة: يوفر المنتج تنبؤات تمتد حتى 72 ساعة، مع توفر البيانات كل 3 ساعات، مما يمنحنا دقة عالية في رصد العواصف الغبارية قبل وصولها.
-</li>
-
-
-
-<h2>
-
-
-التزامنا بالمعايير الدولية
-</h2>
-<p>
-من خلال استخدامنا لهذا المنتج، فإننا نضمن أن البيانات المعروضة لمواطنينا في العراق تتبع أعلى المعايير التي
-وضعتها 
-<strong>
-المنظمة العالمية للأرصاد الجوية (WMO)
-</strong>
-عبر نظام (SDS-WAS).
-
-</p>
-
-
-<p>
-        لمزيد من المعلومات التقنية حول النماذج المشاركة، يمكنك زيارة 
-        <a href="https://dust.aemet.es/products">
-          [دليل منتجات مركز برشلونة الإقليمي]
-        </a>.
-      </p>
-
-
-
-
-
-      <h2>لماذا هذه البيانات موثوقة؟</h2>
-      <ul>
-        <li>نماذج عددية متقدمة متعددة المصادر</li>
-        <li>تكامل بيانات الأقمار الصناعية</li>
-        <li>تحديثات زمنية منتظمة</li>
-        <li>اعتماد رسمي من المنظمة العالمية للأرصاد الجوية</li>
-      </ul>
-
-      <h2>رؤية منصة جودة هواء العراق</h2>
-      <p>
-        يهدف هذا المشروع إلى تحويل المعرفة الأكاديمية والنماذج العلمية
-        إلى خدمة وطنية مجانية تساعد المواطنين والباحثين وصناع القرار
-        على فهم المخاطر البيئية واتخاذ قرارات مبنية على العلم.
-      </p>
-<p><strong>
-الدكتور المهندس: عمر فيصل الثويني. يمكنك زيارة 
-        <a href="https://scholar.google.com/citations?user=IMTD_McAAAAJ&hl=en">
-          [ملخص عن ابحاثي العلمية و اهتماماتي البحثية]
- </a></p></strong>
-<hr>
-
-<h2>إخلاء المسؤولية وحقوق الملكية</h2>
-<p>
-جميع البيانات المشتقة من مركز برشلونة الإقليمي للتنبؤ بالغبار يتم الإشارة إليها كمصدر أساسي للمعلومات. نحن نلتزم بمعايير الاقتباس العلمي الموصى بها من قبل المركز، مع التأكيد على أن هذه التوقعات هي أدوات مساعدة لاتخاذ القرار بناءً على أفضل التقنيات المتاحة للحوسبة الفائقة.
-</p>
-
-<p>
-Dust data and/or images were provided by the WMO Barcelona Dust Regional Center and the partners of the Sand and Dust Storm Warning Advisory and Assessment System (SDS-WAS) for Northern Africa, the Middle East and Europe</p>
-<hr>
 
     </article>
   </main>
 
   <!-- ================= FOOTER ================= -->
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="footer-content">
-
-    <!-- Left: Logo + Copyright -->
-    <div class="footer-left">
-      <a href="index.html" class="footer-logo-link" id="footer-logo">
-        <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
-      </a>
-      <p class="footer-copyright">
-        © 2026 Iraq Air Quality Platform. "For research & public awareness"
-        <br>
-        Numerical simulation & processing by Dr. Omar Althuwaynee
-        <br>
-        <small>(omar.faisel@gmail.com)</small>
-      </p>
-    </div>
-
-    <!-- Center: Data source -->
-    <div class="footer-center">
-      <div class="data-source-wrapper">
-        <span class="data-source-label">Data source:</span>
-        <a href="https://dust.aemet.es/" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
-          <img src="./assets/images/logo-bdrc-and-wmo.svg" 
-               alt="Barcelona Dust Regional Center" 
-               class="data-center-logo">
+  <footer>
+    <div class="footer-content">
+      <!-- Left: Logo + Copyright -->
+      <div class="footer-left">
+        <a href="index.html" class="footer-logo-link" id="footer-logo">
+          <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
         </a>
-        <a href="https://dust.aemet.es/" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="data-center-link">
-          dust.aemet.es
-        </a>
+        <p class="footer-copyright">
+          © 2026 Iraq Air Quality Platform. "For research & public awareness"
+          <br>
+          Numerical simulation & processing by Dr. Omar Althuwaynee
+          <br>
+          <small>(omar.faisel@gmail.com)</small>
+        </p>
+      </div>
+
+      <!-- Center: Data source -->
+      <div class="footer-center">
+        <div class="data-source-wrapper">
+          <span class="data-source-label">Data source:</span>
+          <a href="https://dust.aemet.es/" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
+            <img src="./assets/images/logo-bdrc-and-wmo.svg" 
+                 alt="Barcelona Dust Regional Center" 
+                 class="data-center-logo">
+          </a>
+          <a href="https://dust.aemet.es/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="data-center-link">
+            dust.aemet.es
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Update time -->
+      <div class="footer-right">
+        <div id="ref-time"></div>
       </div>
     </div>
 
-    <!-- Right: Update time -->
-    <div class="footer-right">
-      <div id="ref-time"></div>
-    </div>
-
-  </div>
-
-  <!-- Back to top button -->
-  <button id="back-to-top" title="Back to top">↑</button>
-</footer>
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Back to top">↑</button>
+  </footer>
 
   <!-- ================= SCRIPTS ================= -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/main.js"></script>
-    <script>
-    // Function to get file last modified date
+  <script>
+    // تحديث تاريخ آخر تعديل للصفحة
     function updateLastModified() {
       const lastModified = new Date(document.lastModified);
       const options = { 
@@ -273,11 +528,9 @@ Dust data and/or images were provided by the WMO Barcelona Dust Regional Center 
       
       const updateElement = document.getElementById('last-updated-text');
       if (updateElement) {
-        updateElement.textContent = `آخر تحديث: ${formattedDate} (توقيت بغداد)` ;
+        updateElement.textContent = `آخر تحديث: ${formattedDate} (توقيت بغداد)`;
       }
     }
-    
-    // Run when page loads
     document.addEventListener('DOMContentLoaded', updateLastModified);
   </script>
 
