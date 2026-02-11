@@ -595,7 +595,7 @@ html[dir="rtl"] .page-content h2 { border-left: none; }
 
 @media (max-width: 700px) {
   .layout { grid-template-columns: 1fr; }
-  #map { height: 220px; }
+  #map { height: 620px; }
   .sidebar { height: auto; max-height: 420px; }
   .aqi-bar { left: 10px; right: 10px; bottom: 1px; pointer-events: auto; box-shadow: 1 -6px 20px rgba(0,0,0,0.25); }
   .aqi-bar span { padding: 1px; font-size: 0.65rem; }
@@ -891,4 +891,23 @@ footer {
 .telegram-icon svg {
   width: 20px;
   height: 20px;
+}
+
+
+/* Move Leaflet zoom controls to right side */
+.leaflet-control-zoom {
+  left: auto !important;
+  right: 20px !important;
+  top: 20px !important;
+  position: absolute !important;
+}
+
+/* Optional: Style the zoom buttons */
+.leaflet-control-zoom a {
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  font-size: 22px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
