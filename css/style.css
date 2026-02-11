@@ -593,9 +593,9 @@ html[dir="rtl"] .page-content h2 { border-left: none; }
   .nav a.active::after { bottom: -4px; }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
-  #map { height: 620px; }
+  #map { height: 580px; }
   .sidebar { height: auto; max-height: 420px; }
   .aqi-bar { left: 10px; right: 10px; bottom: 1px; pointer-events: auto; box-shadow: 1 -6px 20px rgba(0,0,0,0.25); }
   .aqi-bar span { padding: 1px; font-size: 0.65rem; }
@@ -896,9 +896,30 @@ footer {
 
 /* Move Leaflet zoom controls to right side */
 .leaflet-control-zoom {
-  left: auto ;
-  right: 20px ;
-  top: 20px ;
-  position: absolute ;
+  left: auto !important;
+  right: 20px !important;
+  top: 20px !important;
+  position: absolute !important;
+}
+
+
+/* Mobile hint popup styling */
+.mobile-hint-popup .leaflet-popup-content-wrapper {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 30px;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+.mobile-hint-popup .leaflet-popup-tip {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Disable double-click zoom on desktop explicitly */
+@media (min-width: 769px) {
+  .leaflet-container {
+    touch-action: pan-y pan-x !important; /* Restore default pan behavior */
+  }
 }
 

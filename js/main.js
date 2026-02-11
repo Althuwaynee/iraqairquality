@@ -691,6 +691,36 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+/* ---------- Enable double-click only on mobile ---------- */
+(function enableMobileFeatures() {
+  function updateMobileSettings() {
+    if (!map) return;
+    
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+      map.doubleClickZoom.enable();
+      console.log('📱 Mobile: Double-click zoom enabled');
+    } else {
+      map.doubleClickZoom.disable();
+      console.log('💻 Desktop: Double-click zoom disabled');
+    }
+  }
+  
+  // Run after map is initialized
+  const checkMapInterval = setInterval(() => {
+    if (map) {
+      clearInterval(checkMapInterval);
+      updateMobileSettings();
+      
+      // Update on resize
+      window.addEventListener('resize', updateMobileSettings);
+    }
+  }, 100);
+})();
+
+
 /* ---------- App Bootstrap ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   initMap();
