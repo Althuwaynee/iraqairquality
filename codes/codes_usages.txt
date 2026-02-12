@@ -1,0 +1,17 @@
+
+# 0. To download real time data, it will be stored in folder "2026_02_latest"
+	download_latest_nc_Iraq.py
+
+# 1. To download any year in .NC ,within the code, choose enter either the Year or Month
+	download_nc_by_multi_YEAR.py
+
+# 2. Now, to update existing (or creating) the database using new files on your stored folders
+# codes uses current folder style, example: IRQ_2026_03
+	update_year_database.py --year 2026
+
+# To make query, edit the database inside the code 2026_dust.db
+	query_dust_database.py
+	
+	
+# 3. To create json for Iraq
+python codes/query_realtime_database.py --region 26 39 37 49 --export-leaflet GIS/leaflet_data.json

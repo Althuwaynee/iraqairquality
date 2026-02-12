@@ -1,0 +1,1 @@
+python png_gif.py input_folder output.gif 20250604 20250605 --start_time 0000 --end_time 2359 --duration 1000
