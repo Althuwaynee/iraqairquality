@@ -2,15 +2,15 @@
 
 # ====== CONFIG ======
 EMAIL="scadac@outlook.com"
-LOG="/home/omar/Documents/Dust/cron.log"
+LOG="$HOME/Documents/Dust/cron.log"
 
 # ====== ENV SETUP ======
-export PATH="/home/omar/miniconda3/bin:$/home/omar/miniconda3/envs/pythonenv/bin/python"
-source /home/omar/miniconda3/etc/profile.d/conda.sh
+export PATH="$HOME/miniconda3/bin:$HOME/miniconda3/envs/pythonenv/bin/python"
+source $HOME/miniconda3/etc/profile.d/conda.sh
 conda activate pythonenv
 
 # ====== WORKING DIR ======
-cd /home/omar/Documents/Dust || exit 1
+cd $HOME/Documents/Dust || exit 1
 
 # ====== LOGGING ======
 exec >> "$LOG" 2>&1
