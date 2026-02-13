@@ -940,3 +940,62 @@ footer {
 .mobile-zoom-hint .leaflet-popup-close-button {
   color: white !important;
 }
+
+
+/* ===============================
+   Contact Page
+   =============================== */
+
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-info h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-box {
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.contact-box a {
+  color: #1e3a8a;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+.contact-note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.contact-image {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.contact-image img {
+  max-width: 100%;
+  border-radius: 16px;
+}
