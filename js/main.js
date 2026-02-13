@@ -372,24 +372,40 @@ function buildDistrictPopup(d) {
     `;
   }).join("");
 
+  // ===== TRANSLATED VERSION =====
   return `
-    <div>
-      <strong>${d.district_name || "Unknown District"}</strong><br>
-      <small>${d.province_name || "Unknown Province"}</small>
+    <div style="direction: rtl; text-align: right; font-family: 'Tajawal', sans-serif;">
+      <strong>${d.district_name || "منطقة غير معروفة"}</strong><br>
+      <small>${d.province_name || "محافظة غير معروفة"}</small>
       <hr>
       <div style="font-size:0.7rem;color:#475569;">
-        Measurement time (Iraq local): ${measurementTime}
+        وقت القياس (بغداد): ${measurementTime}
       </div>
-      PM10: <b>${pm10Now.toFixed(1)}</b> µg/m³<br>
-      AQI: <b>${aqiValue}</b> (${aqiLevel})<br>
-      PM10 (24h mean): ${mean24h.toFixed(1)} µg/m³
+      <span style="color: #032780;">PM10 (الآني):</span> <b>${pm10Now.toFixed(1)}</b> ميكروغرام/م³<br>
+      <span style="color: #032780;">مؤشر جودة الهواء:</span> <b>${aqiValue}</b> (<b>${translateAQILevel(aqiLevel)}</b>)<br>
+      <span style="color: #032780;">PM10 (متوسط 24 ساعة):</span> <b>${mean24h.toFixed(1)}</b> ميكروغرام/م³
       <hr>
       ${forecasts.length > 0 ? `
-        <strong>التنبؤ (PM10 next 24h)</strong>
+        <strong style="color: #1e3a5f;">التنبؤ (PM10 لـ 24 ساعة القادمة)</strong>
         <div class="forecast-row">${forecastHTML}</div>
-      ` : '<em>No forecast data available</em>'}
+      ` : '<em style="color: #666;">لا توجد بيانات توقعات متاحة</em>'}
     </div>
   `;
+}
+
+// Add this helper function to translate AQI levels
+function translateAQILevel(level) {
+  const translations = {
+    'good': 'جيد',
+    'moderate': 'معتدل',
+    'unhealthy_for_sensitive_groups': 'غير صحي للمجموعات الحساسة',
+    'unhealthy': 'غير صحي',
+    'very_unhealthy': 'غير صحي جداً',
+    'hazardous': 'خطير',
+    'unknown': 'غير معروف'
+  };
+  
+  return translations[level] || level;
 }
 
 /* ---------- Sidebar list ---------- */
