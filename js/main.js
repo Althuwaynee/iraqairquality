@@ -382,7 +382,7 @@ function buildDistrictPopup(d) {
         وقت القياس (بغداد): ${measurementTime}
       </div>
       <span style="color: #032780;">PM10 (الآني):</span> <b>${pm10Now.toFixed(1)}</b> ميكروغرام/م³<br>
-      <span style="color: #032780;">مؤشر جودة الهواء:</span> <b>${aqiValue}</b> (<b>${translateAQILevel(aqiLevel)}</b>)<br>
+      <span style="color: #032780;">AQI (مؤشر جودة الهواء):</span> <b>${aqiValue}</b> (<b>${translateAQILevel(aqiLevel)}</b>)<br>
       <span style="color: #032780;">PM10 (متوسط 24 ساعة):</span> <b>${mean24h.toFixed(1)}</b> ميكروغرام/م³
       <hr>
       ${forecasts.length > 0 ? `
