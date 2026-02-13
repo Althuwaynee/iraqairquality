@@ -943,3 +943,86 @@ footer {
 }
 
 
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  flex-shrink: 0;
+}
+
+.site-title {
+  flex-grow: 1;
+  text-align: center;
+  direction: rtl;
+}
+
+/* Remove default h1 margins that might affect centering */
+.title-main {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0; /* Critical for perfect centering */
+}
+
+.title-sub {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 4px 0 0 0; /* Small top margin only */
+  color: #555; /* Optional: slightly lighter color for hierarchy */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* Add these fonts to your stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Tajawal:wght@300;400;700&display=swap');
+
+.site-title {
+  direction: rtl;
+  text-align: center;
+}
+
+.title-main {
+  font-family: 'Markazi Text', serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: #0a2f44; /* Dark, authoritative blue */
+  margin-bottom: 0.2rem;
+  
+  /* Subtle effect for depth */
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+  
+  /* Optional: slight letter spacing for elegance */
+  letter-spacing: 0.5px;
+}
+
+.title-sub {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: #4a5c6b;
+  
+  /* Decorative line above subtitle (optional) */
+  position: relative;
+  display: inline-block;
+  padding-top: 8px;
+}
+
+/* Optional: decorative element */
+.title-sub::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 25%;
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a03d, #b38b2d, transparent);
+}
