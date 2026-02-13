@@ -1026,3 +1026,97 @@ footer {
   height: 1px;
   background: linear-gradient(90deg, transparent, #c9a03d, #b38b2d, transparent);
 }
+
+
+
+/* Popup forecast styling */
+.leaflet-popup-content {
+  min-width: 340px !important;
+  max-width: 400px !important;
+  direction: rtl;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.forecast-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0 8px 0;
+  direction: ltr; /* Keep numbers LTR even in RTL context */
+  scrollbar-width: thin;
+  min-width: 300px;
+}
+
+.forecast-item {
+  min-width: 70px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 8px 6px;
+  text-align: center;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  flex-shrink: 0;
+}
+
+.forecast-day {
+  font-weight: 700;
+  color: #334155;
+  font-size: 0.7rem;
+}
+
+.forecast-time {
+  font-size: 0.65rem;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.forecast-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px auto;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.forecast-pm {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.forecast-unit {
+  font-size: 0.6rem;
+  color: #64748b;
+}
+
+.aqi-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 4px;
+  font-size: 0.8rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .leaflet-popup-content {
+    min-width: 280px !important;
+    max-width: 320px !important;
+  }
+  
+  .forecast-item {
+    min-width: 60px;
+  }
+}

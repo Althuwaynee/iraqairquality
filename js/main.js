@@ -2,10 +2,17 @@
    Iraq Air Quality – Main JS
    =============================== */
 
+// Load translations
+if (typeof getArabicName === 'undefined') {
+  // Simple fallback if translations.js isn't loaded
+  function getArabicName(name) { return name; }
+}
+
 let map;
 let pm10Data = null;
 let districtLayer = L.layerGroup();
 let showAllDistricts = false;
+let originalDistricts = []; // Store original English names for search
 
 const MAX_VISIBLE_DISTRICTS = 15;
 
@@ -40,6 +47,7 @@ function isNightTimeIraq(utcTimestamp) {
 }
 
 /* ---------- Search ---------- */
+/* ---------- Search ---------- */
 function setupSearch() {
   const searchInput = document.getElementById("search");
   if (!searchInput) return;
@@ -52,6 +60,9 @@ function setupSearch() {
       searchInput.value
     );
   });
+  
+  // Add Arabic placeholder
+  searchInput.placeholder = "البحث عن مدينة أو محافظة...";
 }
 
 
@@ -191,6 +202,17 @@ async function loadPM10Alerts() {
     
     console.log(`Loaded ${pm10Data.districts.length} districts`);
     
+    // Add Arabic names to each district
+    pm10Data.districts.forEach(d => {
+      d.district_name_ar = getArabicName(d.district_name, 'district');
+      d.province_name_ar = getArabicName(d.province_name, 'province');
+      d.district_name_en = d.district_name; // Store original English
+      d.province_name_en = d.province_name;
+    });
+    
+    // Store original for search
+    originalDistricts = [...pm10Data.districts];
+    
     // Filter out invalid districts
     const validDistricts = pm10Data.districts.filter(d => {
       const hasCoords = d.latitude && d.longitude;
@@ -222,14 +244,14 @@ async function loadPM10Alerts() {
   } catch (err) {
     console.error("Failed to load PM10 data:", err);
     
-    // Show user-friendly error
+    // Show user-friendly error in Arabic
     const list = document.getElementById("district-list");
     if (list) {
       list.innerHTML = `
-        <li style="color: #dc2626; text-align: center; padding: 2rem;">
-          <strong>⚠️ Data Loading Error</strong><br>
+        <li style="color: #dc2626; text-align: center; padding: 2rem; direction: rtl;">
+          <strong>⚠️ خطأ في تحميل البيانات</strong><br>
           <small>${err.message}</small><br>
-          <small>Check console for details</small>
+          <small>تحقق من وحدة التحكم للمزيد من التفاصيل</small>
         </li>
       `;
     }
@@ -238,10 +260,10 @@ async function loadPM10Alerts() {
     if (map) {
       L.marker([33.2, 44.3]).addTo(map)
         .bindPopup(`
-          <div style="padding: 10px;">
-            <strong>⚠️ Data Loading Failed</strong><br>
+          <div style="padding: 10px; direction: rtl; text-align: right;">
+            <strong>⚠️ فشل تحميل البيانات</strong><br>
             <small>${err.message}</small><br>
-            <small>Check that <code>data/pm10_alerts.json</code> exists and has valid data.</small>
+            <small>تأكد من وجود الملف <code>data/pm10_alerts.json</code></small>
           </div>
         `)
         .openPopup();
@@ -311,6 +333,8 @@ function drawDistrictMarkers(districts) {
 }
 
 /* ---------- Popup ---------- */
+/* ---------- Popup ---------- */
+/* ---------- Popup ---------- */
 function buildDistrictPopup(d) {
   // Safely get values with defaults
   const pm10Now = d.pm10?.now ?? 0;
@@ -372,23 +396,47 @@ function buildDistrictPopup(d) {
     `;
   }).join("");
 
-  // ===== TRANSLATED VERSION =====
+  // Use Arabic names with fallback to English
+  const districtNameAr = d.district_name_ar || d.district_name || "منطقة غير معروفة";
+  const provinceNameAr = d.province_name_ar || d.province_name || "محافظة غير معروفة";
+
+  // FIXED: Removed max-width constraint and added min-width
   return `
-    <div style="direction: rtl; text-align: right; font-family: 'Tajawal', sans-serif;">
-      <strong>${d.district_name || "منطقة غير معروفة"}</strong><br>
-      <small>${d.province_name || "محافظة غير معروفة"}</small>
-      <hr>
-      <div style="font-size:0.7rem;color:#475569;">
-        وقت القياس (بغداد): ${measurementTime}
+    <div style="direction: rtl; text-align: right; font-family: 'Tajawal', sans-serif; min-width: 320px; padding: 8px;">
+      <strong style="font-size: 1.2rem; color: #1e3a5f; display: block; margin-bottom: 4px;">${districtNameAr}</strong>
+      <span style="color: #4a5568; font-size: 0.95rem; display: block; margin-bottom: 8px;">${provinceNameAr}</span>
+      
+      <div style="background: #f8fafc; padding: 10px; border-radius: 8px; margin: 8px 0;">
+        <div style="font-size:0.8rem; color:#64748b; margin-bottom: 8px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 6px;">
+          ⏱️ وقت القياس: ${measurementTime}
+        </div>
+        
+        <div style="line-height: 2; font-size: 0.95rem;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding: 4px 0;">
+            <span style="color: #2563eb; font-weight: 500;">PM10 الحالي:</span>
+            <span style="font-weight: 700;">${pm10Now.toFixed(1)} ميكروغرام/م³</span>
+          </div>
+          
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding: 4px 0;">
+            <span style="color: #2563eb; font-weight: 500;">مؤشر جودة الهواء:</span>
+            <span style="font-weight: 700;">${aqiValue} <span style="color: #64748b; font-weight: normal;">(${translateAQILevel(aqiLevel)})</span></span>
+          </div>
+          
+          <div style="display: flex; justify-content: space-between; padding: 4px 0;">
+            <span style="color: #2563eb; font-weight: 500;">PM10 (متوسط 24 ساعة):</span>
+            <span style="font-weight: 600;">${mean24h.toFixed(1)} ميكروغرام/م³</span>
+          </div>
+        </div>
       </div>
-      <span style="color: #032780;">PM10 (الآني):</span> <b>${pm10Now.toFixed(1)}</b> ميكروغرام/م³<br>
-      <span style="color: #032780;">AQI (مؤشر جودة الهواء):</span> <b>${aqiValue}</b> (<b>${translateAQILevel(aqiLevel)}</b>)<br>
-      <span style="color: #032780;">PM10 (متوسط 24 ساعة):</span> <b>${mean24h.toFixed(1)}</b> ميكروغرام/م³
-      <hr>
+      
       ${forecasts.length > 0 ? `
-        <strong style="color: #1e3a5f;">التنبؤ (PM10 لـ 24 ساعة القادمة)</strong>
-        <div class="forecast-row">${forecastHTML}</div>
-      ` : '<em style="color: #666;">لا توجد بيانات توقعات متاحة</em>'}
+        <div style="margin-top: 12px;">
+          <div style="font-weight: 700; color: #1e3a5f; margin-bottom: 8px; font-size: 1rem; border-right: 4px solid #2563eb; padding-right: 8px;">
+            📊 التنبؤ (PM10 لـ 24 ساعة)
+          </div>
+          <div class="forecast-row" style="overflow-x: auto; padding-bottom: 4px;">${forecastHTML}</div>
+        </div>
+      ` : ''}
     </div>
   `;
 }
@@ -409,16 +457,31 @@ function translateAQILevel(level) {
 }
 
 /* ---------- Sidebar list ---------- */
+/* ---------- Sidebar list ---------- */
 function renderDistrictList(districts, filter = "") {
   const list = document.getElementById("district-list");
   if (!list) return; // Only run if element exists
   
   list.innerHTML = "";
 
-  const filtered = districts.filter(d =>
-    d.district_name?.toLowerCase().includes(filter.toLowerCase()) ||
-    d.province_name?.toLowerCase().includes(filter.toLowerCase())
-  );
+  // Filter using BOTH English and Arabic names
+  const filtered = districts.filter(d => {
+    const searchTerm = filter.toLowerCase().trim();
+    if (!searchTerm) return true;
+    
+    // Search in Arabic names
+    const nameAr = (d.district_name_ar || '').toLowerCase();
+    const provinceAr = (d.province_name_ar || '').toLowerCase();
+    
+    // Search in English names (for backup)
+    const nameEn = (d.district_name_en || '').toLowerCase();
+    const provinceEn = (d.province_name_en || '').toLowerCase();
+    
+    return nameAr.includes(searchTerm) || 
+           provinceAr.includes(searchTerm) ||
+           nameEn.includes(searchTerm) || 
+           provinceEn.includes(searchTerm);
+  });
 
   const visible = showAllDistricts
     ? filtered
@@ -427,11 +490,12 @@ function renderDistrictList(districts, filter = "") {
   visible.forEach(d => {
     const li = document.createElement("li");
     li.style.borderLeftColor = getAlertColor(d.alert?.level);
+    li.setAttribute('dir', 'rtl'); // Set right-to-left for Arabic
 
     li.innerHTML = `
       <div>
-        <strong>${d.district_name || "Unknown"}</strong><br>
-        <small>${d.province_name || "Unknown"}</small>
+        <strong>${d.district_name_ar || d.district_name || "منطقة غير معروفة"}</strong><br>
+        <small>${d.province_name_ar || d.province_name || "محافظة غير معروفة"}</small>
       </div>
       <div class="value">
         <span>${d.aqi?.value ?? 0}</span>
@@ -479,6 +543,7 @@ function autoLocateUser(districts) {
 }
 
 /* ---------- View all ---------- */
+/* ---------- View all ---------- */
 function updateViewAllButton(total) {
   const btn = document.querySelector(".view-all");
   if (!btn) return;
@@ -489,9 +554,10 @@ function updateViewAllButton(total) {
   }
 
   btn.style.display = "block";
+  btn.setAttribute('dir', 'rtl');
   btn.textContent = showAllDistricts
-    ? `Show top ${MAX_VISIBLE_DISTRICTS}`
-    : `View all ${total}`;
+    ? `عرض أفضل ${MAX_VISIBLE_DISTRICTS} مدينة`
+    : `عرض الكل (${total})`;
 
   btn.onclick = () => {
     showAllDistricts = !showAllDistricts;
