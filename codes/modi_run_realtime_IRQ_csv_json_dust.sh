@@ -2,52 +2,94 @@
 
 echo "=== Running Dust Analysis Pipeline ==="
 echo ""
-#!/bin/bash
 
-# ====== CONFIG ======
+# ================= CONFIG =================
 EMAIL="scadac@outlook.com"
-LOG="$HOME/Documents/Dust/cron.log"
+CONDA_BASE="/home/omar/miniconda3"
 
-# ====== ENV SETUP ======
-export PATH="$HOME/miniconda3/bin:$$HOME/miniconda3/envs/pythonenv/bin/python"
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate pythonenv
+# ================= DETECT WORKDIR =================
+if [ -d "/home/omar/Dust" ]; then
+    WORKDIR="/home/omar/Dust"
+elif [ -d "/home/omar/Documents/Dust" ]; then
+    WORKDIR="/home/omar/Documents/Dust"
+else
+    echo "Cannot determine working directory"
+    exit 1
+fi
 
-# ====== WORKING DIR ======
-cd $HOME/Documents/Dust || exit 1
+LOG="$WORKDIR/cron.log"
 
-# ====== LOGGING ======
+# ================= LOAD CONDA =================
+export PATH="$CONDA_BASE/bin:$PATH"
+source "$CONDA_BASE/etc/profile.d/conda.sh"
+
+# ================= DETECT ENV =================
+if [ -d "/home/omar/Dust/envs/pythonenv" ]; then
+    # Server (path-based env)
+    ENV_OPTION="-p /home/omar/Dust/envs/pythonenv"
+elif conda env list | grep -q "pythonenv"; then
+    # PC (named env)
+    ENV_OPTION="-n pythonenv"
+else
+    echo "pythonenv not found" | mail -s "❌ Dust pipeline FAILED (env missing)" "$EMAIL"
+    exit 1
+fi
+
+# ================= START =================
+cd "$WORKDIR" || exit 1
+
 exec >> "$LOG" 2>&1
+
 echo "======================================"
 echo "Run started at: $(date)"
+echo "Working directory: $(pwd)"
+echo "Using environment option: $ENV_OPTION"
 
-# Step 1: Backfill district data for past 72 hours
+# ====================================================
+# STEP 1 — Backfill district PM10 data
+# ====================================================
 echo "Backfilling district PM10 data..."
-python3 $HOME/Documents/Dust/codes/backfill_district_pm10.py \
-  --dust-db $HOME/Documents/Dust/databases/dust_realtime.db \
-  --shapefile $HOME/Documents/Dust/IRQ_adm/IRQ_districts.shp \
-  --store-db $HOME/Documents/Dust/databases/district_pm10_hourly.sqlite \
+
+conda run $ENV_OPTION python iraqairquality/codes/backfill_district_pm10.py \
+  --dust-db databases/dust_realtime.db \
+  --shapefile IRQ_adm/IRQ_districts.shp \
+  --store-db databases/district_pm10_hourly.sqlite \
   --hours 72
 
-echo ""
-echo "=== Generating current PM10 data ==="
-echo ""
+if [ $? -ne 0 ]; then
+    echo "backfill_district_pm10.py FAILED" | mail -s "❌ Dust pipeline FAILED (backfill)" "$EMAIL"
+    exit 1
+fi
 
-# Step 2: Generate current PM10 data (now includes realtime interpolation)
-python3 $HOME/Documents/Dust/codes/realtime_IRQ_csv_json_dust.py \
-  --dust-db $HOME/Documents/Dust/databases/dust_realtime.db \
-  --shapefile $HOME/Documents/Dust/IRQ_adm/IRQ_districts.shp \
-  --output $HOME/Documents/Dust/iraqairquality/data/pm10_now.json \
-  --store-db $HOME/Documents/Dust/databases/district_pm10_hourly.sqlite
+# ====================================================
+# STEP 2 — Generate current PM10 JSON
+# ====================================================
+echo "Generating current PM10 data..."
 
-echo ""
-echo "=== Calculating rolling means and alerts ==="
-echo ""
+conda run $ENV_OPTION python iraqairquality/codes/realtime_IRQ_csv_json_dust.py \
+  --dust-db databases/dust_realtime.db \
+  --shapefile IRQ_adm/IRQ_districts.shp \
+  --output iraqairquality/data/pm10_now.json \
+  --store-db databases/district_pm10_hourly.sqlite
 
-# Step 3: Rolling means + alerts
-python3 $HOME/Documents/Dust/codes/rolling_means_alerts.py \
-  --store-db $HOME/Documents/Dust/databases/district_pm10_hourly.sqlite \
-  --output $HOME/Documents/Dust/iraqairquality/data/pm10_alerts.json
+if [ $? -ne 0 ]; then
+    echo "realtime_IRQ_csv_json_dust.py FAILED" | mail -s "❌ Dust pipeline FAILED (realtime JSON)" "$EMAIL"
+    exit 1
+fi
 
-echo ""
-echo "=== Done ==="
+# ====================================================
+# STEP 3 — Rolling means & alerts
+# ====================================================
+echo "Calculating rolling means and alerts..."
+
+conda run $ENV_OPTION python iraqairquality/codes/rolling_means_alerts.py \
+  --store-db databases/district_pm10_hourly.sqlite \
+  --output iraqairquality/data/pm10_alerts.json
+
+if [ $? -ne 0 ]; then
+    echo "rolling_means_alerts.py FAILED" | mail -s "❌ Dust pipeline FAILED (alerts)" "$EMAIL"
+    exit 1
+fi
+
+echo "Run finished successfully at: $(date)"
+echo "======================================"
