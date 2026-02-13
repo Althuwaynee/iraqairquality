@@ -402,7 +402,7 @@ function translateAQILevel(level) {
     'unhealthy': 'غير صحي',
     'very_unhealthy': 'غير صحي جداً',
     'hazardous': 'خطير',
-    'unknown': 'غير معروف'
+    'beyond_index': 'تجاوزَ المقياس'
   };
   
   return translations[level] || level;
