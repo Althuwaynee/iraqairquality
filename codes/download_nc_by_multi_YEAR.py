@@ -131,6 +131,8 @@ try:
                 date_str = f"{year}{month:02d}{day:02d}"
                 filename = f"{date_str}_3H_MEDIAN.nc"
                 download_url = f"{BASE_URL}/{year}/{MONTH}/{filename}"
+                #home = os.path.expanduser("~")
+                #output_path = os.path.join(home, "Documents", "Dust",output_dir, filename)
                 output_path = os.path.join(output_dir, filename)
                 
                 total_files += 1

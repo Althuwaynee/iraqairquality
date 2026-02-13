@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مصادر البيانات – جودة الهواء في العراق</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مصادر بيانات جودة الهواء والغبار في العراق">
+
+  <!-- Leaflet (shared styles, harmless on non-map pages) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
+</head>
+
+<body  class="data-source-page">
+
+
+
+  <!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="header-left">
+    <a href="index.html" class="logo-link" id="logo-home">
+      <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo">
+    </a>
+  </div>
+
+
+
+  <nav class="nav">
+
+    <a href="index.html#map">الخريطة</a>
+    <a href="shako_mako.html">شكو ماكو</a>
+    <!-- ABOUT dropdown -->
+    <div class="nav-dropdown">
+      <a href="#" class="dropdown-toggle">
+        حول المنصة ▾
+      </a>
+
+      <div class="dropdown-menu">
+        <a href="about_AQI.html" >مؤشر الجودة </a>
+        <a href="why_IAQ.html">منصتنا</a>
+        <a href="data_source.html">مصادر البيانات</a>
+      </div>
+    </div>
+        <!-- ABOUT dropdown -->
+    <div class="nav-dropdown">
+      <a href="#" class="dropdown-toggle">
+        بحوث▾
+      </a>
+
+      <div class="dropdown-menu">
+        <a href="research.html"class="active">تحليل البيانات</a>
+      </div>
+    </div>
+
+
+
+
+  </nav>
+</header>
+
+ 
+
+  <!-- ================= CONTENT ================= -->
+  <main class="page-container">
+    <article class="page-content">
+
+      <h1>تحليل تراكيز الغبار المصاحب للعواصف الترابية و معرفة نشاط الزيادة او النقصان بالمقارنة مع السنوات السابقة</h1>
+      <p class="last-updated" id="last-updated-text">
+      آخر تحديث: جاري التحميل...
+      </p>
+
+
+
+        <h2>الصفحة قيد الانشاء</h2>
+        
+
+
+    <div class="side-column"></div>
+</div>
+
+
+
+
+
+
+
+    </article>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-content">
+
+    <!-- Left: Logo + Copyright -->
+    <div class="footer-left">
+      <a href="index.html" class="footer-logo-link" id="footer-logo">
+        <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
+      </a>
+      <p class="footer-copyright">
+        © 2026 Iraq Air Quality Platform. "For research & public awareness"
+        <br>
+        Numerical simulation & processing by Dr. Omar Althuwaynee
+        <br>
+        <small>(omar.faisel@gmail.com)</small>
+      </p>
+    </div>
+
+    <!-- Center: Data source -->
+    <div class="footer-center">
+      <div class="data-source-wrapper">
+        <span class="data-source-label">Data source:</span>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
+          <img src="./assets/images/logo-bdrc-and-wmo.svg" 
+               alt="Barcelona Dust Regional Center" 
+               class="data-center-logo">
+        </a>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="data-center-link">
+          dust.aemet.es
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Update time -->
+    <div class="footer-right">
+      <div id="ref-time"></div>
+    </div>
+
+  </div>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" title="Back to top">↑</button>
+</footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+    <script>
+    // Function to get file last modified date
+    function updateLastModified() {
+      const lastModified = new Date(document.lastModified);
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+      const formattedDate = lastModified.toLocaleDateString('ar-IQ', options);
+      
+      const updateElement = document.getElementById('last-updated-text');
+      if (updateElement) {
+        updateElement.textContent = `آخر تحديث: ${formattedDate} (توقيت بغداد)` ;
+      }
+    }
+    
+    // Run when page loads
+    document.addEventListener('DOMContentLoaded', updateLastModified);
+  </script>
+
+</body>
+</html>
