@@ -112,6 +112,7 @@ function getHealthIcons({ aqi, pm10, timestamp }) {
     });
   }
 
+  // GOOD: 0-50
   if (aqi <= 50) {
     icons.push({
       icon: "🚴",
@@ -120,30 +121,38 @@ function getHealthIcons({ aqi, pm10, timestamp }) {
         : "Safe for outdoor activity"
     });
   }
+  // MODERATE: 51-100
   else if (aqi <= 100) {
     icons.push({ icon: "🚴", label: "Outdoor activity generally safe" });
     icons.push({ icon: "👶", label: "Sensitive people should be cautious" });
   }
+  // UNHEALTHY FOR SENSITIVE GROUPS: 101-150
   else if (aqi <= 150) {
-    icons.push({ icon: "😷", label: "Wear a mask outdoors" });
-    icons.push({ icon: "👶", label: "Sensitive groups should limit exposure" });
-    if (night) {
-      icons.push({
-        icon: "🏠",
-        label: "Night-time: keep windows closed while sleeping"
-      });
-    }
+    icons.push({ icon: "👶", label: "Sensitive groups: children, elderly, respiratory patients should limit outdoor activities" });
+    icons.push({ icon: "😷", label: "Consider wearing mask if sensitive" });
+    icons.push({ icon: "🏠", label: "Keep windows closed" });
   }
+  // UNHEALTHY: 151-200
   else if (aqi <= 200) {
     icons.push({ icon: "😷", label: "Wear a mask outdoors" });
     icons.push({ icon: "🏠", label: "Stay indoors if possible" });
     icons.push({ icon: "🚫", label: "Avoid outdoor activity" });
+    icons.push({ icon: "👶", label: "Sensitive groups: DO NOT go out" });
   }
+  // VERY UNHEALTHY: 201-300
+  else if (aqi <= 300) {
+    icons.push({ icon: "😷", label: "Wear N95 mask if must go out" });
+    icons.push({ icon: "🏠", label: "Stay indoors - health emergency" });
+    icons.push({ icon: "🚫", label: "No outdoor activities" });
+    icons.push({ icon: "👶", label: "Everyone at risk" });
+  }
+  // HAZARDOUS: 301-500
   else {
-    icons.push({ icon: "😷", label: "Wear a mask outdoors" });
-    icons.push({ icon: "🏠", label: "Stay indoors" });
-    icons.push({ icon: "👶", label: "Sensitive groups at high risk" });
-    icons.push({ icon: "🚫", label: "Avoid outdoor activity" });
+    icons.push({ icon: "😷", label: "N95 mask mandatory if going out" });
+    icons.push({ icon: "🏠", label: "Stay indoors - health emergency" });
+    icons.push({ icon: "🚫", label: "Do NOT go out unless emergency" });
+    icons.push({ icon: "👶", label: "Sensitive groups: extreme danger" });
+    icons.push({ icon: "💨", label: "Use air purifier indoors" });
   }
 
   return icons;
@@ -263,12 +272,12 @@ function getAlertColor(level) {
   if (!level) return "#334155";
   
   switch (level) {
-    case "good": return "#22c55e";
-    case "moderate": return "#eab308";
-    case "unhealthy_for_sensitive_groups": return "#b675bd";
-    case "unhealthy": return "#ee60db";
-    case "very_unhealthy": return "#ed1515";
-    case "hazardous": return "#7c2d12";
+    case "good": return "#22c55e";                    // 0-50
+    case "moderate": return "#eab308";                 // 51-100
+    case "unhealthy_for_sensitive_groups": return "#f97316"; // 101-150 (ORANGE)
+    case "unhealthy": return "#ee60db";                 // 151-200
+    case "very_unhealthy": return "#ed1515";            // 201-300
+    case "hazardous": return "#7c2d12";                  // 301-500
     default: return "#334155";
   }
 }

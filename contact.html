@@ -2,102 +2,455 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>اتصل بنا – جودة الهواء في العراق</title>
+  <title>اتصل بنا – منصة جودة الهواء في العراق</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="اتصل بفريق منصة جودة الهواء في العراق">
+  <meta name="description" content="اتصل بفريق منصة جودة الهواء والغبار في العراق">
 
+  <!-- Leaflet (shared styles, harmless on non-map pages) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- App styles -->
   <link rel="stylesheet" href="css/style.css">
+
   <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
+
+  <style>
+    /* Additional contact page specific styles */
+    .contact-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border-radius: 30px;
+      padding: 3rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #0090d3;
+      box-shadow: 0 10px 20px rgba(0,144,211,0.2);
+      margin-bottom: 1rem;
+    }
+
+    .profile-name {
+      color: #1e3a8a;
+      font-size: 2rem;
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .profile-title {
+      color: #64748b;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-details {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.2rem;
+      background: white;
+      border-radius: 60px;
+      margin-bottom: 1rem;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s ease;
+    }
+
+    .contact-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0,144,211,0.15);
+      border-color: #0090d3;
+    }
+
+    .contact-icon {
+      width: 45px;
+      height: 45px;
+      background: #e0f2fe;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0090d3;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-text {
+      flex: 0 1 auto;
+    }
+
+    .contact-text a, .contact-text p {
+      color: #1e3a8a;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .contact-text a:hover {
+      color: #0090d3;
+      text-decoration: underline;
+    }
+
+    .email-highlight {
+      background: #f0f9ff;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+      font-size: 1.2rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0 1rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid #e2e8f0;
+    }
+
+    .social-link {
+      width: 45px;
+      height: 45px;
+      background: #f1f5f9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e3a8a;
+      font-size: 1.3rem;
+      transition: all 0.2s ease;
+    }
+
+    .social-link:hover {
+      background: #0090d3;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .collaboration-box {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+    }
+
+    .collaboration-box h3 {
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .collaboration-box p {
+      color: #475569;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .institution-logos {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .institution-logo {
+      height: 50px;
+      width: auto;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+      filter: grayscale(30%);
+    }
+
+    .institution-logo:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+
+    .quick-reply {
+      background: #f0f9ff;
+      border-radius: 60px;
+      padding: 1rem 1.5rem;
+      margin: 2rem auto 0;
+      max-width: 400px;
+      font-size: 0.95rem;
+      color: #1e3a8a;
+      border: 1px solid #bae6fd;
+    }
+
+    .quick-reply i {
+      color: #0090d3;
+      margin-left: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-card {
+        padding: 2rem 1.5rem;
+      }
+      
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .profile-name {
+        font-size: 1.6rem;
+      }
+      
+      .contact-item {
+        padding: 1rem;
+      }
+      
+      .email-highlight {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="contact-page">
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="header-left">
-    <a href="index.html" class="logo-link">
-      <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo">
+  <!-- ================= TELEGRAM BAR ================= -->
+  <div class="telegram-bar">
+    <span class="telegram-icon">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.05-.2-.06-.06-.17-.04-.25-.02-.11.02-1.82 1.16-5.16 3.42-.48.33-.92.49-1.32.48-.43-.01-1.26-.24-1.88-.44-.76-.24-1.36-.37-1.31-.78.03-.21.31-.43.85-.66 3.32-1.44 5.53-2.39 6.63-2.85 3.16-1.32 3.81-1.55 4.24-1.56.09 0 .3.02.44.13.11.09.14.22.15.32-.01.07.01.24-.01.38z"/>
+      </svg>
+    </span>
+    <a href="https://t.me/iraqiaqi" target="_blank" rel="noopener noreferrer">
+      انضم إلى قناتنا على تيليجرام للمزيد من التحديثات
     </a>
   </div>
 
-  <nav class="nav">
-    <a href="index.html#map">الخريطة</a>
-    <a href="shako_mako.html">شكو ماكو</a>
-
-    <div class="nav-dropdown">
-      <a href="#" class="dropdown-toggle">حول المنصة ▾</a>
-      <div class="dropdown-menu">
-        <a href="about_AQI.html">مؤشر الجودة</a>
-        <a href="why_IAQ.html">منصتنا</a>
-        <a href="data_source.html">مصادر البيانات</a>
-      </div>
-    </div>
-
-    <a href="contact.html" class="active">للتعاون البحثي</a>
-  </nav>
-</header>
-
-<!-- ================= CONTENT ================= -->
-<main class="page-container">
-  <div class="contact-wrapper">
-
-    <!-- TEXT SIDE -->
-    <div class="contact-info">
-      <h1>اتصل بنا للتعاون البحثي</h1>
-
-      <p>
-        منصة جودة الهواء في العراق هي مبادرة بحثية مستقلة تهدف إلى
-        تعزيز الوعي العام وتحليل بيانات الغبار وجودة الهواء باستخدام
-        تقنيات النمذجة العددية والاستشعار عن بعد.
-      </p>
-
-      <p>
-        للاستفسارات العلمية، التعاون البحثي، أو الملاحظات العامة:
-      </p>
-
-      <div class="contact-box">
-        📧 البريد الإلكتروني:
-        <br>
-        <a href="mailto:omar.faisel@gmail.com">
-          omar.faisel@gmail.com
-        </a>
-      </div>
-
-      <p class="contact-note">
-        يتم الرد عادة خلال 24–48 ساعة.
-      </p>
-    </div>
-
-    <!-- IMAGE SIDE -->
-    <div class="contact-image">
-      <img src="assets/images/contact_side.jpg" alt="Air Quality Monitoring">
-    </div>
-
-  </div>
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="footer-content">
-    <div class="footer-left">
-      <a href="index.html" class="footer-logo-link">
-        <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="header-left">
+      <a href="index.html" class="logo-link" id="logo-home">
+        <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo">
       </a>
-      <p class="footer-copyright">
-        © 2026 Iraq Air Quality Platform
-        <br>
-        Numerical simulation & processing by Dr. Omar Althuwaynee
-      </p>
     </div>
 
-    <div class="footer-right">
-      <div id="ref-time"></div>
-    </div>
-  </div>
-</footer>
+    <nav class="nav">
+      <a href="index.html#map">الخريطة</a>
+      <a href="shako_mako.html">شكو ماكو</a>
+      <!-- ABOUT dropdown -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          حول المنصة ▾
+        </a>
+        <div class="dropdown-menu">
+          <a href="why_IAQ.html">منصتنا</a>
+          <a href="about_AQI.html">مؤشر الجودة</a>
+          <a href="data_source.html">مصادر البيانات</a>
+          <a href="contact.html" class="active">اتصل بنا</a>
+        </div>
+      </div>
 
-<script src="js/main.js"></script>
+      <!-- RESEARCH dropdown -->
+      <div class="nav-dropdown">
+        <a href="#" class="dropdown-toggle">
+          بحوث ▾
+        </a>
+        <div class="dropdown-menu">
+          <a href="research.html">تحليل البيانات</a>
+        </div>
+      </div>
+      
+      <!-- CONTACT link (active) -->
+    </nav>
+  </header>
+
+  <!-- ================= CONTENT ================= -->
+  <main class="page-container">
+    <article class="page-content">
+      
+      <div class="contact-container">
+        <h1>اتصل بنا</h1>
+        <p class="last-updated" id="last-updated-text">
+          آخر تحديث: جاري التحميل...
+        </p>
+
+        <!-- Main Contact Card -->
+        <div class="contact-card">
+          
+          <!-- Profile Section -->
+          <div class="profile-section">
+            <img src="assets/images/omar_zoom.jpg" alt="الدكتور عمر فيصل" class="profile-pic" onerror="this.style.display='none'">
+            <h2 class="profile-name">د.م. عمر فيصل الثويني</h2>
+            <p class="profile-title">مؤسس منصة جودة الهواء العراقية<br>متخصص في علم الجيوماتكس و تحليل البيانات و باحث في تنبؤ و التمثيل المكاني للكوارث الطبيعية</p>
+          </div>
+
+          <!-- Contact details - centered -->
+          <div class="contact-details">
+            
+            <!-- Email only -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <a href="mailto:omar.faisel@gmail.com" class="email-highlight">
+                  omar.faisel@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <!-- Social links -->
+            <div class="social-links">
+ 
+              <a href="https://www.linkedin.com/in/omar-f-althuwaynee-geomatics/" class="social-link" title="لينكد إن">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.researchgate.net/profile/Omar-Althuwaynee?ev=hdr_xprf" class="social-link" title="ResearchGate">
+                <i class="fab fa-researchgate"></i>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100073661064952" class="social-link" title="facebook">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </div>
+
+            <!-- Quick reply note -->
+            <div class="quick-reply">
+              <i class="fas fa-reply-all"></i>
+              يتم الرد على جميع الاستفسارات خلال 24-48 ساعة
+            </div>
+          </div>
+        </div>
+
+        <!-- Collaboration Section -->
+        <div class="collaboration-box">
+          <h3>للتعاون والاستفسارات الأكاديمية</h3>
+          <p>
+            نرحب بالتعاون مع الباحثين والمؤسسات الأكاديمية والجهات الحكومية المهتمة بجودة الهواء والغبار في العراق والمنطقة.
+          </p>
+          
+          <div class="institution-logos">
+            <img src="assets/images/logo.svg" alt="Iraq" class="institution-logo">
+          </div>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer-content">
+      <!-- Left: Logo + Copyright -->
+      <div class="footer-left">
+        <a href="index.html" class="footer-logo-link" id="footer-logo">
+          <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
+        </a>
+        <p class="footer-copyright">
+          © 2026 منصة جودة الهواء العراقية. "للبحث العلمي والتوعية العامة"
+          <br>
+          المحاكاة العددية والمعالجة: د. عمر فيصل
+          <br>
+          <small>(omar.faisel@gmail.com)</small>
+        </p>
+      </div>
+
+      <!-- Center: Data source -->
+      <div class="footer-center">
+        <div class="data-source-wrapper">
+          <span class="data-source-label">مصدر البيانات:</span>
+          <a href="https://dust.aemet.es/" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             title="مركز برشلونة الإقليمي للغبار">
+            <img src="./assets/images/logo-bdrc-and-wmo.svg" 
+                 alt="Barcelona Dust Regional Center" 
+                 class="data-center-logo">
+          </a>
+          <a href="https://dust.aemet.es/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="data-center-link">
+            dust.aemet.es
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Update time -->
+      <div class="footer-right">
+        <div id="ref-time"></div>
+      </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" title="العودة إلى الأعلى">↑</button>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Function to get file last modified date
+    function updateLastModified() {
+      const lastModified = new Date(document.lastModified);
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+      const formattedDate = lastModified.toLocaleDateString('ar-IQ', options);
+      
+      const updateElement = document.getElementById('last-updated-text');
+      if (updateElement) {
+        updateElement.textContent = `آخر تحديث: ${formattedDate} (توقيت بغداد)`;
+      }
+    }
+    
+    // Run when page loads
+    document.addEventListener('DOMContentLoaded', updateLastModified);
+
+    // Add active class to current nav item
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentPage = window.location.pathname.split('/').pop();
+      const navLinks = document.querySelectorAll('.nav a, .dropdown-menu a');
+      
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
