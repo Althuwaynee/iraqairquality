@@ -170,6 +170,7 @@ function getHealthIcons({ aqi, pm10, timestamp }) {
 }
 
 /* ---------- Map ---------- */
+/* ---------- Map ---------- */
 function initMap() {
   // Only initialize map if #map element exists
   const mapElement = document.getElementById("map");
@@ -182,6 +183,9 @@ function initMap() {
   }).addTo(map);
 
   districtLayer.addTo(map);
+  
+  // Add popup close on click functionality
+  setupPopupCloseOnClick();
 }
 
 /* ---------- Load JSON ---------- */
@@ -421,6 +425,30 @@ function buildDistrictPopup(d) {
     </div>
   `;
 }
+
+
+
+/* ---------- Close popup on click ---------- */
+function setupPopupCloseOnClick() {
+  // Listen for clicks on the map
+  map.on('click', function(e) {
+    // Check if a popup is open and the click wasn't on a marker
+    if (map._popup) {
+      // Close the popup
+      map.closePopup();
+    }
+  });
+  
+  // Also close popup when clicking on it
+  document.addEventListener('click', function(e) {
+    const popup = document.querySelector('.leaflet-popup');
+    if (popup && popup.contains(e.target)) {
+      // Clicked inside popup - close it
+      map.closePopup();
+    }
+  });
+}
+
 
 // Add this helper function to translate AQI levels
 function translateAQILevel(level) {
