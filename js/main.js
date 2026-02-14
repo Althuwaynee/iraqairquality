@@ -837,32 +837,7 @@ function enableMobileDoubleClickZoom() {
 }
 
 /* ---------- Show mobile hint (optional) ---------- */
-function showMobileZoomHint() {
-  // Only show once per session
-  if (sessionStorage.getItem('mobileZoomHintShown')) return;
-  
-  setTimeout(() => {
-    map.openPopup(`
-      <div style="text-align: center; padding: 10px; direction: rtl;">
-        <strong>👆 تكبير/تصغير</strong><br>
-        <small style="color: #666;">
-          اضغط مرتين على:<br>
-          • النصف العلوي = تكبير<br>
-          • النصف السفلي = تصغير
-        </small>
-      </div>
-    `, [33.2, 44.3], { 
-      className: 'mobile-zoom-hint',
-      closeButton: true,
-      closeOnClick: true
-    });
-    
-    sessionStorage.setItem('mobileZoomHintShown', 'true');
-    
-    // Auto close after 5 seconds
-    setTimeout(() => map.closePopup(), 5000);
-  }, 1500);
-}
+
 
 
 
