@@ -1,4 +1,5 @@
 
+
 /* ===============================
    Iraq Air Quality – Main JS
    =============================== */
@@ -439,7 +440,7 @@ function buildDistrictPopup(d) {
       <span style="color: #032780;">PM10 (متوسط 24 ساعة):</span> <b>${mean24h.toFixed(1)}</b> ميكروغرام/م³
       </div>
       ${forecasts.length > 0 ? `
-        <hr style="margin: 2px 0; border-color: #e2e8f0;">
+        <hr style="margin: 8px 0; border-color: #e2e8f0;">
         <strong style="color: #1e3a5f; display: block; margin-bottom: 2px;">التنبؤ (PM10 لـ 24 ساعة)</strong>
         <div class="forecast-row">${forecastHTML}</div>
       ` : ''}
@@ -450,13 +451,24 @@ function buildDistrictPopup(d) {
 
 
 /* ---------- Close popup on click ---------- */
-
-function openBottomPopup(content) {
-  const panel = document.getElementById("bottom-popup");
-  if (!panel) return;
-
-  panel.innerHTML = content;
-  panel.classList.add("show");
+function setupPopupCloseOnClick() {
+  // Listen for clicks on the map
+  map.on('click', function(e) {
+    // Check if a popup is open and the click wasn't on a marker
+    if (map._popup) {
+      // Close the popup
+      map.closePopup();
+    }
+  });
+  
+  // Also close popup when clicking on it
+  document.addEventListener('click', function(e) {
+    const popup = document.querySelector('.leaflet-popup');
+    if (popup && popup.contains(e.target)) {
+      // Clicked inside popup - close it
+      map.closePopup();
+    }
+  });
 }
 
 
@@ -531,20 +543,15 @@ function renderDistrictList(districts, filter = "") {
 
 /* ---------- Zoom + popup ---------- */
 function zoomToDistrict(d) {
-  if (!map) return;
-
-  closeBottomPopup();
-
-  map.setView([d.latitude, d.longitude], 11, {
-    animate: true,
-    duration: 0.5
+  if (!map) return; // Only if map exists
+  
+  map.setView([d.latitude, d.longitude], 11);
+  districtLayer.eachLayer(layer => {
+    if (layer._district_id === d.district_id) {
+      layer.openPopup();
+    }
   });
-
-  setTimeout(() => {
-    openBottomPopup(buildDistrictPopup(d));
-  }, 400);
 }
-
 
 /* ---------- Auto locate ---------- */
 function autoLocateUser(districts) {
@@ -880,12 +887,33 @@ function enableMobileDoubleClickZoom() {
 }
 
 /* ---------- Show mobile hint (optional) ---------- */
-
-
-function closeBottomPopup() {
-  const panel = document.getElementById("bottom-popup");
-  if (panel) panel.classList.remove("show");
+function showMobileZoomHint() {
+  // Only show once per session
+  if (sessionStorage.getItem('mobileZoomHintShown')) return;
+  
+  setTimeout(() => {
+    map.openPopup(`
+      <div style="text-align: center; padding: 10px; direction: rtl;">
+        <strong>👆 تكبير/تصغير</strong><br>
+        <small style="color: #666;">
+          اضغط مرتين على:<br>
+          • النصف العلوي = تكبير<br>
+          • النصف السفلي = تصغير
+        </small>
+      </div>
+    `, [33.2, 44.3], { 
+      className: 'mobile-zoom-hint',
+      closeButton: true,
+      closeOnClick: true
+    });
+    
+    sessionStorage.setItem('mobileZoomHintShown', 'true');
+    
+    // Auto close after 5 seconds
+    setTimeout(() => map.closePopup(), 5000);
+  }, 1500);
 }
+
 
 
 /* ---------- App Bootstrap ---------- */
