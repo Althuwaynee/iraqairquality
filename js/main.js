@@ -414,8 +414,8 @@ function buildDistrictPopup(d) {
       <span style="color: #032780;">PM10 (متوسط 24 ساعة):</span> <b>${mean24h.toFixed(1)}</b> ميكروغرام/م³
       </div>
       ${forecasts.length > 0 ? `
-        <hr style="margin: 8px 0; border-color: #e2e8f0;">
-        <strong style="color: #1e3a5f; display: block; margin-bottom: 2px;">التنبؤ (PM10 لـ 24 ساعة)</strong>
+        <hr style="margin: 2px 0; border-color: #e2e8f0;">
+        <strong style="color: #1e3a5f; display: block; margin-bottom: 0.2px;">التنبؤ (PM10 لـ 24 ساعة)</strong>
         <div class="forecast-row">${forecastHTML}</div>
       ` : ''}
     </div>
