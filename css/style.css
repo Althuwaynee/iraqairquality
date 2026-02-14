@@ -306,33 +306,7 @@ z-index: 9999;
 opacity: 1;
 }
 
-/* ===============================
-  Leaflet Popup
-  =============================== */
-.leaflet-popup-content-wrapper {
-max-width: 500px !important;
-padding: 16px 20px !important;
-border-radius: 10px !important;
-}
 
-.leaflet-popup-content {
-font-size: 0.9rem;
-line-height: 1.5;
-margin: 0;
-width: 100% !important;
-max-width: 500px;
-}
-
-.leaflet-popup-content h4 {
-margin: 0 0 12px 0;
-font-size: 1.1rem;
-}
-
-.leaflet-popup-content hr {
-border: none;
-border-top: 1px solid #e2e8f0;
-margin: 6px 0;
-}
 
 /* ===============================
   Forecast Layout
@@ -388,67 +362,88 @@ color: #0f172a;
   Footer
   =============================== */
 footer {
-background: linear-gradient(135deg, #ffffff 0%, #d3eef0 100%);
-color: rgba(0,0,0,0.623);
-padding: 1rem 1.3rem;
-margin-top: 1.1rem;
-border-top: 3px solid #97b7db;
+background: linear-gradient(135deg, #1e3a8a 0%, #4f73c7 100%);
+color: #ffffff;
+padding: 2rem 2rem;
+font-size: 0.9rem;
+line-height: 1.5;
+position: relative;
 }
 
 .footer-content {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
 max-width: 1200px;
 margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr auto 1fr;
+gap: 1rem;
+flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+}
+
+/* Footer logo */
+.footer-logo-link {
+display: block;
+margin-bottom: 0.5rem;
+}
+
+.footer-logo {
+height: 50px;
+width: auto;
+transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+transform: scale(1.05);
+}
+
+/* Center content alignment */
+.footer-center {
 align-items: center;
-gap: 1.1rem;
-}
-
-.footer-left, .footer-center, .footer-right {
-padding: 0.5rem 0;
-}
-
-.footer-left { text-align: left; }
-.footer-center { text-align: center; }
-.footer-right { text-align: right; }
-
-.footer-copyright {
-font-size: 0.85rem;
-line-height: 1.1;
-opacity: 0.9;
+text-align: center;
 }
 
 .data-source-wrapper {
 display: flex;
 flex-direction: column;
 align-items: center;
-gap: 0.5rem;
+gap: 0.25rem;
 }
 
 .data-center-logo {
 height: 45px;
 width: auto;
-filter: brightness(0) invert(1);
 transition: all 0.3s ease;
-margin-bottom: 0.5rem;
 }
 
 .data-center-logo:hover {
-filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
-transform: translateY(-1px);
+transform: translateY(-2px) scale(1.05);
+filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
 }
 
 .data-center-link {
-font-size: 0.8rem;
-color: #84c5fe;
+font-size: 0.85rem;
+color: #ffec99;
 text-decoration: none;
-opacity: 0.8;
+opacity: 0.9;
 transition: opacity 0.3s ease;
 }
 
 .data-center-link:hover {
 opacity: 1;
 text-decoration: underline;
+}
+
+.footer-right {
+align-items: flex-end;
+text-align: right;
 }
 
 #ref-time {
@@ -583,6 +578,11 @@ gap: 1.5rem;
 }
 .footer-left, .footer-center, .footer-right { text-align: center; padding: 0; }
 .footer-copyright br { display: none; }
+.layout { grid-template-columns: 1fr; }
+#map { height: 580px; }
+.sidebar { height: auto; max-height: 420px; }
+.aqi-bar { left: 10px; right: 10px; bottom: 1px; pointer-events: auto; box-shadow: 1 -6px 20px rgba(0,0,0,0.25); }
+.aqi-bar span { padding: 1px; font-size: 0.65rem; }
 }
 
 @media (max-width: 768px) {
@@ -594,12 +594,28 @@ gap: 1.5rem;
 .nav a.active::after { bottom: -4px; }
 }
 
-@media (max-width: 900px) {
-.layout { grid-template-columns: 1fr; }
-#map { height: 580px; }
-.sidebar { height: auto; max-height: 420px; }
-.aqi-bar { left: 10px; right: 10px; bottom: 1px; pointer-events: auto; box-shadow: 1 -6px 20px rgba(0,0,0,0.25); }
-.aqi-bar span { padding: 1px; font-size: 0.65rem; }
+@media (max-width: 700px) {
+.site-header {
+flex-direction: column;
+align-items: center;
+}
+.header-left {
+width: 100%;
+display: flex;
+justify-content: center;
+margin: 0;
+padding: 0.5rem 0;
+}
+.logo-link, .logo {
+margin: 0;
+}
+.nav {
+width: 100%;
+display: flex;
+justify-content: center;
+gap: 1rem;
+margin-top: 0.5rem;
+}
 }
 
 @media (max-width: 600px) {
@@ -607,125 +623,160 @@ gap: 1.5rem;
 .profile-pic { width: 120px; height: 120px; }
 .founder-name { text-align: center; }
 }
-/* ===============================
-  Mobile logo fix for data_source page
-  =============================== */
-@media (max-width: 768px) {
-body.data-source-page .site-header {
-flex-direction: column;
-align-items: center;
-}
 
-body.data-source-page .header-left {
-width: 100%;
-display: flex;
-justify-content: center;
-margin-bottom: 0.5rem; /* spacing below logo */
-}
-
-body.data-source-page .logo {
-margin-left: 0; /* remove desktop left margin */
-}
-
-body.data-source-page .nav {
-width: 100%;
-display: flex;
-justify-content: space-around;
-margin-top: 0.5rem;
-}
-}
-
-
-/* ===============================
-  Professional footer
-  =============================== */
+@media (max-width: 480px) {
 footer {
-background: linear-gradient(135deg, #1e3a8a 0%, #4f73c7 100%);
-color: #ffffff;
-padding: 2rem 2rem;
-font-size: 0.9rem;
-line-height: 1.5;
-position: relative;
-}
-
-.footer-content {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-max-width: 1200px;
-margin: 0 auto;
-gap: 1rem;
-flex-wrap: wrap;
-}
-
-.footer-left,
-.footer-center,
-.footer-right {
-display: flex;
-flex-direction: column;
-gap: 0.5rem;
-}
-
-/* Footer logo */
-.footer-logo-link {
-display: block;
-margin-bottom: 0.5rem;
-}
-
-.footer-logo {
-height: 50px;
-width: auto;
-transition: transform 0.3s ease;
-}
-
-.footer-logo:hover {
-transform: scale(1.05);
-}
-
-/* Center content alignment */
-.footer-center {
-align-items: center;
-text-align: center;
-}
-
-.data-source-wrapper {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 0.25rem;
-}
-
-.data-center-logo {
-height: 45px;
-width: auto;
-transition: all 0.3s ease;
-}
-
-.data-center-logo:hover {
-transform: translateY(-2px) scale(1.05);
-filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
-}
-
-.data-center-link {
+padding: 1.5rem 1rem;
 font-size: 0.85rem;
-color: #ffec99;
-text-decoration: none;
-opacity: 0.9;
-transition: opacity 0.3s ease;
+}
+.footer-logo {
+height: 40px;
+}
+.data-center-logo {
+height: 35px;
+}
 }
 
-.data-center-link:hover {
-opacity: 1;
+/* ===============================
+  Dropdown Menus
+  =============================== */
+.nav-dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-toggle {
+cursor: pointer;
+}
+
+.dropdown-menu {
+position: absolute;
+top: 100%;
+right: 0;
+background: white;
+min-width: 180px;
+box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+border-radius: 8px;
+padding: 0.5rem 0;
+display: none;
+z-index: 1000;
+}
+
+.dropdown-menu a {
+display: block;
+padding: 0.6rem 1rem;
+white-space: nowrap;
+color: #1e293b;
+text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+background: #f1f5f9;
+}
+
+.dropdown-menu a.active {
+font-weight: 600;
+background: #e0f2fe;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+display: block;
+}
+
+/* ===============================
+  Telegram Bar
+  =============================== */
+.telegram-bar {
+background: linear-gradient(135deg, #f4f6f7, #67b0f5);
+text-align: center;
+padding: 0.5rem 1rem;
+font-size: 0.95rem;
+}
+
+.telegram-bar a {
+color: white;
+text-decoration: none;
+font-weight: 500;
+}
+
+.telegram-bar a:hover {
 text-decoration: underline;
 }
 
-.footer-right {
-align-items: flex-end;
-text-align: right;
+.telegram-icon {
+display: inline-flex;
+align-items: center;
+margin-inline-end: 0.5rem;
+}
+
+.telegram-icon svg {
+width: 20px;
+height: 20px;
 }
 
 /* ===============================
-  Back to top button
+  Leaflet Controls
+  =============================== */
+.leaflet-control-zoom {
+left: auto !important;
+right: 20px !important;
+top: 20px !important;
+position: absolute !important;
+}
+
+
+
+/* Disable double-click zoom on desktop explicitly */
+@media (min-width: 769px) {
+.leaflet-container {
+touch-action: pan-y pan-x !important;
+}
+}
+
+/* ===============================
+  Site Title Fonts
+  =============================== */
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Tajawal:wght@300;400;700&display=swap');
+
+.site-title {
+direction: rtl;
+text-align: center;
+flex-grow: 1;
+}
+
+.title-main {
+font-family: 'Markazi Text', serif;
+font-weight: 700;
+font-size: 1.2rem;
+line-height: 1.3;
+color: #0a2f44;
+margin: 0 0 0.2rem 0;
+text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+letter-spacing: 0.5px;
+}
+
+.title-sub {
+font-family: 'Tajawal', sans-serif;
+font-weight: 300;
+font-size: 1.1rem;
+color: #4a5c6b;
+position: relative;
+display: inline-block;
+padding-top: 8px;
+}
+
+.title-sub::before {
+content: "";
+position: absolute;
+top: 0;
+right: 25%;
+width: 50%;
+height: 1px;
+background: linear-gradient(90deg, transparent, #c9a03d, #b38b2d, transparent);
+}
+
+/* ===============================
+  Back to Top Button
   =============================== */
 #back-to-top {
 position: fixed;
@@ -749,282 +800,66 @@ opacity: 1;
 transform: translateY(-2px);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-.footer-content {
+/* ===============================
+  Mobile Specific Fixes
+  =============================== */
+@media (max-width: 768px) {
+body.data-source-page .site-header {
 flex-direction: column;
 align-items: center;
-text-align: center;
-gap: 1.5rem;
 }
 
-.footer-left,
-.footer-center,
-.footer-right {
-align-items: center;
-text-align: center;
-}
-}
-
-@media (max-width: 480px) {
-footer {
-padding: 1.5rem 1rem;
-font-size: 0.85rem;
-}
-.footer-logo {
-height: 40px;
-}
-.data-center-logo {
-height: 35px;
-}
-}
-
-/* ===============================
-  Back-to-top JS trigger (optional)
-  =============================== */
-
-/* ===============================
-  Mobile: center header logo on all pages
-  =============================== */
-@media (max-width: 700px) {
-.site-header {
-flex-direction: column;       /* stack logo + nav */
-align-items: center;          /* center everything horizontally */
-}
-
-.header-left {
+body.data-source-page .header-left {
 width: 100%;
 display: flex;
-justify-content: center;      /* center logo */
-margin: 0;
-padding: 0.5rem 0;            /* optional spacing above/below */
+justify-content: center;
+margin-bottom: 0.5rem;
 }
 
-.logo-link, .logo {
-margin: 0;
+body.data-source-page .logo {
+margin-left: 0;
 }
 
-.nav {
+body.data-source-page .nav {
 width: 100%;
 display: flex;
-justify-content: center;      /* center nav links */
-gap: 1rem;
+justify-content: space-around;
 margin-top: 0.5rem;
 }
 }
 
 
 
-/***** Tabs tree and location*******/
+/* ===============================
+   Bottom Popup (Google Style)
+   =============================== */
+.bottom-popup {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
 
-/* Dropdown container */
-.nav-dropdown {
-position: relative;
-display: inline-block;
-}
+  width: 420px;        /* ← FIXED WIDTH */
+  max-width: 95%;      /* ← Prevent overflow on small screens */
 
-/* Main dropdown link */
-.dropdown-toggle {
-cursor: pointer;
-}
+  height: 300px;       /* ← FIXED HEIGHT */
+  max-height: 70vh;    /* ← Prevent covering whole screen */
 
-/* Hidden menu */
-.dropdown-menu {
-position: absolute;
-top: 100%;
-right: 0;
-background: white;
-min-width: 180px;
-box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-border-radius: 8px;
-padding: 0.5rem 0;
-display: none;
-z-index: 1000;
-}
+  overflow-y: auto;    /* ← Scroll if content is long */
 
-/* Dropdown links */
-.dropdown-menu a {
-display: block;
-padding: 0.6rem 1rem;
-white-space: nowrap;
-color: #1e293b;
-text-decoration: none;
-}
-
-.dropdown-menu a:hover {
-background: #f1f5f9;
-}
-
-/* Active page */
-.dropdown-menu a.active {
-font-weight: 600;
-background: #e0f2fe;
-}
-
-/* Show menu on hover */
-.nav-dropdown:hover .dropdown-menu {
-display: block;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+  padding: 16px 18px;
+  display: none;
+  z-index: 1000;
 }
 
 
-.telegram-bar {
-background: linear-gradient(135deg, #f4f6f7, #67b0f5);
-text-align: center;
-padding: 0.5rem 1rem;
-font-size: 0.95rem;
+
+.bottom-popup.show {
+  display: block;
 }
 
-.telegram-bar a {
-color: white;
-text-decoration: none;
-font-weight: 500;
-}
-
-.telegram-bar a:hover {
-text-decoration: underline;
-}
-.telegram-icon {
-display: inline-flex;
-align-items: center;
-margin-inline-end: 0.5rem;
-}
-
-.telegram-icon svg {
-width: 20px;
-height: 20px;
-}
-
-
-/* Move Leaflet zoom controls to right side */
-.leaflet-control-zoom {
-left: auto !important;
-right: 20px !important;
-top: 20px !important;
-position: absolute !important;
-}
-
-
-/* Mobile hint popup styling */
-.mobile-hint-popup .leaflet-popup-content-wrapper {
-background: rgba(0, 0, 0, 0.8);
-color: white;
-border-radius: 30px;
-font-size: 14px;
-padding: 5px 10px;
-}
-
-.mobile-hint-popup .leaflet-popup-tip {
-background: rgba(0, 0, 0, 0.8);
-}
-
-/* Disable double-click zoom on desktop explicitly */
-@media (min-width: 769px) {
-.leaflet-container {
-touch-action: pan-y pan-x !important; /* Restore default pan behavior */
-}
-}
-
-/* Mobile zoom hint styling */
-.mobile-zoom-hint .leaflet-popup-content-wrapper {
-background: rgba(0, 0, 0, 0.85);
-color: white;
-border-radius: 12px;
-padding: 5px;
-font-family: system-ui, -apple-system, sans-serif;
-border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.mobile-zoom-hint .leaflet-popup-tip {
-background: rgba(0, 0, 0, 0.85);
-}
-
-.mobile-zoom-hint .leaflet-popup-close-button {
-color: white !important;
-}
-
-
-.site-header {
-display: flex;
-align-items: center;
-justify-content: space-between;
-}
-
-.header-left {
-flex-shrink: 0;
-}
-
-.site-title {
-flex-grow: 1;
-text-align: center;
-direction: rtl;
-}
-
-/* Remove default h1 margins that might affect centering */
-.title-main {
-font-size: 1.5rem;
-font-weight: bold;
-line-height: 1.4;
-margin: 0; /* Critical for perfect centering */
-}
-
-.title-sub {
-font-size: 1rem;
-line-height: 1.4;
-margin: 4px 0 0 0; /* Small top margin only */
-color: #555; /* Optional: slightly lighter color for hierarchy */
-}
-
-.nav {
-display: flex;
-align-items: center;
-gap: 1rem;
-flex-shrink: 0;
-}
-
-/* Add these fonts to your stylesheet */
-@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Tajawal:wght@300;400;700&display=swap');
-
-.site-title {
-direction: rtl;
-text-align: center;
-}
-
-.title-main {
-font-family: 'Markazi Text', serif;
-font-weight: 700;
-font-size: 1.2rem;
-line-height: 1.3;
-color: #0a2f44; /* Dark, authoritative blue */
-margin-bottom: 0.2rem;
-
-/* Subtle effect for depth */
-text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
-
-/* Optional: slight letter spacing for elegance */
-letter-spacing: 0.5px;
-}
-
-.title-sub {
-font-family: 'Tajawal', sans-serif;
-font-weight: 300;
-font-size: 1.1rem;
-color: #4a5c6b;
-
-/* Decorative line above subtitle (optional) */
-position: relative;
-display: inline-block;
-padding-top: 8px;
-}
-
-/* Optional: decorative element */
-.title-sub::before {
-content: "";
-position: absolute;
-top: 0;
-right: 25%;
-width: 50%;
-height: 1px;
-background: linear-gradient(90deg, transparent, #c9a03d, #b38b2d, transparent);
-}
 
 
