@@ -169,6 +169,20 @@ function getHealthIcons({ aqi, pm10, timestamp }) {
   return icons;
 }
 
+
+/* ---------- Make popup move with map ---------- */
+function setupPopupDragBehavior() {
+  // When map starts dragging, close the popup
+  map.on('dragstart', function() {
+    map.closePopup();
+  });
+  
+  // Optional: also close when zooming
+  map.on('zoomstart', function() {
+    map.closePopup();
+  });
+}
+
 /* ---------- Map ---------- */
 /* ---------- Map ---------- */
 function initMap() {
