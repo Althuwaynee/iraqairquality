@@ -1,5 +1,3 @@
-
-
 /* ===============================
    Iraq Air Quality – Main JS
    =============================== */
@@ -171,22 +169,6 @@ function getHealthIcons({ aqi, pm10, timestamp }) {
   return icons;
 }
 
-
-/* ---------- Make popup move with map ---------- */
-function setupPopupDragBehavior() {
-  // When map starts dragging, close the popup
-  map.on('dragstart', function() {
-    map.closePopup();
-  });
-  
-  // Optional: also close when zooming
-  map.on('zoomstart', function() {
-    map.closePopup();
-  });
-}
-
-/* ---------- Map ---------- */
-/* ---------- Map ---------- */
 /* ---------- Map ---------- */
 function initMap() {
   // Only initialize map if #map element exists
@@ -200,14 +182,6 @@ function initMap() {
   }).addTo(map);
 
   districtLayer.addTo(map);
-  
-  // Close popup when clicking anywhere on map
-  map.on('click', function() {
-    map.closePopup();
-  });
-  
-  // Make popup move with map by closing on drag/zoom
-  setupPopupDragBehavior();
 }
 
 /* ---------- Load JSON ---------- */
@@ -447,30 +421,6 @@ function buildDistrictPopup(d) {
     </div>
   `;
 }
-
-
-
-/* ---------- Close popup on click ---------- */
-function setupPopupCloseOnClick() {
-  // Listen for clicks on the map
-  map.on('click', function(e) {
-    // Check if a popup is open and the click wasn't on a marker
-    if (map._popup) {
-      // Close the popup
-      map.closePopup();
-    }
-  });
-  
-  // Also close popup when clicking on it
-  document.addEventListener('click', function(e) {
-    const popup = document.querySelector('.leaflet-popup');
-    if (popup && popup.contains(e.target)) {
-      // Clicked inside popup - close it
-      map.closePopup();
-    }
-  });
-}
-
 
 // Add this helper function to translate AQI levels
 function translateAQILevel(level) {
