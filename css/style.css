@@ -1037,9 +1037,9 @@ footer {
 }
 
 .leaflet-popup-content-wrapper {
-  border-radius: 12px;
+  border-radius: 1px;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .forecast-row {
