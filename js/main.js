@@ -843,37 +843,52 @@ function enableMobileDoubleClickZoom() {
 
 
 
-/* ---------- Simple Double-Click and Drag Zoom ---------- */
-function setupSimpleZoom() {
+
+
+
+
+
+
+
+
+
+
+/* ---------- Google Maps Style Zoom ---------- */
+function setupGoogleZoom() {
   if (!map) return;
   
   let touchStartY = 0;
   let touchStartTime = 0;
+  let isZooming = false;
   
-  // Double-click zoom
-  map.on('dblclick', function(e) {
-    e.originalEvent.preventDefault();
-    const currentZoom = map.getZoom();
-    map.setView(e.latlng, currentZoom + 1, { animate: true });
-  });
-  
-  // Two-finger drag up/down to zoom
   map.on('touchstart', function(e) {
-    if (e.touches.length === 2) {
-      touchStartY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+    if (e.touches.length === 1) {
+      touchStartY = e.touches[0].clientY;
       touchStartTime = Date.now();
+      isZooming = false;
     }
   });
   
   map.on('touchmove', function(e) {
-    if (e.touches.length === 2) {
+    if (e.touches.length === 1 && !isZooming) {
+      const deltaY = e.touches[0].clientY - touchStartY;
+      const deltaTime = Date.now() - touchStartTime;
+      
+      // If moving up/down quickly after touch, start zoom mode
+      if (Math.abs(deltaY) > 10 && deltaTime < 300) {
+        isZooming = true;
+        e.originalEvent.preventDefault();
+      }
+    }
+    
+    if (e.touches.length === 1 && isZooming) {
       e.originalEvent.preventDefault();
       
-      const currentY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      const currentY = e.touches[0].clientY;
       const deltaY = currentY - touchStartY;
       
       // Zoom based on drag distance
-      if (Math.abs(deltaY) > 20) {
+      if (Math.abs(deltaY) > 30) {
         const currentZoom = map.getZoom();
         if (deltaY < 0 && currentZoom < 18) {
           // Drag up = zoom in
@@ -888,11 +903,57 @@ function setupSimpleZoom() {
     }
   });
   
+  map.on('touchend', function(e) {
+    if (e.touches.length === 0 && !isZooming) {
+      // Check for double tap
+      const deltaTime = Date.now() - touchStartTime;
+      if (deltaTime < 200) {
+        // This was a tap, let double-click handler work
+        setTimeout(() => {
+          // If no second tap, it was a single tap
+        }, 200);
+      }
+    }
+    isZooming = false;
+  });
+  
+  // Double tap zoom in
+  let lastTap = 0;
+  map.on('tap', function(e) {
+    const now = Date.now();
+    if (now - lastTap < 300) {
+      // Double tap detected
+      e.originalEvent.preventDefault();
+      const currentZoom = map.getZoom();
+      map.setView(e.latlng, currentZoom + 1, { animate: true });
+    }
+    lastTap = now;
+  });
+  
+  // Disable default double-click
+  map.doubleClickZoom.disable();
+  
   // Optional: Show hint once
-  if (!localStorage.getItem('zoomHintShown')) {
+  if (!localStorage.getItem('googleZoomHintShown')) {
     const hint = document.createElement('div');
-    hint.className = 'zoom-hint';
-    hint.innerHTML = '👆 اضغط مرتين للتكبير<br>🖐️ اسحب بإصبعين للتكبير/التصغير';
+    hint.style.cssText = `
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.8);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      z-index: 10000;
+      text-align: center;
+      direction: rtl;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      pointer-events: none;
+      transition: opacity 0.5s;
+    `;
+    hint.innerHTML = '👆 اضغط مرتين ثم اسحب للأعلى/للأسفل للتكبير/التصغير';
     document.body.appendChild(hint);
     
     setTimeout(() => {
@@ -900,9 +961,21 @@ function setupSimpleZoom() {
       setTimeout(() => hint.remove(), 1000);
     }, 4000);
     
-    localStorage.setItem('zoomHintShown', 'true');
+    localStorage.setItem('googleZoomHintShown', 'true');
   }
 }
+
+/* ---------- App Bootstrap ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+  initMap();
+  loadPM10Alerts();
+  setupMobileMenu();
+  setupLogoNavigation();
+  setupSearch();
+  setupGoogleZoom(); // ← ADD THIS LINE
+});
+
+
 
 
 
@@ -914,5 +987,4 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMobileMenu();
   setupLogoNavigation();
   setupSearch();
-  setupSimpleZoom(); // ← ADD THIS LINE
 });
