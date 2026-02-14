@@ -185,6 +185,7 @@ function setupPopupDragBehavior() {
 
 /* ---------- Map ---------- */
 /* ---------- Map ---------- */
+/* ---------- Map ---------- */
 function initMap() {
   // Only initialize map if #map element exists
   const mapElement = document.getElementById("map");
@@ -198,8 +199,13 @@ function initMap() {
 
   districtLayer.addTo(map);
   
-  // Add popup close on click functionality
-  setupPopupCloseOnClick();
+  // Close popup when clicking anywhere on map
+  map.on('click', function() {
+    map.closePopup();
+  });
+  
+  // Make popup move with map by closing on drag/zoom
+  setupPopupDragBehavior();
 }
 
 /* ---------- Load JSON ---------- */
