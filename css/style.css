@@ -310,9 +310,9 @@ opacity: 1;
   Leaflet Popup
   =============================== */
 .leaflet-popup-content-wrapper {
-max-width: 500px !important;
+max-width: 330px !important;
 padding: 2px 20px !important;
-border-radius: 5px !important;
+border-radius: 10px !important;
 }
 
 .leaflet-popup-content {
@@ -320,7 +320,7 @@ font-size: 0.9rem;
 line-height: 1;
 margin: 0;
 width: 100% !important;
-max-width: 500px;
+max-width: 400px;
 }
 
 .leaflet-popup-content h4 {
@@ -339,9 +339,9 @@ margin: 1px 0;
   =============================== */
 .forecast-row {
 display: flex;
-gap: 10px;
+gap: 1px;
 margin-top: 8px;
-justify-content: space-between;
+
 }
 
 .forecast-item {
