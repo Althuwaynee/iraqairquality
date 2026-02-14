@@ -169,6 +169,10 @@ function getHealthIcons({ aqi, pm10, timestamp }) {
   return icons;
 }
 
+
+
+
+
 /* ---------- Map ---------- */
 function initMap() {
   // Only initialize map if #map element exists
@@ -183,6 +187,10 @@ function initMap() {
 
   districtLayer.addTo(map);
 }
+
+
+
+
 
 /* ---------- Load JSON ---------- */
 async function loadPM10Alerts() {
