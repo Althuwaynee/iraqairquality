@@ -400,42 +400,23 @@ function buildDistrictPopup(d) {
   const districtNameAr = d.district_name_ar || d.district_name || "منطقة غير معروفة";
   const provinceNameAr = d.province_name_ar || d.province_name || "محافظة غير معروفة";
 
-  // FIXED: Removed max-width constraint and added min-width
   return `
-    <div style="direction: rtl; text-align: right; font-family: 'Tajawal', sans-serif; min-width: 320px; padding: 8px;">
-      <strong style="font-size: 1.2rem; color: #1e3a5f; display: block; margin-bottom: 4px;">${districtNameAr}</strong>
-      <span style="color: #4a5568; font-size: 0.95rem; display: block; margin-bottom: 8px;">${provinceNameAr}</span>
-      
-      <div style="background: #f8fafc; padding: 10px; border-radius: 8px; margin: 8px 0;">
-        <div style="font-size:0.8rem; color:#64748b; margin-bottom: 8px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 6px;">
-          ⏱️ وقت القياس: ${measurementTime}
-        </div>
-        
-        <div style="line-height: 2; font-size: 0.95rem;">
-          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding: 4px 0;">
-            <span style="color: #2563eb; font-weight: 500;">PM10 الحالي:</span>
-            <span style="font-weight: 700;">${pm10Now.toFixed(1)} ميكروغرام/م³</span>
-          </div>
-          
-          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #e2e8f0; padding: 4px 0;">
-            <span style="color: #2563eb; font-weight: 500;">مؤشر جودة الهواء:</span>
-            <span style="font-weight: 700;">${aqiValue} <span style="color: #64748b; font-weight: normal;">(${translateAQILevel(aqiLevel)})</span></span>
-          </div>
-          
-          <div style="display: flex; justify-content: space-between; padding: 4px 0;">
-            <span style="color: #2563eb; font-weight: 500;">PM10 (متوسط 24 ساعة):</span>
-            <span style="font-weight: 600;">${mean24h.toFixed(1)} ميكروغرام/م³</span>
-          </div>
-        </div>
+    <div style="direction: rtl; text-align: right; font-family: 'Tajawal', sans-serif; max-width: 350px;">
+      <strong style="font-size: 1.1rem; color: #1e3a5f;">${districtNameAr}</strong><br>
+      <small style="color: #4a5568;">${provinceNameAr}</small>
+      <hr style="margin: 2px 0; border-color: #e2e8f0;">
+      <div style="font-size:0.75rem; color:#64748b; margin-bottom: 2px;">
+        وقت القياس: ${measurementTime}
       </div>
-      
+      <div style="line-height: 1.8;">
+      <span style="color: #032780;">PM10 (الآني):</span> <b>${pm10Now.toFixed(1)}</b> ميكروغرام/م³<br>
+      <span style="color: #032780;">AQI (مؤشر جودة الهواء):</span> <b>${aqiValue}</b> (<b>${translateAQILevel(aqiLevel)}</b>)<br>
+      <span style="color: #032780;">PM10 (متوسط 24 ساعة):</span> <b>${mean24h.toFixed(1)}</b> ميكروغرام/م³
+      </div>
       ${forecasts.length > 0 ? `
-        <div style="margin-top: 12px;">
-          <div style="font-weight: 700; color: #1e3a5f; margin-bottom: 8px; font-size: 1rem; border-right: 4px solid #2563eb; padding-right: 8px;">
-            📊 التنبؤ (PM10 لـ 24 ساعة)
-          </div>
-          <div class="forecast-row" style="overflow-x: auto; padding-bottom: 4px;">${forecastHTML}</div>
-        </div>
+        <hr style="margin: 8px 0; border-color: #e2e8f0;">
+        <strong style="color: #1e3a5f; display: block; margin-bottom: 2px;">التنبؤ (PM10 لـ 24 ساعة)</strong>
+        <div class="forecast-row">${forecastHTML}</div>
       ` : ''}
     </div>
   `;
@@ -445,8 +426,8 @@ function buildDistrictPopup(d) {
 function translateAQILevel(level) {
   const translations = {
     'good': 'جيد',
-    'moderate': 'معتدل',
-    'unhealthy_for_sensitive_groups': 'غير صحي للمجموعات الحساسة',
+    'moderate': 'متوسط',
+    'unhealthy_for_sensitive_groups': 'غير صحي للفئات الحساسة',
     'unhealthy': 'غير صحي',
     'very_unhealthy': 'غير صحي جداً',
     'hazardous': 'خطير',
