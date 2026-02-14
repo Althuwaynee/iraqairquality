@@ -1026,3 +1026,32 @@ width: 50%;
 height: 1px;
 background: linear-gradient(90deg, transparent, #c9a03d, #b38b2d, transparent);
 }
+
+
+
+
+
+
+
+
+/* ===============================
+  Simple Zoom Control
+  =============================== */
+.leaflet-control-zoom {
+  display: none; /* Hide the default +/- buttons */
+}
+
+/* Optional hint for mobile users */
+.zoom-hint {
+  position: fixed;
+  bottom: 80px;
+  right: 10px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0.5;
+}

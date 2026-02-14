@@ -836,7 +836,73 @@ function enableMobileDoubleClickZoom() {
   }
 }
 
-/* ---------- Show mobile hint (optional) ---------- */
+
+
+
+
+
+
+
+/* ---------- Simple Double-Click and Drag Zoom ---------- */
+function setupSimpleZoom() {
+  if (!map) return;
+  
+  let touchStartY = 0;
+  let touchStartTime = 0;
+  
+  // Double-click zoom
+  map.on('dblclick', function(e) {
+    e.originalEvent.preventDefault();
+    const currentZoom = map.getZoom();
+    map.setView(e.latlng, currentZoom + 1, { animate: true });
+  });
+  
+  // Two-finger drag up/down to zoom
+  map.on('touchstart', function(e) {
+    if (e.touches.length === 2) {
+      touchStartY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      touchStartTime = Date.now();
+    }
+  });
+  
+  map.on('touchmove', function(e) {
+    if (e.touches.length === 2) {
+      e.originalEvent.preventDefault();
+      
+      const currentY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      const deltaY = currentY - touchStartY;
+      
+      // Zoom based on drag distance
+      if (Math.abs(deltaY) > 20) {
+        const currentZoom = map.getZoom();
+        if (deltaY < 0 && currentZoom < 18) {
+          // Drag up = zoom in
+          map.setZoom(currentZoom + 1);
+          touchStartY = currentY;
+        } else if (deltaY > 0 && currentZoom > 4) {
+          // Drag down = zoom out
+          map.setZoom(currentZoom - 1);
+          touchStartY = currentY;
+        }
+      }
+    }
+  });
+  
+  // Optional: Show hint once
+  if (!localStorage.getItem('zoomHintShown')) {
+    const hint = document.createElement('div');
+    hint.className = 'zoom-hint';
+    hint.innerHTML = '👆 اضغط مرتين للتكبير<br>🖐️ اسحب بإصبعين للتكبير/التصغير';
+    document.body.appendChild(hint);
+    
+    setTimeout(() => {
+      hint.style.opacity = '0';
+      setTimeout(() => hint.remove(), 1000);
+    }, 4000);
+    
+    localStorage.setItem('zoomHintShown', 'true');
+  }
+}
 
 
 
@@ -848,4 +914,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMobileMenu();
   setupLogoNavigation();
   setupSearch();
+  setupSimpleZoom(); // ← ADD THIS LINE
 });
