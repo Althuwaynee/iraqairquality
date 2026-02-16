@@ -336,10 +336,13 @@ function drawDistrictMarkers(districts) {
     marker.bindPopup(buildDistrictPopup(d));
     marker._district_id = d.district_id;
 
+    
+
     districtLayer.addLayer(marker);
   });
 }
 
+/* ---------- Popup ---------- */
 /* ---------- Popup ---------- */
 /* ---------- Popup ---------- */
 /* ---------- Popup ---------- */
@@ -407,12 +410,24 @@ function buildDistrictPopup(d) {
   // Use Arabic names with fallback to English
   const districtNameAr = d.district_name_ar || d.district_name || "منطقة غير معروفة";
   const provinceNameAr = d.province_name_ar || d.province_name || "محافظة غير معروفة";
+  const provinceNameEn = d.province_name || d.province_name_en || "";
+
+  // Create province link with URL parameter
+  const provinceLink = provinceNameEn ? 
+    `province.html?province=${encodeURIComponent(provinceNameEn)}` : 
+    '#';
 
   return `
     <div style="direction: rtl; text-align: right; font-family: 'Tajawal', sans-serif; max-width: 350px;">
       <strong style="font-size: 1.1rem; color: #1e3a5f;">${districtNameAr}</strong><br>
-      <small style="color: #4a5568;">${provinceNameAr}</small>
-      <hr style="margin: 2px 0; border-color: #e2e8f0;">
+      <a href="${provinceLink}" 
+         style="color: #2563eb; text-decoration: none; font-size: 0.9rem; border-bottom: 1px dashed #2563eb;"
+         target="_blank"
+         onmouseover="this.style.color='#1e3a5f'"
+         onmouseout="this.style.color='#2563eb'">
+        ${provinceNameAr} ← اضغط لتحليل المحافظة
+      </a>
+      <hr style="margin: 8px 0; border-color: #e2e8f0;">
       <div style="font-size:0.75rem; color:#64748b; margin-bottom: 2px;">
         وقت القياس: ${measurementTime}
       </div>
@@ -422,7 +437,7 @@ function buildDistrictPopup(d) {
       <span style="color: #032780;">PM10 (متوسط 24 ساعة):</span> <b>${mean24h.toFixed(1)}</b> ميكروغرام/م³
       </div>
       ${forecasts.length > 0 ? `
-        <hr style="margin: 2px 0; border-color: #e2e8f0;">
+        <hr style="margin: 8px 0; border-color: #e2e8f0;">
         <strong style="color: #1e3a5f; display: block; margin-bottom: 0.2px;">التنبؤ (PM10 لـ 24 ساعة)</strong>
         <div class="forecast-row">${forecastHTML}</div>
       ` : ''}
