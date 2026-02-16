@@ -1,0 +1,536 @@
+[
+  {
+    "id": "P01",
+    "name": "Al-Anbar",
+    "districts": [
+      {
+        "id": "D001",
+        "name": "Abu Ghraib"
+      },
+      {
+        "id": "D002",
+        "name": "Al Fallujah"
+      },
+      {
+        "id": "D003",
+        "name": "Al Haditha"
+      },
+      {
+        "id": "D004",
+        "name": "Al Qaim"
+      },
+      {
+        "id": "D005",
+        "name": "Anah"
+      },
+      {
+        "id": "D006",
+        "name": "Ar Ramadi"
+      },
+      {
+        "id": "D007",
+        "name": "Ar Rutbah"
+      },
+      {
+        "id": "D008",
+        "name": "Hit"
+      }
+    ],
+    "district_count": 8
+  },
+  {
+    "id": "P02",
+    "name": "Baghdad",
+    "districts": [
+      {
+        "id": "D009",
+        "name": "Kadhimiya"
+      },
+      {
+        "id": "D055",
+        "name": "Adhamiya"
+      }
+    ],
+    "district_count": 2
+  },
+  {
+    "id": "P03",
+    "name": "Al-Basrah",
+    "districts": [
+      {
+        "id": "D010",
+        "name": "Abu al Khasib"
+      },
+      {
+        "id": "D011",
+        "name": "Al Faw"
+      },
+      {
+        "id": "D012",
+        "name": "Al Madiana"
+      },
+      {
+        "id": "D013",
+        "name": "Al Qurnah"
+      },
+      {
+        "id": "D014",
+        "name": "Al Zubair"
+      },
+      {
+        "id": "D015",
+        "name": "Basrah"
+      },
+      {
+        "id": "D016",
+        "name": "Shatt Al Arab"
+      }
+    ],
+    "district_count": 7
+  },
+  {
+    "id": "P04",
+    "name": "Al-Muthannia",
+    "districts": [
+      {
+        "id": "D017",
+        "name": "Al Khithir"
+      },
+      {
+        "id": "D018",
+        "name": "As Salman"
+      },
+      {
+        "id": "D019",
+        "name": "As Samawah"
+      },
+      {
+        "id": "D020",
+        "name": "Rumaitha"
+      }
+    ],
+    "district_count": 4
+  },
+  {
+    "id": "P05",
+    "name": "Al-Qadisiyah",
+    "districts": [
+      {
+        "id": "D021",
+        "name": "Ad Diwaniyah"
+      },
+      {
+        "id": "D022",
+        "name": "Afak"
+      },
+      {
+        "id": "D023",
+        "name": "Al Hamza"
+      },
+      {
+        "id": "D024",
+        "name": "Shamiya"
+      }
+    ],
+    "district_count": 4
+  },
+  {
+    "id": "P06",
+    "name": "An-Najaf",
+    "districts": [
+      {
+        "id": "D025",
+        "name": "Al Kufa"
+      },
+      {
+        "id": "D026",
+        "name": "Al Manathera"
+      },
+      {
+        "id": "D027",
+        "name": "Najaf"
+      }
+    ],
+    "district_count": 3
+  },
+  {
+    "id": "P07",
+    "name": "Arbil",
+    "districts": [
+      {
+        "id": "D028",
+        "name": "Arbil"
+      },
+      {
+        "id": "D029",
+        "name": "Choman"
+      },
+      {
+        "id": "D030",
+        "name": "Koisnjaq"
+      },
+      {
+        "id": "D031",
+        "name": "Makhmur"
+      },
+      {
+        "id": "D032",
+        "name": "Mergasur"
+      },
+      {
+        "id": "D033",
+        "name": "Shaqlawa"
+      },
+      {
+        "id": "D034",
+        "name": "Soran"
+      }
+    ],
+    "district_count": 7
+  },
+  {
+    "id": "P08",
+    "name": "As-Sulaymaniyah",
+    "districts": [
+      {
+        "id": "D035",
+        "name": "Chamchamal"
+      },
+      {
+        "id": "D036",
+        "name": "Darbandokeh"
+      },
+      {
+        "id": "D037",
+        "name": "Dukan"
+      },
+      {
+        "id": "D038",
+        "name": "Halabja"
+      },
+      {
+        "id": "D039",
+        "name": "Kalar"
+      },
+      {
+        "id": "D040",
+        "name": "Penjwin"
+      },
+      {
+        "id": "D041",
+        "name": "Pshdar"
+      },
+      {
+        "id": "D042",
+        "name": "Rania"
+      },
+      {
+        "id": "D043",
+        "name": "Sharbazher"
+      },
+      {
+        "id": "D044",
+        "name": "Sulaymaniya"
+      }
+    ],
+    "district_count": 10
+  },
+  {
+    "id": "P09",
+    "name": "Kirkuk",
+    "districts": [
+      {
+        "id": "D045",
+        "name": "Daquq"
+      },
+      {
+        "id": "D046",
+        "name": "Dibis"
+      },
+      {
+        "id": "D047",
+        "name": "Haweeja"
+      },
+      {
+        "id": "D048",
+        "name": "Kirkuk"
+      }
+    ],
+    "district_count": 4
+  },
+  {
+    "id": "P10",
+    "name": "Babil",
+    "districts": [
+      {
+        "id": "D049",
+        "name": "Al-Madain"
+      },
+      {
+        "id": "D050",
+        "name": "Al Hashimiyah"
+      },
+      {
+        "id": "D051",
+        "name": "Al Hillah"
+      },
+      {
+        "id": "D052",
+        "name": "Al Mahawil"
+      },
+      {
+        "id": "D053",
+        "name": "Al Misiab"
+      },
+      {
+        "id": "D054",
+        "name": "Mahmudiya"
+      }
+    ],
+    "district_count": 6
+  },
+  {
+    "id": "P11",
+    "name": "Dhi-Qar",
+    "districts": [
+      {
+        "id": "D056",
+        "name": "An Nasiriyah"
+      },
+      {
+        "id": "D057",
+        "name": "Chibayish"
+      },
+      {
+        "id": "D058",
+        "name": "Refai"
+      },
+      {
+        "id": "D059",
+        "name": "Shatrah"
+      },
+      {
+        "id": "D060",
+        "name": "Suq ash Shuyukh"
+      }
+    ],
+    "district_count": 5
+  },
+  {
+    "id": "P12",
+    "name": "Dihok",
+    "districts": [
+      {
+        "id": "D061",
+        "name": "Amedi"
+      },
+      {
+        "id": "D062",
+        "name": "Dahuk"
+      },
+      {
+        "id": "D063",
+        "name": "Simele"
+      },
+      {
+        "id": "D064",
+        "name": "Zakho"
+      }
+    ],
+    "district_count": 4
+  },
+  {
+    "id": "P13",
+    "name": "Diyala",
+    "districts": [
+      {
+        "id": "D065",
+        "name": "Al Khalis"
+      },
+      {
+        "id": "D066",
+        "name": "Al Miqdadiyah"
+      },
+      {
+        "id": "D067",
+        "name": "Baqubah"
+      },
+      {
+        "id": "D068",
+        "name": "Balad Ruz"
+      },
+      {
+        "id": "D069",
+        "name": "Khanaqin"
+      },
+      {
+        "id": "D070",
+        "name": "Kifri"
+      }
+    ],
+    "district_count": 6
+  },
+  {
+    "id": "P14",
+    "name": "Karbala",
+    "districts": [
+      {
+        "id": "D071",
+        "name": "Ain Al Tamur"
+      },
+      {
+        "id": "D072",
+        "name": "Al Jadwal al Gharbi"
+      },
+      {
+        "id": "D073",
+        "name": "Karbala"
+      }
+    ],
+    "district_count": 3
+  },
+  {
+    "id": "P15",
+    "name": "Maysan",
+    "districts": [
+      {
+        "id": "D074",
+        "name": "Al Amarah"
+      },
+      {
+        "id": "D075",
+        "name": "Al Kahla"
+      },
+      {
+        "id": "D076",
+        "name": "Al Miamona"
+      },
+      {
+        "id": "D077",
+        "name": "Al Mijar al Kabir"
+      },
+      {
+        "id": "D078",
+        "name": "Ali al Gharbi"
+      },
+      {
+        "id": "D079",
+        "name": "Qalat Salih"
+      }
+    ],
+    "district_count": 6
+  },
+  {
+    "id": "P16",
+    "name": "Ninawa",
+    "districts": [
+      {
+        "id": "D080",
+        "name": "Akre"
+      },
+      {
+        "id": "D081",
+        "name": "Al Baaj"
+      },
+      {
+        "id": "D082",
+        "name": "Al Hamdaniyah"
+      },
+      {
+        "id": "D083",
+        "name": "Al Shikhan"
+      },
+      {
+        "id": "D084",
+        "name": "Hatra"
+      },
+      {
+        "id": "D085",
+        "name": "Mosul"
+      },
+      {
+        "id": "D086",
+        "name": "Shekhan"
+      },
+      {
+        "id": "D087",
+        "name": "Sinjar"
+      },
+      {
+        "id": "D088",
+        "name": "Talafar"
+      },
+      {
+        "id": "D089",
+        "name": "Tilkef"
+      }
+    ],
+    "district_count": 10
+  },
+  {
+    "id": "P17",
+    "name": "Sala ad-Din",
+    "districts": [
+      {
+        "id": "D090",
+        "name": "Al Dijeel"
+      },
+      {
+        "id": "D091",
+        "name": "Al Door"
+      },
+      {
+        "id": "D092",
+        "name": "Al Shirkat"
+      },
+      {
+        "id": "D093",
+        "name": "Balad"
+      },
+      {
+        "id": "D094",
+        "name": "Bayji"
+      },
+      {
+        "id": "D095",
+        "name": "Samarra"
+      },
+      {
+        "id": "D096",
+        "name": "Tikrit"
+      },
+      {
+        "id": "D097",
+        "name": "Touz Hourmato"
+      }
+    ],
+    "district_count": 8
+  },
+  {
+    "id": "P18",
+    "name": "Wasit",
+    "districts": [
+      {
+        "id": "D098",
+        "name": "Al Hayy"
+      },
+      {
+        "id": "D099",
+        "name": "Al Kut"
+      },
+      {
+        "id": "D100",
+        "name": "Al Noamania"
+      },
+      {
+        "id": "D101",
+        "name": "As Suwayrah"
+      },
+      {
+        "id": "D102",
+        "name": "Badrah"
+      }
+    ],
+    "district_count": 5
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "generated": "2026-02-16T11:52:34.597800",
+  "provinces": 18,
+  "districts": 102,
+  "years": [
+    2024,
+    2025
+  ],
+  "periods": [
+    "daily",
+    "weekly",
+    "monthly"
+  ],
+  "last_updated": "2026-02-16T11:53:27.946134"
+}

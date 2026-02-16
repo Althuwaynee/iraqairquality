@@ -1,0 +1,920 @@
+[
+  {
+    "id": "D001",
+    "name": "Abu Ghraib",
+    "province_id": "P01",
+    "province_name": "Al-Anbar",
+    "lat": 33.22284294208515,
+    "lon": 44.079107812464066,
+    "area_km2": null
+  },
+  {
+    "id": "D002",
+    "name": "Al Fallujah",
+    "province_id": "P01",
+    "province_name": "Al-Anbar",
+    "lat": 33.105313260379475,
+    "lon": 43.777410959201084,
+    "area_km2": null
+  },
+  {
+    "id": "D003",
+    "name": "Al Haditha",
+    "province_id": "P01",
+    "province_name": "Al-Anbar",
+    "lat": 34.27452147741327,
+    "lon": 42.34318442112082,
+    "area_km2": null
+  },
+  {
+    "id": "D004",
+    "name": "Al Qaim",
+    "province_id": "P01",
+    "province_name": "Al-Anbar",
+    "lat": 34.23773850679376,
+    "lon": 41.05757223341616,
+    "area_km2": null
+  },
+  {
+    "id": "D005",
+    "name": "Anah",
+    "province_id": "P01",
+    "province_name": "Al-Anbar",
+    "lat": 34.270706612798,
+    "lon": 41.81234282035886,
+    "area_km2": null
+  },
+  {
+    "id": "D006",
+    "name": "Ar Ramadi",
+    "province_id": "P01",
+    "province_name": "Al-Anbar",
+    "lat": 33.33897119558584,
+    "lon": 43.146785912239935,
+    "area_km2": null
+  },
+  {
+    "id": "D007",
+    "name": "Ar Rutbah",
+    "province_id": "P01",
+    "province_name": "Al-Anbar",
+    "lat": 32.44739391785713,
+    "lon": 41.32672676898627,
+    "area_km2": null
+  },
+  {
+    "id": "D008",
+    "name": "Hit",
+    "province_id": "P01",
+    "province_name": "Al-Anbar",
+    "lat": 33.734816369757134,
+    "lon": 42.68227852661513,
+    "area_km2": null
+  },
+  {
+    "id": "D009",
+    "name": "Kadhimiya",
+    "province_id": "P02",
+    "province_name": "Baghdad",
+    "lat": 33.35933808504119,
+    "lon": 44.17000854725623,
+    "area_km2": null
+  },
+  {
+    "id": "D010",
+    "name": "Abu al Khasib",
+    "province_id": "P03",
+    "province_name": "Al-Basrah",
+    "lat": 30.322295164959556,
+    "lon": 48.00084412853525,
+    "area_km2": null
+  },
+  {
+    "id": "D011",
+    "name": "Al Faw",
+    "province_id": "P03",
+    "province_name": "Al-Basrah",
+    "lat": 30.09346407757131,
+    "lon": 48.21259266486124,
+    "area_km2": null
+  },
+  {
+    "id": "D012",
+    "name": "Al Madiana",
+    "province_id": "P03",
+    "province_name": "Al-Basrah",
+    "lat": 31.01278159959984,
+    "lon": 47.27969021111455,
+    "area_km2": null
+  },
+  {
+    "id": "D013",
+    "name": "Al Qurnah",
+    "province_id": "P03",
+    "province_name": "Al-Basrah",
+    "lat": 30.951507845907454,
+    "lon": 47.504821845711334,
+    "area_km2": null
+  },
+  {
+    "id": "D014",
+    "name": "Al Zubair",
+    "province_id": "P03",
+    "province_name": "Al-Basrah",
+    "lat": 30.140320747885756,
+    "lon": 47.051652263129796,
+    "area_km2": null
+  },
+  {
+    "id": "D015",
+    "name": "Basrah",
+    "province_id": "P03",
+    "province_name": "Al-Basrah",
+    "lat": 30.58488009735456,
+    "lon": 47.60895459396477,
+    "area_km2": null
+  },
+  {
+    "id": "D016",
+    "name": "Shatt Al Arab",
+    "province_id": "P03",
+    "province_name": "Al-Basrah",
+    "lat": 30.733716653568777,
+    "lon": 47.89427749118113,
+    "area_km2": null
+  },
+  {
+    "id": "D017",
+    "name": "Al Khithir",
+    "province_id": "P04",
+    "province_name": "Al-Muthannia",
+    "lat": 31.211217356548065,
+    "lon": 45.59095280222517,
+    "area_km2": null
+  },
+  {
+    "id": "D018",
+    "name": "As Salman",
+    "province_id": "P04",
+    "province_name": "Al-Muthannia",
+    "lat": 30.037772528935243,
+    "lon": 45.34324916086535,
+    "area_km2": null
+  },
+  {
+    "id": "D019",
+    "name": "As Samawah",
+    "province_id": "P04",
+    "province_name": "Al-Muthannia",
+    "lat": 31.22628548408288,
+    "lon": 45.26107498099238,
+    "area_km2": null
+  },
+  {
+    "id": "D020",
+    "name": "Rumaitha",
+    "province_id": "P04",
+    "province_name": "Al-Muthannia",
+    "lat": 31.49777407467573,
+    "lon": 45.295419354379,
+    "area_km2": null
+  },
+  {
+    "id": "D021",
+    "name": "Ad Diwaniyah",
+    "province_id": "P05",
+    "province_name": "Al-Qadisiyah",
+    "lat": 32.05638201510581,
+    "lon": 44.93432548754941,
+    "area_km2": null
+  },
+  {
+    "id": "D022",
+    "name": "Afak",
+    "province_id": "P05",
+    "province_name": "Al-Qadisiyah",
+    "lat": 31.933401279365494,
+    "lon": 45.41428409276566,
+    "area_km2": null
+  },
+  {
+    "id": "D023",
+    "name": "Al Hamza",
+    "province_id": "P05",
+    "province_name": "Al-Qadisiyah",
+    "lat": 31.568054071632826,
+    "lon": 44.83318162808363,
+    "area_km2": null
+  },
+  {
+    "id": "D024",
+    "name": "Shamiya",
+    "province_id": "P05",
+    "province_name": "Al-Qadisiyah",
+    "lat": 31.77676313071312,
+    "lon": 44.59017146056126,
+    "area_km2": null
+  },
+  {
+    "id": "D025",
+    "name": "Al Kufa",
+    "province_id": "P06",
+    "province_name": "An-Najaf",
+    "lat": 32.05113981282575,
+    "lon": 44.44017246858249,
+    "area_km2": null
+  },
+  {
+    "id": "D026",
+    "name": "Al Manathera",
+    "province_id": "P06",
+    "province_name": "An-Najaf",
+    "lat": 31.79653011163293,
+    "lon": 44.41160823199626,
+    "area_km2": null
+  },
+  {
+    "id": "D027",
+    "name": "Najaf",
+    "province_id": "P06",
+    "province_name": "An-Najaf",
+    "lat": 31.021296483611717,
+    "lon": 43.71875238029147,
+    "area_km2": null
+  },
+  {
+    "id": "D028",
+    "name": "Arbil",
+    "province_id": "P07",
+    "province_name": "Arbil",
+    "lat": 36.09412336633159,
+    "lon": 43.979899284467095,
+    "area_km2": null
+  },
+  {
+    "id": "D029",
+    "name": "Choman",
+    "province_id": "P07",
+    "province_name": "Arbil",
+    "lat": 36.62157561582655,
+    "lon": 44.836960413670944,
+    "area_km2": null
+  },
+  {
+    "id": "D030",
+    "name": "Koisnjaq",
+    "province_id": "P07",
+    "province_name": "Arbil",
+    "lat": 36.02310426460116,
+    "lon": 44.483131387922455,
+    "area_km2": null
+  },
+  {
+    "id": "D031",
+    "name": "Makhmur",
+    "province_id": "P07",
+    "province_name": "Arbil",
+    "lat": 35.8020605658091,
+    "lon": 43.594919062925335,
+    "area_km2": null
+  },
+  {
+    "id": "D032",
+    "name": "Mergasur",
+    "province_id": "P07",
+    "province_name": "Arbil",
+    "lat": 36.98379036535986,
+    "lon": 44.17261192442923,
+    "area_km2": null
+  },
+  {
+    "id": "D033",
+    "name": "Shaqlawa",
+    "province_id": "P07",
+    "province_name": "Arbil",
+    "lat": 36.42382582668836,
+    "lon": 44.20208455950038,
+    "area_km2": null
+  },
+  {
+    "id": "D034",
+    "name": "Soran",
+    "province_id": "P07",
+    "province_name": "Arbil",
+    "lat": 36.808070484282545,
+    "lon": 44.58797960447272,
+    "area_km2": null
+  },
+  {
+    "id": "D035",
+    "name": "Chamchamal",
+    "province_id": "P08",
+    "province_name": "As-Sulaymaniyah",
+    "lat": 35.338345566641394,
+    "lon": 44.89128976375739,
+    "area_km2": null
+  },
+  {
+    "id": "D036",
+    "name": "Darbandokeh",
+    "province_id": "P08",
+    "province_name": "As-Sulaymaniyah",
+    "lat": 35.18624281956737,
+    "lon": 45.63370933688703,
+    "area_km2": null
+  },
+  {
+    "id": "D037",
+    "name": "Dukan",
+    "province_id": "P08",
+    "province_name": "As-Sulaymaniyah",
+    "lat": 35.909791337834704,
+    "lon": 45.040271627253254,
+    "area_km2": null
+  },
+  {
+    "id": "D038",
+    "name": "Halabja",
+    "province_id": "P08",
+    "province_name": "As-Sulaymaniyah",
+    "lat": 35.19889656704979,
+    "lon": 45.91233718388822,
+    "area_km2": null
+  },
+  {
+    "id": "D039",
+    "name": "Kalar",
+    "province_id": "P08",
+    "province_name": "As-Sulaymaniyah",
+    "lat": 34.88576413332841,
+    "lon": 45.27184707332049,
+    "area_km2": null
+  },
+  {
+    "id": "D040",
+    "name": "Penjwin",
+    "province_id": "P08",
+    "province_name": "As-Sulaymaniyah",
+    "lat": 35.70007100609606,
+    "lon": 45.99337603708975,
+    "area_km2": null
+  },
+  {
+    "id": "D041",
+    "name": "Pshdar",
+    "province_id": "P08",
+    "province_name": "As-Sulaymaniyah",
+    "lat": 36.260580461317225,
+    "lon": 45.11872985685647,
+    "area_km2": null
+  },
+  {
+    "id": "D042",
+    "name": "Rania",
+    "province_id": "P08",
+    "province_name": "As-Sulaymaniyah",
+    "lat": 36.23643102292312,
+    "lon": 44.74764456144559,
+    "area_km2": null
+  },
+  {
+    "id": "D043",
+    "name": "Sharbazher",
+    "province_id": "P08",
+    "province_name": "As-Sulaymaniyah",
+    "lat": 35.713649396902575,
+    "lon": 45.56328675629061,
+    "area_km2": null
+  },
+  {
+    "id": "D044",
+    "name": "Sulaymaniya",
+    "province_id": "P08",
+    "province_name": "As-Sulaymaniyah",
+    "lat": 35.456944001285265,
+    "lon": 45.29851493606642,
+    "area_km2": null
+  },
+  {
+    "id": "D045",
+    "name": "Daquq",
+    "province_id": "P09",
+    "province_name": "Kirkuk",
+    "lat": 35.13084985740137,
+    "lon": 44.368064379349406,
+    "area_km2": null
+  },
+  {
+    "id": "D046",
+    "name": "Dibis",
+    "province_id": "P09",
+    "province_name": "Kirkuk",
+    "lat": 35.67937289131292,
+    "lon": 43.900415982001164,
+    "area_km2": null
+  },
+  {
+    "id": "D047",
+    "name": "Haweeja",
+    "province_id": "P09",
+    "province_name": "Kirkuk",
+    "lat": 35.256724501356565,
+    "lon": 43.70095842908063,
+    "area_km2": null
+  },
+  {
+    "id": "D048",
+    "name": "Kirkuk",
+    "province_id": "P09",
+    "province_name": "Kirkuk",
+    "lat": 35.4864951510407,
+    "lon": 44.239284367254385,
+    "area_km2": null
+  },
+  {
+    "id": "D049",
+    "name": "Al-Madain",
+    "province_id": "P10",
+    "province_name": "Babil",
+    "lat": 33.05982072936117,
+    "lon": 44.3981231333268,
+    "area_km2": null
+  },
+  {
+    "id": "D050",
+    "name": "Al Hashimiyah",
+    "province_id": "P10",
+    "province_name": "Babil",
+    "lat": 32.29782668302269,
+    "lon": 44.73249203228896,
+    "area_km2": null
+  },
+  {
+    "id": "D051",
+    "name": "Al Hillah",
+    "province_id": "P10",
+    "province_name": "Babil",
+    "lat": 32.29579786117719,
+    "lon": 44.36278554719627,
+    "area_km2": null
+  },
+  {
+    "id": "D052",
+    "name": "Al Mahawil",
+    "province_id": "P10",
+    "province_name": "Babil",
+    "lat": 32.61447742592752,
+    "lon": 44.61763573199641,
+    "area_km2": null
+  },
+  {
+    "id": "D053",
+    "name": "Al Misiab",
+    "province_id": "P10",
+    "province_name": "Babil",
+    "lat": 32.698928485478795,
+    "lon": 44.205794780192214,
+    "area_km2": null
+  },
+  {
+    "id": "D054",
+    "name": "Mahmudiya",
+    "province_id": "P10",
+    "province_name": "Babil",
+    "lat": 32.99181024914125,
+    "lon": 44.16474154022843,
+    "area_km2": null
+  },
+  {
+    "id": "D055",
+    "name": "Adhamiya",
+    "province_id": "P02",
+    "province_name": "Baghdad",
+    "lat": 33.32684542790276,
+    "lon": 44.38813481412715,
+    "area_km2": null
+  },
+  {
+    "id": "D056",
+    "name": "An Nasiriyah",
+    "province_id": "P11",
+    "province_name": "Dhi-Qar",
+    "lat": 31.07190576959777,
+    "lon": 46.20454230615835,
+    "area_km2": null
+  },
+  {
+    "id": "D057",
+    "name": "Chibayish",
+    "province_id": "P11",
+    "province_name": "Dhi-Qar",
+    "lat": 30.846690799784025,
+    "lon": 46.93749421705343,
+    "area_km2": null
+  },
+  {
+    "id": "D058",
+    "name": "Refai",
+    "province_id": "P11",
+    "province_name": "Dhi-Qar",
+    "lat": 31.691869488271003,
+    "lon": 46.040599148346814,
+    "area_km2": null
+  },
+  {
+    "id": "D059",
+    "name": "Shatrah",
+    "province_id": "P11",
+    "province_name": "Dhi-Qar",
+    "lat": 31.370076781406347,
+    "lon": 46.27437951895734,
+    "area_km2": null
+  },
+  {
+    "id": "D060",
+    "name": "Suq ash Shuyukh",
+    "province_id": "P11",
+    "province_name": "Dhi-Qar",
+    "lat": 30.848459053271625,
+    "lon": 46.502609996009,
+    "area_km2": null
+  },
+  {
+    "id": "D061",
+    "name": "Amedi",
+    "province_id": "P12",
+    "province_name": "Dihok",
+    "lat": 37.09417753408788,
+    "lon": 43.51527763533789,
+    "area_km2": null
+  },
+  {
+    "id": "D062",
+    "name": "Dahuk",
+    "province_id": "P12",
+    "province_name": "Dihok",
+    "lat": 36.93310710113811,
+    "lon": 43.04661068219852,
+    "area_km2": null
+  },
+  {
+    "id": "D063",
+    "name": "Simele",
+    "province_id": "P12",
+    "province_name": "Dihok",
+    "lat": 36.89815044166084,
+    "lon": 42.71167707762135,
+    "area_km2": null
+  },
+  {
+    "id": "D064",
+    "name": "Zakho",
+    "province_id": "P12",
+    "province_name": "Dihok",
+    "lat": 37.19439779935592,
+    "lon": 42.84944778352461,
+    "area_km2": null
+  },
+  {
+    "id": "D065",
+    "name": "Al Khalis",
+    "province_id": "P13",
+    "province_name": "Diyala",
+    "lat": 34.04353273578466,
+    "lon": 44.52330952743335,
+    "area_km2": null
+  },
+  {
+    "id": "D066",
+    "name": "Al Miqdadiyah",
+    "province_id": "P13",
+    "province_name": "Diyala",
+    "lat": 33.82225180806976,
+    "lon": 44.77287411440991,
+    "area_km2": null
+  },
+  {
+    "id": "D067",
+    "name": "Baqubah",
+    "province_id": "P13",
+    "province_name": "Diyala",
+    "lat": 33.54106113544986,
+    "lon": 44.5166965637291,
+    "area_km2": null
+  },
+  {
+    "id": "D068",
+    "name": "Balad Ruz",
+    "province_id": "P13",
+    "province_name": "Diyala",
+    "lat": 33.45921096533995,
+    "lon": 45.230436441906626,
+    "area_km2": null
+  },
+  {
+    "id": "D069",
+    "name": "Khanaqin",
+    "province_id": "P13",
+    "province_name": "Diyala",
+    "lat": 34.36150293342428,
+    "lon": 45.28965167467581,
+    "area_km2": null
+  },
+  {
+    "id": "D070",
+    "name": "Kifri",
+    "province_id": "P13",
+    "province_name": "Diyala",
+    "lat": 34.51834370904484,
+    "lon": 44.837354344456614,
+    "area_km2": null
+  },
+  {
+    "id": "D071",
+    "name": "Ain Al Tamur",
+    "province_id": "P14",
+    "province_name": "Karbala",
+    "lat": 32.44144064559491,
+    "lon": 43.51528113780361,
+    "area_km2": null
+  },
+  {
+    "id": "D072",
+    "name": "Al Jadwal al Gharbi",
+    "province_id": "P14",
+    "province_name": "Karbala",
+    "lat": 32.43804041290849,
+    "lon": 44.16832825952361,
+    "area_km2": null
+  },
+  {
+    "id": "D073",
+    "name": "Karbala",
+    "province_id": "P14",
+    "province_name": "Karbala",
+    "lat": 32.426309916614414,
+    "lon": 43.890249236730085,
+    "area_km2": null
+  },
+  {
+    "id": "D074",
+    "name": "Al Amarah",
+    "province_id": "P15",
+    "province_name": "Maysan",
+    "lat": 31.99405901142912,
+    "lon": 47.157453294534136,
+    "area_km2": null
+  },
+  {
+    "id": "D075",
+    "name": "Al Kahla",
+    "province_id": "P15",
+    "province_name": "Maysan",
+    "lat": 31.648353139934745,
+    "lon": 47.55506738090843,
+    "area_km2": null
+  },
+  {
+    "id": "D076",
+    "name": "Al Miamona",
+    "province_id": "P15",
+    "province_name": "Maysan",
+    "lat": 31.49408603401158,
+    "lon": 46.83842736762396,
+    "area_km2": null
+  },
+  {
+    "id": "D077",
+    "name": "Al Mijar al Kabir",
+    "province_id": "P15",
+    "province_name": "Maysan",
+    "lat": 31.4293978232381,
+    "lon": 47.20354501217153,
+    "area_km2": null
+  },
+  {
+    "id": "D078",
+    "name": "Ali al Gharbi",
+    "province_id": "P15",
+    "province_name": "Maysan",
+    "lat": 32.396088677477536,
+    "lon": 46.72321440612597,
+    "area_km2": null
+  },
+  {
+    "id": "D079",
+    "name": "Qalat Salih",
+    "province_id": "P15",
+    "province_name": "Maysan",
+    "lat": 31.428508971329393,
+    "lon": 47.512448178169265,
+    "area_km2": null
+  },
+  {
+    "id": "D080",
+    "name": "Akre",
+    "province_id": "P16",
+    "province_name": "Ninawa",
+    "lat": 36.66346783449737,
+    "lon": 43.83002031016732,
+    "area_km2": null
+  },
+  {
+    "id": "D081",
+    "name": "Al Baaj",
+    "province_id": "P16",
+    "province_name": "Ninawa",
+    "lat": 35.62056584683228,
+    "lon": 41.681830678771604,
+    "area_km2": null
+  },
+  {
+    "id": "D082",
+    "name": "Al Hamdaniyah",
+    "province_id": "P16",
+    "province_name": "Ninawa",
+    "lat": 36.29335231457684,
+    "lon": 43.409231571027405,
+    "area_km2": null
+  },
+  {
+    "id": "D083",
+    "name": "Al Shikhan",
+    "province_id": "P16",
+    "province_name": "Ninawa",
+    "lat": 36.64229670129565,
+    "lon": 43.37599194906899,
+    "area_km2": null
+  },
+  {
+    "id": "D084",
+    "name": "Hatra",
+    "province_id": "P16",
+    "province_name": "Ninawa",
+    "lat": 35.419410363899516,
+    "lon": 42.44538995122619,
+    "area_km2": null
+  },
+  {
+    "id": "D085",
+    "name": "Mosul",
+    "province_id": "P16",
+    "province_name": "Ninawa",
+    "lat": 36.07587527830808,
+    "lon": 42.98592624333245,
+    "area_km2": null
+  },
+  {
+    "id": "D086",
+    "name": "Shekhan",
+    "province_id": "P16",
+    "province_name": "Ninawa",
+    "lat": 36.775989750235034,
+    "lon": 43.41230455135135,
+    "area_km2": null
+  },
+  {
+    "id": "D087",
+    "name": "Sinjar",
+    "province_id": "P16",
+    "province_name": "Ninawa",
+    "lat": 36.295478427982616,
+    "lon": 41.89315428750927,
+    "area_km2": null
+  },
+  {
+    "id": "D088",
+    "name": "Talafar",
+    "province_id": "P16",
+    "province_name": "Ninawa",
+    "lat": 36.58683783797396,
+    "lon": 42.42180688184613,
+    "area_km2": null
+  },
+  {
+    "id": "D089",
+    "name": "Tilkef",
+    "province_id": "P16",
+    "province_name": "Ninawa",
+    "lat": 36.59214605317314,
+    "lon": 43.06208705570715,
+    "area_km2": null
+  },
+  {
+    "id": "D090",
+    "name": "Al Dijeel",
+    "province_id": "P17",
+    "province_name": "Sala ad-Din",
+    "lat": 33.567576470388715,
+    "lon": 44.23120815369178,
+    "area_km2": null
+  },
+  {
+    "id": "D091",
+    "name": "Al Door",
+    "province_id": "P17",
+    "province_name": "Sala ad-Din",
+    "lat": 34.40288351578535,
+    "lon": 44.124870824825855,
+    "area_km2": null
+  },
+  {
+    "id": "D092",
+    "name": "Al Shirkat",
+    "province_id": "P17",
+    "province_name": "Sala ad-Din",
+    "lat": 35.437079041085134,
+    "lon": 43.12198982022632,
+    "area_km2": null
+  },
+  {
+    "id": "D093",
+    "name": "Balad",
+    "province_id": "P17",
+    "province_name": "Sala ad-Din",
+    "lat": 33.827073019073126,
+    "lon": 43.96109496433048,
+    "area_km2": null
+  },
+  {
+    "id": "D094",
+    "name": "Bayji",
+    "province_id": "P17",
+    "province_name": "Sala ad-Din",
+    "lat": 34.81981751236421,
+    "lon": 42.9906765324779,
+    "area_km2": null
+  },
+  {
+    "id": "D095",
+    "name": "Samarra",
+    "province_id": "P17",
+    "province_name": "Sala ad-Din",
+    "lat": 34.14255395182311,
+    "lon": 43.469253323818855,
+    "area_km2": null
+  },
+  {
+    "id": "D096",
+    "name": "Tikrit",
+    "province_id": "P17",
+    "province_name": "Sala ad-Din",
+    "lat": 34.6659931287577,
+    "lon": 43.618385938906165,
+    "area_km2": null
+  },
+  {
+    "id": "D097",
+    "name": "Touz Hourmato",
+    "province_id": "P17",
+    "province_name": "Sala ad-Din",
+    "lat": 34.784153602950724,
+    "lon": 44.547033355815174,
+    "area_km2": null
+  },
+  {
+    "id": "D098",
+    "name": "Al Hayy",
+    "province_id": "P18",
+    "province_name": "Wasit",
+    "lat": 32.139078935764644,
+    "lon": 45.94443905824454,
+    "area_km2": null
+  },
+  {
+    "id": "D099",
+    "name": "Al Kut",
+    "province_id": "P18",
+    "province_name": "Wasit",
+    "lat": 32.52238566305417,
+    "lon": 46.09669435212531,
+    "area_km2": null
+  },
+  {
+    "id": "D100",
+    "name": "Al Noamania",
+    "province_id": "P18",
+    "province_name": "Wasit",
+    "lat": 32.36105076371928,
+    "lon": 45.48407746387027,
+    "area_km2": null
+  },
+  {
+    "id": "D101",
+    "name": "As Suwayrah",
+    "province_id": "P18",
+    "province_name": "Wasit",
+    "lat": 32.826949654777835,
+    "lon": 45.04891490509748,
+    "area_km2": null
+  },
+  {
+    "id": "D102",
+    "name": "Badrah",
+    "province_id": "P18",
+    "province_name": "Wasit",
+    "lat": 33.01018592191133,
+    "lon": 45.874173303288195,
+    "area_km2": null
+  }
+]

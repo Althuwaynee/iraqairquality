@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تحليل البيانات – جودة الهواء في العراق</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تحليل بيانات الغبار والعواصف الترابية في العراق">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
+  <!-- Chart.js for interactive plots -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  
+  <!-- App styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
+  
+  <style>
+    /* Analysis-specific styles */
+    .analysis-controls {
+      background: rgba(0,0,0,0.02);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .control-group label {
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 0.95rem;
+    }
+    
+    .control-group select {
+      padding: 0.8rem 1rem;
+      border-radius: 2rem;
+      border: 1px solid #ddd;
+      background: white;
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .control-group select:hover {
+      border-color: #888;
+    }
+    
+    .control-group select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    }
+    
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .chart-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .chart-header h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    
+    .chart-controls {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .chart-controls button {
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      border: 1px solid #ddd;
+      background: white;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    
+    .chart-controls button:hover {
+      background: #f0f0f0;
+    }
+    
+    .chart-controls button.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+    
+    .stats-panel {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .stat-item {
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .stat-item:last-child {
+      border-bottom: none;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.25rem;
+    }
+    
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      line-height: 1.2;
+    }
+    
+    .stat-unit {
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: normal;
+      margin-right: 0.25rem;
+    }
+    
+    .stat-trend {
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+    
+    .trend-up { color: #dc2626; }
+    .trend-down { color: #059669; }
+    
+    .loading-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255,255,255,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      z-index: 10;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .chart-container {
+      position: relative;
+      min-height: 400px;
+      width: 100%;
+    }
+    
+    .province-badge {
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 1rem;
+      background: #f0f0f0;
+      font-size: 0.85rem;
+      margin-left: 0.5rem;
+    }
+    
+    .analysis-footer {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .controls-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="data-source-page">
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="header-left">
+    <a href="index.html" class="logo-link" id="logo-home">
+      <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo">
+    </a>
+  </div>
+
+  <nav class="nav">
+    <a href="index.html#map">الخريطة</a>
+    <a href="shako_mako.html">شكو ماكو</a>
+
+    <div class="nav-dropdown">
+      <a href="#" class="dropdown-toggle">
+        حول المنصة ▾
+      </a>
+      <div class="dropdown-menu">
+        <a href="about_AQI.html">مؤشر الجودة</a>
+        <a href="why_IAQ.html">منصتنا</a>
+        <a href="data_source.html">مصادر البيانات</a>
+      </div>
+    </div>
+
+    <div class="nav-dropdown">
+      <a href="#" class="dropdown-toggle">
+        بحوث ▾
+      </a>
+      <div class="dropdown-menu">
+        <a href="research.html" class="active">تحليل البيانات</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ================= CONTENT ================= -->
+<main class="page-container">
+  <article class="page-content">
+
+    <h1>
+      تحليل تراكيز الغبار المصاحب للعواصف الترابية
+      ومقارنة الاتجاهات الزمنية مع السنوات السابقة
+    </h1>
+
+    <p class="last-updated" id="last-updated-text">
+      آخر تحديث: جاري التحميل...
+    </p>
+
+    <!-- ================= ANALYSIS CONTROLS ================= -->
+    <section class="analysis-controls">
+      <h2>لوحة التحليل الوطني</h2>
+      <p>اختر المحافظات والسنوات ونوع الرسم البياني لعرض الاتجاهات الزمنية</p>
+      
+      <div class="controls-grid">
+        <!-- Province Selection -->
+        <div class="control-group">
+          <label for="province-select">المحافظة</label>
+          <select id="province-select" multiple size="5">
+            <option value="all" selected>جميع المحافظات</option>
+          </select>
+          <small>يمكنك اختيار عدة محافظات (Ctrl+Click)</small>
+        </div>
+        
+        <!-- Year Selection -->
+        <div class="control-group">
+          <label for="year-select">السنة</label>
+          <select id="year-select" multiple size="5">
+            <option value="all" selected>جميع السنوات</option>
+          </select>
+          <small>اختر سنة أو أكثر للمقارنة</small>
+        </div>
+        
+        <!-- Period Selection -->
+        <div class="control-group">
+          <label for="period-select">مستوى التجميع</label>
+          <select id="period-select">
+            <option value="daily">يومي</option>
+            <option value="weekly" selected>أسبوعي</option>
+            <option value="monthly">شهري</option>
+          </select>
+        </div>
+        
+        <!-- Chart Type Selection -->
+        <div class="control-group">
+          <label for="chart-type">نوع الرسم</label>
+          <select id="chart-type">
+            <option value="line" selected>خطي</option>
+            <option value="bar">أعمدة</option>
+            <option value="scatter">نقاط مبعثرة</option>
+          </select>
+        </div>
+      </div>
+      
+      <div style="margin-top: 1rem; text-align: left;">
+        <button id="update-chart" class="btn btn-primary">تحديث التحليل</button>
+        <button id="reset-filters" class="btn btn-secondary">إعادة تعيين</button>
+      </div>
+    </section>
+
+    <!-- ================= ANALYSIS GRID ================= -->
+    <div class="analysis-grid">
+      <!-- Main Chart -->
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3 id="chart-title">اتجاهات تراكيز الغبار</h3>
+          <div class="chart-controls">
+            <button class="active" data-view="absolute">القيم المطلقة</button>
+            <button data-view="anomaly">الشذوذ</button>
+            <button data-view="normalized">معياري</button>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="dustChart"></canvas>
+        </div>
+      </div>
+      
+      <!-- Statistics Panel -->
+      <div class="stats-panel">
+        <h3>الإحصائيات</h3>
+        <div id="stats-content">
+          <div class="loading-spinner"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ================= PROVINCE COMPARISON ================= -->
+    <div class="chart-card" style="margin-top: 1.5rem;">
+      <h3>مقارنة بين المحافظات</h3>
+      <div class="chart-container" style="min-height: 300px;">
+        <canvas id="comparisonChart"></canvas>
+      </div>
+    </div>
+    
+    <!-- ================= ANALYSIS FOOTER ================= -->
+    <div class="analysis-footer">
+      <div class="data-quality-indicator">
+        <span>جودة البيانات: </span>
+        <span id="data-quality">جاري التحميل...</span>
+      </div>
+      <div id="data-coverage"></div>
+    </div>
+
+    <!-- ================= RESEARCH PARTNERS ================= -->
+    <section class="research-partners">
+      <h2>شركاء البحث والتعاون العلمي</h2>
+      <p class="partners-intro">
+        نتعاون مع باحثين ومؤسسات علمية لدراسة ديناميكية الغبار في العراق
+        وتحليل الاتجاهات الزمنية والمكانية باستخدام النمذجة العددية
+        وتقنيات الاستشعار عن بعد.
+      </p>
+      <div class="partners-grid" id="partners-grid">
+        <!-- Partners will be loaded dynamically -->
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-content">
+    <!-- Left: Logo + Copyright -->
+    <div class="footer-left">
+      <a href="index.html" class="footer-logo-link" id="footer-logo">
+        <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
+      </a>
+      <p class="footer-copyright">
+        © 2026 Iraq Air Quality Platform. "For research & public awareness"
+        <br>
+        Numerical simulation & processing by Dr. Omar Althuwaynee
+        <br>
+        <small>(omar.faisel@gmail.com)</small>
+      </p>
+    </div>
+
+    <!-- Center: Data source -->
+    <div class="footer-center">
+      <div class="data-source-wrapper">
+        <span class="data-source-label">Data source:</span>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
+          <img src="./assets/images/logo-bdrc-and-wmo.svg" 
+               alt="Barcelona Dust Regional Center" 
+               class="data-center-logo">
+        </a>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="data-center-link">
+          dust.aemet.es
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Update time -->
+    <div class="footer-right">
+      <div id="ref-time"></div>
+    </div>
+  </div>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" title="Back to top">↑</button>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Data Analysis Module
+  class DustDataAnalyzer {
+    constructor() {
+      this.years = [];
+      this.provinces = [];
+      this.districts = [];
+      this.data = {};
+      this.charts = {};
+      this.currentView = 'absolute';
+      this.init();
+    }
+    
+    async init() {
+      await this.loadMetadata();
+      await this.loadAvailableYears();
+      this.setupControls();
+      this.setupEventListeners();
+      this.updateLastModified();
+      this.loadPartners();
+    }
+    
+    async loadMetadata() {
+      try {
+        // Load provinces
+        const provincesRes = await fetch('data/historical/provinces.json');
+        this.provinces = await provincesRes.json();
+        
+        // Load districts
+        const districtsRes = await fetch('data/historical/districts.json');
+        this.districts = await districtsRes.json();
+        
+        // Populate province select
+        const provinceSelect = document.getElementById('province-select');
+        provinceSelect.innerHTML = '<option value="all" selected>جميع المحافظات</option>';
+        this.provinces.forEach(p => {
+          const option = document.createElement('option');
+          option.value = p.id;
+          option.textContent = p.name;
+          provinceSelect.appendChild(option);
+        });
+        
+      } catch (error) {
+        console.error('Error loading metadata:', error);
+      }
+    }
+    
+    async loadAvailableYears() {
+      try {
+        const indexRes = await fetch('data/historical/index.json');
+        const index = await indexRes.json();
+        this.years = index.years || [];
+        
+        // Populate year select
+        const yearSelect = document.getElementById('year-select');
+        yearSelect.innerHTML = '<option value="all" selected>جميع السنوات</option>';
+        this.years.sort().forEach(year => {
+          const option = document.createElement('option');
+          option.value = year;
+          option.textContent = year;
+          yearSelect.appendChild(option);
+        });
+        
+        // Update data coverage
+        document.getElementById('data-coverage').innerHTML = 
+          `تغطية البيانات: ${this.years.length} سنوات (${this.years.join('، ')}), ` +
+          `${this.provinces.length} محافظة, ${this.districts.length} قضاء`;
+          
+      } catch (error) {
+        console.error('Error loading index:', error);
+      }
+    }
+    
+    setupControls() {
+      // Chart view buttons
+      document.querySelectorAll('.chart-controls button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          document.querySelectorAll('.chart-controls button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          this.currentView = btn.dataset.view;
+          this.updateChart();
+        });
+      });
+    }
+    
+    setupEventListeners() {
+      document.getElementById('update-chart').addEventListener('click', () => this.updateChart());
+      document.getElementById('reset-filters').addEventListener('click', () => this.resetFilters());
+    }
+    
+    async loadData(years, period) {
+      const allData = {};
+      
+      for (const year of years) {
+        try {
+          const response = await fetch(`data/historical/${year}/${period}_compact.json`);
+          if (response.ok) {
+            allData[year] = await response.json();
+          }
+        } catch (error) {
+          console.warn(`No data for year ${year}`);
+        }
+      }
+      
+      return allData;
+    }
+    
+    async updateChart() {
+      // Get selected values
+      const provinceSelect = document.getElementById('province-select');
+      const selectedProvinces = Array.from(provinceSelect.selectedOptions)
+        .map(opt => opt.value)
+        .filter(v => v !== 'all');
+      
+      const yearSelect = document.getElementById('year-select');
+      const selectedYears = Array.from(yearSelect.selectedOptions)
+        .map(opt => opt.value)
+        .filter(v => v !== 'all');
+      
+      const period = document.getElementById('period-select').value;
+      const chartType = document.getElementById('chart-type').value;
+      
+      // If "all" is selected, use all available
+      const yearsToLoad = selectedYears.length ? selectedYears : this.years;
+      const provincesToShow = selectedProvinces.length ? selectedProvinces : this.provinces.map(p => p.id);
+      
+      // Load data
+      const data = await this.loadData(yearsToLoad, period);
+      
+      // Process and display
+      this.renderChart(data, provincesToShow, period, chartType);
+      this.updateStatistics(data, provincesToShow, yearsToLoad);
+      this.renderComparison(data, provincesToShow, yearsToLoad);
+    }
+    
+    renderChart(data, provinces, period, chartType) {
+      const ctx = document.getElementById('dustChart').getContext('2d');
+      
+      // Destroy existing chart
+      if (this.charts.main) {
+        this.charts.main.destroy();
+      }
+      
+      // Prepare datasets
+      const datasets = [];
+      const colors = ['#2563eb', '#dc2626', '#059669', '#d97706', '#7c3aed', '#db2777'];
+      
+      // Get province names
+      const provinceNames = {};
+      this.provinces.forEach(p => provinceNames[p.id] = p.name);
+      
+      for (const provinceId of provinces) {
+        const provinceData = [];
+        const labels = [];
+        
+        // Collect data for this province across years
+        for (const [year, yearData] of Object.entries(data)) {
+          yearData.forEach(point => {
+            if (point[provinceId] !== undefined) {
+              const value = this.currentView === 'absolute' ? point[provinceId] :
+                           this.currentView === 'anomaly' ? this.calculateAnomaly(point[provinceId], yearData) :
+                           this.normalizeValue(point[provinceId], yearData);
+              
+              provinceData.push(value);
+              labels.push(point.p || `${year}-${point.m || point.w || ''}`);
+            }
+          });
+        }
+        
+        datasets.push({
+          label: provinceNames[provinceId] || provinceId,
+          data: provinceData,
+          borderColor: colors[datasets.length % colors.length],
+          backgroundColor: colors[datasets.length % colors.length] + '20',
+          tension: 0.1,
+          fill: chartType === 'line' ? false : true
+        });
+      }
+      
+      // Create new chart
+      this.charts.main = new Chart(ctx, {
+        type: chartType,
+        data: {
+          labels: datasets[0] ? Array.from({length: datasets[0].data.length}, (_, i) => i + 1) : [],
+          datasets: datasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'top',
+              rtl: true,
+              labels: { font: { family: 'Cairo' } }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: 'التركيز (µg/m³)'
+              }
+            }
+          }
+        }
+      });
+    }
+    
+    updateStatistics(data, provinces, years) {
+      const statsContent = document.getElementById('stats-content');
+      
+      // Calculate statistics
+      let allValues = [];
+      for (const year of years) {
+        if (data[year]) {
+          data[year].forEach(point => {
+            provinces.forEach(provinceId => {
+              if (point[provinceId] !== undefined) {
+                allValues.push(point[provinceId]);
+              }
+            });
+          });
+        }
+      }
+      
+      if (allValues.length === 0) {
+        statsContent.innerHTML = '<p>لا توجد بيانات للفترة المحددة</p>';
+        return;
+      }
+      
+      const mean = allValues.reduce((a, b) => a + b, 0) / allValues.length;
+      const sorted = [...allValues].sort((a, b) => a - b);
+      const median = sorted[Math.floor(sorted.length / 2)];
+      const max = Math.max(...allValues);
+      const min = Math.min(...allValues);
+      const std = Math.sqrt(allValues.map(x => Math.pow(x - mean, 2)).reduce((a, b) => a + b, 0) / allValues.length);
+      
+      // Calculate trend
+      const trend = this.calculateTrend(allValues);
+      
+      statsContent.innerHTML = `
+        <div class="stat-item">
+          <div class="stat-label">المتوسط العام</div>
+          <div class="stat-value">${mean.toFixed(1)}<span class="stat-unit">µg/m³</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">الوسيط</div>
+          <div class="stat-value">${median.toFixed(1)}<span class="stat-unit">µg/m³</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">الانحراف المعياري</div>
+          <div class="stat-value">${std.toFixed(1)}<span class="stat-unit">µg/m³</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">الحد الأقصى</div>
+          <div class="stat-value">${max.toFixed(1)}<span class="stat-unit">µg/m³</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">الحد الأدنى</div>
+          <div class="stat-value">${min.toFixed(1)}<span class="stat-unit">µg/m³</span></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">الاتجاه العام</div>
+          <div class="stat-trend ${trend > 0 ? 'trend-up' : 'trend-down'}">
+            ${trend > 0 ? '↑ تصاعدي' : '↓ تنازلي'} (${Math.abs(trend).toFixed(2)}% per year)
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">عدد القياسات</div>
+          <div class="stat-value">${allValues.length.toLocaleString()}</div>
+        </div>
+      `;
+    }
+    
+    renderComparison(data, provinces, years) {
+      const ctx = document.getElementById('comparisonChart').getContext('2d');
+      
+      if (this.charts.comparison) {
+        this.charts.comparison.destroy();
+      }
+      
+      // Calculate annual averages per province
+      const provinceAverages = {};
+      const provinceNames = {};
+      this.provinces.forEach(p => provinceNames[p.id] = p.name);
+      
+      provinces.forEach(provinceId => {
+        provinceAverages[provinceId] = [];
+      });
+      
+      for (const year of years) {
+        if (data[year]) {
+          provinces.forEach(provinceId => {
+            const values = data[year]
+              .map(point => point[provinceId])
+              .filter(v => v !== undefined);
+            
+            if (values.length > 0) {
+              const avg = values.reduce((a, b) => a + b, 0) / values.length;
+              provinceAverages[provinceId].push(avg);
+            }
+          });
+        }
+      }
+      
+      // Prepare datasets for comparison
+      const datasets = [];
+      const colors = ['#2563eb', '#dc2626', '#059669', '#d97706', '#7c3aed', '#db2777'];
+      
+      provinces.forEach((provinceId, idx) => {
+        datasets.push({
+          label: provinceNames[provinceId] || provinceId,
+          data: provinceAverages[provinceId],
+          backgroundColor: colors[idx % colors.length] + '80',
+          borderColor: colors[idx % colors.length],
+          borderWidth: 1
+        });
+      });
+      
+      this.charts.comparison = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: years.map(y => y.toString()),
+          datasets: datasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top' }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: { display: true, text: 'المتوسط السنوي (µg/m³)' }
+            }
+          }
+        }
+      });
+    }
+    
+    calculateAnomaly(value, yearData) {
+      const mean = yearData.reduce((sum, p) => sum + (p[Object.keys(p).find(k => k.startsWith('D'))] || 0), 0) / yearData.length;
+      return value - mean;
+    }
+    
+    normalizeValue(value, yearData) {
+      const values = yearData.map(p => p[Object.keys(p).find(k => k.startsWith('D'))] || 0);
+      const min = Math.min(...values);
+      const max = Math.max(...values);
+      return (value - min) / (max - min);
+    }
+    
+    calculateTrend(values) {
+      if (values.length < 2) return 0;
+      const first = values[0];
+      const last = values[values.length - 1];
+      return ((last - first) / first) * 100;
+    }
+    
+    resetFilters() {
+      document.getElementById('province-select').value = 'all';
+      document.getElementById('year-select').value = 'all';
+      document.getElementById('period-select').value = 'weekly';
+      document.getElementById('chart-type').value = 'line';
+      this.updateChart();
+    }
+    
+    updateLastModified() {
+      const lastModified = new Date(document.lastModified);
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+      document.getElementById('last-updated-text').textContent = 
+        `آخر تحديث: ${lastModified.toLocaleDateString('ar-IQ', options)} (توقيت بغداد)`;
+    }
+    
+    loadPartners() {
+      const partnersGrid = document.getElementById('partners-grid');
+      partnersGrid.innerHTML = `
+        <div class="partner-card">
+          <img src="assets/images/sejong.svg" alt="Partner Logo">
+          <h3>Dr. Ahmed Al-Khalidi</h3>
+          <p>Professor of Atmospheric Sciences</p>
+          <p>University of Baghdad</p>
+        </div>
+        <div class="partner-card">
+          <a href="https://www.uiz.ac.ma/" target="_blank" rel="noopener noreferrer">
+            <img src="assets/images/UIZ.jpg" alt="University of Ibn Zohor Logo">
+          </a>
+          <h3>Dr. Ali Aydda</h3>
+          <p>Professor of Geology</p>
+          <p>University of Ibn Zohor, Morroco</p>
+        </div>
+        <div class="partner-card">
+          <img src="assets/images/irpi.png" alt="Partner Logo">
+          <h3>Dr. Sarah Johnson</h3>
+          <p>Environmental Modelling Researcher</p>
+          <p>International Dust Observatory</p>
+        </div>
+        <div class="partner-card">
+          <img src="assets/images/moeiraq.png" alt="Partner Logo">
+          <h3>Dr. Mohammed Al-Janabi</h3>
+          <p>Senior Environmental Specialist</p>
+          <p>Ministry of Environment, Iraq</p>
+        </div>
+        <div class="partner-card">
+          <img src="assets/images/Durham.png" alt="Partner Logo">
+          <h3>Dr. Helen Carter</h3>
+          <p>Climate Scientist</p>
+          <p>Durham University, UK</p>
+        </div>
+      `;
+    }
+  }
+  
+  // Initialize analyzer when page loads
+  document.addEventListener('DOMContentLoaded', () => {
+    window.analyzer = new DustDataAnalyzer();
+  });
+</script>
+
+</body>
+</html>
