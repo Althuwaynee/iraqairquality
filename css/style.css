@@ -834,10 +834,10 @@ position: absolute;
 top: 100%;
 right: 0;
 background: white;
-min-width: 180px;
-box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+min-width: 80px;
+box-shadow: 0 8px 15px rgba(0,0,0,0.12);
 border-radius: 8px;
-padding: 0.5rem 0;
+padding: 0.2rem 0;
 display: none;
 z-index: 1000;
 }
