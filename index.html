@@ -1,21 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <title>جودة هواء العراق - منظومة الانذار المبكر للعواصف الترابية</title>
-
+  
+  <!-- Primary Meta Tags (Optimized for Arabic/English SEO) -->
+  <title>جودة هواء العراق - منظومة الإنذار المبكر للعواصف الترابية | Iraq Air Quality Real-Time Monitor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Live PM10 and AQI monitoring for Iraq by district">
-
-  <!-- Leaflet -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
-
+  
+  <!-- Multiple Hreflang Tags for International SEO -->
+  <link rel="alternate" href="https://iraqairquality.com/" hreflang="ar-iq" />
+  <link rel="alternate" href="https://iraqairquality.com/en/" hreflang="en" />
+  <link rel="alternate" href="https://iraqairquality.com/" hreflang="x-default" />
+  
+  <!-- Enhanced Meta Descriptions (Arabic + English) -->
+  <meta name="description" content="منظومة الإنذار المبكر للعواصف الترابية في العراق. مراقبة حية لجودة الهواء وتحليل العواصف الترابية في بغداد، البصرة، وجميع المحافظات. Live dust storm monitoring and real-time air quality data for Iraq and Middle East." />
+  <meta name="keywords" content="العواصف الترابية العراق, جودة الهواء بغداد, رصد العواصف, غبار العراق, إنذار مبكر عواصف ترابية, Iraq dust storm, Middle East dust storm, real-time monitoring, Baghdad air quality, PM10 Iraq, dust storm tracking" />
+  <meta name="author" content="Iraq Air Quality Platform" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Geo Tags for Iraq -->
+  <meta name="geo.region" content="IQ" />
+  <meta name="geo.placename" content="Iraq" />
+  <meta name="geo.position" content="33.3152;44.3661" />
+  <meta name="ICBM" content="33.3152, 44.3661" />
+  
+  <!-- Open Graph / Facebook (Enhanced) -->
+  <meta property="og:title" content="منظومة الإنذار المبكر للعواصف الترابية - العراق | Iraq Dust Storm Early Warning System" />
+  <meta property="og:description" content="مراقبة حية للعواصف الترابية وجودة الهواء في العراق. بيانات فورية لبغداد والبصرة وجميع المحافظات. Real-time dust storm monitoring across Iraq." />
+  <meta property="og:image" content="https://iraqairquality.com/assets/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Iraq Air Quality and Dust Storm Monitoring Map" />
+  <meta property="og:url" content="https://iraqairquality.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Iraq Air Quality - منظومة الإنذار المبكر للعواصف الترابية" />
+  <meta property="og:locale" content="ar_IQ" />
+  <meta property="og:locale:alternate" content="en_US" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@IraqAirQuality" />
+  <meta name="twitter:title" content="Iraq Dust Storm Real-Time Monitor" />
+  <meta name="twitter:description" content="Live dust storm tracking and air quality monitoring for Iraq and Middle East" />
+  <meta name="twitter:image" content="https://iraqairquality.com/assets/images/twitter-card.jpg" />
+  <meta name="twitter:image:alt" content="Iraq Air Quality Monitoring Map" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://iraqairquality.com/" />
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json" />
+  
+  <!-- Preconnect to External Resources -->
+  <link rel="preconnect" href="https://unpkg.com" />
+  <link rel="preconnect" href="https://dust.aemet.es" />
+  <link rel="dns-prefetch" href="https://unpkg.com" />
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  
   <!-- App styles -->
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <!-- Enhanced Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "منظومة الإنذار المبكر للعواصف الترابية",
+    "alternateName": "Iraq Air Quality - Dust Storm Early Warning System",
+    "description": "نظام مراقبة جودة الهواء وتحليل العواصف الترابية في العراق | Real-time air quality and dust storm monitoring system for Iraq",
+    "url": "https://iraqairquality.com",
+    "inLanguage": ["ar", "en"],
+    "keywords": "dust storm, air quality, Iraq, Baghdad, real-time monitoring, عواصف ترابية, جودة الهواء",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://iraqairquality.com/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Add Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Iraq Air Quality Platform",
+    "url": "https://iraqairquality.com",
+    "logo": "https://iraqairquality.com/assets/images/logo.svg",
+    "sameAs": [
+      "https://t.me/IraqAirQuality_bot",
+      "https://twitter.com/IraqAirQuality"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "omar.faisel@gmail.com",
+      "contactType": "technical support"
+    }
+  }
+  </script>
+
+  <!-- Add WebPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Iraq Dust Storm Real-Time Monitoring",
+    "description": "Live dust storm and air quality monitoring for all Iraqi governorates",
+    "url": "https://iraqairquality.com",
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://iraqairquality.com/assets/images/og-image.jpg"
+    },
+    "dateModified": "2026-02-20",
+    "inLanguage": ["ar", "en"],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": ["public", "researchers", "emergency services"]
+    }
+  }
+  </script>
+
+  <!-- Add Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://iraqairquality.com"
+    }]
+  }
+  </script>
+
+  <!-- Add DataFeed Schema for real-time AQI data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DataFeed",
+    "name": "Iraq Air Quality Real-Time Data Feed",
+    "description": "Real-time PM10 and AQI measurements for Iraqi districts",
+    "dateModified": "2026-02-20",
+    "dataFeedElement": [
+      {
+        "@type": "DataFeedItem",
+        "name": "Baghdad Air Quality",
+        "description": "Real-time AQI for Baghdad district"
+      },
+      {
+        "@type": "DataFeedItem",
+        "name": "Basra Air Quality",
+        "description": "Real-time AQI for Basra district"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
