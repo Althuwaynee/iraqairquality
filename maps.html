@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title> تحليل مكاني لتوزيع الغبار – جودة الهواء في العراق</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="خرائط تفاعلية لتوزيع الغبار والعواصف الترابية في العراق">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+ 
+  <!-- App styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
+  
+
+
+
+
+  
+  <style>
+    /* Use system font stack as fallback */
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+
+
+
+
+
+    
+
+
+
+
+  /* Remove the old mobile rules and replace with this */
+  @media (max-width: 768px) {
+    .site-header {
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+      /* Force header stacking */
+    .site-header {
+      display: flex;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center;
+    }
+
+    /* Logo centered on top */
+    .header-left {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5px;
+    }
+
+    /* Title BELOW logo */
+    .site-title {
+      width: 100%;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .title-main,
+    .title-sub {
+      text-align: center;
+      width: 100%;
+    }
+
+
+
+
+
+
+
+
+
+
+    
+    .header-left {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5rem 0;
+    }
+    
+    .logo-link, .logo {
+      margin: 0;
+    }
+    
+    .site-title {
+      width: 100%;
+      text-align: center;
+      margin: 0.5rem 0;
+      padding: 0;
+    }
+    
+    .title-main {
+      font-size: 1.1rem;
+      line-height: 1.4;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .title-sub {
+      font-size: 1rem;
+      text-align: center;
+      width: 100%;
+      margin: 4px 0 0 0;
+    }
+    
+    .nav {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .year-bar {
+      flex-wrap: wrap;
+    }
+    
+    .stats-row {
+      justify-content: flex-start;
+    }
+    
+    .vertical-scale-bar {
+      width: 30px;
+      height: 350px;
+      right: 10px;
+    }
+    
+    .vertical-scale-gradient-container {
+      height: 250px;
+    }
+    
+    .vertical-tick-label {
+      font-size: 0.6rem;
+      right: 14px;
+    }
+    
+    footer {
+      padding: 1.5rem 1rem;
+    }
+    
+    .footer-logo {
+      height: 40px;
+    }
+    
+    .data-center-logo {
+      height: 35px;
+    }
+  }
+
+
+    
+
+
+    
+ 
+    
+    /* Main container */
+    .maps-page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem;
+      direction: rtl;
+    }
+    
+    /* Simple title bar */
+    .title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      padding: 0 0.25rem;
+    }
+    
+    .title-bar h1 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .title-bar h1 i {
+      color: #2563eb;
+      font-size: 1.2rem;
+    }
+    
+    .last-updated {
+      font-size: 0.7rem;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2rem;
+      direction: ltr;
+      display: inline-block;
+    }
+    
+    /* Compact tabs row */
+    .tabs-row {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+    }
+    
+    .tab {
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      background: white;
+      border: 1px solid #e2e8f0;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.1s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    
+    .tab i {
+      font-size: 0.7rem;
+    }
+    
+    .tab:hover {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+    
+    .tab.active {
+      background: #1e3a5f;
+      color: white;
+      border-color: #1e3a5f;
+    }
+    
+    /* Period selector pills */
+    .period-selector {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 0.75rem;
+      background: white;
+      padding: 0.25rem;
+      border-radius: 2rem;
+      border: 1px solid #e2e8f0;
+      width: fit-content;
+    }
+    
+    .period-pill {
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.1s ease;
+    }
+    
+    .period-pill.active {
+      background: #2563eb;
+      color: white;
+    }
+    
+    /* Sub-options - minimal */
+    .sub-options-row {
+      display: flex;
+      gap: 0.25rem;
+      margin-bottom: 0.75rem;
+      flex-wrap: wrap;
+      min-height: 2.2rem;
+    }
+    
+    .sub-option {
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      background: white;
+      border: 1px solid #e2e8f0;
+      font-size: 0.75rem;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.1s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    
+    .sub-option i {
+      font-size: 0.65rem;
+    }
+    
+    .sub-option:hover {
+      background: #f8fafc;
+    }
+    
+    .sub-option.active {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+    
+    /* Seasonal colors */
+    .sub-option[data-map*="winter"].active { background: #3b82f6; }
+    .sub-option[data-map*="spring"].active { background: #10b981; }
+    .sub-option[data-map*="summer"].active { background: #f59e0b; }
+    .sub-option[data-map*="autumn"].active { background: #ef4444; }
+    
+    /* Month select */
+    .month-select {
+      padding: 0.3rem 1.8rem 0.3rem 1rem;
+      border-radius: 2rem;
+      border: 1px solid #e2e8f0;
+      background: white;
+      font-size: 0.75rem;
+      color: #1e293b;
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 0.5rem center;
+    }
+    
+    /* Year controls */
+    .year-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      padding: 0.4rem 1rem;
+      border-radius: 3rem;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 0.75rem;
+      direction: rtl;
+    }
+    
+    .year-display {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .year-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .year-nav-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #e2e8f0;
+      background: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #475569;
+      transition: all 0.1s ease;
+    }
+    
+    .year-nav-btn:hover {
+      background: #f8fafc;
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+    
+    .current-year {
+      font-weight: 600;
+      color: #2563eb;
+      font-size: 1rem;
+      min-width: 60px;
+      text-align: center;
+      direction: ltr;
+      display: inline-block;
+    }
+    
+    .year-label {
+      color: #64748b;
+      font-size: 0.8rem;
+    }
+    
+    /* Stats row */
+    .stats-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      justify-content: flex-start;
+    }
+    
+    .stat-mini {
+      background: white;
+      padding: 0.2rem 1rem;
+      border-radius: 2rem;
+      border: 1px solid #e2e8f0;
+      font-size: 0.7rem;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    
+    .stat-mini i {
+      color: #2563eb;
+      font-size: 0.6rem;
+    }
+    
+    .stat-mini strong {
+      color: #1e293b;
+      margin: 0 0.1rem;
+      direction: ltr;
+      display: inline-block;
+    }
+    
+    /* Map container */
+    .map-container {
+      position: relative;
+      background: white;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border: 1px solid #edf2f7;
+      margin-bottom: 1rem;
+      transition: all 0.2s ease;
+    }
+    
+    .map-container.expanded {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      border-radius: 0;
+      margin: 0;
+    }
+    
+    #raster-map {
+      height: 650px;
+      width: 100%;
+      z-index: 1;
+      background: #f1f5f9;
+      transition: opacity 0.2s ease;
+    }
+    
+    .map-container.expanded #raster-map {
+      height: 100vh;
+    }
+    
+    /* Map controls overlay */
+    .map-controls-overlay {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 1000;
+      display: flex;
+      gap: 0.5rem;
+      direction: ltr;
+    }
+    
+    .map-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: white;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #475569;
+      transition: all 0.1s ease;
+    }
+    
+    .map-btn:hover {
+      background: #f8fafc;
+      border-color: #2563eb;
+      color: #2563eb;
+      transform: scale(1.05);
+    }
+    
+    /* Period overlay on map */
+    .period-overlay {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1e293b;
+      border: 1px solid rgba(255,255,255,0.5);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .period-overlay i {
+      color: #2563eb;
+    }
+    
+    /* Vertical scale bar */
+    .vertical-scale-bar {
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 500px;
+      /* background: rgba(255, 255, 255, 0.95);*/
+      backdrop-filter: blur(8px);
+      padding: 1.5rem 0.5rem;
+      border-radius: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      direction: ltr;
+    }
+    
+    .vertical-scale-header {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+    
+    .vertical-scale-gradient-container {
+      position: relative;
+      width: 12px;
+      height: 350px;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+      overflow: visible;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .vertical-scale-gradient {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, 
+        #74cf6c 0%,
+        #f5b342 20%,
+        #f28c38 40%,
+        #d33d3d 60%,
+        #b63978 80%,
+        #3b1e4b 100%
+      );
+      border-radius: 6px;
+    }
+    
+    .vertical-scale-ticks {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%;
+      height: 100%;
+      pointer-events: none;
+    }
+    /*
+    .vertical-tick {
+      position: absolute;
+      right: -2px;
+      width: 16px;
+      height: 1.5px;
+      background: #51565e;
+      transform: translateY(-50%);
+      z-index: 1002;
+    }
+    */
+    .vertical-tick-label {
+      position: absolute;
+      right: -10px;
+      transform: translateY(45%);
+      font-size: 0.7rem;
+      color: #06152e;
+      white-space: nowrap;
+      font-weight: 400;
+      
+      padding: 0.05rem 0.1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      z-index: 13;
+      direction: ltr;
+    }
+    
+    .vertical-scale-unit {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #2563eb;
+      margin-top: 0.75rem;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+    
+    /* Tooltip styling */
+    .tooltip-icon {
+      margin-right: 0.2rem;
+      color: #94a3b8;
+      font-size: 0.6rem;
+      cursor: help;
+    }
+    
+    /* Move Leaflet zoom controls to right side */
+    .leaflet-control-zoom {
+      left: auto !important;
+      right: 20px !important;
+      top: 20px !important;
+      position: absolute !important;
+    }
+    
+    /* Footer - matching reference page */
+    footer {
+      background: linear-gradient(135deg, #1e3a8a 0%, #4f73c7 100%);
+      color: #ffffff;
+      padding: 2rem 2rem;
+      margin-top: 2rem;
+      border-top: 3px solid #97b7db;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      position: relative;
+      direction: rtl;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .footer-left {
+      align-items: flex-start;
+    }
+    
+    .footer-center {
+      align-items: center;
+      text-align: center;
+    }
+    
+    .footer-right {
+      align-items: flex-end;
+      text-align: right;
+      direction: ltr;
+    }
+    
+    .footer-logo-link {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-logo {
+      height: 50px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+    
+    .footer-logo:hover {
+      transform: scale(1.05);
+    }
+    
+    .footer-copyright {
+      margin: 0;
+      font-size: 0.85rem;
+      line-height: 1.1;
+      opacity: 0.9;
+    }
+    
+    .data-source-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .data-center-logo {
+      height: 45px;
+      width: auto;
+      transition: all 0.3s ease;
+    }
+    
+    .data-center-logo:hover {
+      transform: translateY(-2px) scale(1.05);
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+    }
+    
+    .data-center-link {
+      font-size: 0.85rem;
+      color: #ffec99;
+      text-decoration: none;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+    
+    .data-center-link:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    
+    #ref-time {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      font-family: 'Courier New', monospace;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 0.8rem;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    
+    #back-to-top {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      background: #ffec99;
+      color: #1e3a8a;
+      border: none;
+      cursor: pointer;
+      display: none;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      z-index: 9999;
+      opacity: 0.8;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    
+    #back-to-top:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 900px) {
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+      }
+      
+      .footer-left,
+      .footer-center,
+      .footer-right {
+        align-items: center;
+        text-align: center;
+      }
+    }
+    
+    
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <!-- Add this script for search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "منظومة الإنذار المبكر للعواصف الترابية",
+      "alternateName": "عين ذكية على العراق",
+      "description": "نظام مراقبة جودة الهواء وتحليل العواصف الترابية في العراق",
+      "url": "https://iraqairquality.com",
+      "inLanguage": "ar"
+    }
+    </script>
+
+    <div class="header-left">
+      <a href="index.html" class="logo-link" id="logo-home"> 
+        <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo"> 
+      </a>
+    </div>
+
+    <!-- Same visual layout as before, but now with SEO metadata -->
+    <div class="site-title">
+      <div class="title-main">
+        مَنْظُومةُ الإنذارِ المُبكِّرِ للعواصفِ التُّرابيَّةِ
+      </div>
+      <div class="title-sub">
+        عَيْنٌ ذكيَّةٌ على العِراقِ
+      </div>
+    </div>
+    <!-- ===== UPDATED SECTION END ===== -->
+
+  </header>
+
+  <!-- Telegram bar -->
+  <div class="telegram-bar">
+    <a href="https://t.me/IraqAirQuality_bot" target="_blank" rel="noopener">
+      <span class="telegram-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150" height="150" viewBox="0 0 48 48">
+        <path fill="#29b6f6" d="M24,4C13,4,4,13,4,24s9,20,20,20s20-9,20-20S35,4,24,4z"></path><path fill="#fff" d="M34,15l-3.7,19.1c0,0-0.2,0.9-1.2,0.9c-0.6,0-0.9-0.3-0.9-0.3L20,28l-4-2l-5.1-1.4c0,0-0.9-0.3-0.9-1	c0-0.6,0.9-0.9,0.9-0.9l21.3-8.5c0,0,0.7-0.2,1.1-0.2c0.3,0,0.6,0.1,0.6,0.5C34,14.8,34,15,34,15z"></path><path fill="#b0bec5" d="M23,30.5l-3.4,3.4c0,0-0.1,0.1-0.3,0.1c-0.1,0-0.1,0-0.2,0l1-6L23,30.5z"></path><path fill="#cfd8dc" d="M29.9,18.2c-0.2-0.2-0.5-0.3-0.7-0.1L16,26c0,0,2.1,5.9,2.4,6.9c0.3,1,0.6,1,0.6,1l1-6l9.8-9.1	C30,18.7,30.1,18.4,29.9,18.2z"></path>
+        </svg>
+      </span>
+      اضغط هنا لتصلك اشعارات جودة الهواء في العراق عبر تطبيق تيليجرام
+    </a>
+  </div>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="page-container">
+    <article class="page-content maps-page">
+      
+      <!-- Simple title bar -->
+      <div class="title-bar">
+        <h1><i class="fas fa-map"></i> 
+          
+          
+         
+          تحليل مكاني لتوزيع الغبار
+        
+        </h1>
+
+
+
+      </div>
+
+      
+      <!-- Category tabs with tooltips -->
+      <div class="tabs-row" id="category-tabs">
+        <div class="tab active" data-type="longterm" data-tooltip="متوسط تراكيز الغبار لجميع السنوات (2013-2025)">
+          <i class="fas fa-calendar"></i> طويل الأمد
+          <i class="fas fa-info-circle tooltip-icon"></i>
+        </div>
+        <div class="tab" data-type="seasonal" data-tooltip="متوسط تراكيز الغبار لكل فصل (الشتاء، الربيع، الصيف، الخريف)">
+          <i class="fas fa-cloud-sun"></i> فصلي
+          <i class="fas fa-info-circle tooltip-icon"></i>
+        </div>
+        <div class="tab" data-type="monthly" data-tooltip="متوسط تراكيز الغبار لكل شهر من السنة">
+          <i class="fas fa-calendar-alt"></i> شهري
+          <i class="fas fa-info-circle tooltip-icon"></i>
+        </div>
+        <div class="tab" data-type="exceedance" data-tooltip="نسبة الأيام التي تتجاوز فيها التراكيز الحدود الصحية">
+          <i class="fas fa-exclamation"></i> تجاوز
+          <i class="fas fa-info-circle tooltip-icon"></i>
+        </div>
+        <div class="tab" data-type="annual" data-tooltip="متوسط التراكيز لكل سنة على حدة">
+          <i class="fas fa-chart-line"></i> سنوي
+          <i class="fas fa-info-circle tooltip-icon"></i>
+        </div>
+      </div>
+      
+      <!-- Period selector (multi-year vs single-year) -->
+      <div class="period-selector" id="period-selector">
+        <div class="period-pill active" data-period="multi" data-tooltip="عرض متوسط جميع السنوات المتاحة">متعدد السنوات</div>
+        <div class="period-pill" data-period="single" data-tooltip="عرض سنة واحدة مع إمكانية التنقل بين السنوات">سنة واحدة</div>
+      </div>
+      
+      <!-- Sub-options panel -->
+      <div class="sub-options-row" id="sub-options-panel">
+        <div class="sub-option active" data-map="long_term_mean" data-tooltip="متوسط تراكيز الغبار لجميع السنوات (2013-2025)">
+          <i class="fas fa-check"></i> المتوسط 2013-2025
+        </div>
+      </div>
+      
+      <!-- Year controls (simple arrows only) - visible in single-year mode -->
+      <div id="year-controls-container" style="display: none;">
+        <div class="year-bar">
+          <div class="year-display">
+            <span class="year-label">السنة:</span>
+            <span class="current-year" id="current-year">2013</span>
+          </div>
+          <div class="year-nav">
+            <button class="year-nav-btn" id="prev-year" data-tooltip="السنة السابقة"><i class="fas fa-chevron-right"></i></button>
+            <button class="year-nav-btn" id="next-year" data-tooltip="السنة التالية"><i class="fas fa-chevron-left"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mini stats row -->
+      <div class="stats-row">
+        <div class="stat-mini" data-tooltip="أقل تركيز مسجل في الخريطة"><i class="fas fa-arrow-down"></i> <span>الحد <strong id="stat-min">0</strong></span></div>
+        <div class="stat-mini" data-tooltip="أعلى تركيز مسجل في الخريطة"><i class="fas fa-arrow-up"></i> <span>الحد <strong id="stat-max">500</strong></span></div>
+        <div class="stat-mini" data-tooltip="متوسط التركيز لجميع النقاط"><i class="fas fa-chart-line"></i> <span>المتوسط <strong id="stat-mean">58</strong></span></div>
+      </div>
+      
+      <!-- Map Container -->
+      <div class="map-container" id="map-container">
+        <div id="raster-map"></div>
+        
+        <!-- Map controls overlay -->
+        <div class="map-controls-overlay">
+          <button class="map-btn" id="expand-map" title="تكبير"><i class="fas fa-expand"></i></button>
+          <button class="map-btn" id="reset-map" title="إعادة تعيين"><i class="fas fa-home"></i></button>
+        </div>
+        
+        <!-- Period overlay on map -->
+        <div class="period-overlay" id="period-overlay">
+          <i class="far fa-calendar"></i>
+          <span id="overlay-text">2013-2025</span>
+        </div>
+        
+        <!-- Vertical scale bar -->
+        <div class="vertical-scale-bar" id="vertical-scale-bar">
+          <div class="vertical-scale-header" id="scale-title">التركيز</div>
+          <div class="vertical-scale-gradient-container">
+            <div class="vertical-scale-gradient"></div>
+            <div class="vertical-scale-ticks" id="vertical-scale-ticks"></div>
+          </div>
+          <div class="vertical-scale-unit" id="vertical-scale-unit">µg/m³</div>
+        </div>
+      </div>
+      
+    </article>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer-content">
+
+      <!-- Left: Logo + Copyright -->
+      <div class="footer-left">
+        <a href="index.html" class="footer-logo-link" id="footer-logo">
+          <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
+        </a>
+        <p class="footer-copyright">
+          © 2026 Iraq Air Quality Platform. "For research & public awareness"
+          <br>
+          Numerical simulation & processing by Dr. Omar Althuwaynee
+          <br>
+          <small>(omar.faisel@gmail.com)</small>
+        </p>
+      </div>
+
+      <!-- Center: Data source -->
+      <div class="footer-center">
+        <div class="data-source-wrapper">
+          <span class="data-source-label">Data source:</span>
+          <a href="https://dust.aemet.es/" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
+            <img src="./assets/images/logo-bdrc-and-wmo.svg" 
+                 alt="Barcelona Dust Regional Center" 
+                 class="data-center-logo">
+          </a>
+          <a href="https://dust.aemet.es/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="data-center-link">
+            dust.aemet.es
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Update time -->
+      <div class="footer-right">
+        <div id="ref-time"></div>
+      </div>
+
+    </div>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Back to top">↑</button>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    class DustMapVisualizer {
+      constructor() {
+        this.map = null;
+        this.currentLayer = null;
+        this.currentMap = 'long_term_mean';
+        this.currentType = 'longterm';
+        this.currentPeriod = 'multi';
+        this.years = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
+        this.currentYear = 2013;
+        this.gridBounds = null;
+        this.isExpanded = false;
+        this.metadata = null;
+        
+        this.renderToken = 0;
+        this.isLoading = false;
+        this.debounceTimer = null;
+        
+        this.classes = {
+          'mean': {
+            breaks: [0, 100, 200, 300, 400, 500],
+            colors: ['#74cf6c', '#f5b342', '#f28c38', '#d33d3d', '#b63978', '#38023b']
+          },
+          'exceedance': {
+            breaks: [0, 20, 40, 60, 80, 100],
+            colors: ['#74cf6c', '#f5b342', '#f28c38', '#d33d3d', '#b63978', '#38023b']
+          }
+        };
+        
+        this.init();
+      }
+      
+      async init() {
+        await this.loadMetadata();
+        await this.loadGridBounds();
+        this.initMap();
+        this.setupEventListeners();
+        this.setupTooltips();
+        this.updateSubOptions();
+        this.updateLastModified();
+        this.setupBackToTop();
+      }
+      
+      async loadMetadata() {
+        try {
+          const response = await fetch('./data/maps/metadata.json', { cache: "no-store" });
+          this.metadata = await response.json();
+          console.log('Metadata loaded:', this.metadata);
+          if (this.metadata && this.metadata.processed_years) {
+            this.years = this.metadata.processed_years;
+          }
+        } catch (error) {
+          console.error('Error loading metadata:', error);
+        }
+      }
+      
+      async loadGridBounds() {
+        try {
+          const response = await fetch('./data/maps/long_term_mean_compact.json', { cache: "no-store" });
+          const data = await response.json();
+          const lats = data.data.map(p => p.lat);
+          const lons = data.data.map(p => p.lon);
+          
+          // Calculate bounds with a small buffer
+          const latBuffer = (Math.max(...lats) - Math.min(...lats)) * -0.2;
+          const lonBuffer = (Math.max(...lons) - Math.min(...lons)) * -0.2;
+          
+          this.gridBounds = {
+            minLat: Math.min(...lats) - latBuffer,
+            maxLat: Math.max(...lats) + latBuffer,
+            minLon: Math.min(...lons) - lonBuffer,
+            maxLon: Math.max(...lons) + lonBuffer
+          };
+          
+          console.log('Grid bounds with buffer:', this.gridBounds);
+        } catch (error) {
+          // Fallback to Iraq bounds if data not available
+          this.gridBounds = { 
+            minLat: 29.0, 
+            maxLat: 38.0, 
+            minLon: 38.0, 
+            maxLon: 49.0 
+          };
+        }
+      }
+
+      initMap() {
+        this.map = L.map('raster-map');
+        
+        // Set view to grid bounds with padding
+        if (this.gridBounds) {
+          this.map.fitBounds([
+            [this.gridBounds.minLat, this.gridBounds.minLon],
+            [this.gridBounds.maxLat, this.gridBounds.maxLon]
+          ], { 
+            padding: [20, 20],
+            animate: true,
+            duration: 1
+          });
+        } else {
+          // Fallback center on Iraq
+          this.map.setView([33.2, 44.3], 6);
+        }
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: ''
+        }).addTo(this.map);
+        
+        // Force a resize after map is initialized
+        setTimeout(() => {
+          this.map.invalidateSize();
+        }, 200);
+      }
+      
+      setupTooltips() {
+        if (typeof tippy !== 'undefined') {
+          tippy('[data-tooltip]', {
+            content: (reference) => reference.getAttribute('data-tooltip'),
+            placement: 'top',
+            arrow: true,
+            theme: 'light',
+            duration: [200, 0],
+            animation: 'scale'
+          });
+        }
+      }
+      
+      setupEventListeners() {
+        document.querySelectorAll('.tab').forEach(tab => {
+          tab.addEventListener('click', (e) => {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            this.currentType = tab.dataset.type;
+            this.updateSubOptions();
+          });
+        });
+        
+        document.querySelectorAll('.period-pill').forEach(pill => {
+          pill.addEventListener('click', (e) => {
+            document.querySelectorAll('.period-pill').forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            this.currentPeriod = pill.dataset.period;
+            this.updateSubOptions();
+          });
+        });
+        
+        document.getElementById('expand-map').addEventListener('click', () => {
+          this.toggleExpand();
+        });
+        
+        document.getElementById('reset-map').addEventListener('click', () => {
+          if (this.gridBounds) {
+            this.map.fitBounds([
+              [this.gridBounds.minLat, this.gridBounds.minLon],
+              [this.gridBounds.maxLat, this.gridBounds.maxLon]
+            ], { 
+              padding: [20, 20],
+              animate: true,
+              duration: 1
+            });
+          }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.isExpanded) {
+            this.toggleExpand();
+          }
+        });
+      }
+      
+      toggleExpand() {
+        const container = document.getElementById('map-container');
+        const btn = document.getElementById('expand-map');
+        
+        this.isExpanded = !this.isExpanded;
+        
+        if (this.isExpanded) {
+          container.classList.add('expanded');
+          btn.innerHTML = '<i class="fas fa-compress"></i>';
+          document.body.style.overflow = 'hidden';
+        } else {
+          container.classList.remove('expanded');
+          btn.innerHTML = '<i class="fas fa-expand"></i>';
+          document.body.style.overflow = '';
+        }
+        
+        setTimeout(() => {
+          this.map.invalidateSize();
+        }, 100);
+      }
+      
+      debouncedLoad(mapName) {
+        clearTimeout(this.debounceTimer);
+        this.debounceTimer = setTimeout(() => {
+          this.loadMap(mapName);
+        }, 150);
+      }
+      
+      updateSubOptions() {
+        const panel = document.getElementById('sub-options-panel');
+        const yearControls = document.getElementById('year-controls-container');
+        const overlayText = document.getElementById('overlay-text');
+        
+        panel.innerHTML = '';
+        
+        if (this.currentPeriod === 'single') {
+          yearControls.style.display = 'block';
+        } else {
+          yearControls.style.display = 'none';
+        }
+        
+        switch(this.currentType) {
+          case 'longterm':
+            if (this.currentPeriod === 'multi') {
+              panel.innerHTML = `<div class="sub-option active" data-map="long_term_mean" data-tooltip="متوسط تراكيز الغبار لجميع السنوات (2013-2025)">المتوسط 2013-2025</div>`;
+              overlayText.textContent = '2013-2025';
+              this.debouncedLoad('long_term_mean');
+            } else {
+              this.currentType = 'annual';
+              document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+              document.querySelector('.tab[data-type="annual"]').classList.add('active');
+              this.updateSubOptions();
+              return;
+            }
+            break;
+            
+          case 'seasonal':
+            if (this.currentPeriod === 'multi') {
+              panel.innerHTML = `
+                <div class="sub-option active" data-map="seasonal_winter" data-tooltip="متوسط تراكيز الغبار في فصل الشتاء (ديسمبر-فبراير)">الشتاء</div>
+                <div class="sub-option" data-map="seasonal_spring" data-tooltip="متوسط تراكيز الغبار في فصل الربيع (مارس-مايو)">الربيع</div>
+                <div class="sub-option" data-map="seasonal_summer" data-tooltip="متوسط تراكيز الغبار في فصل الصيف (يونيو-أغسطس)">الصيف</div>
+                <div class="sub-option" data-map="seasonal_autumn" data-tooltip="متوسط تراكيز الغبار في فصل الخريف (سبتمبر-نوفمبر)">الخريف</div>
+              `;
+              overlayText.textContent = 'متعدد السنوات';
+            } else {
+              panel.innerHTML = `
+                <div class="sub-option active" data-map="seasonal_winter_${this.currentYear}" data-tooltip="متوسط تراكيز الغبار في شتاء ${this.currentYear}">الشتاء ${this.currentYear}</div>
+                <div class="sub-option" data-map="seasonal_spring_${this.currentYear}" data-tooltip="متوسط تراكيز الغبار في ربيع ${this.currentYear}">الربيع ${this.currentYear}</div>
+                <div class="sub-option" data-map="seasonal_summer_${this.currentYear}" data-tooltip="متوسط تراكيز الغبار في صيف ${this.currentYear}">الصيف ${this.currentYear}</div>
+                <div class="sub-option" data-map="seasonal_autumn_${this.currentYear}" data-tooltip="متوسط تراكيز الغبار في خريف ${this.currentYear}">الخريف ${this.currentYear}</div>
+              `;
+              overlayText.textContent = `سنة ${this.currentYear}`;
+            }
+            this.attachSubOptionHandlers();
+            this.setupTooltips();
+            break;
+            
+          case 'monthly':
+            if (this.currentPeriod === 'multi') {
+              panel.innerHTML = `
+                <select class="month-select" id="month-select">
+                  <option value="monthly_01" data-tooltip="متوسط تراكيز الغبار في شهر يناير">يناير</option>
+                  <option value="monthly_02" data-tooltip="متوسط تراكيز الغبار في شهر فبراير">فبراير</option>
+                  <option value="monthly_03" data-tooltip="متوسط تراكيز الغبار في شهر مارس">مارس</option>
+                  <option value="monthly_04" data-tooltip="متوسط تراكيز الغبار في شهر أبريل">أبريل</option>
+                  <option value="monthly_05" data-tooltip="متوسط تراكيز الغبار في شهر مايو">مايو</option>
+                  <option value="monthly_06" data-tooltip="متوسط تراكيز الغبار في شهر يونيو">يونيو</option>
+                  <option value="monthly_07" data-tooltip="متوسط تراكيز الغبار في شهر يوليو">يوليو</option>
+                  <option value="monthly_08" data-tooltip="متوسط تراكيز الغبار في شهر أغسطس">أغسطس</option>
+                  <option value="monthly_09" data-tooltip="متوسط تراكيز الغبار في شهر سبتمبر">سبتمبر</option>
+                  <option value="monthly_10" data-tooltip="متوسط تراكيز الغبار في شهر أكتوبر">أكتوبر</option>
+                  <option value="monthly_11" data-tooltip="متوسط تراكيز الغبار في شهر نوفمبر">نوفمبر</option>
+                  <option value="monthly_12" data-tooltip="متوسط تراكيز الغبار في شهر ديسمبر">ديسمبر</option>
+                </select>
+              `;
+              overlayText.textContent = 'متعدد السنوات';
+            } else {
+              panel.innerHTML = `
+                <select class="month-select" id="month-select">
+                  <option value="monthly_01_${this.currentYear}" data-tooltip="تراكيز الغبار في يناير ${this.currentYear}">يناير ${this.currentYear}</option>
+                  <option value="monthly_02_${this.currentYear}" data-tooltip="تراكيز الغبار في فبراير ${this.currentYear}">فبراير ${this.currentYear}</option>
+                  <option value="monthly_03_${this.currentYear}" data-tooltip="تراكيز الغبار في مارس ${this.currentYear}">مارس ${this.currentYear}</option>
+                  <option value="monthly_04_${this.currentYear}" data-tooltip="تراكيز الغبار في أبريل ${this.currentYear}">أبريل ${this.currentYear}</option>
+                  <option value="monthly_05_${this.currentYear}" data-tooltip="تراكيز الغبار في مايو ${this.currentYear}">مايو ${this.currentYear}</option>
+                  <option value="monthly_06_${this.currentYear}" data-tooltip="تراكيز الغبار في يونيو ${this.currentYear}">يونيو ${this.currentYear}</option>
+                  <option value="monthly_07_${this.currentYear}" data-tooltip="تراكيز الغبار في يوليو ${this.currentYear}">يوليو ${this.currentYear}</option>
+                  <option value="monthly_08_${this.currentYear}" data-tooltip="تراكيز الغبار في أغسطس ${this.currentYear}">أغسطس ${this.currentYear}</option>
+                  <option value="monthly_09_${this.currentYear}" data-tooltip="تراكيز الغبار في سبتمبر ${this.currentYear}">سبتمبر ${this.currentYear}</option>
+                  <option value="monthly_10_${this.currentYear}" data-tooltip="تراكيز الغبار في أكتوبر ${this.currentYear}">أكتوبر ${this.currentYear}</option>
+                  <option value="monthly_11_${this.currentYear}" data-tooltip="تراكيز الغبار في نوفمبر ${this.currentYear}">نوفمبر ${this.currentYear}</option>
+                  <option value="monthly_12_${this.currentYear}" data-tooltip="تراكيز الغبار في ديسمبر ${this.currentYear}">ديسمبر ${this.currentYear}</option>
+                </select>
+              `;
+              overlayText.textContent = `سنة ${this.currentYear}`;
+            }
+            
+            setTimeout(() => {
+              document.getElementById('month-select').addEventListener('change', (e) => {
+                this.debouncedLoad(e.target.value);
+              });
+              this.setupTooltips();
+              
+              const select = document.getElementById('month-select');
+              if (select && select.options.length > 0) {
+                this.debouncedLoad(select.value);
+              }
+            }, 100);
+            break;
+            
+          case 'exceedance':
+            if (this.currentPeriod === 'multi') {
+              panel.innerHTML = `
+                <div class="sub-option active" data-map="exceedance_who" data-tooltip="نسبة الأيام التي تتجاوز فيها التراكيز 100 ميكروغرام/م³ (منظمة الصحة العالمية)">أيام > 100</div>
+                <div class="sub-option" data-map="exceedance_extreme" data-tooltip="نسبة الأيام التي تتجاوز فيها التراكيز 150 ميكروغرام/م³ (عواصف ترابية)">أيام > 150</div>
+              `;
+              overlayText.textContent = 'متعدد السنوات';
+            } else {
+              panel.innerHTML = `
+                <div class="sub-option active" data-map="exceedance_who_${this.currentYear}" data-tooltip="نسبة الأيام في ${this.currentYear} التي تتجاوز 100 ميكروغرام/م³">أيام > 100 ${this.currentYear}</div>
+                <div class="sub-option" data-map="exceedance_extreme_${this.currentYear}" data-tooltip="نسبة الأيام في ${this.currentYear} التي تتجاوز 150 ميكروغرام/م³">أيام > 150 ${this.currentYear}</div>
+              `;
+              overlayText.textContent = `سنة ${this.currentYear}`;
+            }
+            this.attachSubOptionHandlers();
+            this.setupTooltips();
+            
+            const firstOption = document.querySelector('.sub-option');
+            if (firstOption) {
+              this.debouncedLoad(firstOption.dataset.map);
+            }
+            break;
+            
+          case 'annual':
+            panel.innerHTML = '';
+            if (this.currentPeriod === 'multi') {
+              overlayText.textContent = 'متعدد السنوات';
+              this.debouncedLoad('long_term_mean');
+            } else {
+              yearControls.style.display = 'block';
+              overlayText.textContent = `سنة ${this.currentYear}`;
+              this.setupYearControls();
+              this.debouncedLoad(`annual_${this.currentYear}`);
+            }
+            break;
+        }
+        
+        this.setupTooltips();
+      }
+      
+      attachSubOptionHandlers() {
+        document.querySelectorAll('.sub-option').forEach(opt => {
+          opt.addEventListener('click', (e) => {
+            document.querySelectorAll('.sub-option').forEach(o => o.classList.remove('active'));
+            opt.classList.add('active');
+            this.debouncedLoad(opt.dataset.map);
+          });
+        });
+      }
+      
+      setupYearControls() {
+        const display = document.getElementById('current-year');
+        const prevBtn = document.getElementById('prev-year');
+        const nextBtn = document.getElementById('next-year');
+        const overlayText = document.getElementById('overlay-text');
+        
+        const updateYear = (year) => {
+          this.currentYear = year;
+          display.textContent = year;
+          overlayText.textContent = `سنة ${year}`;
+          
+          if (this.currentType === 'seasonal') {
+            document.querySelectorAll('.sub-option').forEach((opt, index) => {
+              const seasons = ['winter', 'spring', 'summer', 'autumn'];
+              const seasonNames = ['الشتاء', 'الربيع', 'الصيف', 'الخريف'];
+              opt.dataset.map = `seasonal_${seasons[index]}_${year}`;
+              opt.textContent = `${seasonNames[index]} ${year}`;
+              opt.setAttribute('data-tooltip', `متوسط تراكيز الغبار في ${seasonNames[index]} ${year}`);
+            });
+            const active = document.querySelector('.sub-option.active');
+            if (active) this.debouncedLoad(active.dataset.map);
+            
+          } else if (this.currentType === 'monthly') {
+            const select = document.getElementById('month-select');
+            const months = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
+                           'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+            for (let i = 0; i < select.options.length; i++) {
+              select.options[i].value = `monthly_${(i+1).toString().padStart(2,'0')}_${year}`;
+              select.options[i].textContent = `${months[i]} ${year}`;
+              select.options[i].setAttribute('data-tooltip', `تراكيز الغبار في ${months[i]} ${year}`);
+            }
+            this.debouncedLoad(select.value);
+            
+          } else if (this.currentType === 'exceedance') {
+            document.querySelectorAll('.sub-option').forEach((opt, index) => {
+              if (index === 0) {
+                opt.dataset.map = `exceedance_who_${year}`;
+                opt.textContent = `أيام > 100 ${year}`;
+                opt.setAttribute('data-tooltip', `نسبة الأيام في ${year} التي تتجاوز 100 ميكروغرام/م³`);
+              } else {
+                opt.dataset.map = `exceedance_extreme_${year}`;
+                opt.textContent = `أيام > 150 ${year}`;
+                opt.setAttribute('data-tooltip', `نسبة الأيام في ${year} التي تتجاوز 150 ميكروغرام/م³`);
+              }
+            });
+            const active = document.querySelector('.sub-option.active');
+            if (active) {
+              this.debouncedLoad(active.dataset.map);
+            } else {
+              const first = document.querySelector('.sub-option');
+              if (first) {
+                first.classList.add('active');
+                this.debouncedLoad(first.dataset.map);
+              }
+            }
+            
+          } else if (this.currentType === 'annual') {
+            this.debouncedLoad(`annual_${year}`);
+          }
+          
+          this.setupTooltips();
+        };
+        
+        // Remove old listeners and add new ones
+        const newPrevBtn = prevBtn.cloneNode(true);
+        const newNextBtn = nextBtn.cloneNode(true);
+        prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+        nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+        
+        newPrevBtn.addEventListener('click', () => {
+          const currentIndex = this.years.indexOf(this.currentYear);
+          if (currentIndex > 0) {
+            updateYear(this.years[currentIndex - 1]);
+          }
+        });
+        
+        newNextBtn.addEventListener('click', () => {
+          const currentIndex = this.years.indexOf(this.currentYear);
+          if (currentIndex < this.years.length - 1) {
+            updateYear(this.years[currentIndex + 1]);
+          }
+        });
+        
+        updateYear(this.currentYear);
+      }
+      
+      getColor(value, classConfig) {
+        for (let i = 0; i < classConfig.breaks.length - 1; i++) {
+          if (value >= classConfig.breaks[i] && value < classConfig.breaks[i + 1]) {
+            return classConfig.colors[i];
+          }
+        }
+        return classConfig.colors[classConfig.colors.length - 1];
+      }
+      
+      async loadMap(mapName) {
+        const token = ++this.renderToken;
+        this.isLoading = true;
+        
+        document.getElementById('raster-map').style.opacity = 0.4;
+        
+        try {
+          const response = await fetch(`./data/maps/${mapName}_compact.json`, {
+            cache: "no-store"
+          });
+          
+          if (!response.ok) {
+            throw new Error(`Map ${mapName} not found`);
+          }
+          
+          const data = await response.json();
+          
+          if (token !== this.renderToken) {
+            return;
+          }
+          
+          if (this.currentLayer) {
+            this.map.removeLayer(this.currentLayer);
+            this.currentLayer = null;
+          }
+          
+          const isPercent = mapName.includes('exceedance');
+          const classConfig = isPercent ? this.classes.exceedance : this.classes.mean;
+          
+          const layer = L.layerGroup();
+          this.currentLayer = layer;
+          
+          const cellSize = 0.1;
+          let cellCount = 0;
+          
+          for (const point of data.data) {
+            const lat = point.lat;
+            const lon = point.lon;
+            const value = point.val;
+            
+            const color = this.getColor(value, classConfig);
+            
+            L.rectangle([
+              [lat, lon],
+              [lat + cellSize, lon + cellSize]
+            ], {
+              stroke: false,
+              fillColor: color,
+              fillOpacity: 0.75,
+              interactive: false
+            }).addTo(layer);
+            
+            cellCount++;
+          }
+          
+          layer.addTo(this.map);
+          console.log(`Rendered ${cellCount} grid cells for ${mapName}`);
+          
+          const values = data.data.map(d => d.val);
+          const mean = Math.round(values.reduce((a, b) => a + b, 0) / values.length);
+          
+          document.getElementById('stat-min').textContent = classConfig.breaks[0];
+          document.getElementById('stat-max').textContent = classConfig.breaks[classConfig.breaks.length - 1];
+          document.getElementById('stat-mean').textContent = mean;
+          document.getElementById('vertical-scale-unit').textContent = isPercent ? '%' : 'µg/m³';
+          document.getElementById('scale-title').textContent = isPercent ? 'نسبة التجاوز' : 'التركيز';
+          
+          this.createVerticalScaleTicks(classConfig.breaks, isPercent);
+          
+        } catch (error) {
+          console.error('Error loading map:', error);
+        }
+        
+        document.getElementById('raster-map').style.opacity = 1;
+        this.isLoading = false;
+      }
+      
+      createVerticalScaleTicks(breaks, isPercent) {
+        const container = document.getElementById('vertical-scale-ticks');
+        container.innerHTML = '';
+        
+        breaks.forEach((value, index) => {
+          const position = (index / (breaks.length - 1)) * 100;
+          
+          const tick = document.createElement('div');
+          tick.className = 'vertical-tick';
+          tick.style.bottom = position + '%';
+          container.appendChild(tick);
+          
+          const label = document.createElement('div');
+          label.className = 'vertical-tick-label';
+          label.style.bottom = position + '%';
+          label.textContent = value + (isPercent ? '%' : '');
+          container.appendChild(label);
+        });
+      }
+      
+      updateLastModified() {
+        const lastModified = new Date(document.lastModified);
+        document.getElementById('last-updated-text').innerHTML = 
+          `<i class="far fa-clock"></i> ${lastModified.toLocaleDateString('ar-IQ')}`;
+      }
+      
+      setupBackToTop() {
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTop.style.display = 'block';
+          } else {
+            backToTop.style.display = 'none';
+          }
+        });
+        
+        backToTop.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      window.mapVisualizer = new DustMapVisualizer();
+    });
+  </script>
+</body>
+</html>

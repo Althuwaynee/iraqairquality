@@ -1,42 +1,68 @@
+
+
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>مصادر البيانات – جودة الهواء في العراق</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="مصادر بيانات جودة الهواء والغبار في العراق">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Live PM10 and AQI monitoring for Iraq by district">
 
-  <!-- Leaflet (shared styles, harmless on non-map pages) -->
+  <!-- Leaflet -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
 
   <!-- App styles -->
-  <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
 </head>
 
-<body  class="data-source-page">
+<body>
+
 
 
 
   <!-- ================= HEADER ================= -->
 <header class="site-header">
+  <!-- Add this script for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "منظومة الإنذار المبكر للعواصف الترابية",
+    "alternateName": "عين ذكية على العراق",
+    "description": "نظام مراقبة جودة الهواء وتحليل العواصف الترابية في العراق",
+    "url": "https://iraqairquality.com",
+    "inLanguage": "ar"
+  }
+  </script>
+
   <div class="header-left">
-    <a href="index.html" class="logo-link" id="logo-home">
-      <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo">
+    <a href="index.html" class="logo-link" id="logo-home"> 
+      <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo"> 
     </a>
   </div>
 
+  <!-- Same visual layout as before, but now with SEO metadata -->
+  <div class="site-title">
+    <div class="title-main">
+      مَنْظُومةُ الإنذارِ المُبكِّرِ للعواصفِ التُّرابيَّةِ
+    </div>
+    <div class="title-sub">
+      عَيْنٌ ذكيَّةٌ على العِراقِ
+    </div>
+  </div>
+  <!-- ===== UPDATED SECTION END ===== -->
 
 
   <nav class="nav">
 
     <a href="index.html#map">الخريطة</a>
     <a href="shako_mako.html"class="active">شكو ماكو</a>
+    <a href="maps.html"> ماكو</a>
     <!-- ABOUT dropdown -->
     <div class="nav-dropdown">
       <a href="#" class="dropdown-toggle">
