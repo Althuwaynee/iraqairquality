@@ -65,7 +65,9 @@ class DustRasterGenerator:
                     'summer': {},
                     'autumn': {}
                 },
-                'monthly': {month: {} for month in range(1, 13)},
+                'seasonal_by_year': {},  # Per-year seasonal stats
+                'monthly': {str(month): {} for month in range(1, 13)},
+                'monthly_by_year': {},    # Per-year monthly stats
                 'annual': {},
                 'extreme_days': {
                     'daily_max': {},  # Multi-year daily max
@@ -183,6 +185,7 @@ class DustRasterGenerator:
     
     def update_cumulative_stats(self, df, year):
         """Update cumulative statistics with new year's data"""
+        year_str = str(year)
         
         # 1. Long-term mean
         point_stats = df.groupby('point_key').agg({
@@ -201,7 +204,7 @@ class DustRasterGenerator:
             self.state['cumulative_stats']['long_term'][key]['count'] += int(row['count'])
             self.state['cumulative_stats']['long_term'][key]['sum'] += float(row['sum'])
         
-        # 2. Seasonal stats
+        # 2. Seasonal stats (MULTI-YEAR)
         seasonal_stats = df.groupby(['point_key', 'season']).agg({
             'value': ['count', 'sum']
         }).reset_index()
@@ -219,7 +222,27 @@ class DustRasterGenerator:
             self.state['cumulative_stats']['seasonal'][season][key]['count'] += int(row['count'])
             self.state['cumulative_stats']['seasonal'][season][key]['sum'] += float(row['sum'])
         
-        # 3. Monthly stats
+        # 3. Per-year seasonal stats
+        if 'seasonal_by_year' not in self.state['cumulative_stats']:
+            self.state['cumulative_stats']['seasonal_by_year'] = {}
+        
+        if year_str not in self.state['cumulative_stats']['seasonal_by_year']:
+            self.state['cumulative_stats']['seasonal_by_year'][year_str] = {
+                'winter': {}, 'spring': {}, 'summer': {}, 'autumn': {}
+            }
+        
+        for _, row in seasonal_stats.iterrows():
+            key = row['point_key']
+            season = row['season']
+            year_seasonal = self.state['cumulative_stats']['seasonal_by_year'][year_str][season]
+            
+            if key not in year_seasonal:
+                year_seasonal[key] = {'count': 0, 'sum': 0.0}
+            
+            year_seasonal[key]['count'] += int(row['count'])
+            year_seasonal[key]['sum'] += float(row['sum'])
+        
+        # 4. Monthly stats (MULTI-YEAR)
         monthly_stats = df.groupby(['point_key', 'month']).agg({
             'value': ['count', 'sum']
         }).reset_index()
@@ -237,13 +260,34 @@ class DustRasterGenerator:
             self.state['cumulative_stats']['monthly'][month][key]['count'] += int(row['count'])
             self.state['cumulative_stats']['monthly'][month][key]['sum'] += float(row['sum'])
         
-        # 4. Annual stats
+        # 5. Per-year monthly stats
+        if 'monthly_by_year' not in self.state['cumulative_stats']:
+            self.state['cumulative_stats']['monthly_by_year'] = {}
+        
+        if year_str not in self.state['cumulative_stats']['monthly_by_year']:
+            self.state['cumulative_stats']['monthly_by_year'][year_str] = {}
+        
+        for _, row in monthly_stats.iterrows():
+            key = row['point_key']
+            month = str(row['month'])
+            
+            if month not in self.state['cumulative_stats']['monthly_by_year'][year_str]:
+                self.state['cumulative_stats']['monthly_by_year'][year_str][month] = {}
+            
+            year_monthly = self.state['cumulative_stats']['monthly_by_year'][year_str][month]
+            
+            if key not in year_monthly:
+                year_monthly[key] = {'count': 0, 'sum': 0.0}
+            
+            year_monthly[key]['count'] += int(row['count'])
+            year_monthly[key]['sum'] += float(row['sum'])
+        
+        # 6. Annual stats
         annual_stats = df.groupby(['point_key', 'year']).agg({
             'value': ['count', 'sum']
         }).reset_index()
         annual_stats.columns = ['point_key', 'year', 'count', 'sum']
         
-        year_str = str(year)
         if year_str not in self.state['cumulative_stats']['annual']:
             self.state['cumulative_stats']['annual'][year_str] = {}
         
@@ -255,7 +299,7 @@ class DustRasterGenerator:
             self.state['cumulative_stats']['annual'][year_str][key]['count'] += int(row['count'])
             self.state['cumulative_stats']['annual'][year_str][key]['sum'] += float(row['sum'])
         
-        # 5. Extreme days - Store both multi-year and per-year
+        # 7. Extreme days - Store both multi-year and per-year
         daily_max = df.groupby(['point_key', 'date'])['value'].max().reset_index()
         
         # Initialize per-year storage
@@ -336,7 +380,7 @@ class DustRasterGenerator:
         results = {season: [] for season in seasons}
         
         if year is None:
-            # Multi-year seasonal means
+            # Multi-year seasonal means - from seasonal stats
             for season in seasons:
                 if season in self.state['cumulative_stats']['seasonal']:
                     for key, stats in self.state['cumulative_stats']['seasonal'][season].items():
@@ -349,20 +393,24 @@ class DustRasterGenerator:
                                 'value': mean_val
                             })
         else:
-            # Single-year seasonal means - need monthly data per year
-            # For now, use annual average
+            # Single-year seasonal means - from seasonal_by_year
             year_str = str(year)
-            if year_str in self.state['cumulative_stats']['annual']:
-                for key, stats in self.state['cumulative_stats']['annual'][year_str].items():
-                    if stats['count'] > 0:
-                        lat, lon = map(float, key.split('_'))
-                        mean_val = stats['sum'] / stats['count']
-                        for season in seasons:
-                            results[season].append({
-                                'latitude': lat,
-                                'longitude': lon,
-                                'value': mean_val
-                            })
+            if ('seasonal_by_year' in self.state['cumulative_stats'] and 
+                year_str in self.state['cumulative_stats']['seasonal_by_year']):
+                
+                year_seasonal = self.state['cumulative_stats']['seasonal_by_year'][year_str]
+                
+                for season in seasons:
+                    if season in year_seasonal:
+                        for key, stats in year_seasonal[season].items():
+                            if stats['count'] > 0:
+                                lat, lon = map(float, key.split('_'))
+                                mean_val = stats['sum'] / stats['count']
+                                results[season].append({
+                                    'latitude': lat,
+                                    'longitude': lon,
+                                    'value': mean_val
+                                })
         
         dfs = {}
         for season in seasons:
@@ -377,7 +425,7 @@ class DustRasterGenerator:
         results = {}
         
         if year is None:
-            # Multi-year monthly means
+            # Multi-year monthly means - from monthly stats
             for month in range(1, 13):
                 month_str = str(month)
                 month_data = []
@@ -396,20 +444,28 @@ class DustRasterGenerator:
                 if month_data:
                     results[month] = pd.DataFrame(month_data)
         else:
-            # Single-year monthly means - use annual average for now
+            # Single-year monthly means - from monthly_by_year
             year_str = str(year)
-            if year_str in self.state['cumulative_stats']['annual']:
+            if ('monthly_by_year' in self.state['cumulative_stats'] and 
+                year_str in self.state['cumulative_stats']['monthly_by_year']):
+                
+                year_monthly = self.state['cumulative_stats']['monthly_by_year'][year_str]
+                
                 for month in range(1, 13):
+                    month_str = str(month)
                     month_data = []
-                    for key, stats in self.state['cumulative_stats']['annual'][year_str].items():
-                        if stats['count'] > 0:
-                            lat, lon = map(float, key.split('_'))
-                            mean_val = stats['sum'] / stats['count']
-                            month_data.append({
-                                'latitude': lat,
-                                'longitude': lon,
-                                'value': mean_val
-                            })
+                    
+                    if month_str in year_monthly:
+                        for key, stats in year_monthly[month_str].items():
+                            if stats['count'] > 0:
+                                lat, lon = map(float, key.split('_'))
+                                mean_val = stats['sum'] / stats['count']
+                                month_data.append({
+                                    'latitude': lat,
+                                    'longitude': lon,
+                                    'value': mean_val
+                                })
+                    
                     if month_data:
                         results[month] = pd.DataFrame(month_data)
         

@@ -13,16 +13,10 @@
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
- 
   <!-- App styles -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="assets/images/iraq_logo.svg" type="image/svg+xml">
-  
 
-
-
-
-  
   <style>
     /* Use system font stack as fallback */
     * {
@@ -33,154 +27,135 @@
       background: #f8fafc;
       margin: 0;
       padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     }
 
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .site-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+      }
 
+      .site-header {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+      }
 
+      .header-left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+      }
 
+      .site-title {
+        width: 100%;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+      }
 
+      .title-main,
+      .title-sub {
+        text-align: center;
+        width: 100%;
+      }
 
+      .header-left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5rem 0;
+      }
+      
+      .logo-link, .logo {
+        margin: 0;
+      }
+      
+      .site-title {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+        padding: 0;
+      }
+      
+      .title-main {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .title-sub {
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+        margin: 4px 0 0 0;
+      }
+      
+      .nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+      }
+      
+      .year-bar {
+        flex-wrap: wrap;
+      }
+      
+      .stats-row {
+        justify-content: flex-start;
+      }
+      
+      .vertical-scale-bar {
+        width: 30px;
+        height: 350px;
+        right: 10px;
+      }
+      
+      .vertical-scale-gradient-container {
+        height: 250px;
+      }
+      
+      .vertical-tick-label {
+        font-size: 0.6rem;
+        right: 14px;
+      }
+      
+      footer {
+        padding: 1.5rem 1rem;
+      }
+      
+      .footer-logo {
+        height: 40px;
+      }
+      
+      .data-center-logo {
+        height: 35px;
+      }
 
-
-    
-
-
-
-
-  /* Remove the old mobile rules and replace with this */
-  @media (max-width: 768px) {
-    .site-header {
-      flex-direction: column;
-      align-items: center;
-      padding: 0.5rem;
+      .comparison-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      
+      .comparison-card {
+        padding: 0.5rem !important;
+      }
+      
+      .comparison-card span {
+        font-size: 0.9rem;
+      }
     }
 
-      /* Force header stacking */
-    .site-header {
-      display: flex;
-      flex-direction: column !important;
-      align-items: center !important;
-      text-align: center;
-    }
-
-    /* Logo centered on top */
-    .header-left {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 5px;
-    }
-
-    /* Title BELOW logo */
-    .site-title {
-      width: 100%;
-      text-align: center;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .title-main,
-    .title-sub {
-      text-align: center;
-      width: 100%;
-    }
-
-
-
-
-
-
-
-
-
-
-    
-    .header-left {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0.5rem 0;
-    }
-    
-    .logo-link, .logo {
-      margin: 0;
-    }
-    
-    .site-title {
-      width: 100%;
-      text-align: center;
-      margin: 0.5rem 0;
-      padding: 0;
-    }
-    
-    .title-main {
-      font-size: 1.1rem;
-      line-height: 1.4;
-      margin: 0;
-      text-align: center;
-      width: 100%;
-    }
-    
-    .title-sub {
-      font-size: 1rem;
-      text-align: center;
-      width: 100%;
-      margin: 4px 0 0 0;
-    }
-    
-    .nav {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-    
-    .year-bar {
-      flex-wrap: wrap;
-    }
-    
-    .stats-row {
-      justify-content: flex-start;
-    }
-    
-    .vertical-scale-bar {
-      width: 30px;
-      height: 350px;
-      right: 10px;
-    }
-    
-    .vertical-scale-gradient-container {
-      height: 250px;
-    }
-    
-    .vertical-tick-label {
-      font-size: 0.6rem;
-      right: 14px;
-    }
-    
-    footer {
-      padding: 1.5rem 1rem;
-    }
-    
-    .footer-logo {
-      height: 40px;
-    }
-    
-    .data-center-logo {
-      height: 35px;
-    }
-  }
-
-
-    
-
-
-    
- 
-    
     /* Main container */
     .maps-page {
       max-width: 1400px;
@@ -286,6 +261,23 @@
     .period-pill.active {
       background: #2563eb;
       color: white;
+    }
+    
+    /* Comparison selector */
+    .comparison-selector {
+      display: flex;
+      gap: 0.25rem;
+      background: white;
+      padding: 0.25rem;
+      border-radius: 2rem;
+      border: 1px solid #e2e8f0;
+      width: fit-content;
+      margin-bottom: 0.75rem;
+    }
+
+    .comparison-selector .period-pill {
+      cursor: pointer;
+      transition: all 0.1s ease;
     }
     
     /* Sub-options - minimal */
@@ -540,7 +532,6 @@
       transform: translateY(-50%);
       width: 20px;
       height: 500px;
-      /* background: rgba(255, 255, 255, 0.95);*/
       backdrop-filter: blur(8px);
       padding: 1.5rem 0.5rem;
       border-radius: 3rem;
@@ -594,17 +585,7 @@
       height: 100%;
       pointer-events: none;
     }
-    /*
-    .vertical-tick {
-      position: absolute;
-      right: -2px;
-      width: 16px;
-      height: 1.5px;
-      background: #51565e;
-      transform: translateY(-50%);
-      z-index: 1002;
-    }
-    */
+    
     .vertical-tick-label {
       position: absolute;
       right: -10px;
@@ -613,7 +594,6 @@
       color: #06152e;
       white-space: nowrap;
       font-weight: 400;
-      
       padding: 0.05rem 0.1rem;
       border-radius: 0.5rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -644,6 +624,90 @@
       right: 20px !important;
       top: 20px !important;
       position: absolute !important;
+    }
+
+    /* Comparison grid styling */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .comparison-card {
+      background: white;
+      border-radius: 0.8rem;
+      border: 2px solid #e2e8f0;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .comparison-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-color: #94a3b8 !important;
+    }
+
+    .comparison-card.selected {
+      border-color: #2563eb !important;
+      background-color: #f0f9ff;
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .card-header i {
+      font-size: 1rem;
+    }
+    
+    .card-header span {
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 0.9rem;
+    }
+    
+    .season-hint {
+      font-size: 0.65rem;
+      color: #64748b;
+      margin-right: 1.7rem;
+      margin-top: -0.2rem;
+      margin-bottom: 0.4rem;
+    }
+    
+    .card-value {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      justify-content: space-between;
+    }
+    
+    .card-value .number {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .card-value .unit {
+      font-size: 0.65rem;
+      color: #64748b;
+    }
+    
+    .card-bar {
+      width: 100%;
+      height: 4px;
+      background: #e2e8f0;
+      border-radius: 2px;
+      margin-top: 0.5rem;
+    }
+    
+    .bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.3s ease;
     }
     
     /* Footer - matching reference page */
@@ -794,15 +858,12 @@
         text-align: center;
       }
     }
-    
-    
   </style>
 </head>
 <body>
 
   <!-- ================= HEADER ================= -->
   <header class="site-header">
-    <!-- Add this script for search engines -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -821,7 +882,6 @@
       </a>
     </div>
 
-    <!-- Same visual layout as before, but now with SEO metadata -->
     <div class="site-title">
       <div class="title-main">
         مَنْظُومةُ الإنذارِ المُبكِّرِ للعواصفِ التُّرابيَّةِ
@@ -830,8 +890,6 @@
         عَيْنٌ ذكيَّةٌ على العِراقِ
       </div>
     </div>
-    <!-- ===== UPDATED SECTION END ===== -->
-
   </header>
 
   <!-- Telegram bar -->
@@ -853,18 +911,10 @@
       <!-- Simple title bar -->
       <div class="title-bar">
         <h1><i class="fas fa-map"></i> 
-          
-          
-         
           تحليل مكاني لتوزيع الغبار
-        
         </h1>
-
-
-
       </div>
 
-      
       <!-- Category tabs with tooltips -->
       <div class="tabs-row" id="category-tabs">
         <div class="tab active" data-type="longterm" data-tooltip="متوسط تراكيز الغبار لجميع السنوات (2013-2025)">
@@ -894,15 +944,26 @@
         <div class="period-pill active" data-period="multi" data-tooltip="عرض متوسط جميع السنوات المتاحة">متعدد السنوات</div>
         <div class="period-pill" data-period="single" data-tooltip="عرض سنة واحدة مع إمكانية التنقل بين السنوات">سنة واحدة</div>
       </div>
+
+      <!-- Comparison mode selector -->
+      <div class="comparison-selector" id="comparison-selector">
+        <div class="period-pill active" data-compare="none">عرض عادي</div>
+        <div class="period-pill" data-compare="seasons">مقارنة الفصول</div>
+        <div class="period-pill" data-compare="months">مقارنة الأشهر</div>
+        <div class="period-pill" data-compare="years">مقارنة السنوات</div>
+      </div>
+
+      <!-- Dynamic comparison grid container -->
+      <div id="comparison-grid-container" style="margin-bottom: 1rem;"></div>
       
-      <!-- Sub-options panel -->
+      <!-- Sub-options panel (for normal view) -->
       <div class="sub-options-row" id="sub-options-panel">
         <div class="sub-option active" data-map="long_term_mean" data-tooltip="متوسط تراكيز الغبار لجميع السنوات (2013-2025)">
           <i class="fas fa-check"></i> المتوسط 2013-2025
         </div>
       </div>
       
-      <!-- Year controls (simple arrows only) - visible in single-year mode -->
+      <!-- Year controls (visible in single-year mode) -->
       <div id="year-controls-container" style="display: none;">
         <div class="year-bar">
           <div class="year-display">
@@ -1018,6 +1079,7 @@
         this.currentMap = 'long_term_mean';
         this.currentType = 'longterm';
         this.currentPeriod = 'multi';
+        this.currentCompare = 'none';
         this.years = [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025];
         this.currentYear = 2013;
         this.gridBounds = null;
@@ -1143,16 +1205,29 @@
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
             this.currentType = tab.dataset.type;
+            this.currentCompare = 'none';
             this.updateSubOptions();
           });
         });
         
         document.querySelectorAll('.period-pill').forEach(pill => {
+          if (pill.closest('#period-selector')) {
+            pill.addEventListener('click', (e) => {
+              document.querySelectorAll('#period-selector .period-pill').forEach(p => p.classList.remove('active'));
+              pill.classList.add('active');
+              this.currentPeriod = pill.dataset.period;
+              this.currentCompare = 'none';
+              this.updateSubOptions();
+            });
+          }
+        });
+        
+        document.querySelectorAll('[data-compare]').forEach(pill => {
           pill.addEventListener('click', (e) => {
-            document.querySelectorAll('.period-pill').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('[data-compare]').forEach(p => p.classList.remove('active'));
             pill.classList.add('active');
-            this.currentPeriod = pill.dataset.period;
-            this.updateSubOptions();
+            this.currentCompare = pill.dataset.compare;
+            this.updateComparisonGrid();
           });
         });
         
@@ -1207,19 +1282,395 @@
           this.loadMap(mapName);
         }, 150);
       }
+
+      updateComparisonGrid() {
+        const container = document.getElementById('comparison-grid-container');
+        const panel = document.getElementById('sub-options-panel');
+        
+        if (this.currentCompare === 'none') {
+          container.innerHTML = '';
+          panel.style.display = 'flex';
+          // Reload current map based on type
+          this.loadCurrentMap();
+          return;
+        }
+        
+        panel.style.display = 'none';
+        
+        if (this.currentCompare === 'seasons') {
+          this.showSeasonsComparison();
+        } else if (this.currentCompare === 'months') {
+          this.showMonthsComparison();
+        } else if (this.currentCompare === 'years') {
+          this.showYearsComparison();
+        }
+      }
+
+      showSeasonsComparison() {
+        const seasons = [
+          { id: 'winter', name: 'الشتاء', hint: 'ديسمبر - فبراير', icon: 'fa-snowflake', color: '#3b82f6' },
+          { id: 'spring', name: 'الربيع', hint: 'مارس - مايو', icon: 'fa-seedling', color: '#10b981' },
+          { id: 'summer', name: 'الصيف', hint: 'يونيو - أغسطس', icon: 'fa-sun', color: '#f59e0b' },
+          { id: 'autumn', name: 'الخريف', hint: 'سبتمبر - نوفمبر', icon: 'fa-leaf', color: '#ef4444' }
+        ];
+        
+        let html = '<div class="comparison-grid">';
+        seasons.forEach(s => {
+          html += `
+            <div class="comparison-card" data-map-type="seasonal" data-season="${s.id}">
+              <div class="card-header">
+                <i class="fas ${s.icon}" style="color: ${s.color}"></i>
+                <span>${s.name}</span>
+              </div>
+              <div class="season-hint">${s.hint}</div>
+              <div class="card-value">
+                <span class="number" id="season-${s.id}-value">--</span>
+                <span class="unit">µg/m³</span>
+              </div>
+              <div class="card-bar">
+                <div class="bar-fill" id="season-${s.id}-bar" style="background: ${s.color}"></div>
+              </div>
+            </div>
+          `;
+        });
+        html += '</div>';
+        
+        document.getElementById('comparison-grid-container').innerHTML = html;
+        
+        // Add click handlers
+        document.querySelectorAll('[data-map-type="seasonal"]').forEach(card => {
+          card.addEventListener('click', () => {
+            const season = card.dataset.season;
+            this.switchToSeason(season);
+          });
+        });
+        
+        // Load data
+        this.loadSeasonsData();
+      }
+
+      showMonthsComparison() {
+        const monthNames = [
+          'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
+          'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'
+        ];
+        const monthColors = [
+          '#3b82f6', '#3b82f6', '#10b981', '#10b981', '#f59e0b', '#f59e0b',
+          '#f59e0b', '#f59e0b', '#ef4444', '#ef4444', '#3b82f6', '#3b82f6'
+        ];
+        
+        let html = '<div class="comparison-grid">';
+        for (let i = 0; i < 12; i++) {
+          html += `
+            <div class="comparison-card" data-map-type="monthly" data-month="${i+1}">
+              <div class="card-header">
+                <i class="fas fa-calendar-day" style="color: ${monthColors[i]}"></i>
+                <span>${monthNames[i]}</span>
+              </div>
+              <div class="card-value">
+                <span class="number" id="month-${i+1}-value">--</span>
+                <span class="unit">µg/m³</span>
+              </div>
+              <div class="card-bar">
+                <div class="bar-fill" id="month-${i+1}-bar" style="background: ${monthColors[i]}"></div>
+              </div>
+            </div>
+          `;
+        }
+        html += '</div>';
+        
+        document.getElementById('comparison-grid-container').innerHTML = html;
+        
+        // Add click handlers
+        document.querySelectorAll('[data-map-type="monthly"]').forEach(card => {
+          card.addEventListener('click', () => {
+            const month = card.dataset.month;
+            this.switchToMonth(month);
+          });
+        });
+        
+        // Load data
+        this.loadMonthsData();
+      }
+
+      showYearsComparison() {
+        let html = '<div class="comparison-grid">';
+        this.years.forEach(year => {
+          html += `
+            <div class="comparison-card" data-map-type="annual" data-year="${year}">
+              <div class="card-header">
+                <i class="fas fa-calendar-alt" style="color: #64748b"></i>
+                <span>سنة ${year}</span>
+              </div>
+              <div class="card-value">
+                <span class="number" id="year-${year}-value">--</span>
+                <span class="unit">µg/m³</span>
+              </div>
+              <div class="card-bar">
+                <div class="bar-fill" id="year-${year}-bar" style="background: #2563eb"></div>
+              </div>
+            </div>
+          `;
+        });
+        html += '</div>';
+        
+        document.getElementById('comparison-grid-container').innerHTML = html;
+        
+        // Add click handlers
+        document.querySelectorAll('[data-map-type="annual"]').forEach(card => {
+          card.addEventListener('click', () => {
+            const year = card.dataset.year;
+            this.switchToYear(year);
+          });
+        });
+        
+        // Load data
+        this.loadYearsData();
+      }
+
+      async loadSeasonsData() {
+        const seasons = ['winter', 'spring', 'summer', 'autumn'];
+        const values = {};
+        
+        if (this.currentPeriod === 'single') {
+          // Single year - load seasonal data for current year
+          await Promise.all(seasons.map(async (season) => {
+            const mapName = `seasonal_${season}_${this.currentYear}`;
+            values[season] = await this.getMapAverage(mapName);
+          }));
+        } else {
+          // Multi-year - load multi-year seasonal data
+          await Promise.all(seasons.map(async (season) => {
+            const mapName = `seasonal_${season}`;
+            values[season] = await this.getMapAverage(mapName);
+          }));
+        }
+        
+        // Find max for scaling
+        const max = Math.max(...Object.values(values), 1);
+        
+        // Update UI
+        seasons.forEach(season => {
+          const value = Math.round(values[season] || 0);
+          const valueEl = document.getElementById(`season-${season}-value`);
+          const barEl = document.getElementById(`season-${season}-bar`);
+          if (valueEl) valueEl.textContent = value;
+          if (barEl) barEl.style.width = `${(value / max) * 100}%`;
+        });
+      }
+
+      async loadMonthsData() {
+        const values = {};
+        
+        if (this.currentPeriod === 'single') {
+          // Single year - load monthly data for current year
+          await Promise.all(Array.from({length: 12}, async (_, i) => {
+            const month = i + 1;
+            const monthStr = month.toString().padStart(2, '0');
+            const mapName = `monthly_${monthStr}_${this.currentYear}`;
+            values[month] = await this.getMapAverage(mapName);
+          }));
+        } else {
+          // Multi-year - load multi-year monthly data
+          await Promise.all(Array.from({length: 12}, async (_, i) => {
+            const month = i + 1;
+            const monthStr = month.toString().padStart(2, '0');
+            const mapName = `monthly_${monthStr}`;
+            values[month] = await this.getMapAverage(mapName);
+          }));
+        }
+        
+        // Find max for scaling
+        const max = Math.max(...Object.values(values), 1);
+        
+        // Update UI
+        for (let month = 1; month <= 12; month++) {
+          const value = Math.round(values[month] || 0);
+          const valueEl = document.getElementById(`month-${month}-value`);
+          const barEl = document.getElementById(`month-${month}-bar`);
+          if (valueEl) valueEl.textContent = value;
+          if (barEl) barEl.style.width = `${(value / max) * 100}%`;
+        }
+      }
+
+      async loadYearsData() {
+        const values = {};
+        
+        // Load all years
+        await Promise.all(this.years.map(async (year) => {
+          const mapName = `annual_${year}`;
+          values[year] = await this.getMapAverage(mapName);
+        }));
+        
+        // Find max for scaling
+        const max = Math.max(...Object.values(values), 1);
+        
+        // Update UI
+        this.years.forEach(year => {
+          const value = Math.round(values[year] || 0);
+          const valueEl = document.getElementById(`year-${year}-value`);
+          const barEl = document.getElementById(`year-${year}-bar`);
+          if (valueEl) valueEl.textContent = value;
+          if (barEl) barEl.style.width = `${(value / max) * 100}%`;
+        });
+      }
+
+      async getMapAverage(mapName) {
+        try {
+          const response = await fetch(`./data/maps/${mapName}_compact.json`, {
+            cache: "no-store"
+          });
+          
+          if (response.ok) {
+            const data = await response.json();
+            const values = data.data.map(d => d.val);
+            return values.reduce((a, b) => a + b, 0) / values.length;
+          }
+        } catch (error) {
+          console.warn(`Could not load ${mapName}`);
+        }
+        return 0;
+      }
+
+      switchToSeason(season) {
+        const seasonMap = {
+          'winter': 'الشتاء',
+          'spring': 'الربيع',
+          'summer': 'الصيف',
+          'autumn': 'الخريف'
+        };
+        
+        let mapName, overlayText;
+        
+        if (this.currentPeriod === 'single') {
+          mapName = `seasonal_${season}_${this.currentYear}`;
+          overlayText = `${seasonMap[season]} ${this.currentYear}`;
+        } else {
+          mapName = `seasonal_${season}`;
+          overlayText = `${seasonMap[season]} (متعدد السنوات)`;
+        }
+        
+        this.debouncedLoad(mapName);
+        document.getElementById('overlay-text').textContent = overlayText;
+        
+        // Highlight selected card
+        document.querySelectorAll('[data-map-type="seasonal"]').forEach(card => {
+          if (card.dataset.season === season) {
+            card.classList.add('selected');
+          } else {
+            card.classList.remove('selected');
+          }
+        });
+      }
+
+      switchToMonth(month) {
+        const monthNames = [
+          'يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
+          'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'
+        ];
+        
+        let mapName, overlayText;
+        
+        if (this.currentPeriod === 'single') {
+          const monthStr = month.toString().padStart(2, '0');
+          mapName = `monthly_${monthStr}_${this.currentYear}`;
+          overlayText = `${monthNames[month-1]} ${this.currentYear}`;
+        } else {
+          const monthStr = month.toString().padStart(2, '0');
+          mapName = `monthly_${monthStr}`;
+          overlayText = `${monthNames[month-1]} (متعدد السنوات)`;
+        }
+        
+        this.debouncedLoad(mapName);
+        document.getElementById('overlay-text').textContent = overlayText;
+        
+        // Highlight selected card
+        document.querySelectorAll('[data-map-type="monthly"]').forEach(card => {
+          if (card.dataset.month === month) {
+            card.classList.add('selected');
+          } else {
+            card.classList.remove('selected');
+          }
+        });
+      }
+
+      switchToYear(year) {
+        const mapName = `annual_${year}`;
+        this.debouncedLoad(mapName);
+        document.getElementById('overlay-text').textContent = `سنة ${year}`;
+        
+        // Highlight selected card
+        document.querySelectorAll('[data-map-type="annual"]').forEach(card => {
+          if (card.dataset.year === year) {
+            card.classList.add('selected');
+          } else {
+            card.classList.remove('selected');
+          }
+        });
+        
+        // If in single-year mode, also update current year
+        if (this.currentPeriod === 'single') {
+          this.currentYear = parseInt(year);
+          document.getElementById('current-year').textContent = year;
+        }
+      }
+      
+      loadCurrentMap() {
+        if (this.currentPeriod === 'multi') {
+          if (this.currentType === 'longterm') {
+            this.debouncedLoad('long_term_mean');
+            document.getElementById('overlay-text').textContent = '2013-2025';
+          } else if (this.currentType === 'seasonal') {
+            this.debouncedLoad('seasonal_winter');
+            document.getElementById('overlay-text').textContent = 'الشتاء (متعدد السنوات)';
+          } else if (this.currentType === 'monthly') {
+            this.debouncedLoad('monthly_01');
+            document.getElementById('overlay-text').textContent = 'يناير (متعدد السنوات)';
+          } else if (this.currentType === 'exceedance') {
+            this.debouncedLoad('exceedance_who');
+            document.getElementById('overlay-text').textContent = 'أيام > 100 (متعدد السنوات)';
+          }
+        } else {
+          if (this.currentType === 'annual') {
+            this.debouncedLoad(`annual_${this.currentYear}`);
+            document.getElementById('overlay-text').textContent = `سنة ${this.currentYear}`;
+          } else if (this.currentType === 'seasonal') {
+            this.debouncedLoad(`seasonal_winter_${this.currentYear}`);
+            document.getElementById('overlay-text').textContent = `الشتاء ${this.currentYear}`;
+          } else if (this.currentType === 'monthly') {
+            this.debouncedLoad(`monthly_01_${this.currentYear}`);
+            document.getElementById('overlay-text').textContent = `يناير ${this.currentYear}`;
+          } else if (this.currentType === 'exceedance') {
+            this.debouncedLoad(`exceedance_who_${this.currentYear}`);
+            document.getElementById('overlay-text').textContent = `أيام > 100 ${this.currentYear}`;
+          }
+        }
+      }
       
       updateSubOptions() {
         const panel = document.getElementById('sub-options-panel');
         const yearControls = document.getElementById('year-controls-container');
         const overlayText = document.getElementById('overlay-text');
+        const comparisonSelector = document.getElementById('comparison-selector');
         
         panel.innerHTML = '';
         
+        // Always show comparison selector
+        comparisonSelector.style.display = 'flex';
+        
+        // Show/hide year controls based on period
         if (this.currentPeriod === 'single') {
           yearControls.style.display = 'block';
         } else {
           yearControls.style.display = 'none';
         }
+        
+        // Reset compare to none when changing tabs
+        this.currentCompare = 'none';
+        document.querySelectorAll('[data-compare]').forEach(p => p.classList.remove('active'));
+        document.querySelector('[data-compare="none"]').classList.add('active');
+        document.getElementById('comparison-grid-container').innerHTML = '';
+        panel.style.display = 'flex';
         
         switch(this.currentType) {
           case 'longterm':
@@ -1370,6 +1821,11 @@
           this.currentYear = year;
           display.textContent = year;
           overlayText.textContent = `سنة ${year}`;
+          
+          // Update comparison grids if visible
+          if (this.currentCompare !== 'none') {
+            this.updateComparisonGrid();
+          }
           
           if (this.currentType === 'seasonal') {
             document.querySelectorAll('.sub-option').forEach((opt, index) => {
