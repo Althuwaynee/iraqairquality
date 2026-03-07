@@ -29,3 +29,9 @@ pm10_alerts.json
 # System
 .DS_Store
 Thumbs.db
+
+#maps
+data/maps
+
+#Firebase info
+js/firebase-config.js
