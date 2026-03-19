@@ -88,6 +88,103 @@
   
   <!-- App styles -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Additional styles for sort controls */
+    .sort-controls {
+      padding: 12px 15px;
+      margin: 10px 0 15px 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      direction: rtl;
+    }
+
+    .sort-controls label {
+      color: #1e3a5f;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .sort-controls select {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-family: 'Tajawal', 'Segoe UI', sans-serif;
+      font-size: 14px;
+      background: white;
+      color: #1e293b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .sort-controls select:hover {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    }
+
+    .sort-controls select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+
+    /* AQI value styling in list */
+    .value {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      min-width: 60px;
+    }
+
+    .value span {
+      font-size: 18px;
+      font-weight: bold;
+      color: #0f172a;
+    }
+
+    .value em {
+      font-size: 12px;
+      color: #64748b;
+      font-style: normal;
+    }
+
+    /* District list items */
+    #district-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 15px;
+      margin-bottom: 5px;
+      background: white;
+      border-radius: 8px;
+      border-left: 5px solid transparent;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      direction: rtl;
+    }
+
+    #district-list li:hover {
+      transform: translateX(-5px);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    #district-list li strong {
+      color: #1e3a5f;
+      font-size: 16px;
+    }
+
+    #district-list li small {
+      color: #64748b;
+      font-size: 13px;
+    }
+  </style>
 </head>
 
 <body>
@@ -194,9 +291,6 @@
 
 <body>
 
-
-
-
   <!-- ================= HEADER ================= -->
 <header class="site-header">
   <!-- Add this script for search engines -->
@@ -297,15 +391,24 @@
       <input
         type="text"
         id="search"
-        placeholder="Search district or province…"
+        placeholder="البحث عن مدينة أو محافظة..."
         aria-label="Search district"
       />
+
+      <!-- Sort Controls - NEW -->
+      <div class="sort-controls">
+        <label for="sort-order">ترتيب حسب:</label>
+        <select id="sort-order" aria-label="Sort districts by AQI">
+          <option value="desc">AQI من الأعلى إلى الأقل</option>
+          <option value="asc">AQI من الأقل إلى الأعلى</option>
+        </select>
+      </div>
 
       <!-- District list -->
       <ul id="district-list"></ul>
 
       <!-- View all toggle -->
-      <div class="view-all">View all districts →</div>
+      <div class="view-all">عرض الكل</div>
 
     </aside>
 
@@ -371,6 +474,23 @@
   <!-- Add translations first -->
   <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
+
+  <script>
+    // Initialize sort order after main.js loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const sortSelect = document.getElementById('sort-order');
+      if (sortSelect) {
+        sortSelect.addEventListener('change', function(e) {
+          // This will be handled by main.js if it has the sort functionality
+          // If main.js doesn't have it yet, we'll add a custom event
+          const event = new CustomEvent('sortOrderChanged', { 
+            detail: { order: e.target.value } 
+          });
+          document.dispatchEvent(event);
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>

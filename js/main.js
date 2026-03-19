@@ -13,6 +13,7 @@ let pm10Data = null;
 let districtLayer = L.layerGroup();
 let showAllDistricts = false;
 let originalDistricts = []; // Store original English names for search
+let currentSortOrder = 'desc'; // Default to highest AQI first
 
 const MAX_VISIBLE_DISTRICTS = 15;
 
@@ -47,7 +48,6 @@ function isNightTimeIraq(utcTimestamp) {
 }
 
 /* ---------- Search ---------- */
-/* ---------- Search ---------- */
 function setupSearch() {
   const searchInput = document.getElementById("search");
   if (!searchInput) return;
@@ -65,6 +65,24 @@ function setupSearch() {
   searchInput.placeholder = "البحث عن مدينة أو محافظة...";
 }
 
+/* ---------- Sort Setup ---------- */
+function setupSortControls() {
+  const sortSelect = document.getElementById("sort-order");
+  if (!sortSelect) return;
+
+  // Set initial value
+  sortSelect.value = currentSortOrder;
+
+  sortSelect.addEventListener("change", (e) => {
+    currentSortOrder = e.target.value;
+    if (!pm10Data || !pm10Data.districts) return;
+    
+    renderDistrictList(
+      pm10Data.districts,
+      document.getElementById("search")?.value || ""
+    );
+  });
+}
 
 /* ---------- Geo helpers ---------- */
 function haversineDistance(lat1, lon1, lat2, lon2) {
@@ -169,10 +187,6 @@ function getHealthIcons({ aqi, pm10, timestamp }) {
   return icons;
 }
 
-
-
-
-
 /* ---------- Map ---------- */
 function initMap() {
   // Only initialize map if #map element exists
@@ -187,10 +201,6 @@ function initMap() {
 
   districtLayer.addTo(map);
 }
-
-
-
-
 
 /* ---------- Load JSON ---------- */
 async function loadPM10Alerts() {
@@ -244,7 +254,9 @@ async function loadPM10Alerts() {
       updateHeaderInfo(pm10Data.metadata);
     }
     
+    // Sort by AQI (highest first) - initial sort
     validDistricts.sort((a, b) => (b.aqi.value || 0) - (a.aqi.value || 0));
+    
     drawDistrictMarkers(validDistricts);
     renderDistrictList(validDistricts);
     autoLocateUser(validDistricts);
@@ -336,15 +348,10 @@ function drawDistrictMarkers(districts) {
     marker.bindPopup(buildDistrictPopup(d));
     marker._district_id = d.district_id;
 
-    
-
     districtLayer.addLayer(marker);
   });
 }
 
-/* ---------- Popup ---------- */
-/* ---------- Popup ---------- */
-/* ---------- Popup ---------- */
 /* ---------- Popup ---------- */
 function buildDistrictPopup(d) {
   // Safely get values with defaults
@@ -461,7 +468,6 @@ function translateAQILevel(level) {
 }
 
 /* ---------- Sidebar list ---------- */
-/* ---------- Sidebar list ---------- */
 function renderDistrictList(districts, filter = "") {
   const list = document.getElementById("district-list");
   if (!list) return; // Only run if element exists
@@ -485,6 +491,18 @@ function renderDistrictList(districts, filter = "") {
            provinceAr.includes(searchTerm) ||
            nameEn.includes(searchTerm) || 
            provinceEn.includes(searchTerm);
+  });
+
+  // Sort by AQI value based on current sort order
+  filtered.sort((a, b) => {
+    const aqiA = a.aqi?.value || 0;
+    const aqiB = b.aqi?.value || 0;
+    
+    if (currentSortOrder === 'desc') {
+      return aqiB - aqiA; // Highest first (descending)
+    } else {
+      return aqiA - aqiB; // Lowest first (ascending)
+    }
   });
 
   const visible = showAllDistricts
@@ -547,7 +565,6 @@ function autoLocateUser(districts) {
 }
 
 /* ---------- View all ---------- */
-/* ---------- View all ---------- */
 function updateViewAllButton(total) {
   const btn = document.querySelector(".view-all");
   if (!btn) return;
@@ -609,7 +626,6 @@ function setupLogoNavigation() {
     }
   });
 }
-
 
 /* ---------- Mobile Menu ---------- */
 function setupMobileMenu() {
@@ -786,7 +802,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
 //* ---------- Mobile double-click zoom (BOTH in AND out) ---------- */
 function enableMobileDoubleClickZoom() {
   if (!map) return;
@@ -810,8 +825,7 @@ function enableMobileDoubleClickZoom() {
       
       if (isTouch || isMobile) {
         e.originalEvent.preventDefault();
-          /* 
-        // Determine zoom direction based on tap position
+        /* 
         // Option A: Tap on upper half = zoom in, lower half = zoom out
         const mapContainer = map.getContainer();
         const containerHeight = mapContainer.clientHeight;
@@ -824,8 +838,7 @@ function enableMobileDoubleClickZoom() {
           // Tap on bottom half - ZOOM OUT
           map.setView(e.latlng, currentZoom - 1, { animate: true });
         }
-        
-         */ 
+        */ 
         // Option B: Single tap = zoom in, Double tap = zoom out
         // Uncomment this and comment Option A to use this instead
         const now = Date.now();
@@ -858,23 +871,6 @@ function enableMobileDoubleClickZoom() {
     map.off('dblclick');
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ---------- Google Maps Style Zoom ---------- */
 function setupGoogleZoom() {
@@ -995,19 +991,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMobileMenu();
   setupLogoNavigation();
   setupSearch();
-  setupGoogleZoom(); // ← ADD THIS LINE
-});
-
-
-
-
-
-
-/* ---------- App Bootstrap ---------- */
-document.addEventListener("DOMContentLoaded", () => {
-  initMap();
-  loadPM10Alerts();
-  setupMobileMenu();
-  setupLogoNavigation();
-  setupSearch();
+  setupSortControls(); // ← ADD THIS LINE
+  setupGoogleZoom();
 });
