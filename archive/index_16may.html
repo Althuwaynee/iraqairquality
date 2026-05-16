@@ -8,6 +8,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+
     gtag('config', 'G-P9ML0TEJR5');
   </script>
 
@@ -34,6 +35,8 @@
   <meta name="geo.position" content="33.3152;44.3661" />
   <meta name="ICBM" content="33.3152, 44.3661" />
 
+  
+  
   <!-- Open Graph / Facebook (Enhanced) -->
   <meta property="og:title" content="منظومة الإنذار المبكر للعواصف الترابية - العراق | Iraq Dust Storm Early Warning System" />
   <meta property="og:description" content="مراقبة حية للعواصف الترابية وجودة الهواء في العراق. بيانات فورية لبغداد والبصرة وجميع المحافظات. Real-time dust storm monitoring across Iraq." />
@@ -55,6 +58,7 @@
   <meta name="twitter:title" content="MENA Dust Storm Monitor - Iraq Air Quality" />
   <meta name="twitter:description" content="Live dust storm tracking across Middle East & North Africa. Real-time air quality data for Iraq, Kuwait, Saudi Arabia, Jordan." />
 
+  
   <!-- Canonical URL -->
   <link rel="canonical" href="https://iraqairquality.com/" />
   
@@ -73,11 +77,11 @@
   <link rel="alternate" href="https://iraqairquality.com/ar-kw/" hreflang="ar-kw" />
   <link rel="alternate" href="https://iraqairquality.com/ar-sa/" hreflang="ar-sa" />
   <link rel="alternate" href="https://iraqairquality.com/ar-jo/" hreflang="ar-jo" />
-  
   <!-- Geographic Coverage Expansion (MENA Region) -->
   <meta name="geo.region" content="MEN" />
   <meta name="geo.placename" content="Middle East and North Africa" />
   <meta name="keywords" content="غبار الشرق الأوسط, عواصف ترابية السعودية, غبار الكويت, عواصف الاردن, غبار سوريا, تراب ايران, عواصف رملية الخليج, MENA dust storms, Middle East sandstorms, Persian Gulf dust, Arabian Peninsula dust, North Africa dust, Sahara dust transport, Iraq dust forecast, PM10 Middle East" />
+  
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -180,73 +184,10 @@
       color: #64748b;
       font-size: 13px;
     }
-
-    /* SEO informational block - preserves existing layout */
-    .seo-informational-block {
-      background: white;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 25px;
-      direction: rtl;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-      margin: 20px 10px 0 10px;
-    }
-
-    .seo-informational-block h1 {
-      color: #1e3a8a;
-      font-size: 22px;
-      margin-top: 0;
-      margin-bottom: 15px;
-    }
-
-    .seo-informational-block p {
-      color: #334155;
-      line-height: 1.7;
-      font-size: 15px;
-      margin-bottom: 20px;
-    }
-
-    .seo-informational-block a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .seo-informational-block a:hover {
-      text-decoration: underline;
-    }
-
-    .seo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .seo-grid h2 {
-      color: #1e3a5f;
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .seo-grid ul {
-      color: #475569;
-      padding-right: 20px;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .seo-grid ul li {
-      margin-bottom: 8px;
-    }
-
-    .seo-grid .icon {
-      margin-left: 8px;
-      color: #2563eb;
-    }
   </style>
 </head>
-<body>
 
+<body>
   <!-- Enhanced Schema.org Structured Data -->
   <script type="application/ld+json">
   {
@@ -324,57 +265,103 @@
   }
   </script>
 
+  <!-- Add DataFeed Schema for real-time AQI data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DataFeed",
+    "name": "Iraq Air Quality Real-Time Data Feed",
+    "description": "Real-time PM10 and AQI measurements for Iraqi districts",
+    "dateModified": "2026-02-20",
+    "dataFeedElement": [
+      {
+        "@type": "DataFeedItem",
+        "name": "Baghdad Air Quality",
+        "description": "Real-time AQI for Baghdad district"
+      },
+      {
+        "@type": "DataFeedItem",
+        "name": "Basra Air Quality",
+        "description": "Real-time AQI for Basra district"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
   <!-- ================= HEADER ================= -->
-  <header class="site-header">
-    <div class="header-left">
-      <a href="index.html" class="logo-link" id="logo-home"> 
-        <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo"> 
-      </a>
-    </div>
+<header class="site-header">
+  <!-- Add this script for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "منظومة الإنذار المبكر للعواصف الترابية",
+    "alternateName": "عين ذكية على العراق",
+    "description": "نظام مراقبة جودة الهواء وتحليل العواصف الترابية في العراق",
+    "url": "https://iraqairquality.com",
+    "inLanguage": "ar"
+  }
+  </script>
 
-    <div class="site-title">
-      <div class="title-main">
-        مَنْظُومةُ الإنذارِ المُبكِّرِ للعواصفِ التُّرابيَّةِ
-      </div>
-      <div class="title-sub">
-        عَيْنٌ ذكيَّةٌ على العِراقِ
-      </div>
-    </div>
-
-    <nav class="nav">
-      <a href="research.html">تحليل بياني</a>
-      <a href="maps.html">تحليل مكاني</a>
-   
-      <!-- ABOUT dropdown -->
-      <div class="nav-dropdown">
-        <a href="#" class="dropdown-toggle">
-          حول المنصة ▾
-        </a>
-        <div class="dropdown-menu">
-            <a href="why_IAQ.html">منصتنا</a>
-            <a href="about_AQI.html">مؤشر الجودة</a>
-            <a href="data_source.html">مصادر البيانات</a>
-            <a href="contact.html">اتصل بنا</a>
-        </div>
-      </div>
-      
-      <a href="index.html#map" class="active">الخريطة</a>
-    </nav>
-  </header>
-
-  <div class="telegram-bar">
-    <a href="https://t.me/IraqAirQuality_bot" target="_blank" rel="noopener">
-      <span class="telegram-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150" height="150" viewBox="0 0 48 48">
-          <path fill="#29b6f6" d="M24,4C13,4,4,13,4,24s9,20,20,20s20-9,20-20S35,4,24,4z"></path>
-          <path fill="#fff" d="M34,15l-3.7,19.1c0,0-0.2,0.9-1.2,0.9c-0.6,0-0.9-0.3-0.9-0.3L20,28l-4-2l-5.1-1.4c0,0-0.9-0.3-0.9-1	c0-0.6,0.9-0.9,0.9-0.9l21.3-8.5c0,0,0.7-0.2,1.1-0.2c0.3,0,0.6,0.1,0.6,0.5C34,14.8,34,15,34,15z"></path>
-          <path fill="#b0bec5" d="M23,30.5l-3.4,3.4c0,0-0.1,0.1-0.3,0.1c-0.1,0-0.1,0-0.2,0l1-6L23,30.5z"></path>
-          <path fill="#cfd8dc" d="M29.9,18.2c-0.2-0.2-0.5-0.3-0.7-0.1L16,26c0,0,2.1,5.9,2.4,6.9c0.3,1,0.6,1,0.6,1l1-6l9.8-9.1C30,18.7,30.1,18.4,29.9,18.2z"></path>
-        </svg>
-      </span>
-      اضغط هنا لتصلك اشعارات جودة الهواء في العراق عبر تطبيق تيليجرام
+  <div class="header-left">
+    <a href="index.html" class="logo-link" id="logo-home"> 
+      <img src="assets/images/logo.svg" alt="Iraq AQI" class="logo"> 
     </a>
   </div>
+
+  <!-- Same visual layout as before, but now with SEO metadata -->
+  <div class="site-title">
+    <div class="title-main">
+      مَنْظُومةُ الإنذارِ المُبكِّرِ للعواصفِ التُّرابيَّةِ
+    </div>
+    <div class="title-sub">
+      عَيْنٌ ذكيَّةٌ على العِراقِ
+    </div>
+  </div>
+  <!-- ===== UPDATED SECTION END ===== -->
+
+  <nav class="nav">
+   <a href="research.html">تحليل بياني</a>
+    <a href="maps.html">تحليل مكاني</a>
+ 
+    <!-- ABOUT dropdown -->
+    <div class="nav-dropdown">
+      <a href="#" class="dropdown-toggle">
+        حول المنصة ▾
+      </a>
+      <div class="dropdown-menu">
+          <a href="why_IAQ.html">منصتنا</a>
+          <a href="about_AQI.html">مؤشر الجودة</a>
+          <a href="data_source.html">مصادر البيانات</a>
+          <a href="contact.html">اتصل بنا</a>
+      </div>
+    </div>
+    
+    <a href="index.html#map" class="active">الخريطة</a>
+    
+
+  </nav>
+</header>
+
+
+
+<div class="telegram-bar">
+  <a href="https://t.me/IraqAirQuality_bot" target="_blank" rel="noopener">
+    <span class="telegram-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="150" height="150" viewBox="0 0 48 48">
+      <path fill="#29b6f6" d="M24,4C13,4,4,13,4,24s9,20,20,20s20-9,20-20S35,4,24,4z"></path><path fill="#fff" d="M34,15l-3.7,19.1c0,0-0.2,0.9-1.2,0.9c-0.6,0-0.9-0.3-0.9-0.3L20,28l-4-2l-5.1-1.4c0,0-0.9-0.3-0.9-1	c0-0.6,0.9-0.9,0.9-0.9l21.3-8.5c0,0,0.7-0.2,1.1-0.2c0.3,0,0.6,0.1,0.6,0.5C34,14.8,34,15,34,15z"></path><path fill="#b0bec5" d="M23,30.5l-3.4,3.4c0,0-0.1,0.1-0.3,0.1c-0.1,0-0.1,0-0.2,0l1-6L23,30.5z"></path><path fill="#cfd8dc" d="M29.9,18.2c-0.2-0.2-0.5-0.3-0.7-0.1L16,26c0,0,2.1,5.9,2.4,6.9c0.3,1,0.6,1,0.6,1l1-6l9.8-9.1	C30,18.7,30.1,18.4,29.9,18.2z"></path>
+      </svg>
+    </span>
+    اضغط هنا لتصلك اشعارات جودة الهواء في العراق عبر تطبيق تيليجرام
+  </a>
+</div>
+
+
+
+
 
   <!-- ================= MAIN LAYOUT ================= -->
   <main class="layout">
@@ -382,17 +369,20 @@
     <!-- ===== MAP ===== -->
     <section class="map-wrapper">
       <div id="map"></div>
+      
 
       <!-- AQI legend bar -->
-      <div class="aqi-bar">
-        <span class="good">جيد (0-50)</span>
-        <span class="moderate">متوسط (51-100)</span>
-        <span class="unhealthy-sensitive">غير صحي للفئات الحساسة (101-150)</span>
-        <span class="unhealthy">غير صحي (151-200)</span>
-        <span class="very">غير صحي جداً (201-300)</span>
-        <span class="hazardous">خطير (301-500)</span>
-      </div>
+    <div class="aqi-bar">
+      <span class="good">جيد (0-50)</span>
+      <span class="moderate">متوسط (51-100)</span>
+      <span class="unhealthy-sensitive">غير صحي للفئات الحساسة (101-150)</span>
+      <span class="unhealthy">غير صحي (151-200)</span>
+      <span class="very">غير صحي جداً (201-300)</span>
+      <span class="hazardous">خطير (301-500)</span>
+    </div>
     </section>
+
+
 
     <!-- ===== SIDEBAR ===== -->
     <aside class="sidebar">
@@ -405,7 +395,7 @@
         aria-label="Search district"
       />
 
-      <!-- Sort Controls -->
+      <!-- Sort Controls - NEW -->
       <div class="sort-controls">
         <label for="sort-order">ترتيب حسب:</label>
         <select id="sort-order" aria-label="Sort districts by AQI">
@@ -422,87 +412,66 @@
 
     </aside>
 
-  </main>
 
-  <!-- ================= SEO INFORMATIONAL BLOCK (Crawlable Content) ================= -->
-  <section class="seo-informational-block">
-    <h1>رصد العواصف الترابية ومؤشر جودة الهواء في العراق بث مباشر</h1>
-    <p>
-      مرحباً بكم في منصة <strong>جودة هواء العراق</strong>، النظام الرقمي المتقدم والإنذار المبكر المخصص لتتبع ومراقبة 
-      <a href="maps.html">العواصف الترابية والغبار العالق في العراق</a>. 
-      يقدم نظامنا تحديثات جغرافية مباشرة لمستويات تلوث الهواء والجسيمات الدقيقة العالقة (<span dir="ltr">PM10</span>) في العاصمة بغداد، البصرة، نينوى، وكافة المحافظات العراقية لمساعدتكم على اتخاذ الإجراءات الوقائية الصحية فوراً.
-    </p>
-    
-    <div class="seo-grid">
-      <div>
-        <h2><span class="icon">🛡️</span> أهداف منظومة الإنذار المبكر للعواصف الترابية</h2>
-        <ul>
-          <li>التنبؤ الفوري بالموجات الغبارية والجدارية الرملية قبل وصولها للمدن المأهولة.</li>
-          <li>حماية الصحة العامة، لا سيما المصابين بالربو والأمراض التنفسية المزمنة.</li>
-          <li>توفير قاعدة بيانات جغرافية دقيقة للباحثين والمؤسسات البيئية في الشرق الأوسط.</li>
-        </ul>
-      </div>
-      <div>
-        <h2><span class="icon">ℹ️</span> كيف تفهم مؤشر الغبار المباشر؟</h2>
-        <p>
-          تعتمد المنصة على معايير منظومة رصد الغبار الإقليمية التابعة للمنظمة العالمية للأرصاد الجوية (<span dir="ltr">WMO</span>). عندما تلاحظ تحول مؤشر المحافظة إلى اللون البرتقالي أو الأحمر، فإن هذا يعني تزايد تراكيز الغبار العالق وبداية تشكل <strong>عاصفة ترابية</strong> قد تؤثر على مدى الرؤية الأفقية والسلامة العامة.
-        </p>
-      </div>
-    </div>
-  </section>
+  </main>
+ 
 
   <!-- ================= FOOTER ================= -->
-  <footer>
-    <div class="footer-content">
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-content">
 
-      <!-- Left: Logo + Copyright -->
-      <div class="footer-left">
-        <a href="index.html" class="footer-logo-link" id="footer-logo">
-          <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
-        </a>
-        <p class="footer-copyright">
-          © 2026 Iraq Air Quality Platform. "For research & public awareness"
-          <br>
-          Numerical simulation & processing by Dr. Omar Althuwaynee
-          <br>
-          <small>(omar.faisel@gmail.com)</small>
-        </p>
-      </div>
-
-      <!-- Center: Data source -->
-      <div class="footer-center">
-        <div class="data-source-wrapper">
-          <span class="data-source-label">Data source:</span>
-          <a href="https://dust.aemet.es/" 
-             target="_blank" 
-             rel="noopener noreferrer"
-             title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
-            <img src="./assets/images/logo-bdrc-and-wmo.svg" 
-                 alt="Barcelona Dust Regional Center" 
-                 class="data-center-logo">
-          </a>
-          <a href="https://dust.aemet.es/" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="data-center-link">
-            dust.aemet.es
-          </a>
-        </div>
-      </div>
-
-      <!-- Right: Update time -->
-      <div class="footer-right">
-        <div id="ref-time"></div>
-      </div>
-
+    <!-- Left: Logo + Copyright -->
+    <div class="footer-left">
+      <a href="index.html" class="footer-logo-link" id="footer-logo">
+        <img src="./assets/images/logo.svg" alt="Iraq AQI" class="footer-logo">
+      </a>
+      <p class="footer-copyright">
+        © 2026 Iraq Air Quality Platform. "For research & public awareness"
+        <br>
+        Numerical simulation & processing by Dr. Omar Althuwaynee
+        <br>
+        <small>(omar.faisel@gmail.com)</small>
+      </p>
     </div>
 
-    <!-- Back to top button -->
-    <button id="back-to-top" title="Back to top">↑</button>
-  </footer>
+    <!-- Center: Data source -->
+    <div class="footer-center">
+      <div class="data-source-wrapper">
+        <span class="data-source-label">Data source:</span>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Barcelona Dust Regional Center - WMO Regional Center for Dust Forecast">
+          <img src="./assets/images/logo-bdrc-and-wmo.svg" 
+               alt="Barcelona Dust Regional Center" 
+               class="data-center-logo">
+        </a>
+        <a href="https://dust.aemet.es/" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="data-center-link">
+          dust.aemet.es
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Update time -->
+    <div class="footer-right">
+      <div id="ref-time"></div>
+    </div>
+
+  </div>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" title="Back to top">↑</button>
+</footer>
+
+
 
   <!-- ================= SCRIPTS ================= -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Add translations first -->
   <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 
@@ -512,6 +481,8 @@
       const sortSelect = document.getElementById('sort-order');
       if (sortSelect) {
         sortSelect.addEventListener('change', function(e) {
+          // This will be handled by main.js if it has the sort functionality
+          // If main.js doesn't have it yet, we'll add a custom event
           const event = new CustomEvent('sortOrderChanged', { 
             detail: { order: e.target.value } 
           });
